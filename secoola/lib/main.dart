@@ -3,6 +3,7 @@ import 'package:secoola/Widgets/Login_page.dart';
 import 'package:secoola/Widgets/Reset_password.dart';
 import 'package:secoola/Widgets/Signin_page.dart';
 import 'package:secoola/Widgets/SplashScreen.dart';
+import 'package:secoola/Widgets/Verification.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         'SignPage': (context) => SignPage(),
         'LoginPage': (context) => LoginPage(),
         'ResetPassword': (context) => ResetPassword(),
+        'VerificationPage': (context) => VerficicationPage(),
+
       },
       debugShowCheckedModeBanner: false,
       title: 'Secoola',

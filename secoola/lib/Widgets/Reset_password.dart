@@ -154,13 +154,15 @@ class EmailEntry extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "VerificationPage");
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xfff00a9b7),
+                  ),
                   child: const Text(
                     "Send verification code",
                     style: TextStyle(color: Color(0xfffffffff)),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xfff00A9B7),
                   ),
                 ),
               ),
