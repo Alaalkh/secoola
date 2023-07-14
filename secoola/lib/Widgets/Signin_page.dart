@@ -202,15 +202,9 @@ class _SignButtonState extends State<SignButton> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ElevatedButton(
-                  onPressed: isActive
-                      ? () {
-                          setState(() {
-                            isActive = false;
-                            controller.clear();
-                            controller2.clear();
-                          });
-                        }
-                      : null,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "ChooseTopic");
+                  },
                   child: const Text(
                     "Signup",
                     style: TextStyle(color: Color(0xfffffffff)),

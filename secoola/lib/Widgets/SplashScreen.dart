@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:secoola/Widgets/Signin_page.dart';
 
 class SplachScreen extends StatefulWidget {
   const SplachScreen({super.key});
@@ -14,9 +13,7 @@ class _SplachScreenState extends State<SplachScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 2),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SignPage())));
+        Duration(seconds: 2), () => Navigator.pushNamed(context, "OnBoarding"));
   }
 
   @override

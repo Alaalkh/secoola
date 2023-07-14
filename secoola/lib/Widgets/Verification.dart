@@ -47,7 +47,10 @@ class VerficicationPage extends StatelessWidget {
           const SizedBox(
             height: 22,
           ),
-          const VerfiyButton(),const SizedBox(height: 66,),
+          const VerfiyButton(),
+          const SizedBox(
+            height: 66,
+          ),
           const ResendCode()
         ],
       ),
@@ -220,7 +223,8 @@ class VerfiyButton extends StatelessWidget {
             padding: const EdgeInsets.only(left: 25),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "VerificationPage");
+                Navigator.pushNamed(context, "NewPassword");
+
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xfff00a9b7),
@@ -236,17 +240,29 @@ class VerfiyButton extends StatelessWidget {
     );
   }
 }
+
 class ResendCode extends StatelessWidget {
   const ResendCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Container(margin: EdgeInsets.only(left: 77),
-        child: const Text("Not retrieve any code?",style: TextStyle(color: Color(0xfffA9AEB2),fontSize: 14),),),  Container(
-        child:TextButton(onPressed: (){
-          
-        }, child: Text("Resend code",style: TextStyle(color: Color(0xfff00A9B7),fontSize: 14))))
-    ],);
+    return Row(
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 77),
+          child: const Text(
+            "Not retrieve any code?",
+            style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14),
+          ),
+        ),
+        Container(
+            child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "NewPassword");
+                },
+                child: Text("Resend code",
+                    style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14))))
+      ],
+    );
   }
 }
