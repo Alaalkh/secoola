@@ -1,5 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:secoola/Widgets/Verification_code_widget.dart';
+
+import '../Models/appRoutes.dart';
 
 class VerficicationPage extends StatelessWidget {
   const VerficicationPage({super.key});
@@ -17,6 +23,10 @@ class VerficicationPage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 11),
                   height: 52,
                   width: 52,
+                  margin: const EdgeInsets.only(top: 66, left: 22),
+                  decoration: BoxDecoration(
+                      color: const Color(0xfffFFFFFF),
+                      borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -24,10 +34,6 @@ class VerficicationPage extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back_ios),
                     color: Colors.black,
                   ),
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: const Color(0xfffFFFFFF),
-                      borderRadius: BorderRadius.circular(17)),
                 ),
                 const SizedBox(
                   width: 22,
@@ -121,89 +127,37 @@ class NumberCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 52,
-          width: 69,
-          margin: const EdgeInsets.only(left: 22, top: 44),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17.0),
-                borderSide: const BorderSide(
-                  color: Color(0xff00A9B7),
-                ),
-              ),
-              border: InputBorder.none,
-            ),
+    return Form(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+              margin: const EdgeInsets.only(left: 25, top: 33),
+              decoration: BoxDecoration(
+                  color: const Color(0xfffFFFFFF),
+                  borderRadius: BorderRadius.circular(12)),
+              child: const CodeTextFeild()),
+          Container(
+              margin: const EdgeInsets.only(top: 33),
+              decoration: BoxDecoration(
+                  color: const Color(0xfffFFFFFF),
+                  borderRadius: BorderRadius.circular(12)),
+              child: const CodeTextFeild()),
+          Container(
+            margin: const EdgeInsets.only(top: 33),
+            decoration: BoxDecoration(
+                color: const Color(0xfffFFFFFF),
+                borderRadius: BorderRadius.circular(12)),
+            child: const CodeTextFeild(),
           ),
-          decoration: BoxDecoration(
-              color: const Color(0xfffFFFFFF),
-              borderRadius: BorderRadius.circular(17)),
-        ),
-        Container(
-          height: 52,
-          width: 69,
-          margin: const EdgeInsets.only(left: 22, top: 44),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17.0),
-                borderSide: const BorderSide(
-                  color: Color(0xff00A9B7),
-                ),
-              ),
-              border: InputBorder.none,
-            ),
-          ),
-          decoration: BoxDecoration(
-              color: const Color(0xfffFFFFFF),
-              borderRadius: BorderRadius.circular(17)),
-        ),
-        Container(
-          height: 52,
-          width: 69,
-          margin: const EdgeInsets.only(left: 22, top: 44),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17.0),
-                borderSide: const BorderSide(
-                  color: Color(0xff00A9B7),
-                ),
-              ),
-              border: InputBorder.none,
-            ),
-          ),
-          decoration: BoxDecoration(
-              color: const Color(0xfffFFFFFF),
-              borderRadius: BorderRadius.circular(17)),
-        ),
-        Container(
-          height: 52,
-          width: 69,
-          margin: const EdgeInsets.only(left: 22, top: 44),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17.0),
-                borderSide: const BorderSide(
-                  color: Color(0xff00A9B7),
-                ),
-              ),
-              border: InputBorder.none,
-            ),
-          ),
-          decoration: BoxDecoration(
-              color: const Color(0xfffFFFFFF),
-              borderRadius: BorderRadius.circular(17)),
-        )
-      ],
+          Container(
+              margin: const EdgeInsets.only(top: 33, right: 14),
+              decoration: BoxDecoration(
+                  color: const Color(0xfffFFFFFF),
+                  borderRadius: BorderRadius.circular(12)),
+              child: const CodeTextFeild())
+        ],
+      ),
     );
   }
 }
@@ -223,8 +177,7 @@ class VerfiyButton extends StatelessWidget {
             padding: const EdgeInsets.only(left: 25),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "NewPassword");
-
+                Get.toNamed(Routes.newpassword);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xfff00a9b7),
@@ -249,7 +202,7 @@ class ResendCode extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 77),
+          margin: const EdgeInsets.only(left: 77),
           child: const Text(
             "Not retrieve any code?",
             style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14),
@@ -260,7 +213,7 @@ class ResendCode extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, "NewPassword");
                 },
-                child: Text("Resend code",
+                child: const Text("Resend code",
                     style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14))))
       ],
     );

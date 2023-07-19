@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:secoola/Models/appRoutes.dart';
 import 'package:secoola/Models/onboardinModel.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -70,7 +73,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         alignment: Alignment.centerRight,
                         child: TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, "SignPage");
+                              Get.toNamed(Routes.SignPage);
                             },
                             child: const Text(
                               "Skip",
@@ -113,7 +116,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       child: TextButton(
                         onPressed: () {
                           if (currentIndex == contents.length - 1) {
-                            Navigator.pushNamed(context, "SignPage");
+                            Get.toNamed(Routes.SignPage);
                           }
                           _controller.nextPage(
                             duration: const Duration(milliseconds: 100),
@@ -131,7 +134,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "LoginPage");
+                      Get.toNamed(Routes.LoginPage);
                     },
                     child: Container(
                       padding: const EdgeInsets.only(top: 13),

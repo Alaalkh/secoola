@@ -1,6 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+
+import '../Models/appRoutes.dart';
 
 class SplachScreen extends StatefulWidget {
   const SplachScreen({super.key});
@@ -13,7 +17,8 @@ class _SplachScreenState extends State<SplachScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 2), () => Navigator.pushNamed(context, "OnBoarding"));
+        Duration(seconds: 2), () =>
+        Get.toNamed(Routes.Onboarding));
   }
 
   @override

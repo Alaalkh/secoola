@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:secoola/Widgets/TextFieldWidget.dart';
+
+import '../Models/appRoutes.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -13,22 +18,22 @@ class NewPassword extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 11),
+                  padding: const EdgeInsets.only(left: 11),
                   height: 52,
                   width: 52,
+                  margin: const EdgeInsets.only(top: 66, left: 22),
+                  decoration: BoxDecoration(
+                      color: const Color(0xfffFFFFFF),
+                      borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios),
                     color: Colors.black,
                   ),
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: Color(0xfffFFFFFF),
-                      borderRadius: BorderRadius.circular(17)),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 22,
                 ),
                 Container(
@@ -41,8 +46,8 @@ class NewPassword extends StatelessWidget {
               ],
             ),
           ),
-          titleWidget(),
-          EmailEntry()
+          const titleWidget(),
+          const passwordEntry()
         ],
       ),
     );
@@ -107,8 +112,8 @@ class titleWidget extends StatelessWidget {
   }
 }
 
-class EmailEntry extends StatelessWidget {
-  const EmailEntry({super.key});
+class passwordEntry extends StatelessWidget {
+  const passwordEntry({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -117,31 +122,18 @@ class EmailEntry extends StatelessWidget {
         Row(
           children: [
             Container(
-              width: 335,
-              height: 56,
-              margin: const EdgeInsets.only(top: 44, left: 27),
-              decoration: BoxDecoration(
-                  color: const Color(0xFFFFFFFFF),
-                  borderRadius: BorderRadius.circular(16)),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "    Your Password",
-                  hintStyle:
-                      const TextStyle(fontSize: 14, color: Color(0xFFFA9AEB2)),
-                  border: InputBorder.none,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                    borderSide: const BorderSide(
-                      color: Color(0xff00A9B7),
-                    ),
-                  ),
-                ),
-                keyboardType: TextInputType.visiblePassword,
-              ),
-            ),
+                width: 335,
+                height: 56,
+                margin: const EdgeInsets.only(top: 44, left: 27),
+                decoration: BoxDecoration(
+                    color: const Color(0xFFFFFFFFF),
+                    borderRadius: BorderRadius.circular(16)),
+                child: const TextFeildwidget(
+                  hint: ' Your Password',
+                )),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 22,
         ),
         Row(
@@ -155,7 +147,7 @@ class EmailEntry extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 25),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "LoginPage");
+                    Get.toNamed(Routes.LoginPage);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xfff00a9b7),
