@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/appRoutes.dart';
@@ -36,15 +37,15 @@ class _OnBoardingState extends State<OnBoarding> {
         children: [
           Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.only(top: 77),
+            margin: EdgeInsets.only(top: ScreenUtil().setHeight(77)),
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,
-              effect: const SlideEffect(
+              effect:  SlideEffect(
                 spacing: 8,
-                radius: 4,
-                dotWidth: 111,
-                dotHeight: 4,
+                radius: ScreenUtil().radius(4),
+                dotWidth: ScreenUtil().setWidth(111),
+                dotHeight: ScreenUtil().setHeight(4),
                 dotColor: Color.fromARGB(255, 154, 203, 203),
                 activeDotColor: Color(0xfff00A9B7),
               ),
@@ -61,13 +62,13 @@ class _OnBoardingState extends State<OnBoarding> {
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(40),
+                  padding:  EdgeInsets.only(left:ScreenUtil().setWidth(40)),
                   child: Column(
                     children: [
-                      const SizedBox(height: 88),
+                       SizedBox(height: ScreenUtil().setHeight(88)),
                       Image.asset(
                         contents[i].image,
-                        height: 266,
+                        height: 244.h,
                       ),
                       Container(
                         alignment: Alignment.centerRight,
@@ -82,16 +83,16 @@ class _OnBoardingState extends State<OnBoarding> {
                       ),
                       Text(
                         contents[i].title,
-                        style: const TextStyle(
-                          fontSize: 24,
+                        style:  TextStyle(
+                          fontSize: ScreenUtil().setSp(24),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         contents[i].discription,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 14,
+                        style:  TextStyle(
+                          fontSize: ScreenUtil().setSp(14),
                           color: Colors.grey,
                         ),
                       )
@@ -106,13 +107,13 @@ class _OnBoardingState extends State<OnBoarding> {
               Row(
                 children: [
                   Container(
-                      padding: const EdgeInsets.only(top: 5),
+                      padding:  EdgeInsets.only(top: ScreenUtil().setHeight(5)),
                       decoration: BoxDecoration(
                           color: const Color(0xfff00A9B7),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 335,
-                      height: 52,
-                      margin: const EdgeInsets.only(left: 30, bottom: 15),
+                          borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
+                      width:  ScreenUtil().setWidth(335),
+                      height:  ScreenUtil().setHeight(52),
+                      margin:  EdgeInsets.only(left: ScreenUtil().setWidth(30), bottom: ScreenUtil().setHeight(15)),
                       child: TextButton(
                         onPressed: () {
                           if (currentIndex == contents.length - 1) {
@@ -137,18 +138,18 @@ class _OnBoardingState extends State<OnBoarding> {
                       Get.toNamed(Routes.LoginPage);
                     },
                     child: Container(
-                      padding: const EdgeInsets.only(top: 13),
+                      padding:  EdgeInsets.only(top: ScreenUtil().setHeight(13)),
                       decoration: BoxDecoration(
                           color: const Color(0xfffFFFFFF),
                           border: Border.all(color: const Color(0xfff00A9B7)),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 335,
-                      height: 52,
-                      margin: const EdgeInsets.only(left: 30, bottom: 87),
-                      child: const Text(
+                          borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
+                      width:  ScreenUtil().setWidth(335),
+                      height:  ScreenUtil().setHeight(52),
+                      margin:  EdgeInsets.only(left: ScreenUtil().setWidth(30), bottom: ScreenUtil().setHeight(66)),
+                      child:  Text(
                         "I already have an account",
                         style:
-                            TextStyle(fontSize: 16, color: Color(0xfff00A9B7)),
+                            TextStyle(fontSize: ScreenUtil().setSp(16), color: Color(0xfff00A9B7)),
                         textAlign: TextAlign.center,
                       ),
                     ),

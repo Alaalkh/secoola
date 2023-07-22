@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:secoola/App/SplashScreen.dart';
 
-
 import 'Models/appRoutes.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(360, 690),
+        designSize: Size(375, 812),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {

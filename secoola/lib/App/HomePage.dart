@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Widgets/CourseWidget.dart';
+import 'package:secoola/Widgets/DesignTopics.dart';
+import 'package:secoola/Widgets/TopicWidget.dart';
 
 import '../Widgets/CategoriesWidget.dart';
 
@@ -8,13 +11,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xfffFAFAFA),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Appbar(), PopularCourse(), Categories()],
-        ),
+    return const SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Appbar(),
+          PopularCourse(),
+          Categories(),
+          DesignTopic(),
+          CodingTopic(),
+          MarketingTopic()
+        ],
       ),
     );
   }
@@ -26,88 +33,88 @@ class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         color: Color(0xfff00A9B7),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
+          bottomLeft: Radius.circular(28.r),
+          bottomRight: Radius.circular(28.r),
         ),
       ),
-      height: 222,
+      height: 222.h,
       width: double.infinity,
       child: Column(
         children: [
           Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(left: 33, top: 66),
-                  child: const Text(
+                  margin:  EdgeInsets.only(left: 33.w, top: 66.h),
+                  child:  Text(
                     "Hi, Dimas",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-              const SizedBox(
-                width: 22,
+               SizedBox(
+                width: 22.w,
               ),
               Container(
-                margin: const EdgeInsets.only(top: 66),
-                child: const Text(
+                margin:  EdgeInsets.only(top: 66.h),
+                child:  Text(
                   "👋   ",
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 24.sp),
                 ),
               ),
-              const SizedBox(
-                width: 77,
+               SizedBox(
+                width: 77.w,
               ),
               Container(
-                margin: const EdgeInsets.only(top: 66),
+                margin:  EdgeInsets.only(top: 66.h),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r),
                   color: const Color(0xfff008793),
                 ),
-                height: 40,
-                width: 40,
+                height: 40.h,
+                width: 40.w,
               ),
-              const SizedBox(
-                width: 6,
+               SizedBox(
+                width: 6.w,
               ),
               Container(
-                margin: const EdgeInsets.only(top: 66),
+                margin:  EdgeInsets.only(top: 66.h),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r),
                   color: const Color(0xfff008793),
                 ),
-                height: 40,
-                width: 40,
+                height: 40.h,
+                width: 40.w,
               )
             ],
           ),
           Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(left: 33),
-                  child: const Text(
+                  margin:  EdgeInsets.only(left: 33.w),
+                  child:  Text(
                     "Let's start learning!",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    style: TextStyle(fontSize: 20.sp, color: Colors.white),
                   ))
             ],
           ),
-          const SizedBox(
-            height: 22,
+           SizedBox(
+            height: 22.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 48,
-                width: 335,
+                height: 48.h,
+                width: 335.w,
                 decoration: BoxDecoration(
                     color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(15)),
+                    borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
-                    hintStyle: const TextStyle(
-                        fontSize: 14, color: Color(0xfffD9DBDE)),
+                    hintStyle:  TextStyle(
+                        fontSize: 14.sp, color: Color(0xfffD9DBDE)),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -134,20 +141,20 @@ class PopularCourse extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 22, top: 22),
-              child: const Text(
+              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+              child:  Text(
                 "Popular course",
-                style: TextStyle(color: Colors.black, fontSize: 18),
+                style: TextStyle(color: Colors.black, fontSize: 18.sp),
               ),
             ),
-            const SizedBox(
-              width: 144,
+             SizedBox(
+              width: 144.w,
             ),
             Container(
-              margin: const EdgeInsets.only(left: 22, top: 22),
-              child: const Text(
+              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+              child:  Text(
                 "See All",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -253,6 +260,156 @@ class Categories extends StatelessWidget {
             ],
           ),
         )
+      ],
+    );
+  }
+}
+
+class DesignTopic extends StatelessWidget {
+  const DesignTopic({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [TopicWidgdet(Topictitle: "Design")],
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              DesignTopics(
+                boxcolor: Color(0xfffFFEA7D),
+                titletext: "Design Thingking F...",
+                coursetutor: "Dianne Russell",
+                price: "\$ 75",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfffFFB099),
+                titletext: "Figma Prototyping 1...",
+                coursetutor: "Jacob Jones",
+                price: "\$ 32",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfffFCE2EA),
+                titletext: "UI UX Design Essentials",
+                coursetutor: "Jacob Jones",
+                price: "\$ 83",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class CodingTopic extends StatelessWidget {
+  const CodingTopic({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [TopicWidgdet(Topictitle: "Coding")],
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              DesignTopics(
+                boxcolor: Color(0xfffD0B2FF),
+                titletext: "Flutter Class - Adv...",
+                coursetutor: "Cameron Williamson",
+                price: "\$ 97",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfffFFEA7D),
+                titletext: "Python Class - Adv...",
+                coursetutor: "Brooklyn Simmons",
+                price: "\$ 66",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfff00A9B7),
+                titletext: "Swift Class - Adv...",
+                coursetutor: "Cameron Williamson",
+                price: "\$ 41",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Label",
+                background: Color(0xfffDCF3F5),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class MarketingTopic extends StatelessWidget {
+  const MarketingTopic({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [TopicWidgdet(Topictitle: "Marketing")],
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              DesignTopics(
+                boxcolor: Color(0xfffFFB099),
+                titletext: "Digital Marketing S...",
+                coursetutor: "Esther Howard",
+                price: "\$ 49",
+                colorText: Color(0xfffFF6666),
+                recommend: "Hot Deals",
+                background: Color(0xfffFCE2EA),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfff86F2CB),
+                titletext: "Personal Branding F...",
+                coursetutor: "Savannah Nguyen",
+                price: "\$ 56",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Most Sold",
+                background: Color(0xfffDCF3F5),
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfff00A9B7),
+                titletext: "Neuromarketing&Marketing ",
+                coursetutor: "Arlene McCoy",
+                price: "\$ 41",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Color(0xfffDCF3F5),
+              ),
+            ],
+          ),
+        ),SizedBox(height: 33,)
       ],
     );
   }

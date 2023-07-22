@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CourseWidget extends StatelessWidget {
   final Color boxcolor;
@@ -17,47 +18,47 @@ class CourseWidget extends StatelessWidget {
         children: [ Row(crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 22, top: 22),
-          width: 220,
-          height: 140,
+          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+          width: 220.w,
+          height: 140.h,
           decoration: BoxDecoration(
               color:boxcolor,
-              borderRadius: BorderRadius.circular(17)),
+              borderRadius: BorderRadius.circular(17.r)),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.only(left: 22, top: 11),
+                margin:  EdgeInsets.only(left: 22.w, top: 11.h),
                 decoration: BoxDecoration(
                     color: const Color(0xfffFFFFFF),
                     borderRadius: BorderRadius.circular(9)),
-                height: 28,
-                width: 49,
+                height: 28.h,
+                width: 49.w,
                 child: Row(
                   children: [
                     Image.asset(
                       "assets/star.png",
-                      height: 11,
-                      width: 22,
+                      height: 11.h,
+                      width: 22.w,
                     ),
                     const Text("4.8")
                   ],
                 ),
               ),
-              const SizedBox(
-                width: 77,
+               SizedBox(
+                width: 77.w,
               ),
               Container(
-                margin: const EdgeInsets.only(left: 22, top: 11),
+                margin:  EdgeInsets.only(left: 22.w, top: 11.h),
                 decoration: BoxDecoration(
                     color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(9)),
-                height: 28,
-                width: 28,
+                    borderRadius: BorderRadius.circular(9.r)),
+                height: 28.h,
+                width: 28.w,
                 child: Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.only(left: 6),
+                      padding:  EdgeInsets.only(left: 6.w),
                       child: const Icon(
                         Icons.favorite,
                         color: Colors.red,
@@ -75,10 +76,10 @@ class CourseWidget extends StatelessWidget {
       Row(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 22, top: 11),
+            margin:  EdgeInsets.only(left: 22.w, top: 11.h),
             child:  Text(
               titletext,
-              style: const TextStyle(color: Colors.black, fontSize: 14),
+              style:  TextStyle(color: Colors.black, fontSize: 14.sp),
             ),
           )
         ],
@@ -86,16 +87,16 @@ class CourseWidget extends StatelessWidget {
       Row(
         children: [
           Container(
-              margin: const EdgeInsets.only(left: 20, top: 6),
+              margin:  EdgeInsets.only(left: 20.w, top: 6.h),
               child: const Icon(
                 Icons.person,
                 color: Color(0xfffA9AEB2),
               )),
           Container(
-            margin: const EdgeInsets.only(top: 6),
+            margin:  EdgeInsets.only(top: 6.h),
             child:  Text(
               coursetutor,
-              style: const TextStyle(color: Color(0xfffA9AEB2), fontSize: 12),
+              style:  TextStyle(color: Color(0xfffA9AEB2), fontSize: 12.sp),
             ),
           )
         ],
@@ -103,24 +104,25 @@ class CourseWidget extends StatelessWidget {
       Row(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 22, top: 6),
+            margin:  EdgeInsets.only(left: 22.w, top: 6.h),
             child:  Text(
               price,
-              style: TextStyle(color: Color(0xfff00A9B7), fontSize: 16),
+              style: TextStyle(color: Color(0xfff00A9B7), fontSize: 16.sp),
             ),
           ),
           Container(
-            height: 20,
-            width: 77,
+            height: 20.h,
+            width: 77.w,
             alignment: Alignment.center,
-            decoration:  BoxDecoration(color: background,borderRadius: BorderRadius.circular(22)),
-            margin: const EdgeInsets.only(left: 11, top: 6),
+            decoration:  BoxDecoration(color: background,borderRadius: BorderRadius.circular(22.r)),
+            margin:  EdgeInsets.only(left: 11.w, top: 6.h),
             child:  Text(
               recommend,
-              style: TextStyle(color: colorText, fontSize: 12),
+              style: TextStyle(color: colorText, fontSize: 12.sp),
             ),
           )
         ],
-      )],);
+      )
+        ],);
   }
 }

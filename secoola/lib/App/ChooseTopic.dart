@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/TopicContent.dart';
@@ -11,8 +12,10 @@ class ChooseTopic extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xffffafafa),
-      body: Column(
-        children: [titleWidget()],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [titleWidget()],
+        ),
       ),
     );
   }
@@ -28,10 +31,10 @@ class titleWidget extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 66, top: 88),
-              child: const Text(
+              margin:  EdgeInsets.only(left: 100.w, top: 88.h),
+              child:  Text(
                 "Pick your favorite topic",
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 24.sp),
               ),
             )
           ],
@@ -39,20 +42,20 @@ class titleWidget extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 44, top: 11),
-              width: 294,
-              height: 41,
-              child: const Text(
+              margin:  EdgeInsets.only(left: 44.w, top: 11.h),
+              width: 294.w,
+              height: 41.h,
+              child:  Text(
                 "Choose your favorite topic to help us deliver the most suitable course for you.",
-                style: TextStyle(fontSize: 14, color: Color(0xfffa9aeb2)),
+                style: TextStyle(fontSize: 14.sp, color: Color(0xfffa9aeb2)),
                 textAlign: TextAlign.center,
               ),
             )
           ],
         ),
         const TopicSelection(),
-        const SizedBox(
-          height: 66,
+         SizedBox(
+          height: 66.h,
         ),
         const ButtomWidget()
       ],
@@ -68,7 +71,7 @@ class TopicSelection extends StatelessWidget {
     return GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 33.0,
           mainAxisSpacing: 44.0,
@@ -79,19 +82,19 @@ class TopicSelection extends StatelessWidget {
           return Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(left: 22, right: 16),
-                height: 80,
-                width: 101,
+                margin:  EdgeInsets.only(left: 22.w, right: 16.w),
+                height: 80.h,
+                width: 101.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    22,
+                    22.r,
                   ),
                   color: const Color(0xfffffffff),
                 ),
                 child: Image.asset(topicContent[i].image),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 11),
+                margin:  EdgeInsets.only(left: 11.w),
                 child: Text(topicContent[i].title),
               )
             ],
@@ -108,15 +111,15 @@ class ButtomWidget extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(right: 22),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-          width: 355,
-          height: 56,
+          margin:  EdgeInsets.only(right: 22.w),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r)),
+          width: 355.w,
+          height: 56.h,
           child: Padding(
-            padding: const EdgeInsets.only(left: 25),
+            padding:  EdgeInsets.only(left: 25.w),
             child: ElevatedButton(
               onPressed: () {
-                Get.toNamed(Routes.HomePage);
+                Get.toNamed(Routes.NavigationPage);
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.resolveWith<Color?>(
@@ -137,11 +140,11 @@ class ButtomWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 22,
+          height: 22.h,
         ),
-        const Text(
+         Text(
           "You can still change your topic again later",
-          style: TextStyle(fontSize: 14, color: Color(0xfffcacaca)),
+          style: TextStyle(fontSize: 14.sp, color: Color(0xfffcacaca)),
         )
       ],
     );

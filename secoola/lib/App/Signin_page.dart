@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/appRoutes.dart';
@@ -25,18 +26,22 @@ class _SignPageState extends State<SignPage> {
               child: Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 111, left: 44),
-                    child: const Text(
+                    margin: EdgeInsets.only(
+                        top: ScreenUtil().setHeight(111),
+                        left: ScreenUtil().setWidth(44)),
+                    child: Text(
                       "Create Account",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: ScreenUtil().setSp(22)),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 111, left: 44),
-                    child: const Text(
+                    margin: EdgeInsets.only(
+                        top: 111.h, left: ScreenUtil().setWidth(44)),
+                    child: Text(
                       " ✌️  ",
-                      style: TextStyle(fontSize: 24),
+                      style: TextStyle(fontSize: ScreenUtil().setSp(24)),
                     ),
                   )
                 ],
@@ -46,18 +51,20 @@ class _SignPageState extends State<SignPage> {
               child: Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 14, left: 44),
-                    child: const Text(
+                    margin: EdgeInsets.only(
+                        top: ScreenUtil().setHeight(14),
+                        left: ScreenUtil().setWidth(44)),
+                    child: Text(
                       "Create your account to start your course lessons.",
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                      style: TextStyle(color: Colors.grey, fontSize: 14.sp),
                     ),
                   )
                 ],
               ),
             ),
-            const SocialMediaIcons(),
-            const SizedBox(
-              height: 22,
+            SocialMediaIcons(),
+            SizedBox(
+              height: 22.h,
             ),
             const SignButton()
           ],
@@ -78,23 +85,23 @@ class SocialMediaIcons extends StatelessWidget {
           children: [
             Iconwidget(
                 image: Image.asset("assets/search.png"),
-                edgeInsets: const EdgeInsets.only(left: 33, top: 55)),
+                edgeInsets: EdgeInsets.only(left: 33.w, top: 55.h)),
             Iconwidget(
                 image: Image.asset("assets/facebook.png"),
-                edgeInsets: const EdgeInsets.only(left: 11, top: 55)),
+                edgeInsets: EdgeInsets.only(left: 11.w, top: 55.h)),
             Iconwidget(
                 image: Image.asset("assets/apple-logo.png"),
-                edgeInsets: const EdgeInsets.only(left: 11, top: 55))
+                edgeInsets: EdgeInsets.only(left: 11.w, top: 55.h))
           ],
         ),
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 99, top: 60),
-              child: const Text(
+              margin: EdgeInsets.only(left: 200.w, top: 60.h),
+              child: Text(
                 "Or sign up with your email",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14, color: Color(0xFFFA9AEB2)),
+                style: TextStyle(fontSize: 14.sp, color: Color(0xFFFA9AEB2)),
               ),
             )
           ],
@@ -130,35 +137,35 @@ class _SignButtonState extends State<SignButton> {
     return Column(
       children: [
         Container(
-            width: 335,
-            height: 56,
-            margin: const EdgeInsets.only(top: 66),
+            width: 335.w,
+            height: 56.h,
+            margin: EdgeInsets.only(top: 66.h),
             decoration: BoxDecoration(
-                color: const Color(0xFFFFFFFFF),
-                borderRadius: BorderRadius.circular(16)),
+                color: Color(0xFFFFFFFFF),
+                borderRadius: BorderRadius.circular(16.r)),
             child: const TextFeildwidget(
               hint: 'Your email',
             )),
         Container(
-            width: 335,
-            height: 56,
-            margin: const EdgeInsets.only(top: 22),
+            width: 335.w,
+            height: 56.h,
+            margin: EdgeInsets.only(top: 22.h),
             decoration: BoxDecoration(
-                color: const Color(0xFFFFFFFFF),
-                borderRadius: BorderRadius.circular(22)),
+                color: Color(0xFFFFFFFFF),
+                borderRadius: BorderRadius.circular(22.r)),
             child: const TextFeildwidget(
               hint: 'Your password',
             )),
-        const SizedBox(
-          height: 33,
+        SizedBox(
+          height: 33.h,
         ),
         Row(
           children: [
             Container(
               decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(11)),
-              width: 355,
-              height: 56,
+                  BoxDecoration(borderRadius: BorderRadius.circular(11.r)),
+              width: 355.w,
+              height: 56.h,
               child: Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ElevatedButton(
@@ -180,17 +187,17 @@ class _SignButtonState extends State<SignButton> {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 55, top: 22),
-              child: const Text(
+              margin: EdgeInsets.only(left: 55.w, top: 22.h),
+              child: Text(
                 "By continuing, you agree to our",
-                style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14),
+                style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14.sp),
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 25, left: 3),
-              child: const Text(
+              margin: EdgeInsets.only(top: 25.h, left: 3.w),
+              child: Text(
                 "Terms & ",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -198,10 +205,10 @@ class _SignButtonState extends State<SignButton> {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 88),
-              child: const Text(
+              margin: EdgeInsets.only(left: 88.w),
+              child: Text(
                 "Conditions and Privacy Policy ",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -213,10 +220,10 @@ class _SignButtonState extends State<SignButton> {
                 Get.toNamed(Routes.LoginPage);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 122, top: 55),
-                child: const Text(
+                margin: EdgeInsets.only(left: 122.w, top: 55.h),
+                child: Text(
                   "I already have an account",
-                  style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+                  style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
                 ),
               ),
             ),

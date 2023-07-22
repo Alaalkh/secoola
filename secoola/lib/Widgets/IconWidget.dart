@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Iconwidget extends StatelessWidget {
@@ -10,11 +11,11 @@ class Iconwidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: edgeInsets,
-      height: 52,
-      width: 98,
+      height: 52.h,
+      width: 98.w,
       decoration: BoxDecoration(
           color: const Color(0xFFFFFFFF),
-          borderRadius: BorderRadius.circular(15)),
+          borderRadius: BorderRadius.circular(15.r)),
       child: image,
     );
   }
