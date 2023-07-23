@@ -92,7 +92,7 @@ class Emailinfo extends StatelessWidget {
                   color: Color(0xfffFFFFFF),
                   borderRadius: BorderRadius.circular(12)),
               child: Image.asset(
-                "assets/editbutton.png"
+                "assets/editbutton.png",scale: 2,
               ),
             )
           ],

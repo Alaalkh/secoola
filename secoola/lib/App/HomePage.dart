@@ -200,20 +200,20 @@ class Categories extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 22, top: 22),
-              child: const Text(
+              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+              child:  Text(
                 "Categories",
-                style: TextStyle(color: Colors.black, fontSize: 18),
+                style: TextStyle(color: Colors.black, fontSize: 18.sp),
               ),
             ),
-            const SizedBox(
-              width: 180,
+             SizedBox(
+              width: 180.w,
             ),
             Container(
-              margin: const EdgeInsets.only(left: 22, top: 22),
-              child: const Text(
+              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+              child:  Text(
                 "See All",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],

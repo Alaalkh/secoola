@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/App/HomePage.dart';
 import 'package:secoola/Widgets/Completecourse.dart';
 import 'package:secoola/Widgets/Ongoingtasks.dart';
 
-class CourseDetails extends StatefulWidget {
-  const CourseDetails({super.key});
+class MyCourse extends StatefulWidget {
+  const MyCourse({super.key});
 
   @override
-  State<CourseDetails> createState() => _CourseDetailsState();
+  State<MyCourse> createState() => _CourseDetailsState();
 }
 
-class _CourseDetailsState extends State<CourseDetails>
+class _CourseDetailsState extends State<MyCourse>
     with SingleTickerProviderStateMixin {
   late TabController tabController = TabController(length: 2, vsync: this);
   List<String> labels = ["Ongoing", "Complete"];
@@ -24,7 +25,7 @@ class _CourseDetailsState extends State<CourseDetails>
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return  const SingleChildScrollView(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -119,22 +120,22 @@ class _TogglebarState extends State<Togglebar>
     double yourWidth = width;
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding:  EdgeInsets.symmetric(horizontal: 20.w),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
-              const SizedBox(height: 22),
+               SizedBox(height: 22.h),
               Container(
                 // height: 50,
 
                 decoration: BoxDecoration(
                     color: const Color(0xfffF4F4F4),
-                    borderRadius: BorderRadius.circular(17)),
+                    borderRadius: BorderRadius.circular(17.r)),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding:  EdgeInsets.only(left: 5.w,top: 5.h,right: 5.w,bottom: 5.h),
                       child: TabBar(
                         unselectedLabelColor: Colors.black,
                         labelColor: Colors.white,
@@ -142,21 +143,21 @@ class _TogglebarState extends State<Togglebar>
                         indicatorWeight: 2,
                         indicator: BoxDecoration(
                           color: const Color(0xfff00A9B7),
-                          borderRadius: BorderRadius.circular(17),
+                          borderRadius: BorderRadius.circular(17.r),
                         ),
                         controller: tabController,
                         tabs: [
-                          const SizedBox(
-                            child: Tab(
+                           SizedBox(
+                            width: 300.w,
+                            child: const Tab(
                               text: 'Ongoing',
                             ),
-                            width: 300,
                           ),
                           SizedBox(
+                            width: yourWidth,
                             child: const Tab(
                               text: 'Complete',
                             ),
-                            width: yourWidth,
                           ),
                         ],
                       ),

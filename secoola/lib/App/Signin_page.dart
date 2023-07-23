@@ -28,7 +28,7 @@ class _SignPageState extends State<SignPage> {
                   Container(
                     margin: EdgeInsets.only(
                         top: ScreenUtil().setHeight(111),
-                        left: ScreenUtil().setWidth(44)),
+                        left: ScreenUtil().setWidth(33)),
                     child: Text(
                       "Create Account",
                       style: TextStyle(
@@ -97,7 +97,7 @@ class SocialMediaIcons extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 200.w, top: 60.h),
+              margin: EdgeInsets.only(left: 120.w, top: 60.h),
               child: Text(
                 "Or sign up with your email",
                 textAlign: TextAlign.center,

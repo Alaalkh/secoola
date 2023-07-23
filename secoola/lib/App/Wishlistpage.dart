@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Models/WishlistContent.dart';
 
 class WishlistPage extends StatelessWidget {
@@ -7,10 +8,8 @@ class WishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Column(
-      children: [const Appbar(),
-        Elements()
-      ],
+    return Column(
+      children: [Appbar(), Elements()],
     );
   }
 }
@@ -21,50 +20,47 @@ class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Color(0xfff00A9B7),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
+          bottomLeft: Radius.circular(28.r),
+          bottomRight: Radius.circular(28.r),
         ),
       ),
-      height: 222,
-      width: double.infinity,
+      height: 222.h,
+      width: double.infinity.w,
       child: Column(
         children: [
           Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(left: 33, top: 66),
-                  child: const Text(
+                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
+                  child: Text(
                     "Wishlist",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-              const SizedBox(
-                width: 22,
-              ),
-              const SizedBox(
-                width: 77,
+              SizedBox(
+                width: 77.w,
               ),
             ],
           ),
-          const SizedBox(
-            height: 44,
+          SizedBox(
+            height: 44.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 48,
-                width: 335,
+                height: 48.h,
+                width: 335.w,
                 decoration: BoxDecoration(
                     color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(15)),
+                    borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
-                    hintStyle: const TextStyle(
-                        fontSize: 14, color: Color(0xfffD9DBDE)),
+                    hintStyle:
+                        TextStyle(fontSize: 14.sp, color: Color(0xfffD9DBDE)),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -80,6 +76,7 @@ class Appbar extends StatelessWidget {
     );
   }
 }
+
 class Elements extends StatelessWidget {
   const Elements({super.key});
 
@@ -92,112 +89,120 @@ class Elements extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 33.0,
           mainAxisSpacing: 44.0,
-          mainAxisExtent: 179,
+          mainAxisExtent: 190,
         ),
         itemCount: WishlistContents.length,
         itemBuilder: (_, i) {
           return Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(left: 22, right: 16),
-                height: 100,
-                width: 158,
+                margin: EdgeInsets.only(left: 22.w, right: 16.w),
+                height: 100.h,
+                width: 158.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    22,
+                    22.r,
                   ),
                   color: const Color(0xfffA3CCDE),
-                ),child:  Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 11, top: 11),
-                    decoration: BoxDecoration(
-                        color: const Color(0xfffFFFFFF),
-                        borderRadius: BorderRadius.circular(9)),
-                    height: 28,
-                    width: 49,
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/star.png",
-                          height: 11,
-                          width: 22,
-                        ),
-                        const Text("4.8")
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 19,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 22, top: 11),
-                    decoration: BoxDecoration(
-                        color: const Color(0xfffFFFFFF),
-                        borderRadius: BorderRadius.circular(9)),
-                    height: 28,
-                    width: 28,
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(left: 6),
-                          child: const Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 17,
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 11.w, top: 11.h),
+                      decoration: BoxDecoration(
+                          color: const Color(0xfffFFFFFF),
+                          borderRadius: BorderRadius.circular(9.r)),
+                      height: 28.h,
+                      width: 49.w,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/star.png",
+                            height: 11.h,
+                            width: 22.w,
                           ),
-                        )
-                      ],
+                          const Text("4.8")
+                        ],
+                      ),
                     ),
-                  )
-                ],
-              ),
+                    SizedBox(
+                      width: 19.w,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 22.w, top: 11.h),
+                      decoration: BoxDecoration(
+                          color: const Color(0xfffFFFFFF),
+                          borderRadius: BorderRadius.circular(9.r)),
+                      height: 28.h,
+                      width: 28.w,
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(left: 6.w),
+                            child: const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                              size: 17,
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 11),
+                margin: EdgeInsets.only(left: 11.w),
                 child: Text(WishlistContents[i].title),
               ),
               Row(
                 children: [
                   Container(
-                      margin: const EdgeInsets.only(left: 20, top: 6),
+                      margin: EdgeInsets.only(left: 20.w, top: 6.h),
                       child: const Icon(
                         Icons.person,
                         color: Color(0xfffA9AEB2),
                       )),
                   Container(
-                    margin: const EdgeInsets.only(top: 6),
-                    child:  Text(
+                    margin: EdgeInsets.only(top: 6.h),
+                    child: Text(
                       WishlistContents[i].tutorname,
-                      style: const TextStyle(color: Color(0xfffA9AEB2), fontSize: 12),
+                      style:
+                          TextStyle(color: Color(0xfffA9AEB2), fontSize: 12.sp),
                     ),
                   ),
-
                 ],
-              ),Row(
-                children: [ Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(left: 22, top: 6),
-                      child:  const Text(
-                        "\$ 24",
-                        style: TextStyle(color: Color(0xfff00A9B7), fontSize: 16),
+              ),
+              Row(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 22.w),
+                        child: Text(
+                          "\$ 24",
+                          style: TextStyle(
+                              color: Color(0xfff00A9B7), fontSize: 16.sp),
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 20,
-                      width: 77,
-                      alignment: Alignment.center,
-                      decoration:  BoxDecoration(color: const Color(0xfffDCF3F5),borderRadius: BorderRadius.circular(22)),
-                      margin: const EdgeInsets.only(left: 11, top: 6),
-                      child:  const Text(
-                        "Label",
-                        style: TextStyle(color: Color(0xfff00A9B7), fontSize: 12),
-                      ),
-                    )
-                  ],
-                )],
+                      Container(
+                        height: 15.h,
+                        width: 77.w,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: const Color(0xfffDCF3F5),
+                            borderRadius: BorderRadius.circular(22.r)),
+                        margin: EdgeInsets.only(left: 11.w, top: 6.h),
+                        child: Text(
+                          "Label",
+                          style: TextStyle(
+                              color: Color(0xfff00A9B7), fontSize: 12.sp),
+                        ),
+                      )
+                    ],
+                  )
+                ],
               )
             ],
           );

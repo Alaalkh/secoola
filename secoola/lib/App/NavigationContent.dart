@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:secoola/App/AccountPage.dart';
-import 'package:secoola/App/Course_detail.dart';
+import 'package:secoola/App/MyCourse.dart';
 import 'package:secoola/App/HomePage.dart';
 import 'package:secoola/App/Wishlistpage.dart';
 
@@ -16,7 +16,7 @@ class _NavigationContentState extends State<NavigationContent> {
   int _currentIndex = 0;
   final List<Widget> _widget = <Widget>[
     const HomePage(),
-    const CourseDetails(),
+    const MyCourse(),
     const WishlistPage(),
     const AccontPage()
   ];

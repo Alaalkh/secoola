@@ -41,7 +41,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,
-              effect:  SlideEffect(
+              effect: SlideEffect(
                 spacing: 8,
                 radius: ScreenUtil().radius(4),
                 dotWidth: ScreenUtil().setWidth(111),
@@ -62,10 +62,10 @@ class _OnBoardingState extends State<OnBoarding> {
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding:  EdgeInsets.only(left:ScreenUtil().setWidth(40)),
+                  padding: EdgeInsets.only(left: ScreenUtil().setWidth(10)),
                   child: Column(
                     children: [
-                       SizedBox(height: ScreenUtil().setHeight(88)),
+                      SizedBox(height: ScreenUtil().setHeight(88)),
                       Image.asset(
                         contents[i].image,
                         height: 244.h,
@@ -81,21 +81,26 @@ class _OnBoardingState extends State<OnBoarding> {
                               style: TextStyle(color: Color(0xfff00A9B7)),
                             )),
                       ),
-                      Text(
-                        contents[i].title,
-                        style:  TextStyle(
-                          fontSize: ScreenUtil().setSp(24),
-                          fontWeight: FontWeight.bold,
+                      Container(
+                        margin: EdgeInsets.only(right: 28.w),
+                        child: Text(
+                          contents[i].title,
+                          style: TextStyle(
+                            fontSize: ScreenUtil().setSp(24),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      Text(
-                        contents[i].discription,
-                        textAlign: TextAlign.center,
-                        style:  TextStyle(
-                          fontSize: ScreenUtil().setSp(14),
-                          color: Colors.grey,
-                        ),
-                      )
+                      Container(
+                          margin: EdgeInsets.only(right: 28.w),
+                          child: Text(
+                            contents[i].discription,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: ScreenUtil().setSp(14),
+                              color: Colors.grey,
+                            ),
+                          ))
                     ],
                   ),
                 );
@@ -107,13 +112,16 @@ class _OnBoardingState extends State<OnBoarding> {
               Row(
                 children: [
                   Container(
-                      padding:  EdgeInsets.only(top: ScreenUtil().setHeight(5)),
+                      padding: EdgeInsets.only(top: ScreenUtil().setHeight(5)),
                       decoration: BoxDecoration(
                           color: const Color(0xfff00A9B7),
-                          borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
-                      width:  ScreenUtil().setWidth(335),
-                      height:  ScreenUtil().setHeight(52),
-                      margin:  EdgeInsets.only(left: ScreenUtil().setWidth(30), bottom: ScreenUtil().setHeight(15)),
+                          borderRadius:
+                              BorderRadius.circular(ScreenUtil().radius(20))),
+                      width: ScreenUtil().setWidth(335),
+                      height: ScreenUtil().setHeight(52),
+                      margin: EdgeInsets.only(
+                          left: ScreenUtil().setWidth(22),
+                          bottom: ScreenUtil().setHeight(15)),
                       child: TextButton(
                         onPressed: () {
                           if (currentIndex == contents.length - 1) {
@@ -138,18 +146,23 @@ class _OnBoardingState extends State<OnBoarding> {
                       Get.toNamed(Routes.LoginPage);
                     },
                     child: Container(
-                      padding:  EdgeInsets.only(top: ScreenUtil().setHeight(13)),
+
+                      padding: EdgeInsets.only(top: ScreenUtil().setHeight(13)),
                       decoration: BoxDecoration(
                           color: const Color(0xfffFFFFFF),
                           border: Border.all(color: const Color(0xfff00A9B7)),
-                          borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
-                      width:  ScreenUtil().setWidth(335),
-                      height:  ScreenUtil().setHeight(52),
-                      margin:  EdgeInsets.only(left: ScreenUtil().setWidth(30), bottom: ScreenUtil().setHeight(66)),
-                      child:  Text(
+                          borderRadius:
+                              BorderRadius.circular(ScreenUtil().radius(20))),
+                      width: ScreenUtil().setWidth(335),
+                      height: ScreenUtil().setHeight(52),
+                      margin: EdgeInsets.only(
+                          left: ScreenUtil().setWidth(22),
+                          bottom: ScreenUtil().setHeight(66)),
+                      child: Text(
                         "I already have an account",
-                        style:
-                            TextStyle(fontSize: ScreenUtil().setSp(16), color: Color(0xfff00A9B7)),
+                        style: TextStyle(
+                            fontSize: ScreenUtil().setSp(16),
+                            color: Color(0xfff00A9B7)),
                         textAlign: TextAlign.center,
                       ),
                     ),

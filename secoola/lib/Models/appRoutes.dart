@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:secoola/App/ChooseTopic.dart';
-import 'package:secoola/App/Course_detail.dart';
+import 'package:secoola/App/Cousre_Details.dart';
+import 'package:secoola/App/MyCourse.dart';
 import 'package:secoola/App/HomePage.dart';
 import 'package:secoola/App/NavigationContent.dart';
 import 'package:secoola/App/OnBoarding.dart';
@@ -23,6 +24,7 @@ class Routes {
   static String Chossetopic = '/Chossetopic';
   static String HomePage = '/HomePage';
   static String NavigationPage = '/NavigationPage';
+  static String MyCourse = '/MyCourse';
   static String CourseDetails = '/CourseDetails';
 }
 
@@ -67,8 +69,8 @@ final getPages = [
     name: Routes.NavigationPage,
     page: () => const NavigationContent(),
   ),
-  GetPage(
-      name: Routes.CourseDetails, page: () => const CourseDetails())
+  GetPage(name: Routes.MyCourse, page: () => const MyCourse()),
+  GetPage(name: Routes.CourseDetails, page: () => const CourseDetails(),transition: Transition.circularReveal)
 ];
 
 // class MyMiddelware extends GetMiddleware {

@@ -83,7 +83,7 @@ class TopicSelection extends StatelessWidget {
             children: [
               Container(
                 margin:  EdgeInsets.only(left: 22.w, right: 16.w),
-                height: 80.h,
+                height: 70.h,
                 width: 101.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
