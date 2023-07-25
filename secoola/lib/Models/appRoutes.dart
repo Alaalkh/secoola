@@ -70,7 +70,7 @@ final getPages = [
     page: () => const NavigationContent(),
   ),
   GetPage(name: Routes.MyCourse, page: () => const MyCourse()),
-  GetPage(name: Routes.CourseDetails, page: () => const CourseDetails(),transition: Transition.circularReveal)
+  GetPage(name: Routes.CourseDetails, page: () => const CourseDetails(),transition: Transition.fade)
 ];
 
 // class MyMiddelware extends GetMiddleware {

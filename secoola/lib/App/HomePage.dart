@@ -5,6 +5,7 @@ import 'package:secoola/Widgets/DesignTopics.dart';
 import 'package:secoola/Widgets/TopicWidget.dart';
 
 import '../Widgets/CategoriesWidget.dart';
+import '../Widgets/NotificationWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -30,11 +31,50 @@ class HomePage extends StatelessWidget {
 class Appbar extends StatelessWidget {
   const Appbar({super.key});
 
+  void _show(BuildContext ctx) {
+    showModalBottomSheet(
+        elevation: 10,
+        backgroundColor: const Color(0xfffFAFAFA),
+        context: ctx,
+        builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
+              SingleChildScrollView(
+                child: Container(
+                  decoration: const BoxDecoration(
+                      color: Color(0xfffFAFAFA),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30))),
+                  height: 700.h,
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[BottomSheet_Content()],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                  top: -80.h,
+                  right: 12.w,
+                  child: Container(
+                    height: 52.h,
+                    width: 52.w,
+                    decoration: BoxDecoration(
+                        color: const Color(0xfffFAFAFA),
+                        borderRadius: BorderRadius.circular(20.r)),
+                    child: const Icon(Icons.close),
+                  )),
+            ]));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
-        color: Color(0xfff00A9B7),
+      decoration: BoxDecoration(
+        color: const Color(0xfff00A9B7),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -47,58 +87,68 @@ class Appbar extends StatelessWidget {
           Row(
             children: [
               Container(
-                  margin:  EdgeInsets.only(left: 33.w, top: 66.h),
-                  child:  Text(
+                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
+                  child: Text(
                     "Hi, Dimas",
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-               SizedBox(
+              SizedBox(
                 width: 22.w,
               ),
               Container(
-                margin:  EdgeInsets.only(top: 66.h),
-                child:  Text(
+                margin: EdgeInsets.only(top: 66.h),
+                child: Text(
                   "👋   ",
                   style: TextStyle(fontSize: 24.sp),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 width: 77.w,
               ),
               Container(
-                margin:  EdgeInsets.only(top: 66.h),
+                margin: EdgeInsets.only(top: 66.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: const Color(0xfff008793),
                 ),
                 height: 40.h,
                 width: 40.w,
+                child: const Icon(Icons.shopping_cart, color: Colors.white),
               ),
-               SizedBox(
+              SizedBox(
                 width: 6.w,
               ),
-              Container(
-                margin:  EdgeInsets.only(top: 66.h),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
-                  color: const Color(0xfff008793),
+              GestureDetector(
+                onTap: () {
+                  _show(context);
+                },
+                child: Container(
+                  margin: EdgeInsets.only(top: 66.h),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.r),
+                    color: const Color(0xfff008793),
+                  ),
+                  height: 40.h,
+                  width: 40.w,
+                  child: const Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                  ),
                 ),
-                height: 40.h,
-                width: 40.w,
               )
             ],
           ),
           Row(
             children: [
               Container(
-                  margin:  EdgeInsets.only(left: 33.w),
-                  child:  Text(
+                  margin: EdgeInsets.only(left: 33.w),
+                  child: Text(
                     "Let's start learning!",
                     style: TextStyle(fontSize: 20.sp, color: Colors.white),
                   ))
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 22.h,
           ),
           Row(
@@ -113,8 +163,8 @@ class Appbar extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
-                    hintStyle:  TextStyle(
-                        fontSize: 14.sp, color: Color(0xfffD9DBDE)),
+                    hintStyle: TextStyle(
+                        fontSize: 14.sp, color: const Color(0xfffD9DBDE)),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -141,20 +191,21 @@ class PopularCourse extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-              child:  Text(
+              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+              child: Text(
                 "Popular course",
                 style: TextStyle(color: Colors.black, fontSize: 18.sp),
               ),
             ),
-             SizedBox(
+            SizedBox(
               width: 144.w,
             ),
             Container(
-              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-              child:  Text(
+              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+              child: Text(
                 "See All",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
+                style:
+                    TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -200,20 +251,21 @@ class Categories extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-              child:  Text(
+              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+              child: Text(
                 "Categories",
                 style: TextStyle(color: Colors.black, fontSize: 18.sp),
               ),
             ),
-             SizedBox(
+            SizedBox(
               width: 180.w,
             ),
             Container(
-              margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-              child:  Text(
+              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+              child: Text(
                 "See All",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
+                style:
+                    TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -409,7 +461,101 @@ class MarketingTopic extends StatelessWidget {
               ),
             ],
           ),
-        ),SizedBox(height: 33,)
+        ),
+        SizedBox(
+          height: 33,
+        )
+      ],
+    );
+  }
+}
+
+class BottomSheet_Content extends StatelessWidget {
+  const BottomSheet_Content({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 22.h, left: 11.w),
+              child: Text(
+                "Notification",
+                style: TextStyle(fontSize: 24.sp),
+              ),
+            ),
+            SizedBox(
+              width: 22.w,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 22.h, left: 11.w),
+              child: Text(
+                "👋   ",
+                style: TextStyle(fontSize: 24.sp),
+              ),
+            )
+          ],
+        ),
+        Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 20.h, left: 11.w),
+              child: Text(
+                "Today",
+                style: TextStyle(fontSize: 18.sp),
+              ),
+            )
+          ],
+        ),
+        const SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              NotificationWidget(
+                image: Icon(Icons.rectangle_rounded, color: Color(0xfff00A9B7)),
+                description: 'Start your course now.',
+                title: 'Your payment is success', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+              ),NotificationWidget(
+                image: Icon(Icons.notifications, color: Color(0xfff00A9B7)),
+                description: 'Continue you recent course. ',
+                title: 'Daily reminder', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+              ),
+
+            ],
+          ),
+        ), Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 20.h, left: 11.w),
+              child: Text(
+                "Yesterday",
+                style: TextStyle(fontSize: 18.sp),
+              ),
+            )
+          ],
+        ),const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            NotificationWidget(
+              image: Icon(Icons.download, color: Color(0xfff00A9B7)),
+              description: 'Go toaccount page to download',
+              title: 'Download your certificate', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+            ),NotificationWidget(
+              image: Icon(Icons.sunny, color: Color(0xfff00A9B7)),
+              description: 'Get the best offer only for you',
+              title: 'Summer sale!', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+            ),
+
+          ],
+        ),
       ],
     );
   }
