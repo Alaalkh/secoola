@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Widgets/CourseWidget.dart';
 import 'package:secoola/Widgets/DesignTopics.dart';
 import 'package:secoola/Widgets/TopicWidget.dart';
+import 'package:secoola/Widgets/itemsWidget.dart';
 
 import '../Widgets/CategoriesWidget.dart';
 import '../Widgets/NotificationWidget.dart';
@@ -44,13 +45,56 @@ class Appbar extends StatelessWidget {
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(30))),
                   height: 700.h,
+                  width: double.infinity.w,
                   child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
                     child: Center(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[BottomSheet_Content()],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                  top: -80.h,
+                  right: 12.w,
+                  child: Container(
+                    height: 52.h,
+                    width: 52.w,
+                    decoration: BoxDecoration(
+                        color: const Color(0xfffFAFAFA),
+                        borderRadius: BorderRadius.circular(20.r)),
+                    child: const Icon(Icons.close),
+                  )),
+            ]));
+  }
+
+  void _Items(BuildContext ctx) {
+    showModalBottomSheet(
+        elevation: 10,
+        backgroundColor: const Color(0xfffFAFAFA),
+        context: ctx,
+        builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
+              SingleChildScrollView(
+                child: Container(
+                  decoration: const BoxDecoration(
+                      color: Color(0xfffFAFAFA),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30))),
+                  height: 700.h,
+                  width: double.infinity.w,
+                  child: const Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[BottomItem()],
                       ),
                     ),
                   ),
@@ -105,15 +149,20 @@ class Appbar extends StatelessWidget {
               SizedBox(
                 width: 77.w,
               ),
-              Container(
-                margin: EdgeInsets.only(top: 66.h),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
-                  color: const Color(0xfff008793),
+              GestureDetector(
+                onTap: () {
+                  _Items(context);
+                },
+                child: Container(
+                  margin: EdgeInsets.only(top: 66.h),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.r),
+                    color: const Color(0xfff008793),
+                  ),
+                  height: 40.h,
+                  width: 40.w,
+                  child: const Icon(Icons.shopping_cart, color: Colors.white),
                 ),
-                height: 40.h,
-                width: 40.w,
-                child: const Icon(Icons.shopping_cart, color: Colors.white),
               ),
               SizedBox(
                 width: 6.w,
@@ -521,16 +570,19 @@ class BottomSheet_Content extends StatelessWidget {
               NotificationWidget(
                 image: Icon(Icons.rectangle_rounded, color: Color(0xfff00A9B7)),
                 description: 'Start your course now.',
-                title: 'Your payment is success', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
-              ),NotificationWidget(
+                title: 'Your payment is success',
+                list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+              ),
+              NotificationWidget(
                 image: Icon(Icons.notifications, color: Color(0xfff00A9B7)),
                 description: 'Continue you recent course. ',
-                title: 'Daily reminder', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+                title: 'Daily reminder',
+                list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
               ),
-
             ],
           ),
-        ), Row(
+        ),
+        Row(
           children: [
             Container(
               margin: EdgeInsets.only(top: 20.h, left: 11.w),
@@ -540,22 +592,78 @@ class BottomSheet_Content extends StatelessWidget {
               ),
             )
           ],
-        ),const Column(
+        ),
+        const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             NotificationWidget(
               image: Icon(Icons.download, color: Color(0xfff00A9B7)),
               description: 'Go toaccount page to download',
-              title: 'Download your certificate', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
-            ),NotificationWidget(
+              title: 'Download your certificate',
+              list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+            ),
+            NotificationWidget(
               image: Icon(Icons.sunny, color: Color(0xfff00A9B7)),
               description: 'Get the best offer only for you',
-              title: 'Summer sale!', list: Icon(Icons.more_horiz,color: Color(0xfff00A9B7)),
+              title: 'Summer sale!',
+              list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
             ),
-
           ],
         ),
+      ],
+    );
+  }
+}
+
+class BottomItem extends StatelessWidget {
+  const BottomItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 20.h, left: 11.w),
+              child: Text(
+                "Your items",
+                style: TextStyle(fontSize: 18.sp),
+              ),
+            )
+          ],
+        ),
+        const Column(
+          children: [
+            ItemsWidget(
+              checkbox: Icon(
+                Icons.check_box_rounded,
+                color: Color(0xfff00A9B7),
+              ),
+              videocolor: Color(0xfffFFEA7D),
+              title: 'Design Thingking Fundam...',
+              coursetutor: 'Dianne Russell',
+              price: '\$ 72',
+              Boxcolor: Color(0xfffDCF3F5),
+              textrecommend: 'Popular',
+              Textcolor: Color(0xfff00A9B7),
+            ),
+            ItemsWidget(
+              checkbox: Icon(
+                Icons.check_box_outline_blank_rounded,
+                color: Color(0xfffE4E4E4),
+              ),
+              videocolor: Color(0xfff86F2CB),
+              title: 'Design Thingking Fundam...',
+              coursetutor: 'Dianne Russell',
+              price: '\$ 150',
+              Boxcolor: Color(0xfffFCE2EA),
+              textrecommend: 'Best Seller',
+              Textcolor: Colors.red,
+            )
+          ],
+        )
       ],
     );
   }
