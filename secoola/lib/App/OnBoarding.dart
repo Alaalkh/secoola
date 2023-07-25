@@ -157,7 +157,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       height: ScreenUtil().setHeight(52),
                       margin: EdgeInsets.only(
                           left: ScreenUtil().setWidth(22),
-                          bottom: ScreenUtil().setHeight(66)),
+                          bottom: ScreenUtil().setHeight(33)),
                       child: Text(
                         "I already have an account",
                         style: TextStyle(

@@ -30,7 +30,8 @@ class ItemsWidget extends StatelessWidget {
       height: 140.h,
       width: 335.w,
       decoration: BoxDecoration(
-          color: Color(0xfffFFFFFF), borderRadius: BorderRadius.circular(15.r)),
+          color: const Color(0xfffFFFFFF),
+          borderRadius: BorderRadius.circular(15.r)),
       child: Column(
         children: [
           Row(
@@ -55,7 +56,7 @@ class ItemsWidget extends StatelessWidget {
                     margin: EdgeInsets.only(left: 11.w, top: 22.h),
                     child: Text(
                       title,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                   ),
                   Row(
@@ -71,7 +72,7 @@ class ItemsWidget extends StatelessWidget {
                         child: Text(
                           coursetutor,
                           style: TextStyle(
-                              color: Color(0xfffA9AEB2), fontSize: 12.sp),
+                              color: const Color(0xfffA9AEB2), fontSize: 12.sp),
                         ),
                       )
                     ],
@@ -85,7 +86,8 @@ class ItemsWidget extends StatelessWidget {
                             Text(
                               price,
                               style: TextStyle(
-                                  color: Color(0xfff00A9B7), fontSize: 16.sp),
+                                  color: const Color(0xfff00A9B7),
+                                  fontSize: 16.sp),
                             ),
                             SizedBox(
                               width: 11.w,
@@ -94,14 +96,14 @@ class ItemsWidget extends StatelessWidget {
                               alignment: Alignment.center,
                               height: 20.h,
                               width: 68.w,
+                              decoration: BoxDecoration(
+                                  color: Boxcolor,
+                                  borderRadius: BorderRadius.circular(12.r)),
                               child: Text(
                                 textrecommend,
                                 style:
                                     TextStyle(fontSize: 12, color: Textcolor),
                               ),
-                              decoration: BoxDecoration(
-                                  color: Boxcolor,
-                                  borderRadius: BorderRadius.circular(12.r)),
                             )
                           ],
                         ),
@@ -111,16 +113,21 @@ class ItemsWidget extends StatelessWidget {
                 ],
               )
             ],
-          ),SizedBox(height: 11.h,),
-          Row( mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+          ),
+          SizedBox(
+            height: 11.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                child: Text(
+                child: const Text(
                   "Remove",
                   style: TextStyle(color: Colors.red, fontSize: 12),
                 ),
-              ),Container(
-                child: Text(
+              ),
+              Container(
+                child: const Text(
                   "Move to wishlist",
                   style: TextStyle(color: Color(0xfff00A9B7), fontSize: 12),
                 ),

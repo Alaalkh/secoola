@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:secoola/Models/appRoutes.dart';
 import 'package:secoola/Widgets/CourseWidget.dart';
 import 'package:secoola/Widgets/DesignTopics.dart';
 import 'package:secoola/Widgets/TopicWidget.dart';
@@ -81,11 +84,11 @@ class Appbar extends StatelessWidget {
         builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
               SingleChildScrollView(
                 child: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                       color: Color(0xfffFAFAFA),
                       borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(30))),
-                  height: 700.h,
+                          BorderRadius.vertical(top: Radius.circular(30.r))),
+                  height: 697.h,
                   width: double.infinity.w,
                   child: const Padding(
                     padding:
@@ -663,7 +666,112 @@ class BottomItem extends StatelessWidget {
               Textcolor: Colors.red,
             )
           ],
-        )
+        ),
+        SizedBox(
+          height: 160.h,
+        ),
+        Container(
+          width: double.infinity,
+          height: 148.h,
+          decoration: BoxDecoration(
+            color: Color(0xfffFFFFF),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 11,
+                offset: const Offset(0, 2), // changes position of shadow
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 22.w, top: 15.h),
+                    child: Text(
+                      "Voucher",
+                      style: TextStyle(fontSize: 12.sp),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 111.w,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 15.h),
+                    width: 152.w,
+                    height: 28.h,
+                    decoration: BoxDecoration(
+                        color: Color(0xfffDCF3F5),
+                        borderRadius: BorderRadius.circular(8.r)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "VEKTORABELAJAR",
+                          style: TextStyle(
+                              fontSize: 12.sp, color: Color(0xfff00A9B7)),
+                        ),
+                        Image.asset(
+                          "assets/more.png",
+                          color: Color(0xfff00A9B7),
+                          scale: 2,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 11.w, top: 17.h),
+                        child: Text(
+                          "Total",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 22.w, top: 2.h),
+                        child: Text(
+                          "\$520",
+                          style: TextStyle(
+                            fontSize: 24.sp,
+                            color: Color(0xfff00A9B7),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(Routes.Paymentpage);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(left: 100.w, top: 11.h),
+                      width: 157.w,
+                      height: 52.h,
+                      decoration: BoxDecoration(
+                          color: Color(0xfff00A9B7),
+                          borderRadius: BorderRadius.circular(20.r)),
+                      child: Text("Checkout",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Color(0xffffffff),
+                          )),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
