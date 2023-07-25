@@ -129,7 +129,7 @@ class passwordEntry extends StatelessWidget {
                     color: const Color(0xFFFFFFFFF),
                     borderRadius: BorderRadius.circular(16)),
                 child: const TextFeildwidget(
-                  hint: ' Your Password',
+                  hint: ' Your Password', icon: Icon(size: 17,Icons.lock_rounded,color: Color(0xfff00A9B7),),
                 )),
           ],
         ),

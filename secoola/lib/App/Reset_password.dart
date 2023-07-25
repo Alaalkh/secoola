@@ -128,7 +128,7 @@ class EmailEntry extends StatelessWidget {
                   color: const Color(0xFFFFFFFFF),
                   borderRadius: BorderRadius.circular(16)),
               child: const TextFeildwidget(
-                hint: '  Your email',
+                hint: '  Your email', icon: Icon(Icons.rectangle_rounded,color: Color(0xfff00A9B7),size: 17,),
               ),
             ),
           ],

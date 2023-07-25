@@ -62,7 +62,7 @@ class _SignPageState extends State<SignPage> {
                 ],
               ),
             ),
-            SocialMediaIcons(),
+            const SocialMediaIcons(),
             SizedBox(
               height: 22.h,
             ),
@@ -101,7 +101,7 @@ class SocialMediaIcons extends StatelessWidget {
               child: Text(
                 "Or sign up with your email",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14.sp, color: Color(0xFFFA9AEB2)),
+                style: TextStyle(fontSize: 14.sp, color: const Color(0xFFFA9AEB2)),
               ),
             )
           ],
@@ -141,20 +141,20 @@ class _SignButtonState extends State<SignButton> {
             height: 56.h,
             margin: EdgeInsets.only(top: 66.h),
             decoration: BoxDecoration(
-                color: Color(0xFFFFFFFFF),
+                color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(16.r)),
-            child: const TextFeildwidget(
-              hint: 'Your email',
+            child: const TextFeildwidget(icon:Icon(Icons.rectangle_rounded,color: Color(0xfff00A9B7,),size: 17,)
+,              hint: 'Your email',
             )),
         Container(
             width: 335.w,
             height: 56.h,
             margin: EdgeInsets.only(top: 22.h),
             decoration: BoxDecoration(
-                color: Color(0xFFFFFFFFF),
+                color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(22.r)),
             child: const TextFeildwidget(
-              hint: 'Your password',
+              hint: 'Your password', icon: Icon(Icons.lock,color: Color(0xfff00A9B7),size: 17,),
             )),
         SizedBox(
           height: 33.h,
@@ -190,14 +190,14 @@ class _SignButtonState extends State<SignButton> {
               margin: EdgeInsets.only(left: 55.w, top: 22.h),
               child: Text(
                 "By continuing, you agree to our",
-                style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14.sp),
+                style: TextStyle(color: const Color(0xfffA9AEB2), fontSize: 14.sp),
               ),
             ),
             Container(
               margin: EdgeInsets.only(top: 25.h, left: 3.w),
               child: Text(
                 "Terms & ",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
+                style: TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -208,7 +208,7 @@ class _SignButtonState extends State<SignButton> {
               margin: EdgeInsets.only(left: 88.w),
               child: Text(
                 "Conditions and Privacy Policy ",
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
+                style: TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
               ),
             )
           ],
@@ -223,7 +223,7 @@ class _SignButtonState extends State<SignButton> {
                 margin: EdgeInsets.only(left: 122.w, top: 55.h),
                 child: Text(
                   "I already have an account",
-                  style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14.sp),
+                  style: TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
                 ),
               ),
             ),
