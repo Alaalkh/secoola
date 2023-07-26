@@ -11,14 +11,16 @@ class Paymentpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Color(0xfffFAFAFA),
-      body: Column(
-        children: [
-          Appbar(),
-          item_details(),
-          Payment(),
-          SizedBox(height: 216.h),
-          Checkout()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Appbar(),
+            item_details(),
+            Payment(),
+            SizedBox(height: 216.h),
+            Checkout()
+          ],
+        ),
       ),
     );
   }
