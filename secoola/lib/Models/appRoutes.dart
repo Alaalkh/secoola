@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:secoola/App/ChooseTopic.dart';
 import 'package:secoola/App/Continuecourse.dart';
+import 'package:secoola/App/Course_complete.dart';
 import 'package:secoola/App/Cousre_Details.dart';
 import 'package:secoola/App/MyCourse.dart';
 import 'package:secoola/App/HomePage.dart';
@@ -8,6 +9,7 @@ import 'package:secoola/App/NavigationContent.dart';
 import 'package:secoola/App/OnBoarding.dart';
 import 'package:secoola/App/Payment_Success.dart';
 import 'package:secoola/App/Payment_page.dart';
+import 'package:secoola/App/Search_default.dart';
 import 'package:secoola/App/SplashScreen.dart';
 import 'package:secoola/App/Verification.dart';
 
@@ -32,6 +34,8 @@ class Routes {
   static String Paymentpage = '/Paymentpage';
   static String PaymentSuccess = '/PaymentSuccess';
   static String Continuecourse = '/Continuecourse';
+  static String Coursecomplete = '/Coursecomplete';
+  static String Searchdefault = '/Searchdefault';
 }
 
 final getPages = [
@@ -83,11 +87,18 @@ final getPages = [
   GetPage(
       name: Routes.Paymentpage,
       page: () => const Paymentpage(),
-      transition: Transition.rightToLeft) ,
+      transition: Transition.rightToLeft),
   GetPage(
       name: Routes.PaymentSuccess,
       page: () => const PaymentSuccess(),
-      transition: Transition.rightToLeft), GetPage(
+      transition: Transition.rightToLeft),
+  GetPage(
+      name: Routes.Coursecomplete,
+      page: () => const Coursecomplete()),
+  GetPage(
+      name: Routes.Searchdefault,
+      page: () => const Searchdefault()),
+  GetPage(
       name: Routes.Continuecourse,
       page: () => const Continuecourse()),
 ];
