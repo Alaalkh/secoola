@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Widgets/CurriculumWidget.dart';
 
-class CourseDetails extends StatelessWidget {
-  const CourseDetails({super.key});
+class Continuecourse extends StatelessWidget {
+  const Continuecourse({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -299,9 +298,6 @@ class _CourseReviewState extends State<CourseReview>
               children: [const Curriculum(), const ReviewTab()],
             ),
           ),
-          const Row(
-            children: [PriceDetails()],
-          )
         ],
       ),
     );
@@ -316,11 +312,10 @@ class Curriculum extends StatelessWidget {
     return const Column(
       children: [
         CurriculumWidgets(
-          Name: "Introduction         ",
-          duraion: "00.53 mins",
-          iconn: Icon(Icons.slow_motion_video_outlined,
-              size: 33, color: Color(0xfff00A9B7)),
-        ),
+            Name: "Introduction         ",
+            duraion: "00.53 mins",
+            iconn:
+                Icon(Icons.check_circle, size: 33, color: Color(0xfff00A9B7))),
         CurriculumWidgets(
             Name: "Design Thingking",
             duraion: "05.25 mins",
@@ -488,110 +483,6 @@ class ReviewTab extends StatelessWidget {
           ],
         )
       ],
-    );
-  }
-}
-
-class PriceDetails extends StatelessWidget {
-  const PriceDetails({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: 33.h,
-      ),
-      width: 375.w,
-      height: 222.h,
-      decoration: BoxDecoration(
-        color: const Color(0xfffFFFFFF),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(0, 2), // changes position of shadow
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
-                child: Text(
-                  "Price",
-                  style: TextStyle(
-                      color: const Color(0xfffA9AEB2), fontSize: 16.sp),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 244.w),
-                child: Text(
-                  "\$150",
-                  style: TextStyle(
-                      color: const Color(0xfff00A9B7), fontSize: 24.sp),
-                ),
-              )
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h),
-                alignment: Alignment.center,
-                height: 52.h,
-                width: 335.w,
-                decoration: BoxDecoration(
-                    color: const Color(0xfff00A9B7),
-                    borderRadius: BorderRadius.circular(20.r)),
-                child: const Text(
-                  "Enroll course now",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                ),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
-                height: 52.h,
-                width: 158.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00A9B7)),
-                ),
-                child: const Text(
-                  "ADD TO CART",
-                  style: TextStyle(color: Color(0xfff00A9B7)),
-                ),
-              ),
-              SizedBox(
-                width: 16.w,
-              ),
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(top: 22.h),
-                height: 52.h,
-                width: 158.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00A9B7)),
-                ),
-                child: const Text(
-                  "ADD TO WISHLIST",
-                  style: TextStyle(color: Color(0xfff00A9B7)),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
     );
   }
 }

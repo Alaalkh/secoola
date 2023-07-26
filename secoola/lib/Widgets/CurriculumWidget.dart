@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CurriculumWidgets extends StatelessWidget {
   final String Name;
   final String duraion;
-  const CurriculumWidgets({super.key, required this.Name, required this.duraion});
+  final Icon iconn;
+  const CurriculumWidgets({super.key, required this.Name, required this.duraion, required this.iconn});
 
   @override
   Widget build(BuildContext context) {
@@ -56,12 +57,9 @@ class CurriculumWidgets extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(top: 30.h),
-            child: const Icon(
-              Icons.slow_motion_video_outlined,
-              size: 33,
-              color: Color(0xfff00A9B7),
+            child:  iconn,
             ),
-          )
+
         ],
       ),
     );

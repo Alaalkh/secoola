@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:secoola/App/ChooseTopic.dart';
+import 'package:secoola/App/Continuecourse.dart';
 import 'package:secoola/App/Cousre_Details.dart';
 import 'package:secoola/App/MyCourse.dart';
 import 'package:secoola/App/HomePage.dart';
@@ -30,6 +31,7 @@ class Routes {
   static String CourseDetails = '/CourseDetails';
   static String Paymentpage = '/Paymentpage';
   static String PaymentSuccess = '/PaymentSuccess';
+  static String Continuecourse = '/Continuecourse';
 }
 
 final getPages = [
@@ -85,7 +87,9 @@ final getPages = [
   GetPage(
       name: Routes.PaymentSuccess,
       page: () => const PaymentSuccess(),
-      transition: Transition.rightToLeft)
+      transition: Transition.rightToLeft), GetPage(
+      name: Routes.Continuecourse,
+      page: () => const Continuecourse()),
 ];
 
 // class MyMiddelware extends GetMiddleware {
