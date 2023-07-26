@@ -37,27 +37,26 @@ class Appbar extends StatelessWidget {
 
   void _show(BuildContext ctx) {
     showModalBottomSheet(
+        isScrollControlled: true,
+        constraints: BoxConstraints(maxHeight: 700.h, minHeight: 700.h),
         elevation: 10,
         backgroundColor: const Color(0xfffFAFAFA),
         context: ctx,
         builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
-              SingleChildScrollView(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      color: Color(0xfffFAFAFA),
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(30))),
-                  height: 700.h,
-                  width: double.infinity.w,
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
-                    child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[BottomSheet_Content()],
-                      ),
+              Container(
+                decoration: const BoxDecoration(
+                     color: Color(0xfffFAFAFA),
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(30))),
+                // height: 900.h,
+                width: double.infinity.w,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[BottomSheet_Content()],
                     ),
                   ),
                 ),
@@ -78,6 +77,7 @@ class Appbar extends StatelessWidget {
 
   void _Items(BuildContext ctx) {
     showModalBottomSheet(
+        isScrollControlled: true,
         elevation: 10,
         backgroundColor: const Color(0xfffFAFAFA),
         context: ctx,

@@ -20,7 +20,7 @@ final Icon list;
         width: 335.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          color: Color(0xfffFFFFF),
+          color: const Color(0xfffFFFFF),
         ),
         child: Row(
           children: [
@@ -28,10 +28,10 @@ final Icon list;
               margin: EdgeInsets.only(left: 22.w),
               height: 40.h,
               width: 40.w,
-              child: image,
               decoration: BoxDecoration(
-                  color: Color(0xfffFAFAFA),
+                  color: const Color(0xfffFAFAFA),
                   borderRadius: BorderRadius.circular(10.r)),
+              child: image,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ final Icon list;
                 Container(margin: EdgeInsets.only(left: 22.w),
                   child: Text(
                     description,
-                    style: TextStyle(fontSize: 12, color: Color(0xfffA9AEB2)),
+                    style: const TextStyle(fontSize: 12, color: Color(0xfffA9AEB2)),
                   ),
                 )
               ],
