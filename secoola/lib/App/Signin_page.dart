@@ -133,8 +133,9 @@ class _SignButtonState extends State<SignButton> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
+  Widget build(BuildContext context) {  final _formKey = GlobalKey<FormState>();
+
+  return Column(
       children: [
         Container(
             width: 335.w,
@@ -161,23 +162,31 @@ class _SignButtonState extends State<SignButton> {
         ),
         Row(
           children: [
-            Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(11.r)),
-              width: 355.w,
-              height: 56.h,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 25),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.Chossetopic);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xfff00A9B7),
-                  ),
-                  child: const Text(
-                    "Signup",
-                    style: TextStyle(color: Color(0xfffffffff)),
+            GestureDetector(onTap: (){ if (_formKey.currentState!.validate()) {
+              // If the form is valid, display a snackbar. In the real world,
+              // you'd often call a server or save the information in a database.
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Processing Data')),
+              );
+            }},
+              child: Container(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(11.r)),
+                width: 355.w,
+                height: 56.h,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.Chossetopic);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xfff00A9B7),
+                    ),
+                    child: const Text(
+                      "Signup",
+                      style: TextStyle(color: Color(0xfffffffff)),
+                    ),
                   ),
                 ),
               ),
