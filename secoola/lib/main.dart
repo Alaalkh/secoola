@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:secoola/App/Search_default.dart';
 import 'package:secoola/App/SplashScreen.dart';
+import 'package:secoola/App/SplashScreen.dart';
 
 import 'App/Search_result.dart';
+import 'App/SplashScreen.dart';
+import 'App/SplashScreen.dart';
 import 'Models/appRoutes.dart';
 
 void main() {
@@ -23,11 +26,11 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-            initialRoute: Routes.Searchresult,
+            initialRoute: Routes.Splashscreen,
             getPages: getPages,
             debugShowCheckedModeBanner: false,
             title: 'Secoola',
-            home: const Searchresult(),
+            home: const SplachScreen(),
             theme: ThemeData(
               useMaterial3: true,
             ),
