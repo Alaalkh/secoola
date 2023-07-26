@@ -10,6 +10,7 @@ import 'package:secoola/App/OnBoarding.dart';
 import 'package:secoola/App/Payment_Success.dart';
 import 'package:secoola/App/Payment_page.dart';
 import 'package:secoola/App/Search_default.dart';
+import 'package:secoola/App/Search_result.dart';
 import 'package:secoola/App/SplashScreen.dart';
 import 'package:secoola/App/Verification.dart';
 
@@ -36,6 +37,7 @@ class Routes {
   static String Continuecourse = '/Continuecourse';
   static String Coursecomplete = '/Coursecomplete';
   static String Searchdefault = '/Searchdefault';
+  static String Searchresult = '/Searchresult';
 }
 
 final getPages = [
@@ -100,7 +102,9 @@ final getPages = [
       page: () => const Searchdefault()),
   GetPage(
       name: Routes.Continuecourse,
-      page: () => const Continuecourse()),
+      page: () => const Continuecourse()),  GetPage(
+      name: Routes.Searchresult,
+      page: () => const Searchresult()),
 ];
 
 // class MyMiddelware extends GetMiddleware {
