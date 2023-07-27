@@ -207,13 +207,18 @@ class Appbar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox( width: 335.w, // Set the desired width
+              SizedBox(
+                width: 335.w, // Set the desired width
                 height: 48.h,
                 child: ElevatedButton(
                   onPressed: () {
                     Get.toNamed(Routes.Searchdefault);
                   },
                   style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xfffFFFFF)),
+                    // Set the desired background color
+
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
@@ -221,12 +226,22 @@ class Appbar extends StatelessWidget {
                     ),
                     // You can add more customizations here if needed, like colors, padding, etc.
                   ),
-                  child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.start, // Center the icon and text horizontally
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // Center the icon and text horizontally
                     children: [
-                      Image.asset("assets/img_4.png",scale: 5,), // Replace 'Icons.star' with the desired icon
-                      SizedBox(width: 8), // Add some space between the icon and text
-                      Text('Search for anything',style: TextStyle(fontSize: 14.sp,color: Color(0xfffADB2B6)),),
+                      Image.asset(
+                        "assets/img_4.png",
+                        scale: 5,
+                      ),
+                      // Replace 'Icons.star' with the desired icon
+                      const SizedBox(width: 8),
+                      // Add some space between the icon and text
+                      Text(
+                        'Search for anything',
+                        style: TextStyle(
+                            fontSize: 14.sp, color: const Color(0xfffADB2B6)),
+                      ),
                     ],
                   ),
                 ),
@@ -380,16 +395,17 @@ class DesignTopic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Design")],
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
+        Container(
+          height: 226.h,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const <Widget>[
               DesignTopics(
                 boxcolor: Color(0xfffFFEA7D),
                 titletext: "Design Thingking F...",
@@ -430,16 +446,17 @@ class CodingTopic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Coding")],
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
+        Container(
+          height: 226.h,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const <Widget>[
               DesignTopics(
                 boxcolor: Color(0xfffD0B2FF),
                 titletext: "Flutter Class - Adv...",
@@ -470,6 +487,11 @@ class CodingTopic extends StatelessWidget {
             ],
           ),
         )
+        // child: Row(
+        //   children: [
+
+        //   ],
+        // ),
       ],
     );
   }
@@ -480,47 +502,48 @@ class MarketingTopic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Marketing")],
-        ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              DesignTopics(
-                boxcolor: Color(0xfffFFB099),
-                titletext: "Digital Marketing S...",
-                coursetutor: "Esther Howard",
-                price: "\$ 49",
-                colorText: Color(0xfffFF6666),
-                recommend: "Hot Deals",
-                background: Color(0xfffFCE2EA),
-              ),
-              DesignTopics(
-                boxcolor: Color(0xfff86F2CB),
-                titletext: "Personal Branding F...",
-                coursetutor: "Savannah Nguyen",
-                price: "\$ 56",
-                colorText: Color(0xfff00A9B7),
-                recommend: "Most Sold",
-                background: Color(0xfffDCF3F5),
-              ),
-              DesignTopics(
-                boxcolor: Color(0xfff00A9B7),
-                titletext: "Neuromarketing&Marketing ",
-                coursetutor: "Arlene McCoy",
-                price: "\$ 41",
-                colorText: Color(0xfff00A9B7),
-                recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
-              ),
+        ), Container(
+          height: 226.h,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const <Widget>[
+            DesignTopics(
+                      boxcolor: Color(0xfffFFB099),
+                      titletext: "Digital Marketing S...",
+                      coursetutor: "Esther Howard",
+                      price: "\$ 49",
+                      colorText: Color(0xfffFF6666),
+                      recommend: "Hot Deals",
+                      background: Color(0xfffFCE2EA),
+                    ),
+                    DesignTopics(
+                      boxcolor: Color(0xfff86F2CB),
+                      titletext: "Personal Branding F...",
+                      coursetutor: "Savannah Nguyen",
+                      price: "\$ 56",
+                      colorText: Color(0xfff00A9B7),
+                      recommend: "Most Sold",
+                      background: Color(0xfffDCF3F5),
+                    ),
+                    DesignTopics(
+                      boxcolor: Color(0xfff00A9B7),
+                      titletext: "Neuromarketing&Marketing ",
+                      coursetutor: "Arlene McCoy",
+                      price: "\$ 41",
+                      colorText: Color(0xfff00A9B7),
+                      recommend: "Best Deal",
+                      background: Color(0xfffDCF3F5),
+                    )
             ],
           ),
-        ),
-        SizedBox(
+        )
+      ,
+        const SizedBox(
           height: 33,
         )
       ],
@@ -719,7 +742,8 @@ class BottomItem extends StatelessWidget {
                             Text(
                               "VEKTORABELAJAR",
                               style: TextStyle(
-                                  fontSize: 12.sp, color: const Color(0xfff00A9B7)),
+                                  fontSize: 12.sp,
+                                  color: const Color(0xfff00A9B7)),
                             ),
                             Image.asset(
                               "assets/more.png",

@@ -32,7 +32,7 @@ class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffFFFFFF),
+      backgroundColor: const Color(0xfffffffff),
       body: Column(
         children: [
           Container(
@@ -46,8 +46,8 @@ class _OnBoardingState extends State<OnBoarding> {
                 radius: ScreenUtil().radius(4),
                 dotWidth: ScreenUtil().setWidth(111),
                 dotHeight: ScreenUtil().setHeight(4),
-                dotColor: Color.fromARGB(255, 154, 203, 203),
-                activeDotColor: Color(0xfff00A9B7),
+                dotColor: const Color.fromARGB(255, 154, 203, 203),
+                activeDotColor: const Color(0xfff00a9b7),
               ),
             ),
           ),
@@ -78,7 +78,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             },
                             child: const Text(
                               "Skip",
-                              style: TextStyle(color: Color(0xfff00A9B7)),
+                              style: TextStyle(color: Color(0xfff00a9b7)),
                             )),
                       ),
                       Container(
@@ -114,7 +114,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   Container(
                       padding: EdgeInsets.only(top: ScreenUtil().setHeight(5)),
                       decoration: BoxDecoration(
-                          color: const Color(0xfff00A9B7),
+                          color: const Color(0xfff00a9b7),
                           borderRadius:
                               BorderRadius.circular(ScreenUtil().radius(20))),
                       width: ScreenUtil().setWidth(335),
@@ -149,8 +149,8 @@ class _OnBoardingState extends State<OnBoarding> {
 
                       padding: EdgeInsets.only(top: ScreenUtil().setHeight(13)),
                       decoration: BoxDecoration(
-                          color: const Color(0xfffFFFFFF),
-                          border: Border.all(color: const Color(0xfff00A9B7)),
+                          color: const Color(0xfffffffff),
+                          border: Border.all(color: const Color(0xfff00a9b7)),
                           borderRadius:
                               BorderRadius.circular(ScreenUtil().radius(20))),
                       width: ScreenUtil().setWidth(335),
@@ -162,7 +162,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         "I already have an account",
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(16),
-                            color: Color(0xfff00A9B7)),
+                            color: const Color(0xfff00a9b7)),
                         textAlign: TextAlign.center,
                       ),
                     ),
