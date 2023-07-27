@@ -42,11 +42,11 @@ class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         color: Color(0xfff00A9B7),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
+          bottomLeft: Radius.circular(28.r),
+          bottomRight: Radius.circular(28.r),
         ),
       ),
       height: 222,
@@ -56,17 +56,13 @@ class Appbar extends StatelessWidget {
           Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(left: 33, top: 66),
-                  child: const Text(
+                  margin:  EdgeInsets.only(left: 33.w, top: 66.h),
+                  child:  Text(
                     "My Course",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-              const SizedBox(
-                width: 22,
-              ),
-              const SizedBox(
-                width: 77,
-              ),
+
+
             ],
           ),
           const SizedBox(
@@ -76,16 +72,16 @@ class Appbar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 48,
-                width: 335,
+                height: 48.h,
+                width: 335.w,
                 decoration: BoxDecoration(
                     color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(15)),
+                    borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
-                    hintStyle: const TextStyle(
-                        fontSize: 14, color: Color(0xfffD9DBDE)),
+                    hintStyle:  TextStyle(
+                        fontSize: 14.sp, color: Color(0xfffD9DBDE)),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,

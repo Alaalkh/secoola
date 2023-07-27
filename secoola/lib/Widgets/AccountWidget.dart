@@ -44,7 +44,7 @@ class CourseWidget extends StatelessWidget {
                     title,
                     style: TextStyle(fontSize: 14.sp),
                   )), Container(
-                margin: EdgeInsets.only(top: 22.h, left: 160.w),
+                margin: EdgeInsets.only(top: 22.h, left: 165.w),
                 child: more,
               )
             ],

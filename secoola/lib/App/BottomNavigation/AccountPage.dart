@@ -11,9 +11,18 @@ class AccontPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child:  Column(
-        children: [title(), Emailinfo(), Accountwidget(),Coursewidget(),SupportWidget(),
-          Signout(),SizedBox(height: 40.h,)],
+      child: Column(
+        children: [
+          const title(),
+          const Emailinfo(),
+          const Accountwidget(),
+          const Coursewidget(),
+          const SupportWidget(),
+          const Signout(),
+          SizedBox(
+            height: 40.h,
+          )
+        ],
       ),
     );
   }
@@ -130,14 +139,18 @@ class Accountwidget extends StatelessWidget {
           title: 'Notifications',
           title2: 'Security',
           iconn2: Icon(Icons.lock_open),
-          iconn3: Icon(Icons.rectangle_rounded,size: 22,),
+          iconn3: Icon(
+            Icons.rectangle_rounded,
+            size: 22,
+          ),
           title3: 'Email ',
-          more: Icon(Icons.arrow_forward_ios_outlined) ,
+          more: Icon(Icons.arrow_forward_ios_outlined),
         )
       ],
     );
   }
 }
+
 class Coursewidget extends StatelessWidget {
   const Coursewidget({super.key});
 
@@ -161,12 +174,13 @@ class Coursewidget extends StatelessWidget {
           iconn2: Icon(Icons.rectangle_rounded),
           iconn3: Icon(Icons.rectangle_rounded),
           title3: 'History',
-          more: Icon(Icons.arrow_forward_ios_outlined) ,
+          more: Icon(Icons.arrow_forward_ios_outlined),
         )
       ],
     );
   }
 }
+
 class SupportWidget extends StatelessWidget {
   const SupportWidget({super.key});
 
@@ -188,20 +202,29 @@ class SupportWidget extends StatelessWidget {
           title: 'Help',
           title2: 'FAQ',
           iconn2: Icon(Icons.rectangle_rounded),
-
-          more: Icon(Icons.arrow_forward_ios_outlined) ,
+          more: Icon(Icons.arrow_forward_ios_outlined),
         )
       ],
     );
   }
 }
+
 class Signout extends StatelessWidget {
   const Signout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment:MainAxisAlignment.center,children: [
-      Container(margin:EdgeInsets.only(top: 22.h),child: Text("Sign out",style: TextStyle(fontSize: 14,color: Colors.red),),)
-    ],);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 22.h),
+          child: const Text(
+            "Sign out",
+            style: TextStyle(fontSize: 14, color: Colors.red),
+          ),
+        )
+      ],
+    );
   }
 }
