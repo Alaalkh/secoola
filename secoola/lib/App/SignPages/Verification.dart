@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/Widgets/Verification_code_widget.dart';
 
-import '../Models/appRoutes.dart';
+import '../../Models/appRoutes.dart';
 
 class VerficicationPage extends StatelessWidget {
   const VerficicationPage({super.key});

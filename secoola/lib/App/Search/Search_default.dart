@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Widgets/Category.dart';
 
-import '../Widgets/Popular_search.dart';
+import '../../Widgets/Popular_search.dart';
 
 class Searchdefault extends StatelessWidget {
   const Searchdefault({super.key});
@@ -11,8 +11,10 @@ class Searchdefault extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xfffFAFAFA),
-      body: Column(
-        children: [searchbar(), popularSearch(), BrowseCategory()],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [searchbar(), popularSearch(), BrowseCategory()],
+        ),
       ),
     );
   }
@@ -116,7 +118,8 @@ class BrowseCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
       children: [
         Row(
           children: [
@@ -134,7 +137,7 @@ class BrowseCategory extends StatelessWidget {
           children: [
             Container(
               width: 335.w,
-              height: 352.h,
+              height: 366.h,
               decoration: BoxDecoration(
                   color: const Color(0xfffFFFFFF),
                   borderRadius: BorderRadius.circular(16.r)),
@@ -189,6 +192,6 @@ class BrowseCategory extends StatelessWidget {
           ],
         )
       ],
-    );
+    ));
   }
 }

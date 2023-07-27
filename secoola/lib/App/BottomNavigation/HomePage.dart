@@ -8,8 +8,8 @@ import 'package:secoola/Widgets/DesignTopics.dart';
 import 'package:secoola/Widgets/TopicWidget.dart';
 import 'package:secoola/Widgets/itemsWidget.dart';
 
-import '../Widgets/CategoriesWidget.dart';
-import '../Widgets/NotificationWidget.dart';
+import '../../Widgets/CategoriesWidget.dart';
+import '../../Widgets/NotificationWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -38,14 +38,14 @@ class Appbar extends StatelessWidget {
   void _show(BuildContext ctx) {
     showModalBottomSheet(
         isScrollControlled: true,
-        constraints: BoxConstraints(maxHeight: 700.h, minHeight: 700.h),
+        constraints: BoxConstraints(maxHeight: 622.h),
         elevation: 10,
         backgroundColor: const Color(0xfffFAFAFA),
         context: ctx,
         builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
               Container(
                 decoration: const BoxDecoration(
-                     color: Color(0xfffFAFAFA),
+                    color: Color(0xfffFAFAFA),
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(30))),
                 // height: 900.h,
@@ -77,6 +77,7 @@ class Appbar extends StatelessWidget {
 
   void _Items(BuildContext ctx) {
     showModalBottomSheet(
+        constraints: BoxConstraints(maxHeight: 622.h),
         isScrollControlled: true,
         elevation: 10,
         backgroundColor: const Color(0xfffFAFAFA),
@@ -85,7 +86,7 @@ class Appbar extends StatelessWidget {
               SingleChildScrollView(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color(0xfffFAFAFA),
+                      color: const Color(0xfffFAFAFA),
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(30.r))),
                   height: 697.h,
@@ -206,25 +207,30 @@ class Appbar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox( width: 335.w, // Set the desired width
                 height: 48.h,
-                width: 335.w,
-                decoration: BoxDecoration(
-                    color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(15.r)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search for anything",
-                    hintStyle: TextStyle(
-                        fontSize: 14.sp, color: const Color(0xfffD9DBDE)),
-                    prefixIcon: Image.asset(
-                      "assets/img_4.png",
-                      scale: 5,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.Searchdefault);
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
-                    border: InputBorder.none,
+                    // You can add more customizations here if needed, like colors, padding, etc.
+                  ),
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // Center the icon and text horizontally
+                    children: [
+                      Image.asset("assets/img_4.png",scale: 5,), // Replace 'Icons.star' with the desired icon
+                      SizedBox(width: 8), // Add some space between the icon and text
+                      Text('Search for anything',style: TextStyle(fontSize: 14.sp,color: Color(0xfffADB2B6)),),
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           )
         ],
@@ -624,155 +630,159 @@ class BottomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 20.h, left: 11.w),
-              child: Text(
-                "Your items",
-                style: TextStyle(fontSize: 18.sp),
-              ),
-            )
-          ],
-        ),
-        const Column(
-          children: [
-            ItemsWidget(
-              checkbox: Icon(
-                Icons.check_box_rounded,
-                color: Color(0xfff00A9B7),
-              ),
-              videocolor: Color(0xfffFFEA7D),
-              title: 'Design Thingking Fundam...',
-              coursetutor: 'Dianne Russell',
-              price: '\$ 72',
-              Boxcolor: Color(0xfffDCF3F5),
-              textrecommend: 'Popular',
-              Textcolor: Color(0xfff00A9B7),
-            ),
-            ItemsWidget(
-              checkbox: Icon(
-                Icons.check_box_outline_blank_rounded,
-                color: Color(0xfffE4E4E4),
-              ),
-              videocolor: Color(0xfff86F2CB),
-              title: 'Design Thingking Fundam...',
-              coursetutor: 'Dianne Russell',
-              price: '\$ 150',
-              Boxcolor: Color(0xfffFCE2EA),
-              textrecommend: 'Best Seller',
-              Textcolor: Colors.red,
-            )
-          ],
-        ),
-        SizedBox(
-          height: 160.h,
-        ),
-        Container(
-          width: double.infinity,
-          height: 148.h,
-          decoration: BoxDecoration(
-            color: Color(0xfffFFFFF),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                spreadRadius: 2,
-                blurRadius: 11,
-                offset: const Offset(0, 2), // changes position of shadow
-              ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 20.h, left: 11.w),
+                child: Text(
+                  "Your items",
+                  style: TextStyle(fontSize: 18.sp),
+                ),
+              )
             ],
           ),
-          child: Column(
+          const Column(
             children: [
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 22.w, top: 15.h),
-                    child: Text(
-                      "Voucher",
-                      style: TextStyle(fontSize: 12.sp),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 111.w,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 15.h),
-                    width: 152.w,
-                    height: 28.h,
-                    decoration: BoxDecoration(
-                        color: Color(0xfffDCF3F5),
-                        borderRadius: BorderRadius.circular(8.r)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "VEKTORABELAJAR",
-                          style: TextStyle(
-                              fontSize: 12.sp, color: Color(0xfff00A9B7)),
-                        ),
-                        Image.asset(
-                          "assets/more.png",
-                          color: Color(0xfff00A9B7),
-                          scale: 2,
-                        )
-                      ],
-                    ),
-                  )
-                ],
+              ItemsWidget(
+                checkbox: Icon(
+                  Icons.check_box_rounded,
+                  color: Color(0xfff00A9B7),
+                ),
+                videocolor: Color(0xfffFFEA7D),
+                title: 'Design Thingking Fundam...',
+                coursetutor: 'Dianne Russell',
+                price: '\$ 72',
+                Boxcolor: Color(0xfffDCF3F5),
+                textrecommend: 'Popular',
+                Textcolor: Color(0xfff00A9B7),
               ),
-              Row(
+              ItemsWidget(
+                checkbox: Icon(
+                  Icons.check_box_outline_blank_rounded,
+                  color: Color(0xfffE4E4E4),
+                ),
+                videocolor: Color(0xfff86F2CB),
+                title: 'Design Thingking Fundam...',
+                coursetutor: 'Dianne Russell',
+                price: '\$ 150',
+                Boxcolor: Color(0xfffFCE2EA),
+                textrecommend: 'Best Seller',
+                Textcolor: Colors.red,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 160.h,
+          ),
+          Container(
+            width: double.infinity,
+            height: 120.h,
+            decoration: BoxDecoration(
+              color: const Color(0xfffFFFFF),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 11,
+                  offset: const Offset(0, 2), // changes position of shadow
+                ),
+              ],
+            ),
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Column(
+                  Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 11.w, top: 17.h),
+                        margin: EdgeInsets.only(left: 22.w, top: 15.h),
                         child: Text(
-                          "Total",
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                          ),
+                          "Voucher",
+                          style: TextStyle(fontSize: 12.sp),
                         ),
                       ),
+                      SizedBox(
+                        width: 111.w,
+                      ),
                       Container(
-                        margin: EdgeInsets.only(left: 22.w, top: 2.h),
-                        child: Text(
-                          "\$520",
-                          style: TextStyle(
-                            fontSize: 24.sp,
-                            color: Color(0xfff00A9B7),
-                          ),
+                        margin: EdgeInsets.only(top: 15.h),
+                        width: 152.w,
+                        height: 28.h,
+                        decoration: BoxDecoration(
+                            color: const Color(0xfffDCF3F5),
+                            borderRadius: BorderRadius.circular(8.r)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "VEKTORABELAJAR",
+                              style: TextStyle(
+                                  fontSize: 12.sp, color: const Color(0xfff00A9B7)),
+                            ),
+                            Image.asset(
+                              "assets/more.png",
+                              color: const Color(0xfff00A9B7),
+                              scale: 2,
+                            )
+                          ],
                         ),
                       )
                     ],
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed(Routes.Paymentpage);
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(left: 100.w, top: 11.h),
-                      width: 157.w,
-                      height: 52.h,
-                      decoration: BoxDecoration(
-                          color: Color(0xfff00A9B7),
-                          borderRadius: BorderRadius.circular(20.r)),
-                      child: Text("Checkout",
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            color: Color(0xffffffff),
-                          )),
-                    ),
-                  )
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 11.w, top: 17.h),
+                            child: Text(
+                              "Total",
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 22.w, top: 2.h),
+                            child: Text(
+                              "\$520",
+                              style: TextStyle(
+                                fontSize: 24.sp,
+                                color: const Color(0xfff00A9B7),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.Paymentpage);
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.only(left: 100.w, top: 11.h),
+                          width: 157.w,
+                          height: 52.h,
+                          decoration: BoxDecoration(
+                              color: const Color(0xfff00A9B7),
+                              borderRadius: BorderRadius.circular(20.r)),
+                          child: Text("Checkout",
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                color: const Color(0xffffffff),
+                              )),
+                        ),
+                      )
+                    ],
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

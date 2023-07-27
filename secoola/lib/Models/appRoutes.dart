@@ -1,23 +1,23 @@
 import 'package:get/get.dart';
 import 'package:secoola/App/ChooseTopic.dart';
-import 'package:secoola/App/Continuecourse.dart';
-import 'package:secoola/App/Course_complete.dart';
-import 'package:secoola/App/Cousre_Details.dart';
-import 'package:secoola/App/MyCourse.dart';
-import 'package:secoola/App/HomePage.dart';
-import 'package:secoola/App/NavigationContent.dart';
+import 'package:secoola/App/Course/Continuecourse.dart';
+import 'package:secoola/App/Course/Course_complete.dart';
+import 'package:secoola/App/Course/Cousre_Details.dart';
+import 'package:secoola/App/BottomNavigation/MyCourse.dart';
+import 'package:secoola/App/BottomNavigation/HomePage.dart';
+import 'package:secoola/App/BottomNavigation/NavigationContent.dart';
 import 'package:secoola/App/OnBoarding.dart';
 import 'package:secoola/App/Payment_Success.dart';
 import 'package:secoola/App/Payment_page.dart';
-import 'package:secoola/Search/Search_default.dart';
-import 'package:secoola/Search/Search_result.dart';
+import 'package:secoola/App/Search/Search_default.dart';
+import 'package:secoola/App/Search/Search_result.dart';
 import 'package:secoola/App/SplashScreen.dart';
-import 'package:secoola/SignPages/Verification.dart';
+import 'package:secoola/App/SignPages/Verification.dart';
 
-import '../SignPages/Login_page.dart';
-import '../SignPages/NewPassword.dart';
-import '../SignPages/Reset_password.dart';
-import '../SignPages/Signin_page.dart';
+import '../App/SignPages/Login_page.dart';
+import '../App/SignPages/NewPassword.dart';
+import '../App/SignPages/Reset_password.dart';
+import '../App/SignPages/Signin_page.dart';
 
 class Routes {
   static String Splashscreen = '/Splashscreen';

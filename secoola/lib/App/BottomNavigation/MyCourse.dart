@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/App/HomePage.dart';
+import 'package:secoola/App/BottomNavigation/HomePage.dart';
 import 'package:secoola/Widgets/Completecourse.dart';
 import 'package:secoola/Widgets/Ongoingtasks.dart';
 

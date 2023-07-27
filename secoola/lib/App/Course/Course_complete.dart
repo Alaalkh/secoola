@@ -47,12 +47,12 @@ class Coursecomplete extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerRight,
+              height: 22.h,
+              width: 301.w,
               child: const Text(
                 "Congratulation! Your transaction is successful",
                 style: TextStyle(fontSize: 14, color: Color(0xfff899197)),
               ),
-              height: 22.h,
-              width: 301.w,
             ),
             Container(
               alignment: Alignment.center,

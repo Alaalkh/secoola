@@ -27,7 +27,7 @@ class ItemsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 17.h),
-      height: 140.h,
+      height: 150.h,
       width: 335.w,
       decoration: BoxDecoration(
           color: const Color(0xfffFFFFFF),
