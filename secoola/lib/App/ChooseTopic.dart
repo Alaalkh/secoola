@@ -31,7 +31,7 @@ class titleWidget extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin:  EdgeInsets.only(left: 100.w, top: 88.h),
+              margin:  EdgeInsets.only(left: 70.w, top: 88.h),
               child:  Text(
                 "Pick your favorite topic",
                 style: TextStyle(fontSize: 24.sp),
@@ -47,7 +47,7 @@ class titleWidget extends StatelessWidget {
               height: 41.h,
               child:  Text(
                 "Choose your favorite topic to help us deliver the most suitable course for you.",
-                style: TextStyle(fontSize: 14.sp, color: Color(0xfffa9aeb2)),
+                style: TextStyle(fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
                 textAlign: TextAlign.center,
               ),
             )
@@ -71,7 +71,7 @@ class TopicSelection extends StatelessWidget {
     return GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 33.0,
           mainAxisSpacing: 44.0,
@@ -132,9 +132,9 @@ class ButtomWidget extends StatelessWidget {
                   },
                 ),
               ),
-              child: const Text(
+              child:  Text(
                 "Start your Journey",
-                style: TextStyle(color: Color(0xfffffffff), fontSize: 16),
+                style: TextStyle(color: const Color(0xfffffffff), fontSize: 16.sp),
               ),
             ),
           ),
@@ -144,7 +144,7 @@ class ButtomWidget extends StatelessWidget {
         ),
          Text(
           "You can still change your topic again later",
-          style: TextStyle(fontSize: 14.sp, color: Color(0xfffcacaca)),
+          style: TextStyle(fontSize: 14.sp, color: const Color(0xfffcacaca)),
         )
       ],
     );

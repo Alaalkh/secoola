@@ -60,12 +60,12 @@ class Emailinfo extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 22, top: 40),
+          margin:  EdgeInsets.only(left: 22.w, top: 40.h),
           height: 40,
           width: 40,
           decoration: BoxDecoration(
               color: const Color(0xfffFFEA7D),
-              borderRadius: BorderRadius.circular(12)),
+              borderRadius: BorderRadius.circular(12.r)),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,24 +73,24 @@ class Emailinfo extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 22, top: 37),
-                  child: const Text(
+                  margin:  EdgeInsets.only(left: 22.w, top: 37.h),
+                  child:  Text(
                     "Raymond Skyberg",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16.sp),
                   ),
                 )
               ],
             ),
-            const SizedBox(
-              height: 11,
+             SizedBox(
+              height: 11.h,
             ),
             Row(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 22),
-                  child: const Text(
+                  margin:  EdgeInsets.only(left: 22.w),
+                  child:  Text(
                     "raymond@mail.com",
-                    style: TextStyle(fontSize: 12, color: Color(0xfffA19C9C)),
+                    style: TextStyle(fontSize: 12.sp, color: Color(0xfffA19C9C)),
                   ),
                 )
               ],
@@ -100,12 +100,12 @@ class Emailinfo extends StatelessWidget {
         Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 88, top: 40),
-              height: 40,
-              width: 40,
+              margin:  EdgeInsets.only(left: 100.w, top: 40.h),
+              height: 40.h,
+              width: 40.w,
               decoration: BoxDecoration(
                   color: const Color(0xfffFFFFFF),
-                  borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12.r)),
               child: Image.asset(
                 "assets/editbutton.png",
                 scale: 2,

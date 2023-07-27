@@ -132,17 +132,15 @@ class Appbar extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
-          Row(
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
+                  margin: EdgeInsets.only(left: 20.w, top: 66.h),
                   child: Text(
                     "Hi, Dimas",
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-              SizedBox(
-                width: 22.w,
-              ),
+
               Container(
                 margin: EdgeInsets.only(top: 66.h),
                 child: Text(
@@ -168,9 +166,7 @@ class Appbar extends StatelessWidget {
                   child: const Icon(Icons.shopping_cart, color: Colors.white),
                 ),
               ),
-              SizedBox(
-                width: 6.w,
-              ),
+
               GestureDetector(
                 onTap: () {
                   _show(context);
