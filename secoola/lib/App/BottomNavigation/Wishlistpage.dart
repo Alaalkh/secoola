@@ -81,14 +81,15 @@ class Elements extends StatelessWidget {
   const Elements({super.key});
 
   @override
-  Widget build(BuildContext context) {List<Color> colorsList = [
-    Color(0xfffFFB099),
-    Color(0xfffD0B2FF),
-    Color(0xfffFFEA7D),
-    Color(0xfff86F2CB),
-    Color(0xfffA3CCDE),
-    Color(0xfffFCE2EA),
-  ];
+  Widget build(BuildContext context) {
+    List<Color> colorsList = [
+      Color(0xfffFFB099),
+      Color(0xfffD0B2FF),
+      Color(0xfffFFEA7D),
+      Color(0xfff86F2CB),
+      Color(0xfffA3CCDE),
+      Color(0xfffFCE2EA),
+    ];
     return GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -98,9 +99,11 @@ class Elements extends StatelessWidget {
           mainAxisExtent: 190,
         ),
         itemCount: WishlistContents.length,
-        itemBuilder: (_, i) {            Color color = colorsList[i];
+        itemBuilder: (_, i) {
+          Color color = colorsList[i];
 
-        return Column(
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 margin: EdgeInsets.only(left: 22.w, right: 16.w),
@@ -159,11 +162,11 @@ class Elements extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 11.w),
+              Container(margin: EdgeInsets.only(left: 22.w),
                 child: Text(WishlistContents[i].title),
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                       margin: EdgeInsets.only(left: 20.w, top: 6.h),
@@ -182,32 +185,29 @@ class Elements extends StatelessWidget {
                 ],
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 22.w),
-                        child: Text(
-                          "\$ 24",
-                          style: TextStyle(
-                              color: Color(0xfff00A9B7), fontSize: 16.sp),
-                        ),
-                      ),
-                      Container(
-                        height: 15.h,
-                        width: 77.w,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffDCF3F5),
-                            borderRadius: BorderRadius.circular(22.r)),
-                        margin: EdgeInsets.only(left: 11.w, top: 6.h),
-                        child: Text(
-                          "Label",
-                          style: TextStyle(
-                              color: Color(0xfff00A9B7), fontSize: 12.sp),
-                        ),
-                      )
-                    ],
+                  Container(
+                    margin: EdgeInsets.only(left: 22.w),
+                    child: Text(
+                      "\$ 24",
+                      style:
+                          TextStyle(color: Color(0xfff00A9B7), fontSize: 16.sp),
+                    ),
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 77.w,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: const Color(0xfffDCF3F5),
+                        borderRadius: BorderRadius.circular(22.r)),
+                    margin: EdgeInsets.only(left: 11.w, top: 6.h),
+                    child: Text(
+                      "Label",
+                      style:
+                          TextStyle(color: Color(0xfff00A9B7), fontSize: 12.sp),
+                    ),
                   )
                 ],
               )
