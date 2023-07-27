@@ -1,23 +1,23 @@
 import 'package:get/get.dart';
-import 'package:secoola/App/ChooseTopic.dart';
-import 'package:secoola/App/Course/Continuecourse.dart';
-import 'package:secoola/App/Course/Course_complete.dart';
-import 'package:secoola/App/Course/Cousre_Details.dart';
-import 'package:secoola/App/BottomNavigation/MyCourse.dart';
-import 'package:secoola/App/BottomNavigation/HomePage.dart';
-import 'package:secoola/App/BottomNavigation/NavigationContent.dart';
-import 'package:secoola/App/OnBoarding.dart';
-import 'package:secoola/App/Payment_Success.dart';
-import 'package:secoola/App/Payment_page.dart';
-import 'package:secoola/App/Search/Search_default.dart';
-import 'package:secoola/App/Search/Search_result.dart';
-import 'package:secoola/App/SplashScreen.dart';
-import 'package:secoola/App/SignPages/Verification.dart';
+import 'package:secoola/View/ChooseTopic.dart';
+import 'package:secoola/View/Course/Continuecourse.dart';
+import 'package:secoola/View/Course/Course_complete.dart';
+import 'package:secoola/View/Course/Cousre_Details.dart';
+import 'package:secoola/View/BottomNavigation/MyCourse.dart';
+import 'package:secoola/View/BottomNavigation/HomePage.dart';
+import 'package:secoola/View/BottomNavigation/NavigationContent.dart';
+import 'package:secoola/View/OnBoarding.dart';
+import 'package:secoola/View/Payment_Success.dart';
+import 'package:secoola/View/Payment_page.dart';
+import 'package:secoola/View/Search/Search_default.dart';
+import 'package:secoola/View/Search/Search_result.dart';
+import 'package:secoola/View/SplashScreen.dart';
+import 'package:secoola/View/SignPages/Verification.dart';
 
-import '../App/SignPages/Login_page.dart';
-import '../App/SignPages/NewPassword.dart';
-import '../App/SignPages/Reset_password.dart';
-import '../App/SignPages/Signin_page.dart';
+import '../View/SignPages/Login_page.dart';
+import '../View/SignPages/NewPassword.dart';
+import '../View/SignPages/Reset_password.dart';
+import '../View/SignPages/Signin_page.dart';
 
 class Routes {
   static String Splashscreen = '/Splashscreen';
