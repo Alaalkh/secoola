@@ -58,7 +58,7 @@ class titleWidget extends StatelessWidget {
         SizedBox(
           height: 66.h,
         ),
-        const ButtomWidget(buttonColor: Color(0xfff),)
+        const ButtomWidget()
       ],
     );
   }
@@ -131,8 +131,8 @@ class _TopicSelectionState extends State<TopicSelection> {
                           top:0,
                           right:0,
                           child: Image.asset(
-                            "assets/check.png",
-                            // color: Color(0xfff00A9B7),
+                            "assets/checkmark.png",
+                            color: Color(0xfff00A9B7),
                           ),
                         ),
                     ]),
@@ -150,8 +150,7 @@ class _TopicSelectionState extends State<TopicSelection> {
 }
 
 class ButtomWidget extends StatelessWidget {
-  final Color buttonColor;
-  const ButtomWidget({super.key, required this.buttonColor});
+  const ButtomWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
