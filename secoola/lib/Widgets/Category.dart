@@ -14,10 +14,10 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 22.h, left: 22.w),
+          margin: EdgeInsets.only(top: 22.h),
           child: icon,
         ),
         Container(
@@ -33,34 +33,3 @@ class Category extends StatelessWidget {
   }
 }
 
-class Category2 extends StatelessWidget {
-  final Image icon;
-  final String title;
-  final Icon arrow;
-
-  const Category2(
-      {super.key,
-        required this.icon,
-        required this.title,
-        required this.arrow});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 22.h, left: 22.w),
-          child: icon,
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 22.h, left: 6.w),
-          child: Text(title),
-        ),SizedBox(width: 166.w,),
-        Container(
-          margin: EdgeInsets.only(top: 22.h),
-          child: arrow,
-        )
-      ],
-    );
-  }
-}

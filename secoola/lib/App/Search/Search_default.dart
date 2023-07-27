@@ -119,7 +119,7 @@ class BrowseCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
+        child: Column(
       children: [
         Row(
           children: [
@@ -133,7 +133,7 @@ class BrowseCategory extends StatelessWidget {
         ),
         SizedBox(height: 22.h),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               width: 335.w,
@@ -150,35 +150,40 @@ class BrowseCategory extends StatelessWidget {
                       Icons.arrow_forward_ios,
                       size: 16,
                     ),
-                  ),         Category(
+                  ),
+                  Category(
                     icon: Image.asset("assets/laptop.png"),
                     title: "Coding",
                     arrow: const Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
                     ),
-                  ),       Category(
+                  ),
+                  Category(
                     icon: Image.asset("assets/design.png"),
                     title: "Design",
                     arrow: const Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
                     ),
-                  ),   Category(
+                  ),
+                  Category(
                     icon: Image.asset("assets/healthcare.png"),
                     title: "Health",
                     arrow: const Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
                     ),
-                  ),Category2(
+                  ),
+                  Category(
                     icon: Image.asset("assets/business.png"),
                     title: "Business",
                     arrow: const Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
                     ),
-                  ),Category2(
+                  ),
+                  Category(
                     icon: Image.asset("assets/life.png"),
                     title: "LifeStyle",
                     arrow: const Icon(
