@@ -8,7 +8,7 @@ class WishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [Appbar(), Elements()],
     );
   }
@@ -21,7 +21,7 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xfff00A9B7),
+        color: const Color(0xfff00A9B7),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -60,7 +60,7 @@ class Appbar extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: "Search for anything",
                     hintStyle:
-                        TextStyle(fontSize: 14.sp, color: Color(0xfffD9DBDE)),
+                        TextStyle(fontSize: 14.sp, color: const Color(0xfffD9DBDE)),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -83,12 +83,12 @@ class Elements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Color> colorsList = [
-      Color(0xfffFFB099),
-      Color(0xfffD0B2FF),
-      Color(0xfffFFEA7D),
-      Color(0xfff86F2CB),
-      Color(0xfffA3CCDE),
-      Color(0xfffFCE2EA),
+      const Color(0xfffFFB099),
+      const Color(0xfffD0B2FF),
+      const Color(0xfffFFEA7D),
+      const Color(0xfff86F2CB),
+      const Color(0xfffA3CCDE),
+      const Color(0xfffFCE2EA),
     ];
     return GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
@@ -179,7 +179,7 @@ class Elements extends StatelessWidget {
                     child: Text(
                       WishlistContents[i].tutorname,
                       style:
-                          TextStyle(color: Color(0xfffA9AEB2), fontSize: 12.sp),
+                          TextStyle(color: const Color(0xfffA9AEB2), fontSize: 12.sp),
                     ),
                   ),
                 ],
@@ -192,7 +192,7 @@ class Elements extends StatelessWidget {
                     child: Text(
                       "\$ 24",
                       style:
-                          TextStyle(color: Color(0xfff00A9B7), fontSize: 16.sp),
+                          TextStyle(color: const Color(0xfff00A9B7), fontSize: 16.sp),
                     ),
                   ),
                   Container(
@@ -206,7 +206,7 @@ class Elements extends StatelessWidget {
                     child: Text(
                       "Label",
                       style:
-                          TextStyle(color: Color(0xfff00A9B7), fontSize: 12.sp),
+                          TextStyle(color: const Color(0xfff00A9B7), fontSize: 12.sp),
                     ),
                   )
                 ],

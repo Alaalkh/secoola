@@ -123,7 +123,7 @@ class Accountwidget extends StatelessWidget {
                 child: const Text("Account")),
           ],
         ),
-        const AccountWidget(
+        const CourseWidget(
           iconn: Icon(
             Icons.notifications,
           ),
@@ -131,7 +131,7 @@ class Accountwidget extends StatelessWidget {
           title2: 'Security',
           iconn2: Icon(Icons.lock_open),
           iconn3: Icon(Icons.rectangle_rounded,size: 22,),
-          title3: 'Email preference',
+          title3: 'Email ',
           more: Icon(Icons.arrow_forward_ios_outlined) ,
         )
       ],

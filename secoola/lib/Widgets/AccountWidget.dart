@@ -1,93 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AccountWidget extends StatelessWidget {
-  final Icon iconn;
-  final Icon iconn2;
-  final String title;
-  final String title2;
-  final String title3;
-  final Icon iconn3;
-  final Icon more;
-
-
-  const AccountWidget(
-      {super.key,
-      required this.iconn,
-      required this.title,
-      required this.iconn2,
-      required this.title2,
-      required this.title3,
-      required this.iconn3, required this.more,
-   });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 22.h),
-      width: 335.w,
-      height: 152.h,
-      decoration: BoxDecoration(
-          color: Color(0xfffFFFFFF), borderRadius: BorderRadius.circular(20.r)),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
-                child: iconn,
-              ),
-              Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
-                  child: Text(
-                    title,
-                    style: TextStyle(fontSize: 14.sp),
-                  )), Container(
-                margin: EdgeInsets.only(top: 22.h, left: 144.w),
-                child: more,
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
-                child: iconn2,
-              ),
-              Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
-                  child: Text(
-                    title2,
-                    style: TextStyle(fontSize: 14.sp),
-                  )), Container(
-                margin: EdgeInsets.only(top: 22.h, left: 177.w),
-                child: more,
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
-                child: iconn3,
-              ),
-              Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
-                  child: Text(
-                    title3,
-                    style: TextStyle(fontSize: 14.sp),
-                  )),
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 122.w),
-                child: more,
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class CourseWidget extends StatelessWidget {
   final Icon iconn;
@@ -119,14 +32,14 @@ class CourseWidget extends StatelessWidget {
           color: Color(0xfffFFFFFF), borderRadius: BorderRadius.circular(20.r)),
       child: Column(
         children: [
-          Row(
+          Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
+                margin: EdgeInsets.only(top: 22.h),
                 child: iconn,
               ),
               Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
+                  margin: EdgeInsets.only(top: 22.h),
                   child: Text(
                     title,
                     style: TextStyle(fontSize: 14.sp),
@@ -136,14 +49,14 @@ class CourseWidget extends StatelessWidget {
               )
             ],
           ),
-          Row(
+          Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
+                margin: EdgeInsets.only(top: 22.h,),
                 child: iconn2,
               ),
               Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
+                  margin: EdgeInsets.only(top: 22.h),
                   child: Text(
                     title2,
                     style: TextStyle(fontSize: 14.sp),
@@ -153,14 +66,16 @@ class CourseWidget extends StatelessWidget {
               )
             ],
           ),
-          Row(
+          Row(  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
             children: [
               Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
+                margin: EdgeInsets.only(top: 22.h),
+
                 child: iconn3,
               ),
               Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
+                  margin: EdgeInsets.only(top: 22.h),
                   child: Text(
                     title3,
                     style: TextStyle(fontSize: 14.sp),
@@ -203,14 +118,14 @@ class SupportWid extends StatelessWidget {
           color: Color(0xfffFFFFFF), borderRadius: BorderRadius.circular(20.r)),
       child: Column(
         children: [
-          Row(
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
+                margin: EdgeInsets.only(top: 22.h, left: 11.w),
                 child: iconn,
               ),
               Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
+                  margin: EdgeInsets.only(top: 22.h),
                   child: Text(
                     title,
                     style: TextStyle(fontSize: 14.sp),
@@ -220,14 +135,14 @@ class SupportWid extends StatelessWidget {
               )
             ],
           ),
-          Row(
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 22.h, left: 22.w),
+                margin: EdgeInsets.only(top: 22.h, left: 11.w),
                 child: iconn2,
               ),
               Container(
-                  margin: EdgeInsets.only(top: 22.h, left: 16.w),
+                  margin: EdgeInsets.only(top: 22.h,),
                   child: Text(
                     title2,
                     style: TextStyle(fontSize: 14.sp),
