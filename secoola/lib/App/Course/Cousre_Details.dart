@@ -11,7 +11,7 @@ class CourseDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFFFFFFFFF),
+      backgroundColor: Color(0xfffffffff),
       body: SingleChildScrollView(
         child: Column(
           children: [AppbarWidget(), CourseReview()],
@@ -34,7 +34,7 @@ class AppbarWidget extends StatelessWidget {
             Container(
               height: 360.h,
               width: 375.w,
-              decoration:  BoxDecoration(color: Color(0xfffFFEA7D)),
+              decoration:  const BoxDecoration(color: Color(0xfffffea7d)),
               child: Column(
                 children: [
                   Row(
@@ -46,11 +46,11 @@ class AppbarWidget extends StatelessWidget {
                           width: 40.w,
                           margin: EdgeInsets.only(left: 33.w, top: 55.h),
                           decoration: BoxDecoration(
-                              color: const Color(0xfff6BC2A3),
+                              color: const Color(0xfff6bc2a3),
                               borderRadius: BorderRadius.circular(12.r)),
                           child: const Icon(
                             Icons.arrow_back,
-                            color: Color(0xfffFFFFFF),
+                            color: Color(0xfffffffff),
                           ),
                         ),onTap: (){
                         Get.back();
@@ -62,11 +62,11 @@ class AppbarWidget extends StatelessWidget {
                         width: 40.w,
                         margin: EdgeInsets.only(left: 222.w, top: 55.h),
                         decoration: BoxDecoration(
-                            color: const Color(0xfffCCBB64),
+                            color: const Color(0xfffccbb64),
                             borderRadius: BorderRadius.circular(12.r)),
                         child: const Icon(
                           Icons.shopping_cart,
-                          color: Color(0xfffFFFFFF),
+                          color: Color(0xfffffffff),
                         ),
                       )
                     ],
@@ -100,7 +100,7 @@ class _CourseReviewState extends State<CourseReview>
       height: 956.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28.r),
-        color: const Color(0xFFFFFFFFF),
+        color: const Color(0xfffffffff),
       ),
       child: Column(
         children: [
@@ -133,7 +133,7 @@ class _CourseReviewState extends State<CourseReview>
                         "Halo Academy",
                         style: TextStyle(
                             color: const Color(
-                              0xfff00A9B7,
+                              0xfff00a9b7,
                             ),
                             fontSize: 16.sp),
                       )),
@@ -168,7 +168,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Description this is a simple description that explain the description about the class or blabla bla and then blablabla of course.",
                   style: TextStyle(
-                      color: const Color(0xfffA9AEB2), fontSize: 16.sp),
+                      color: const Color(0xfffa9aeb2), fontSize: 16.sp),
                 ),
               )
             ],
@@ -180,7 +180,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Students",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffA9AEB2)),
+                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
                 ),
               ),
               Container(
@@ -188,7 +188,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Language",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffA9AEB2)),
+                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
                 ),
               )
             ],
@@ -218,7 +218,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Last update",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffA9AEB2)),
+                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
                 ),
               ),
               Container(
@@ -226,7 +226,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Subtitle",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffA9AEB2)),
+                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
                 ),
               )
             ],
@@ -251,7 +251,7 @@ class _CourseReviewState extends State<CourseReview>
                     Text(
                       "5 more",
                       style: TextStyle(
-                          fontSize: 16.sp, color: const Color(0xfff00A9B7)),
+                          fontSize: 16.sp, color: const Color(0xfff00a9b7)),
                     )
                   ],
                 ),
@@ -266,7 +266,7 @@ class _CourseReviewState extends State<CourseReview>
                 height: 46.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xfffF4F4F4),
+                    color: const Color(0xffff4f4f4),
                     borderRadius: BorderRadius.circular(16.r)),
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -277,7 +277,7 @@ class _CourseReviewState extends State<CourseReview>
                     indicatorColor: Colors.transparent,
                     indicatorWeight: 2,
                     indicator: BoxDecoration(
-                      color: const Color(0xfff00A9B7),
+                      color: const Color(0xfff00a9b7),
                       borderRadius: BorderRadius.circular(17.r),
                     ),
                     controller: tabController,
@@ -326,18 +326,18 @@ class Curriculum extends StatelessWidget {
           Name: "Introduction         ",
           duraion: "00.53 mins",
           iconn: Icon(Icons.slow_motion_video_outlined,
-              size: 33, color: Color(0xfff00A9B7)),
+              size: 33, color: Color(0xfff00a9b7)),
         ),
         CurriculumWidgets(
             Name: "Design Thingking",
             duraion: "05.25 mins",
             iconn: Icon(Icons.slow_motion_video_outlined,
-                size: 33, color: Color(0xfff00A9B7))),
+                size: 33, color: Color(0xfff00a9b7))),
         CurriculumWidgets(
             Name: "Improving Design",
             duraion: "05.36 mins",
             iconn: Icon(Icons.slow_motion_video_outlined,
-                size: 33, color: Color(0xfff00A9B7)))
+                size: 33, color: Color(0xfff00a9b7)))
       ],
     );
   }
@@ -431,7 +431,7 @@ class ReviewTab extends StatelessWidget {
               height: 36.h,
               width: 36.h,
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFEA7D),
+                  color: const Color(0xfffffea7d),
                   borderRadius: BorderRadius.circular(12)),
             ),
             Column(
@@ -449,9 +449,9 @@ class ReviewTab extends StatelessWidget {
                 ),
                 Container(
                     margin: EdgeInsets.only(left: 22.w, top: 3.h),
-                    child: const Text(
+                    child:  Text(
                       "1 day ago",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 12.sp),
                     ))
               ],
             ),
@@ -460,7 +460,7 @@ class ReviewTab extends StatelessWidget {
               height: 32.h,
               width: 67.w,
               decoration: BoxDecoration(
-                  color: const Color(0xfffFAFAFA),
+                  color: const Color(0xffffafafa),
                   borderRadius: BorderRadius.circular(12.r)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -472,9 +472,9 @@ class ReviewTab extends StatelessWidget {
                   SizedBox(
                     width: 6.w,
                   ),
-                  const Text(
+                   Text(
                     "4.8",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16.sp),
                   )
                 ],
               ),
@@ -489,7 +489,7 @@ class ReviewTab extends StatelessWidget {
               height: 41.h,
               child: const Text(
                 "Description this is a simple description that explain the description about the class ",
-                style: TextStyle(color: Color(0xfffA9AEB2)),
+                style: TextStyle(color: Color(0xfffa9aeb2)),
               ),
             )
           ],
@@ -511,7 +511,7 @@ class PriceDetails extends StatelessWidget {
       width: 375.w,
       height: 222.h,
       decoration: BoxDecoration(
-        color: const Color(0xfffFFFFFF),
+        color: const Color(0xfffffffff),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
@@ -530,7 +530,7 @@ class PriceDetails extends StatelessWidget {
                 child: Text(
                   "Price",
                   style: TextStyle(
-                      color: const Color(0xfffA9AEB2), fontSize: 16.sp),
+                      color: const Color(0xfffa9aeb2), fontSize: 16.sp),
                 ),
               ),
               Container(
@@ -538,7 +538,7 @@ class PriceDetails extends StatelessWidget {
                 child: Text(
                   "\$150",
                   style: TextStyle(
-                      color: const Color(0xfff00A9B7), fontSize: 24.sp),
+                      color: const Color(0xfff00a9b7), fontSize: 24.sp),
                 ),
               )
             ],
@@ -553,7 +553,7 @@ class PriceDetails extends StatelessWidget {
                 height: 52.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xfff00A9B7),
+                    color: const Color(0xfff00a9b7),
                     borderRadius: BorderRadius.circular(20.r)),
                 child: const Text(
                   "Enroll course now",
@@ -571,11 +571,11 @@ class PriceDetails extends StatelessWidget {
                 width: 158.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00A9B7)),
+                  border: Border.all(color: const Color(0xfff00a9b7)),
                 ),
                 child: const Text(
                   "ADD TO CART",
-                  style: TextStyle(color: Color(0xfff00A9B7)),
+                  style: TextStyle(color: Color(0xfff00a9b7)),
                 ),
               ),
               SizedBox(
@@ -588,11 +588,11 @@ class PriceDetails extends StatelessWidget {
                 width: 158.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00A9B7)),
+                  border: Border.all(color: const Color(0xfff00a9b7)),
                 ),
                 child: const Text(
                   "ADD TO WISHLIST",
-                  style: TextStyle(color: Color(0xfff00A9B7)),
+                  style: TextStyle(color: Color(0xfff00a9b7)),
                 ),
               )
             ],
