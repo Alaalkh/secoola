@@ -420,8 +420,7 @@ class ReviewTab extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: 33.h, left: 28.w),
-              // child:Icon(Icons)
-            )
+          child:    Image.asset("assets/arrow.png",scale: 3,))
           ],
         ),
         Row(

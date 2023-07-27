@@ -163,7 +163,6 @@ class Elements extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 33.0,
           mainAxisSpacing: 44.0,
           mainAxisExtent: 190,
         ),
