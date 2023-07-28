@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/Widgets/Category.dart';
-
+import 'package:secoola/Views/Widgets/Category.dart';
 import '../../Widgets/Popular_search.dart';
 
 class Searchdefault extends StatelessWidget {

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/Models/appRoutes.dart';
-import 'package:secoola/Widgets/TextFieldWidget.dart';
+
+import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -20,6 +21,10 @@ class ResetPassword extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 11),
                   height: 52,
                   width: 52,
+                  margin: const EdgeInsets.only(top: 66, left: 22),
+                  decoration: BoxDecoration(
+                      color: const Color(0xfffFFFFFF),
+                      borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -27,10 +32,6 @@ class ResetPassword extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back_ios),
                     color: Colors.black,
                   ),
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: const Color(0xfffFFFFFF),
-                      borderRadius: BorderRadius.circular(17)),
                 ),
                 const SizedBox(
                   width: 22,
@@ -127,7 +128,7 @@ class EmailEntry extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color(0xFFFFFFFFF),
                   borderRadius: BorderRadius.circular(16)),
-              child: const TextFeildwidget(
+              child: const TextFeildwidget(obscuretext: false,
                 hint: '  Your email', icon: Icon(Icons.rectangle_rounded,color: Color(0xfff00A9B7),size: 17,),
               ),
             ),

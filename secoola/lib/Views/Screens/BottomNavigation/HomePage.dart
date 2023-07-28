@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/appRoutes.dart';
-import 'package:secoola/Widgets/CourseWidget.dart';
-import 'package:secoola/Widgets/DesignTopics.dart';
-import 'package:secoola/Widgets/TopicWidget.dart';
-import 'package:secoola/Widgets/itemsWidget.dart';
+import 'package:secoola/Views/Widgets/CourseWidget.dart';
+import 'package:secoola/Views/Widgets/DesignTopics.dart';
+import 'package:secoola/Views/Widgets/TopicWidget.dart';
+import 'package:secoola/Views/Widgets/itemsWidget.dart';
 
 import '../../Widgets/CategoriesWidget.dart';
 import '../../Widgets/NotificationWidget.dart';

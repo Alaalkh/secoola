@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/appRoutes.dart';
-import 'package:secoola/Widgets/TextFieldWidget.dart';
-
-import '../../Widgets/IconWidget.dart';
+import 'package:secoola/Views/Widgets/IconWidget.dart';
+import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 
 class SignPage extends StatefulWidget {
   const SignPage({super.key});
@@ -145,7 +144,7 @@ class _SignButtonState extends State<SignButton> {
                 color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(16.r)),
             child: const TextFeildwidget(icon:Icon(Icons.rectangle_rounded,color: Color(0xfff00A9B7,),size: 17,)
-,              hint: 'Your email',
+,              hint: 'Your email',obscuretext: false,
             )),
         Container(
             width: 335.w,
@@ -154,7 +153,7 @@ class _SignButtonState extends State<SignButton> {
             decoration: BoxDecoration(
                 color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(22.r)),
-            child: const TextFeildwidget(
+            child: const TextFeildwidget(obscuretext: true,
               hint: 'Your password', icon: Icon(Icons.lock,color: Color(0xfff00A9B7),size: 17,),
             )),
         SizedBox(

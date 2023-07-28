@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:secoola/Models/appRoutes.dart';
 
-import '../Models/appRoutes.dart';
 
 class SplachScreen extends StatefulWidget {
   const SplachScreen({super.key});

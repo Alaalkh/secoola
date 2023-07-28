@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/View/BottomNavigation/HomePage.dart';
-import 'package:secoola/Widgets/Completecourse.dart';
-import 'package:secoola/Widgets/Ongoingtasks.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
+import 'package:secoola/Views/Widgets/Completecourse.dart';
+import 'package:secoola/Views/Widgets/Ongoingtasks.dart';
 
 class MyCourse extends StatefulWidget {
   const MyCourse({super.key});

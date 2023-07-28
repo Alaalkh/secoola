@@ -1,23 +1,23 @@
 import 'package:get/get.dart';
-import 'package:secoola/View/ChooseTopic.dart';
-import 'package:secoola/View/Course/Continuecourse.dart';
-import 'package:secoola/View/Course/Course_complete.dart';
-import 'package:secoola/View/Course/Cousre_Details.dart';
-import 'package:secoola/View/BottomNavigation/MyCourse.dart';
-import 'package:secoola/View/BottomNavigation/HomePage.dart';
-import 'package:secoola/View/BottomNavigation/NavigationContent.dart';
-import 'package:secoola/View/OnBoarding.dart';
-import 'package:secoola/View/Payment_Success.dart';
-import 'package:secoola/View/Payment_page.dart';
-import 'package:secoola/View/Search/Search_default.dart';
-import 'package:secoola/View/Search/Search_result.dart';
-import 'package:secoola/View/SplashScreen.dart';
-import 'package:secoola/View/SignPages/Verification.dart';
+import 'package:secoola/Views/Screens/ChooseTopic.dart';
+import 'package:secoola/Views/Screens//Course/Continuecourse.dart';
+import 'package:secoola/Views/Screens/Course/Course_complete.dart';
+import 'package:secoola/Views/Screens/Course/Cousre_Details.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/MyCourse.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/NavigationContent.dart';
+import 'package:secoola/Views/Screens/OnBoarding.dart';
+import 'package:secoola/Views/Screens/Payment_Success.dart';
+import 'package:secoola/Views/Screens/Payment_page.dart';
+import 'package:secoola/Views/Screens/Search/Search_default.dart';
+import 'package:secoola/Views/Screens/Search/Search_result.dart';
+import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
+import 'package:secoola/Views/Screens/SplashScreen.dart';
+import 'package:secoola/Views/Screens/SignPages/Verification.dart';
 
-import '../View/SignPages/Login_page.dart';
-import '../View/SignPages/NewPassword.dart';
-import '../View/SignPages/Reset_password.dart';
-import '../View/SignPages/Signin_page.dart';
+import '../Views/Screens/SignPages/NewPassword.dart';
+import '../Views/Screens/SignPages/Reset_password.dart';
+import '../Views/Screens/SignPages/Signin_page.dart';
 
 class Routes {
   static String Splashscreen = '/Splashscreen';

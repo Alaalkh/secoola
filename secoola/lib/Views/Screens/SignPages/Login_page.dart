@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Widgets/IconWidget.dart';
-import 'package:secoola/Widgets/TextFieldWidget.dart';
-
-import '../../Models/appRoutes.dart';
+import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/Views/Widgets/IconWidget.dart';
+import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -123,12 +122,14 @@ class _SignButtonState extends State<SignButton> {
                 color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(16.r)),
             child: const TextFeildwidget(
-                hint: 'Your email',
-                icon: Icon(
-                  Icons.rectangle_rounded,
-                  color: Color(0xfff00A9B7),
-                  size: 17,
-                ))),
+              hint: 'Your email',
+              icon: Icon(
+                Icons.rectangle_rounded,
+                color: Color(0xfff00A9B7),
+                size: 17,
+              ),
+              obscuretext: false,
+            )),
         Container(
             width: 335.w,
             height: 56.h,
@@ -137,6 +138,7 @@ class _SignButtonState extends State<SignButton> {
                 color: const Color(0xFFFFFFFFF),
                 borderRadius: BorderRadius.circular(22.r)),
             child: const TextFeildwidget(
+              obscuretext: true,
               icon: Icon(
                 Icons.lock_rounded,
                 color: Color(0xfff00A9B7),

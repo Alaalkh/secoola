@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:secoola/View//BottomNavigation/AccountPage.dart';
-import 'package:secoola/View/BottomNavigation/MyCourse.dart';
-import 'package:secoola/View/BottomNavigation/HomePage.dart';
-import 'package:secoola/View/BottomNavigation/Wishlistpage.dart';
+import 'package:secoola/Views/Screens//BottomNavigation/AccountPage.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/MyCourse.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/Wishlistpage.dart';
 
 class NavigationContent extends StatefulWidget {
   const NavigationContent({super.key});

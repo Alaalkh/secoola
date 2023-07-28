@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Models/WishlistContent.dart';
+import '../../../Models/WishlistContent.dart';
+
 
 class Searchresult extends StatelessWidget {
   const Searchresult({super.key});

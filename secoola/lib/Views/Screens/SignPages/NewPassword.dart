@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Widgets/TextFieldWidget.dart';
-
-import '../../Models/appRoutes.dart';
+import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/Views/Widgets/IconWidget.dart';
+import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -128,7 +128,7 @@ class passwordEntry extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: const Color(0xFFFFFFFFF),
                     borderRadius: BorderRadius.circular(16)),
-                child: const TextFeildwidget(
+                child: const TextFeildwidget(obscuretext: true,
                   hint: ' Your Password', icon: Icon(size: 17,Icons.lock_rounded,color: Color(0xfff00A9B7),),
                 )),
           ],

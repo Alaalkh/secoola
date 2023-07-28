@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:secoola/View/Search/Search_default.dart';
-import 'package:secoola/View/SplashScreen.dart';
-import 'package:secoola/View/SplashScreen.dart';
+import 'package:secoola/Views/Screens/SplashScreen.dart';
 
-
-import 'View/SplashScreen.dart';
-import 'View/SplashScreen.dart';
 import 'Models/appRoutes.dart';
 
 void main() {
