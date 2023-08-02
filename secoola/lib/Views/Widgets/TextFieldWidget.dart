@@ -16,7 +16,6 @@ class TextFeildwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final validator1 = ValidationBuilder().email().maxLength(50).build();
-    final validator2 = ValidationBuilder().email().maxLength(20).build();
 
     return TextFormField(
       validator: validator1,

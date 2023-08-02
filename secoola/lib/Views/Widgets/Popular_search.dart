@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/theme/Color.dart';
 
 class Popularsearch extends StatelessWidget {
   final String search;
@@ -14,7 +15,7 @@ class Popularsearch extends StatelessWidget {
       width: 85.w,
       height: 38.h,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r), color: Color(0xfffFFFFFF)),
+          borderRadius: BorderRadius.circular(20.r), color: white2),
       child: Text(
         search,
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:secoola/theme/Color.dart';
 
 class TopicWidgdet extends StatelessWidget {
   final String Topictitle;
@@ -38,7 +39,7 @@ class TopicWidgdet extends StatelessWidget {
           margin: const EdgeInsets.only(left: 22, top: 22),
           child: const Text(
             "See All",
-            style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14),
+            style: TextStyle(color: teal, fontSize: 14),
           ),
         )
       ],

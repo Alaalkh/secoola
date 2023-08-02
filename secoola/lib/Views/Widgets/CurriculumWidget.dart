@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/theme/Color.dart';
 
 class CurriculumWidgets extends StatelessWidget {
   final String Name;
@@ -15,7 +16,7 @@ class CurriculumWidgets extends StatelessWidget {
       width: 335.w,
       height: 86.h,
       decoration: BoxDecoration(
-        color: const Color(0xfffFFFFFF),
+        color: white2,
         borderRadius: BorderRadius.circular(15.r),
         boxShadow: [
           BoxShadow(
@@ -47,7 +48,7 @@ class CurriculumWidgets extends StatelessWidget {
                 child: Text(
                   duraion,
                   style: TextStyle(
-                      fontSize: 12.sp, color: const Color(0xfff707070)),
+                      fontSize: 12.sp, color: darkgrey),
                 ),
               )
             ],
