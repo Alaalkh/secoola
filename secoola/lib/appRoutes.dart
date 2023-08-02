@@ -7,8 +7,8 @@ import 'package:secoola/Views/Screens/BottomNavigation/MyCourse.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/NavigationContent.dart';
 import 'package:secoola/Views/Screens/Onboarding/OnBoarding.dart';
-import 'package:secoola/Views/Screens/Payment/Payment_Success.dart';
-import 'package:secoola/Views/Screens/Payment/Payment_page.dart';
+import 'package:secoola/Views/Screens/Transaction/Payment_Success.dart';
+import 'package:secoola/Views/Screens/Transaction/Payment_page.dart';
 import 'package:secoola/Views/Screens/Search/Search_default.dart';
 import 'package:secoola/Views/Screens/Search/Search_result.dart';
 import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
@@ -37,7 +37,6 @@ class Routes {
   static String Continuecourse = '/Continuecourse';
   static String Coursecomplete = '/Coursecomplete';
   static String Searchdefault = '/Searchdefault';
-  static String EmptyCart = '/EmptyCart';
   static String Searchresult = '/Searchresult';
 }
 
@@ -99,7 +98,6 @@ final getPages = [
   GetPage(name: Routes.Searchdefault, page: () => const Searchdefault()),
   GetPage(name: Routes.Continuecourse, page: () => const Continuecourse()),
   GetPage(name: Routes.Searchresult, page: () => const Searchresult()),
-  GetPage(name: Routes.EmptyCart, page: () => const EmptyCart()),
 ];
 
 // class MyMiddelware extends GetMiddleware {
