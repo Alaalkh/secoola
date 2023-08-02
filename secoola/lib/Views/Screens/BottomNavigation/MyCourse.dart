@@ -26,14 +26,13 @@ class _CourseDetailsState extends State<MyCourse>
 
   @override
   Widget build(BuildContext context) {
-    return  const SingleChildScrollView(
-        child: Column(
+    return  const Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Appbar(),
         Togglebar(),
       ],
-    ));
+    );
   }
 }
 
@@ -115,8 +114,7 @@ class _TogglebarState extends State<Togglebar>
     double width = MediaQuery.of(context).size.width;
 
     double yourWidth = width;
-    return SingleChildScrollView(
-      child: Padding(
+    return Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.w),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
@@ -171,7 +169,7 @@ class _TogglebarState extends State<Togglebar>
             ],
           ),
         ),
-      ),
+
     );
   }
 }

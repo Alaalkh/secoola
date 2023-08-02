@@ -67,7 +67,7 @@ class AppbarWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12.r)),
                         child: const Icon(
                           Icons.shopping_cart,
-                          color: Color(0xfffffffff),
+                          color: white2,
                         ),
                       )
                     ],
@@ -101,7 +101,7 @@ class _CourseReviewState extends State<CourseReview>
       height: 956.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28.r),
-        color: const Color(0xfffffffff),
+        color: white2,
       ),
       child: Column(
         children: [
@@ -133,9 +133,7 @@ class _CourseReviewState extends State<CourseReview>
                       child: Text(
                         "Halo Academy",
                         style: TextStyle(
-                            color: const Color(
-                              0xfff00a9b7,
-                            ),
+                            color: teal,
                             fontSize: 16.sp),
                       )),
                   Container(
@@ -169,7 +167,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Description this is a simple description that explain the description about the class or blabla bla and then blablabla of course.",
                   style: TextStyle(
-                      color: const Color(0xfffa9aeb2), fontSize: 16.sp),
+                      color: grey, fontSize: 16.sp),
                 ),
               )
             ],
@@ -181,7 +179,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Students",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
+                      fontSize: 14.sp, color: grey),
                 ),
               ),
               Container(
@@ -189,7 +187,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Language",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
+                      fontSize: 14.sp, color: grey),
                 ),
               )
             ],
@@ -219,7 +217,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Last update",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
+                      fontSize: 14.sp, color: grey),
                 ),
               ),
               Container(
@@ -227,7 +225,7 @@ class _CourseReviewState extends State<CourseReview>
                 child: Text(
                   "Subtitle",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
+                      fontSize: 14.sp, color: grey),
                 ),
               )
             ],
@@ -252,7 +250,7 @@ class _CourseReviewState extends State<CourseReview>
                     Text(
                       "5 more",
                       style: TextStyle(
-                          fontSize: 16.sp, color: const Color(0xfff00a9b7)),
+                          fontSize: 16.sp, color: teal),
                     )
                   ],
                 ),
@@ -267,7 +265,7 @@ class _CourseReviewState extends State<CourseReview>
                 height: 46.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xffff4f4f4),
+                    color: Ligthgrey2,
                     borderRadius: BorderRadius.circular(16.r)),
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -278,7 +276,7 @@ class _CourseReviewState extends State<CourseReview>
                     indicatorColor: Colors.transparent,
                     indicatorWeight: 2,
                     indicator: BoxDecoration(
-                      color: const Color(0xfff00a9b7),
+                      color: teal,
                       borderRadius: BorderRadius.circular(17.r),
                     ),
                     controller: tabController,
@@ -432,16 +430,16 @@ class ReviewTab extends StatelessWidget {
               width: 36.h,
               decoration: BoxDecoration(
                   color: const Color(0xfffffea7d),
-                  borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12.r)),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   margin: EdgeInsets.only(left: 22.w, top: 12.h),
-                  child: const Text(
+                  child:  Text(
                     "Reviewer Username",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16.sp),
                   ),
                 ),
                 SizedBox(
@@ -460,7 +458,7 @@ class ReviewTab extends StatelessWidget {
               height: 32.h,
               width: 67.w,
               decoration: BoxDecoration(
-                  color: const Color(0xffffafafa),
+                  color: white,
                   borderRadius: BorderRadius.circular(12.r)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -489,7 +487,7 @@ class ReviewTab extends StatelessWidget {
               height: 41.h,
               child: const Text(
                 "Description this is a simple description that explain the description about the class ",
-                style: TextStyle(color: Color(0xfffa9aeb2)),
+                style: TextStyle(color: grey),
               ),
             )
           ],
@@ -530,7 +528,7 @@ class PriceDetails extends StatelessWidget {
                 child: Text(
                   "Price",
                   style: TextStyle(
-                      color: const Color(0xfffa9aeb2), fontSize: 16.sp),
+                      color: grey, fontSize: 16.sp),
                 ),
               ),
               Container(
@@ -538,7 +536,7 @@ class PriceDetails extends StatelessWidget {
                 child: Text(
                   "\$150",
                   style: TextStyle(
-                      color: const Color(0xfff00a9b7), fontSize: 24.sp),
+                      color: teal, fontSize: 24.sp),
                 ),
               )
             ],
@@ -553,7 +551,7 @@ class PriceDetails extends StatelessWidget {
                 height: 52.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xfff00a9b7),
+                    color: teal,
                     borderRadius: BorderRadius.circular(20.r)),
                 child: const Text(
                   "Enroll course now",
@@ -571,11 +569,11 @@ class PriceDetails extends StatelessWidget {
                 width: 158.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00a9b7)),
+                  border: Border.all(color: teal),
                 ),
                 child: const Text(
                   "ADD TO CART",
-                  style: TextStyle(color: Color(0xfff00a9b7)),
+                  style: TextStyle(color: teal),
                 ),
               ),
               SizedBox(
@@ -588,11 +586,11 @@ class PriceDetails extends StatelessWidget {
                 width: 158.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: const Color(0xfff00a9b7)),
+                  border: Border.all(color: teal),
                 ),
                 child: const Text(
                   "ADD TO WISHLIST",
-                  style: TextStyle(color: Color(0xfff00a9b7)),
+                  style: TextStyle(color: teal),
                 ),
               )
             ],
