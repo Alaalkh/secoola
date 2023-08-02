@@ -13,10 +13,10 @@ import 'package:secoola/Views/Screens/Search/Search_default.dart';
 import 'package:secoola/Views/Screens/Search/Search_result.dart';
 import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
 import 'package:secoola/Views/Screens/Splashscreen/SplashScreen.dart';
-import 'package:secoola/Views/Screens/SignPages/Verification.dart';
+import 'package:secoola/Views/Screens/ForgotPassword/Verification.dart';
 
-import 'Views/Screens/SignPages/NewPassword.dart';
-import 'Views/Screens/SignPages/Reset_password.dart';
+import 'Views/Screens/ForgotPassword/NewPassword.dart';
+import 'Views/Screens/ForgotPassword/Reset_password.dart';
 import 'Views/Screens/SignPages/Signin_page.dart';
 
 class Routes {
