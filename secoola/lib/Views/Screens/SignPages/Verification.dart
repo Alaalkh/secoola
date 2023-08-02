@@ -6,13 +6,15 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Views/Widgets/Verification_code_widget.dart';
 
+import '../../../theme/Color.dart';
+
 class VerficicationPage extends StatelessWidget {
   const VerficicationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFAFAFA),
+      backgroundColor: white,
       body: Column(
         children: [
           Container(
@@ -24,7 +26,7 @@ class VerficicationPage extends StatelessWidget {
                   width: 52,
                   margin: const EdgeInsets.only(top: 66, left: 22),
                   decoration: BoxDecoration(
-                      color: const Color(0xfffFFFFFF),
+                      color: white2,
                       borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
@@ -133,26 +135,26 @@ class NumberCode extends StatelessWidget {
           Container(
               margin: const EdgeInsets.only(left: 25, top: 33),
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFFFFF),
+                  color: white2,
                   borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
               margin: const EdgeInsets.only(top: 33),
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFFFFF),
+                  color: white2,
                   borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
             margin: const EdgeInsets.only(top: 33),
             decoration: BoxDecoration(
-                color: const Color(0xfffFFFFFF),
+                color: white2,
                 borderRadius: BorderRadius.circular(12)),
             child: const CodeTextFeild(),
           ),
           Container(
               margin: const EdgeInsets.only(top: 33, right: 14),
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFFFFF),
+                  color: white2,
                   borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild())
         ],
@@ -179,11 +181,11 @@ class VerfiyButton extends StatelessWidget {
                 Get.toNamed(Routes.newpassword);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xfff00a9b7),
+                backgroundColor: teal,
               ),
               child: const Text(
                 "Verify",
-                style: TextStyle(color: Color(0xfffffffff)),
+                style: TextStyle(color: white2),
               ),
             ),
           ),
@@ -204,7 +206,7 @@ class ResendCode extends StatelessWidget {
           margin: const EdgeInsets.only(left: 77),
           child: const Text(
             "Not retrieve any code?",
-            style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 14),
+            style: TextStyle(color: grey, fontSize: 14),
           ),
         ),
         Container(
@@ -213,7 +215,7 @@ class ResendCode extends StatelessWidget {
                   Navigator.pushNamed(context, "NewPassword");
                 },
                 child: const Text("Resend code",
-                    style: TextStyle(color: Color(0xfff00A9B7), fontSize: 14))))
+                    style: TextStyle(color: teal, fontSize: 14))))
       ],
     );
   }

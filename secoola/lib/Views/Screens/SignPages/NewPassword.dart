@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Views/Widgets/IconWidget.dart';
 import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
+import 'package:secoola/theme/Color.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -11,7 +12,7 @@ class NewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFAFAFA),
+      backgroundColor:white,
       body: Column(
         children: [
           Container(
@@ -23,7 +24,7 @@ class NewPassword extends StatelessWidget {
                   width: 52,
                   margin: const EdgeInsets.only(top: 66, left: 22),
                   decoration: BoxDecoration(
-                      color: const Color(0xfffFFFFFF),
+                      color: white2,
                       borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
@@ -126,10 +127,10 @@ class passwordEntry extends StatelessWidget {
                 height: 56,
                 margin: const EdgeInsets.only(top: 44, left: 27),
                 decoration: BoxDecoration(
-                    color: const Color(0xFFFFFFFFF),
+                    color: white2,
                     borderRadius: BorderRadius.circular(16)),
                 child: const TextFeildwidget(obscuretext: true,
-                  hint: ' Your Password', icon: Icon(size: 17,Icons.lock_rounded,color: Color(0xfff00A9B7),),
+                  hint: ' Your Password', icon: Icon(size: 17,Icons.lock_rounded,color: teal,),
                 )),
           ],
         ),
@@ -150,11 +151,11 @@ class passwordEntry extends StatelessWidget {
                     Get.toNamed(Routes.LoginPage);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xfff00a9b7),
+                    backgroundColor: teal,
                   ),
                   child: const Text(
                     "Set new password",
-                    style: TextStyle(color: Color(0xfffffffff)),
+                    style: TextStyle(color: white2),
                   ),
                 ),
               ),

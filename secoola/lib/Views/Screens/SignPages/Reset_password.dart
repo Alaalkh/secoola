@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/appRoutes.dart';
 
 import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
+import 'package:secoola/theme/Color.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -11,7 +12,7 @@ class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFAFAFA),
+      backgroundColor: white2,
       body: Column(
         children: [
           Container(
@@ -23,7 +24,7 @@ class ResetPassword extends StatelessWidget {
                   width: 52,
                   margin: const EdgeInsets.only(top: 66, left: 22),
                   decoration: BoxDecoration(
-                      color: const Color(0xfffFFFFFF),
+                      color: white,
                       borderRadius: BorderRadius.circular(17)),
                   child: IconButton(
                     onPressed: () {
@@ -126,10 +127,10 @@ class EmailEntry extends StatelessWidget {
               height: 56,
               margin: const EdgeInsets.only(top: 44, left: 27),
               decoration: BoxDecoration(
-                  color: const Color(0xFFFFFFFFF),
+                  color: white,
                   borderRadius: BorderRadius.circular(16)),
               child: const TextFeildwidget(obscuretext: false,
-                hint: '  Your email', icon: Icon(Icons.rectangle_rounded,color: Color(0xfff00A9B7),size: 17,),
+                hint: '  Your email', icon: Icon(Icons.rectangle_rounded,color: teal,size: 17,),
               ),
             ),
           ],
@@ -151,11 +152,11 @@ class EmailEntry extends StatelessWidget {
                     Get.toNamed(Routes.verification);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xfff00a9b7),
+                    backgroundColor: teal,
                   ),
                   child: const Text(
                     "Send verification code",
-                    style: TextStyle(color: Color(0xfffffffff)),
+                    style: TextStyle(color: white),
                   ),
                 ),
               ),

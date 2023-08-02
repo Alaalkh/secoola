@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Models/onboardinModel.dart';
+import 'package:secoola/theme/Color.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -47,7 +48,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 dotWidth: ScreenUtil().setWidth(111),
                 dotHeight: ScreenUtil().setHeight(4),
                 dotColor: const Color.fromARGB(255, 154, 203, 203),
-                activeDotColor: const Color(0xfff00a9b7),
+                activeDotColor: teal,
               ),
             ),
           ),
@@ -78,7 +79,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             },
                             child: const Text(
                               "Skip",
-                              style: TextStyle(color: Color(0xfff00a9b7)),
+                              style: TextStyle(color: teal),
                             )),
                       ),
                       Container(
@@ -114,7 +115,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   Container(
                       padding: EdgeInsets.only(top: ScreenUtil().setHeight(5)),
                       decoration: BoxDecoration(
-                          color: const Color(0xfff00a9b7),
+                          color: teal,
                           borderRadius:
                               BorderRadius.circular(ScreenUtil().radius(20))),
                       width: ScreenUtil().setWidth(335),
@@ -150,7 +151,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       padding: EdgeInsets.only(top: ScreenUtil().setHeight(13)),
                       decoration: BoxDecoration(
                           color: const Color(0xfffffffff),
-                          border: Border.all(color: const Color(0xfff00a9b7)),
+                          border: Border.all(color: teal),
                           borderRadius:
                               BorderRadius.circular(ScreenUtil().radius(20))),
                       width: ScreenUtil().setWidth(335),
@@ -162,7 +163,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         "I already have an account",
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(16),
-                            color: const Color(0xfff00a9b7)),
+                            color: teal),
                         textAlign: TextAlign.center,
                       ),
                     ),

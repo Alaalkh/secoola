@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../theme/Color.dart';
+
 class Iconwidget extends StatelessWidget {
   final Image image;
   final EdgeInsets edgeInsets;
@@ -14,7 +16,7 @@ class Iconwidget extends StatelessWidget {
       height: 52.h,
       width: 98.w,
       decoration: BoxDecoration(
-          color: const Color(0xFFFFFFFF),
+          color: white2,
           borderRadius: BorderRadius.circular(15.r)),
       child: image,
     );
