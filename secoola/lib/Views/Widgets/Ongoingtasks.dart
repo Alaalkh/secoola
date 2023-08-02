@@ -39,7 +39,7 @@ class Item1 extends StatelessWidget {
               },
               child: Container(
                 width: 335.w,
-                height: 220.h,
+                height: 243.h,
                 decoration: BoxDecoration(
                     color: white2, borderRadius: BorderRadius.circular(17.r)),
                 child: Column(
@@ -155,12 +155,12 @@ class Item1 extends StatelessWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 20),
-                      width: 326,
-                      height: 13,
+                      width: 310.w,
+                      height: 13.h,
                       child: const ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         child: LinearProgressIndicator(
-                          value: 0.7,
+                          value: 0.87,
                           valueColor: AlwaysStoppedAnimation<Color>(
                             Color(0xfff00CDB1),
                           ),
@@ -194,7 +194,7 @@ class Item2 extends StatelessWidget {
           children: [
             Container(
               width: 335.w,
-              height: 220.h,
+              height: 243.h,
               decoration: BoxDecoration(
                   color: white2, borderRadius: BorderRadius.circular(17.r)),
               child: Column(
@@ -308,12 +308,12 @@ class Item2 extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 20),
-                    width: 326,
-                    height: 13,
+                    width: 310.w,
+                    height: 13.h,
                     child: const ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: LinearProgressIndicator(
-                        value: 0.7,
+                        value: 0.3,
                         valueColor: AlwaysStoppedAnimation<Color>(
                           Color(0xfff00CDB1),
                         ),
@@ -463,12 +463,12 @@ class Item3 extends StatelessWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 20),
-                      width: 326,
-                      height: 13,
+                      width: 310.w,
+                      height: 13.h,
                       child: const ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         child: LinearProgressIndicator(
-                          value: 0.7,
+                          value: 0.6,
                           valueColor: AlwaysStoppedAnimation<Color>(
                             Color(0xfff00CDB1),
                           ),
