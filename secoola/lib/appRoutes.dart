@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:secoola/Views/Screens/ChooseTopic.dart';
+import 'package:secoola/Views/Screens/Topics/ChooseTopic.dart';
 import 'package:secoola/Views/Screens//Course/Continuecourse.dart';
 import 'package:secoola/Views/Screens/Course/Course_complete.dart';
 import 'package:secoola/Views/Screens/Course/Cousre_Details.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/MyCourse.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/NavigationContent.dart';
-import 'package:secoola/Views/Screens/OnBoarding.dart';
-import 'package:secoola/Views/Screens/Payment_Success.dart';
-import 'package:secoola/Views/Screens/Payment_page.dart';
+import 'package:secoola/Views/Screens/Onboarding/OnBoarding.dart';
+import 'package:secoola/Views/Screens/Payment/Payment_Success.dart';
+import 'package:secoola/Views/Screens/Payment/Payment_page.dart';
 import 'package:secoola/Views/Screens/Search/Search_default.dart';
 import 'package:secoola/Views/Screens/Search/Search_result.dart';
 import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
-import 'package:secoola/Views/Screens/SplashScreen.dart';
+import 'package:secoola/Views/Screens/Splashscreen/SplashScreen.dart';
 import 'package:secoola/Views/Screens/SignPages/Verification.dart';
 
 import 'Views/Screens/SignPages/NewPassword.dart';
