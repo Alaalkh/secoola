@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/appRoutes.dart';
 
 class Paymentpage extends StatelessWidget {
   const Paymentpage({super.key});

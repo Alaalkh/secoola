@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/appRoutes.dart';
 
 class Coursecomplete extends StatelessWidget {
   const Coursecomplete({super.key});

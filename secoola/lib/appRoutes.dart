@@ -15,9 +15,9 @@ import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
 import 'package:secoola/Views/Screens/SplashScreen.dart';
 import 'package:secoola/Views/Screens/SignPages/Verification.dart';
 
-import '../Views/Screens/SignPages/NewPassword.dart';
-import '../Views/Screens/SignPages/Reset_password.dart';
-import '../Views/Screens/SignPages/Signin_page.dart';
+import 'Views/Screens/SignPages/NewPassword.dart';
+import 'Views/Screens/SignPages/Reset_password.dart';
+import 'Views/Screens/SignPages/Signin_page.dart';
 
 class Routes {
   static String Splashscreen = '/Splashscreen';

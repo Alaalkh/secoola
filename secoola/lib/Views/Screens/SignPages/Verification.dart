@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Views/Widgets/Verification_code_widget.dart';
 
 class VerficicationPage extends StatelessWidget {

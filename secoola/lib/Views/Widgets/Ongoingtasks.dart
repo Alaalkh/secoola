@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/appRoutes.dart';
 
 class Ondoingtask extends StatelessWidget {
   const Ondoingtask({super.key});

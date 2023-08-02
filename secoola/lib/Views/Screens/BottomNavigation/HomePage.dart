@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:secoola/Models/appRoutes.dart';
+import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Views/Widgets/CourseWidget.dart';
 import 'package:secoola/Views/Widgets/DesignTopics.dart';
 import 'package:secoola/Views/Widgets/TopicWidget.dart';
