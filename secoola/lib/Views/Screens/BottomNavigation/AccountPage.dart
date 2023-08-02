@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:secoola/Views/Widgets/AccountWidget.dart';
+import 'package:secoola/theme/Color.dart';
 
 
 class AccontPage extends StatelessWidget {
@@ -64,7 +65,7 @@ class Emailinfo extends StatelessWidget {
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-              color: const Color(0xfffFFEA7D),
+              color: yellow,
               borderRadius: BorderRadius.circular(12.r)),
         ),
         Column(
@@ -90,7 +91,7 @@ class Emailinfo extends StatelessWidget {
                   margin:  EdgeInsets.only(left: 22.w),
                   child:  Text(
                     "raymond@mail.com",
-                    style: TextStyle(fontSize: 12.sp, color: Color(0xfffA19C9C)),
+                    style: TextStyle(fontSize: 12.sp, color: grey),
                   ),
                 )
               ],
@@ -104,7 +105,7 @@ class Emailinfo extends StatelessWidget {
               height: 40.h,
               width: 40.w,
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFFFFF),
+                  color: white2,
                   borderRadius: BorderRadius.circular(12.r)),
               child: Image.asset(
                 "assets/editbutton.png",

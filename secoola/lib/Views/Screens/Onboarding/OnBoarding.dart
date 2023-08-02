@@ -62,48 +62,49 @@ class _OnBoardingState extends State<OnBoarding> {
                 });
               },
               itemBuilder: (_, i) {
-                return Padding(
-                  padding: EdgeInsets.only(left: ScreenUtil().setWidth(10)),
-                  child: Column(
-                    children: [
-                      SizedBox(height: ScreenUtil().setHeight(88)),
-                      AspectRatio(aspectRatio: 16 / 9,
-                        child: Image.asset(
-                          contents[i].image,
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                            onPressed: () {
-                              Get.toNamed(Routes.SignPage);
-                            },
-                            child: const Text(
-                              "Skip",
-                              style: TextStyle(color: teal),
-                            )),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 28.w),
-                        child: Text(
-                          contents[i].title,
-                          style: TextStyle(
-                            fontSize: ScreenUtil().setSp(24),
-                            fontWeight: FontWeight.bold,
+                return SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: ScreenUtil().setWidth(10)),
+                    child: Column(
+                      children: [
+                        SizedBox(height: ScreenUtil().setHeight(66)),
+                     Image.asset(
+                            contents[i].image,width: 300.w,height: 180.h,
                           ),
+                        
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                              onPressed: () {
+                                Get.toNamed(Routes.SignPage);
+                              },
+                              child: const Text(
+                                "Skip",
+                                style: TextStyle(color: teal),
+                              )),
                         ),
-                      ),
-                      Container(
+                        Container(
                           margin: EdgeInsets.only(right: 28.w),
                           child: Text(
-                            contents[i].discription,
-                            textAlign: TextAlign.center,
+                            contents[i].title,
                             style: TextStyle(
-                              fontSize: ScreenUtil().setSp(14),
-                              color: Colors.grey,
+                              fontSize: ScreenUtil().setSp(24),
+                              fontWeight: FontWeight.bold,
                             ),
-                          ))
-                    ],
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(right: 28.w),
+                            child: Text(
+                              contents[i].discription,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: ScreenUtil().setSp(14),
+                                color: Colors.grey,
+                              ),
+                            ))
+                      ],
+                    ),
                   ),
                 );
               },

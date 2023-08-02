@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Models/WishlistContent.dart';
+import 'package:secoola/theme/Color.dart';
 
 class WishlistPage extends StatelessWidget {
   const WishlistPage({super.key});
@@ -83,12 +84,12 @@ class Elements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Color> colorsList = [
-      const Color(0xfffFFB099),
-      const Color(0xfffD0B2FF),
-      const Color(0xfffFFEA7D),
-      const Color(0xfff86F2CB),
-      const Color(0xfffA3CCDE),
-      const Color(0xfffFCE2EA),
+      Ligthorange,
+      purple,
+      yellow,
+      green,
+      Ligthblue,
+      pink,
     ];
     return GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
@@ -121,7 +122,7 @@ class Elements extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 11.w, top: 11.h),
                       decoration: BoxDecoration(
-                          color: const Color(0xfffFFFFFF),
+                          color: white2,
                           borderRadius: BorderRadius.circular(9.r)),
                       height: 28.h,
                       width: 49.w,
@@ -142,7 +143,7 @@ class Elements extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 22.w, top: 11.h),
                       decoration: BoxDecoration(
-                          color: const Color(0xfffFFFFFF),
+                          color:white2,
                           borderRadius: BorderRadius.circular(9.r)),
                       height: 28.h,
                       width: 28.w,
@@ -172,14 +173,14 @@ class Elements extends StatelessWidget {
                       margin: EdgeInsets.only(left: 20.w, top: 6.h),
                       child: const Icon(
                         Icons.person,
-                        color: Color(0xfffA9AEB2),
+                        color: grey,
                       )),
                   Container(
                     margin: EdgeInsets.only(top: 6.h),
                     child: Text(
                       WishlistContents[i].tutorname,
                       style:
-                          TextStyle(color: const Color(0xfffA9AEB2), fontSize: 12.sp),
+                          TextStyle(color: grey, fontSize: 12.sp),
                     ),
                   ),
                 ],
@@ -192,7 +193,7 @@ class Elements extends StatelessWidget {
                     child: Text(
                       "\$ 24",
                       style:
-                          TextStyle(color: const Color(0xfff00A9B7), fontSize: 16.sp),
+                          TextStyle(color: teal, fontSize: 16.sp),
                     ),
                   ),
                   Container(
@@ -200,13 +201,13 @@ class Elements extends StatelessWidget {
                     width: 77.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: const Color(0xfffDCF3F5),
+                        color: Ligthblue,
                         borderRadius: BorderRadius.circular(22.r)),
                     margin: EdgeInsets.only(left: 11.w, top: 6.h),
                     child: Text(
                       "Label",
                       style:
-                          TextStyle(color: const Color(0xfff00A9B7), fontSize: 12.sp),
+                          TextStyle(color: teal, fontSize: 12.sp),
                     ),
                   )
                 ],

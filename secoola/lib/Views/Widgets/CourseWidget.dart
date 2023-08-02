@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/appRoutes.dart';
+import 'package:secoola/theme/Color.dart';
 
 class CourseWidget extends StatelessWidget {
   final Color boxcolor;
@@ -50,7 +51,7 @@ class CourseWidget extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(left: 22.w, top: 11.h),
                           decoration: BoxDecoration(
-                              color: const Color(0xfffFFFFFF),
+                              color: white2,
                               borderRadius: BorderRadius.circular(9)),
                           height: 28.h,
                           width: 49.w,
@@ -71,7 +72,7 @@ class CourseWidget extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(left: 22.w, top: 11.h),
                           decoration: BoxDecoration(
-                              color: const Color(0xfffFFFFFF),
+                              color: white2,
                               borderRadius: BorderRadius.circular(9.r)),
                           height: 28.h,
                           width: 28.w,
@@ -114,13 +115,13 @@ class CourseWidget extends StatelessWidget {
                 margin: EdgeInsets.only(left: 20.w, top: 6.h),
                 child: const Icon(
                   Icons.person,
-                  color: Color(0xfffA9AEB2),
+                  color: grey,
                 )),
             Container(
               margin: EdgeInsets.only(top: 6.h),
               child: Text(
                 coursetutor,
-                style: TextStyle(color: Color(0xfffA9AEB2), fontSize: 12.sp),
+                style: TextStyle(color:grey, fontSize: 12.sp),
               ),
             )
           ],
@@ -131,7 +132,7 @@ class CourseWidget extends StatelessWidget {
               margin: EdgeInsets.only(left: 22.w, top: 6.h),
               child: Text(
                 price,
-                style: TextStyle(color: Color(0xfff00A9B7), fontSize: 16.sp),
+                style: TextStyle(color: teal, fontSize: 16.sp),
               ),
             ),
             Container(
@@ -152,23 +153,23 @@ class CourseWidget extends StatelessWidget {
     );
   }
 }
-
-class DotPainter extends CustomPainter {
-  final Color color;
-  final double radius;
-
-  DotPainter({this.color = Colors.black, this.radius = 5.0});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()..color = color;
-
-    Offset center = Offset(size.width / 2, size.height / 2);
-    canvas.drawCircle(center, radius, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
-  }
-}
+//
+// class DotPainter extends CustomPainter {
+//   final Color color;
+//   final double radius;
+//
+//   DotPainter({this.color = Colors.black, this.radius = 5.0});
+//
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final Paint paint = Paint()..color = color;
+//
+//     Offset center = Offset(size.width / 2, size.height / 2);
+//     canvas.drawCircle(center, radius, paint);
+//   }
+//
+//   @override
+//   bool shouldRepaint(CustomPainter oldDelegate) {
+//     return false;
+//   }
+// }

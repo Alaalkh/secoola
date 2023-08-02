@@ -39,7 +39,7 @@ class Appbar extends StatelessWidget {
   void _show(BuildContext ctx) {
     showModalBottomSheet(
         isScrollControlled: true,
-        constraints: BoxConstraints(maxHeight: 622.h),
+        constraints: BoxConstraints(maxHeight: 655.h),
         elevation: 10,
         backgroundColor: white,
         context: ctx,
@@ -78,7 +78,7 @@ class Appbar extends StatelessWidget {
 
   void _Items(BuildContext ctx) {
     showModalBottomSheet(
-        constraints: BoxConstraints(maxHeight: 622.h),
+        constraints: BoxConstraints(maxHeight: 655.h),
         isScrollControlled: true,
         elevation: 10,
         backgroundColor: white,
