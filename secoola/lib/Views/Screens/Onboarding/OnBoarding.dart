@@ -67,9 +67,10 @@ class _OnBoardingState extends State<OnBoarding> {
                   child: Column(
                     children: [
                       SizedBox(height: ScreenUtil().setHeight(88)),
-                      Image.asset(
-                        contents[i].image,
-                        height: 244.h,
+                      AspectRatio(aspectRatio: 16 / 9,
+                        child: Image.asset(
+                          contents[i].image,
+                        ),
                       ),
                       Container(
                         alignment: Alignment.centerRight,
