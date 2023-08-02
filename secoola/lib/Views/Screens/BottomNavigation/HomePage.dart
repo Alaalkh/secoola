@@ -290,7 +290,7 @@ class PopularCourse extends StatelessWidget {
                 titletext: "Design Thingking Fundamental",
                 coursetutor: "Robert Fox",
                 price: "\$ 150",
-                colorText: Colors.red,
+                colorText: teal,
                 recommend: "Best Seller",
                 background: Ligthblue,
               ),
@@ -299,7 +299,7 @@ class PopularCourse extends StatelessWidget {
                 titletext: "Flutter Class - Advance Program",
                 coursetutor: "Wade Warren",
                 price: "\$ 24",
-                colorText: teal,
+                colorText: Colors.red,
                 recommend: "Recomended",
                 background: Ligthred,
               )
@@ -596,16 +596,16 @@ class BottomSheet_Content extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               NotificationWidget(
-                image: Icon(Icons.rectangle_rounded, color: Color(0xfff00A9B7)),
+                image: Icon(Icons.rectangle_rounded, color: teal),
                 description: 'Start your course now.',
                 title: 'Your payment is success',
-                list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+                list: Icon(Icons.more_horiz, color: teal),
               ),
               NotificationWidget(
-                image: Icon(Icons.notifications, color: Color(0xfff00A9B7)),
+                image: Icon(Icons.notifications, color: teal),
                 description: 'Continue you recent course. ',
                 title: 'Daily reminder',
-                list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+                list: Icon(Icons.more_horiz, color: teal),
               ),
             ],
           ),
@@ -626,16 +626,16 @@ class BottomSheet_Content extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             NotificationWidget(
-              image: Icon(Icons.download, color: Color(0xfff00A9B7)),
+              image: Icon(Icons.download, color:teal),
               description: 'Go toaccount page to download',
               title: 'Download your certificate',
-              list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+              list: Icon(Icons.more_horiz, color: teal),
             ),
             NotificationWidget(
-              image: Icon(Icons.sunny, color: Color(0xfff00A9B7)),
+              image: Icon(Icons.sunny, color: teal),
               description: 'Get the best offer only for you',
               title: 'Summer sale!',
-              list: Icon(Icons.more_horiz, color: Color(0xfff00A9B7)),
+              list: Icon(Icons.more_horiz, color: teal),
             ),
           ],
         ),
@@ -668,39 +668,39 @@ class BottomItem extends StatelessWidget {
               ItemsWidget(
                 checkbox: Icon(
                   Icons.check_box_rounded,
-                  color: Color(0xfff00A9B7),
+                  color: teal,
                 ),
-                videocolor: Color(0xfffFFEA7D),
+                videocolor: yellow,
                 title: 'Design Thingking Fundam...',
                 coursetutor: 'Dianne Russell',
                 price: '\$ 72',
-                Boxcolor: Color(0xfffDCF3F5),
+                Boxcolor: Ligthblue,
                 textrecommend: 'Popular',
-                Textcolor: Color(0xfff00A9B7),
+                Textcolor: teal,
               ),
               ItemsWidget(
                 checkbox: Icon(
                   Icons.check_box_outline_blank_rounded,
-                  color: Color(0xfffE4E4E4),
+                  color: grey,
                 ),
-                videocolor: Color(0xfff86F2CB),
+                videocolor: green,
                 title: 'Design Thingking Fundam...',
                 coursetutor: 'Dianne Russell',
                 price: '\$ 150',
-                Boxcolor: Color(0xfffFCE2EA),
+                Boxcolor: Ligthred,
                 textrecommend: 'Best Seller',
                 Textcolor: Colors.red,
               )
             ],
           ),
           SizedBox(
-            height: 160.h,
+            height: 168.h,
           ),
           Container(
-            width: double.infinity,
+            width: double.infinity.w,
             height: 120.h,
             decoration: BoxDecoration(
-              color: const Color(0xfffFFFFF),
+              color: white2,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.2),
@@ -730,7 +730,7 @@ class BottomItem extends StatelessWidget {
                         width: 152.w,
                         height: 28.h,
                         decoration: BoxDecoration(
-                            color: const Color(0xfffDCF3F5),
+                            color: Ligthblue,
                             borderRadius: BorderRadius.circular(8.r)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -739,11 +739,11 @@ class BottomItem extends StatelessWidget {
                               "VEKTORABELAJAR",
                               style: TextStyle(
                                   fontSize: 12.sp,
-                                  color: const Color(0xfff00A9B7)),
+                                  color: teal),
                             ),
                             Image.asset(
                               "assets/more.png",
-                              color: const Color(0xfff00A9B7),
+                              color: teal,
                               scale: 2,
                             )
                           ],
@@ -770,7 +770,7 @@ class BottomItem extends StatelessWidget {
                               "\$520",
                               style: TextStyle(
                                 fontSize: 24.sp,
-                                color: const Color(0xfff00A9B7),
+                                color: teal,
                               ),
                             ),
                           )
@@ -786,12 +786,12 @@ class BottomItem extends StatelessWidget {
                           width: 157.w,
                           height: 52.h,
                           decoration: BoxDecoration(
-                              color: const Color(0xfff00A9B7),
+                              color: teal,
                               borderRadius: BorderRadius.circular(20.r)),
                           child: Text("Checkout",
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: const Color(0xffffffff),
+                                color: white2,
                               )),
                         ),
                       )

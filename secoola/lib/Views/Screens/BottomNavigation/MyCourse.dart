@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
 import 'package:secoola/Views/Widgets/Completecourse.dart';
 import 'package:secoola/Views/Widgets/Ongoingtasks.dart';
+import 'package:secoola/theme/Color.dart';
 
 class MyCourse extends StatefulWidget {
   const MyCourse({super.key});
@@ -43,7 +44,7 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:  BoxDecoration(
-        color: Color(0xfff00A9B7),
+        color:teal,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -75,13 +76,13 @@ class Appbar extends StatelessWidget {
                 height: 48.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xfffFFFFFF),
+                    color: white2,
                     borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
                     hintStyle:  TextStyle(
-                        fontSize: 14.sp, color: Color(0xfffD9DBDE)),
+                        fontSize: 14.sp, color: grey),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -126,7 +127,7 @@ class _TogglebarState extends State<Togglebar>
                 // height: 50,
 
                 decoration: BoxDecoration(
-                    color: const Color(0xfffF4F4F4),
+                    color: Ligthgrey2,
                     borderRadius: BorderRadius.circular(17.r)),
                 child: Column(
                   children: [
@@ -138,7 +139,7 @@ class _TogglebarState extends State<Togglebar>
                         indicatorColor: Colors.transparent,
                         indicatorWeight: 2,
                         indicator: BoxDecoration(
-                          color: const Color(0xfff00A9B7),
+                          color: teal,
                           borderRadius: BorderRadius.circular(17.r),
                         ),
                         controller: tabController,

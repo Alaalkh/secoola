@@ -5,13 +5,14 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:secoola/appRoutes.dart';
+import 'package:secoola/theme/Color.dart';
 
 class Ondoingtask extends StatelessWidget {
   const Ondoingtask({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  const SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [Item1(), Item2(), Item3()],
       ),
@@ -40,8 +41,7 @@ class Item1 extends StatelessWidget {
                 width: 335.w,
                 height: 220.h,
                 decoration: BoxDecoration(
-                    color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(17.r)),
+                    color: white2, borderRadius: BorderRadius.circular(17.r)),
                 child: Column(
                   children: [
                     Row(
@@ -51,7 +51,7 @@ class Item1 extends StatelessWidget {
                           height: 68.h,
                           width: 68.w,
                           decoration: BoxDecoration(
-                              color: const Color(0xfffFFEA7D),
+                              color: yellow,
                               borderRadius: BorderRadius.circular(17.r)),
                         ),
                         SizedBox(
@@ -79,15 +79,14 @@ class Item1 extends StatelessWidget {
                                         EdgeInsets.only(left: 6.w, top: 6.h),
                                     child: const Icon(
                                       Icons.person,
-                                      color: Color(0xfffA9AEB2),
+                                      color: grey,
                                     )),
                                 Container(
                                   margin: EdgeInsets.only(top: 6.h),
                                   child: Text(
                                     "Dianne Russell",
-                                    style: TextStyle(
-                                        color: const Color(0xfffA9AEB2),
-                                        fontSize: 12.sp),
+                                    style:
+                                        TextStyle(color: grey, fontSize: 12.sp),
                                   ),
                                 )
                               ],
@@ -99,15 +98,14 @@ class Item1 extends StatelessWidget {
                                   width: 77.w,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xfffDCF3F5),
+                                      color: Ligthblue,
                                       borderRadius:
                                           BorderRadius.circular(12.r)),
                                   margin: EdgeInsets.only(left: 6.w, top: 6.h),
                                   child: Text(
                                     "Label",
-                                    style: TextStyle(
-                                        color: const Color(0xfff00A9B7),
-                                        fontSize: 12.sp),
+                                    style:
+                                        TextStyle(color: teal, fontSize: 12.sp),
                                   ),
                                 )
                               ],
@@ -122,16 +120,14 @@ class Item1 extends StatelessWidget {
                           margin: EdgeInsets.only(left: 22.w, top: 11.h),
                           child: Text(
                             "Progress",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: const Color(0xfff707070)),
+                            style: TextStyle(fontSize: 12.sp, color: darkgrey),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 88.w, top: 11.h),
                           child: Text(
                             "Due Time",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: const Color(0xfff707070)),
+                            style: TextStyle(fontSize: 12.sp, color: darkgrey),
                           ),
                         )
                       ],
@@ -158,15 +154,20 @@ class Item1 extends StatelessWidget {
                       height: 17.h,
                     ),
                     Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.r)),
-                      child: LinearPercentIndicator(
-                        lineHeight: 14.0,
-                        percent: 0.8,
-                        backgroundColor: const Color(0xfffF6F6F6),
-                        progressColor: const Color(0xfff00CDB1),
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      width: 326,
+                      height: 13,
+                      child: const ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        child: LinearProgressIndicator(
+                          value: 0.7,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Color(0xfff00CDB1),
+                          ),
+                          backgroundColor: Color(0xfffF6F6F6),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -195,8 +196,7 @@ class Item2 extends StatelessWidget {
               width: 335.w,
               height: 220.h,
               decoration: BoxDecoration(
-                  color: const Color(0xfffFFFFFF),
-                  borderRadius: BorderRadius.circular(17.r)),
+                  color: white2, borderRadius: BorderRadius.circular(17.r)),
               child: Column(
                 children: [
                   Row(
@@ -206,7 +206,7 @@ class Item2 extends StatelessWidget {
                         height: 68.h,
                         width: 68.w,
                         decoration: BoxDecoration(
-                            color: const Color(0xfffDCF3F5),
+                            color: Ligthblue,
                             borderRadius: BorderRadius.circular(17)),
                       ),
                       SizedBox(
@@ -233,15 +233,14 @@ class Item2 extends StatelessWidget {
                                   margin: EdgeInsets.only(left: 6.w, top: 6.h),
                                   child: const Icon(
                                     Icons.person,
-                                    color: Color(0xfffA9AEB2),
+                                    color: grey,
                                   )),
                               Container(
                                 margin: EdgeInsets.only(top: 6.h),
                                 child: Text(
                                   "Dianne Russell",
-                                  style: TextStyle(
-                                      color: const Color(0xfffA9AEB2),
-                                      fontSize: 12.sp),
+                                  style:
+                                      TextStyle(color: grey, fontSize: 12.sp),
                                 ),
                               )
                             ],
@@ -253,14 +252,13 @@ class Item2 extends StatelessWidget {
                                 width: 77.w,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
-                                    color: const Color(0xfffDCF3F5),
+                                    color: Ligthblue,
                                     borderRadius: BorderRadius.circular(12.r)),
                                 margin: EdgeInsets.only(left: 6.w, top: 6.h),
                                 child: Text(
                                   "Label",
-                                  style: TextStyle(
-                                      color: const Color(0xfff00A9B7),
-                                      fontSize: 12.sp),
+                                  style:
+                                      TextStyle(color: teal, fontSize: 12.sp),
                                 ),
                               )
                             ],
@@ -275,16 +273,14 @@ class Item2 extends StatelessWidget {
                         margin: EdgeInsets.only(left: 22.w, top: 11.h),
                         child: Text(
                           "Progress",
-                          style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xfff707070)),
+                          style: TextStyle(fontSize: 12.sp, color: darkgrey),
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 88.w, top: 11.h),
                         child: Text(
                           "Due Time",
-                          style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xfff707070)),
+                          style: TextStyle(fontSize: 12.sp, color: darkgrey),
                         ),
                       )
                     ],
@@ -311,15 +307,20 @@ class Item2 extends StatelessWidget {
                     height: 17.h,
                   ),
                   Container(
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(5.r)),
-                    child: LinearPercentIndicator(
-                      lineHeight: 14.0,
-                      percent: 0.3,
-                      backgroundColor: const Color(0xfffF6F6F6),
-                      progressColor: const Color(0xfff00CDB1),
+                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    width: 326,
+                    height: 13,
+                    child: const ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      child: LinearProgressIndicator(
+                        value: 0.7,
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Color(0xfff00CDB1),
+                        ),
+                        backgroundColor: Color(0xfffF6F6F6),
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
             )
@@ -346,10 +347,9 @@ class Item3 extends StatelessWidget {
             children: [
               Container(
                 width: 335.w,
-                height: 220.h,
+                height: 250.h,
                 decoration: BoxDecoration(
-                    color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(17.r)),
+                    color: white2, borderRadius: BorderRadius.circular(17.r)),
                 child: Column(
                   children: [
                     Row(
@@ -375,26 +375,26 @@ class Item3 extends StatelessWidget {
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(left: 6.w, top: 22.h),
-                                  child:
-                                      const Text("Design Thingking Fundamental"),
+                                  child: const Text(
+                                      "Design Thingking Fundamental"),
                                 )
                               ],
                             ),
                             Row(
                               children: [
                                 Container(
-                                    margin: EdgeInsets.only(left: 6.w, top: 6.h),
+                                    margin:
+                                        EdgeInsets.only(left: 6.w, top: 6.h),
                                     child: const Icon(
                                       Icons.person,
-                                      color: Color(0xfffA9AEB2),
+                                      color: grey,
                                     )),
                                 Container(
                                   margin: EdgeInsets.only(top: 6.h),
                                   child: Text(
                                     "Dianne Russell",
-                                    style: TextStyle(
-                                        color: const Color(0xfffA9AEB2),
-                                        fontSize: 12.sp),
+                                    style:
+                                        TextStyle(color: grey, fontSize: 12.sp),
                                   ),
                                 )
                               ],
@@ -406,14 +406,14 @@ class Item3 extends StatelessWidget {
                                   width: 77.w,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xfffDCF3F5),
-                                      borderRadius: BorderRadius.circular(12.r)),
+                                      color: Ligthblue,
+                                      borderRadius:
+                                          BorderRadius.circular(12.r)),
                                   margin: EdgeInsets.only(left: 6.w, top: 6.h),
                                   child: Text(
                                     "Label",
-                                    style: TextStyle(
-                                        color: const Color(0xfff00A9B7),
-                                        fontSize: 12.sp),
+                                    style:
+                                        TextStyle(color: teal, fontSize: 12.sp),
                                   ),
                                 )
                               ],
@@ -428,16 +428,14 @@ class Item3 extends StatelessWidget {
                           margin: EdgeInsets.only(left: 22.w, top: 11.h),
                           child: Text(
                             "Progress",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: const Color(0xfff707070)),
+                            style: TextStyle(fontSize: 12.sp, color: darkgrey),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 88.w, top: 11.h),
                           child: Text(
                             "Due Time",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: const Color(0xfff707070)),
+                            style: TextStyle(fontSize: 12.sp, color: darkgrey),
                           ),
                         )
                       ],
@@ -464,15 +462,20 @@ class Item3 extends StatelessWidget {
                       height: 17.h,
                     ),
                     Container(
-                      decoration:
-                          BoxDecoration(borderRadius: BorderRadius.circular(5.r)),
-                      child: LinearPercentIndicator(
-                        lineHeight: 14.0,
-                        percent: 0.5,
-                        backgroundColor: const Color(0xfffF6F6F6),
-                        progressColor: const Color(0xfff00CDB1),
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      width: 326,
+                      height: 13,
+                      child: const ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        child: LinearProgressIndicator(
+                          value: 0.7,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Color(0xfff00CDB1),
+                          ),
+                          backgroundColor: Color(0xfffF6F6F6),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               )

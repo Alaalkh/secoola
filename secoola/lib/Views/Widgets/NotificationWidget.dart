@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../theme/Color.dart';
+
 class NotificationWidget extends StatelessWidget {
   final Icon image;
   final String title;
@@ -20,7 +22,7 @@ final Icon list;
         width: 335.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          color: const Color(0xfffFFFFF),
+          color: white2,
         ),
         child: Row(
           children: [
@@ -29,7 +31,7 @@ final Icon list;
               height: 40.h,
               width: 40.w,
               decoration: BoxDecoration(
-                  color: const Color(0xfffFAFAFA),
+                  color: white,
                   borderRadius: BorderRadius.circular(10.r)),
               child: image,
             ),
@@ -46,7 +48,7 @@ final Icon list;
                 Container(margin: EdgeInsets.only(left: 22.w),
                   child: Text(
                     description,
-                    style: const TextStyle(fontSize: 12, color: Color(0xfffA9AEB2)),
+                    style: const TextStyle(fontSize: 12, color: grey),
                   ),
                 )
               ],

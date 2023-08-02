@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/theme/Color.dart';
 
 class ItemsWidget extends StatelessWidget {
   final Icon checkbox;
@@ -30,7 +31,7 @@ class ItemsWidget extends StatelessWidget {
       height: 150.h,
       width: 335.w,
       decoration: BoxDecoration(
-          color: const Color(0xfffFFFFFF),
+          color: white2,
           borderRadius: BorderRadius.circular(15.r)),
       child: Column(
         children: [
@@ -65,14 +66,14 @@ class ItemsWidget extends StatelessWidget {
                           margin: EdgeInsets.only(top: 6.h, left: 4.w),
                           child: const Icon(
                             Icons.person,
-                            color: Color(0xfffA9AEB2),
+                            color: grey,
                           )),
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
                           coursetutor,
                           style: TextStyle(
-                              color: const Color(0xfffA9AEB2), fontSize: 12.sp),
+                              color: grey, fontSize: 12.sp),
                         ),
                       )
                     ],
@@ -86,7 +87,7 @@ class ItemsWidget extends StatelessWidget {
                             Text(
                               price,
                               style: TextStyle(
-                                  color: const Color(0xfff00A9B7),
+                                  color: teal,
                                   fontSize: 16.sp),
                             ),
                             SizedBox(
@@ -129,7 +130,7 @@ class ItemsWidget extends StatelessWidget {
               Container(
                 child: const Text(
                   "Move to wishlist",
-                  style: TextStyle(color: Color(0xfff00A9B7), fontSize: 12),
+                  style: TextStyle(color: teal, fontSize: 12),
                 ),
               )
             ],
