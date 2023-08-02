@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
 import 'package:secoola/Views/Screens/Splashscreen/SplashScreen.dart';
 
 import 'appRoutes.dart';
@@ -21,11 +22,11 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-            initialRoute: Routes.Splashscreen,
+            initialRoute: Routes.EmptyCart,
             getPages: getPages,
             debugShowCheckedModeBanner: false,
             title: 'Secoola',
-            home: const SplachScreen(),
+            home: const EmptyCart(),
             theme: ThemeData(
               useMaterial3: true,
             ),

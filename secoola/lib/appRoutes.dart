@@ -37,6 +37,7 @@ class Routes {
   static String Continuecourse = '/Continuecourse';
   static String Coursecomplete = '/Coursecomplete';
   static String Searchdefault = '/Searchdefault';
+  static String EmptyCart = '/EmptyCart';
   static String Searchresult = '/Searchresult';
 }
 
@@ -94,17 +95,11 @@ final getPages = [
       name: Routes.PaymentSuccess,
       page: () => const PaymentSuccess(),
       transition: Transition.rightToLeft),
-  GetPage(
-      name: Routes.Coursecomplete,
-      page: () => const Coursecomplete()),
-  GetPage(
-      name: Routes.Searchdefault,
-      page: () => const Searchdefault()),
-  GetPage(
-      name: Routes.Continuecourse,
-      page: () => const Continuecourse()),  GetPage(
-      name: Routes.Searchresult,
-      page: () => const Searchresult()),
+  GetPage(name: Routes.Coursecomplete, page: () => const Coursecomplete()),
+  GetPage(name: Routes.Searchdefault, page: () => const Searchdefault()),
+  GetPage(name: Routes.Continuecourse, page: () => const Continuecourse()),
+  GetPage(name: Routes.Searchresult, page: () => const Searchresult()),
+  GetPage(name: Routes.EmptyCart, page: () => const EmptyCart()),
 ];
 
 // class MyMiddelware extends GetMiddleware {

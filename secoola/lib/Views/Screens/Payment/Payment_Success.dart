@@ -47,18 +47,18 @@ class PaymentSuccess extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerRight,
-              child: const Text(
+              child:  Text(
                 "Congratulation! Your transaction is successful",
-                style: TextStyle(fontSize: 14, color: Color(0xfff899197)),
+                style: TextStyle(fontSize: 14.sp, color: Color(0xfff899197)),
               ),
               height: 22.h,
               width: 301.w,
             ),
             Container(
               alignment: Alignment.center,
-              child: const Text(
+              child:  Text(
                 "you can start your course now.",
-                style: TextStyle(fontSize: 14, color: Color(0xfff899197)),
+                style: TextStyle(fontSize: 14.sp, color: Color(0xfff899197)),
               ),
             ),
             SizedBox(

@@ -133,7 +133,8 @@ class Appbar extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                   margin: EdgeInsets.only(left: 20.w, top: 66.h),
@@ -141,7 +142,6 @@ class Appbar extends StatelessWidget {
                     "Hi, Dimas",
                     style: TextStyle(fontSize: 24.sp, color: white2),
                   )),
-
               Container(
                 margin: EdgeInsets.only(top: 66.h),
                 child: Text(
@@ -167,7 +167,6 @@ class Appbar extends StatelessWidget {
                   child: const Icon(Icons.shopping_cart, color: white2),
                 ),
               ),
-
               GestureDetector(
                 onTap: () {
                   _show(context);
@@ -194,7 +193,7 @@ class Appbar extends StatelessWidget {
                   margin: EdgeInsets.only(left: 33.w),
                   child: Text(
                     "Let's start learning!",
-                    style: TextStyle(fontSize: 20.sp, color:white2),
+                    style: TextStyle(fontSize: 20.sp, color: white2),
                   ))
             ],
           ),
@@ -212,8 +211,7 @@ class Appbar extends StatelessWidget {
                     Get.toNamed(Routes.Searchdefault);
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        white2),
+                    backgroundColor: MaterialStateProperty.all<Color>(white2),
                     // Set the desired background color
 
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -236,8 +234,7 @@ class Appbar extends StatelessWidget {
                       // Add some space between the icon and text
                       Text(
                         'Search for anything',
-                        style: TextStyle(
-                            fontSize: 14.sp, color: grey),
+                        style: TextStyle(fontSize: 14.sp, color: grey),
                       ),
                     ],
                   ),
@@ -274,8 +271,7 @@ class PopularCourse extends StatelessWidget {
               margin: EdgeInsets.only(left: 22.w, top: 22.h),
               child: Text(
                 "See All",
-                style:
-                    TextStyle(color: teal, fontSize: 14.sp),
+                style: TextStyle(color: teal, fontSize: 14.sp),
               ),
             )
           ],
@@ -334,8 +330,7 @@ class Categories extends StatelessWidget {
               margin: EdgeInsets.only(left: 22.w, top: 22.h),
               child: Text(
                 "See All",
-                style:
-                    TextStyle(color: teal, fontSize: 14.sp),
+                style: TextStyle(color: teal, fontSize: 14.sp),
               ),
             )
           ],
@@ -419,7 +414,7 @@ class DesignTopic extends StatelessWidget {
                 price: "\$ 32",
                 colorText: teal,
                 recommend: "Best Deal",
-                background:Ligthblue,
+                background: Ligthblue,
               ),
               DesignTopics(
                 boxcolor: pink,
@@ -428,7 +423,7 @@ class DesignTopic extends StatelessWidget {
                 price: "\$ 83",
                 colorText: teal,
                 recommend: "Best Deal",
-                background:Ligthblue,
+                background: Ligthblue,
               ),
             ],
           ),
@@ -479,7 +474,8 @@ class CodingTopic extends StatelessWidget {
                 price: "\$ 41",
                 colorText: teal,
                 recommend: "Label",
-                background: Ligthblue,              ),
+                background: Ligthblue,
+              ),
             ],
           ),
         )
@@ -498,47 +494,47 @@ class MarketingTopic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Marketing")],
-        ), Container(
+        ),
+        Container(
           height: 226.h,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: const <Widget>[
-            DesignTopics(
-                      boxcolor: Ligthorange,
-                      titletext: "Digital Marketing S...",
-                      coursetutor: "Esther Howard",
-                      price: "\$ 49",
-                      colorText: Colors.red,
-                      recommend: "Hot Deals",
-                      background: Ligthred,
-                    ),
-                    DesignTopics(
-                      boxcolor: Color(0xfff86F2CB),
-                      titletext: "Personal Branding F...",
-                      coursetutor: "Savannah Nguyen",
-                      price: "\$ 56",
-                      colorText: teal,
-                      recommend: "Most Sold",
-                      background: Ligthblue,
-                    ),
-                    DesignTopics(
-                      boxcolor: Color(0xfff00A9B7),
-                      titletext: "Neuromarketing&Marketing ",
-                      coursetutor: "Arlene McCoy",
-                      price: "\$ 41",
-                      colorText: Color(0xfff00A9B7),
-                      recommend: "Best Deal",
-                      background:Ligthblue,
-                    )
+              DesignTopics(
+                boxcolor: Ligthorange,
+                titletext: "Digital Marketing S...",
+                coursetutor: "Esther Howard",
+                price: "\$ 49",
+                colorText: Colors.red,
+                recommend: "Hot Deals",
+                background: Ligthred,
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfff86F2CB),
+                titletext: "Personal Branding F...",
+                coursetutor: "Savannah Nguyen",
+                price: "\$ 56",
+                colorText: teal,
+                recommend: "Most Sold",
+                background: Ligthblue,
+              ),
+              DesignTopics(
+                boxcolor: Color(0xfff00A9B7),
+                titletext: "Neuromarketing&Marketing ",
+                coursetutor: "Arlene McCoy",
+                price: "\$ 41",
+                colorText: Color(0xfff00A9B7),
+                recommend: "Best Deal",
+                background: Ligthblue,
+              )
             ],
           ),
-        )
-      ,
+        ),
         const SizedBox(
           height: 33,
         )
@@ -626,7 +622,7 @@ class BottomSheet_Content extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             NotificationWidget(
-              image: Icon(Icons.download, color:teal),
+              image: Icon(Icons.download, color: teal),
               description: 'Go toaccount page to download',
               title: 'Download your certificate',
               list: Icon(Icons.more_horiz, color: teal),
@@ -737,9 +733,7 @@ class BottomItem extends StatelessWidget {
                           children: [
                             Text(
                               "VEKTORABELAJAR",
-                              style: TextStyle(
-                                  fontSize: 12.sp,
-                                  color: teal),
+                              style: TextStyle(fontSize: 12.sp, color: teal),
                             ),
                             Image.asset(
                               "assets/more.png",
@@ -801,6 +795,63 @@ class BottomItem extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class EmptyCart extends StatelessWidget {
+  const EmptyCart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 77.h),
+                width: 300.w,
+                height: 199.h,
+                decoration: BoxDecoration(
+                    color: yellow, borderRadius: BorderRadius.circular(20.r)),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 33.h,
+          ),
+          Text(
+            "Nothing here yet    💁‍♀️",
+            style: TextStyle(fontSize: 24.sp),
+          ),
+          Container(
+              alignment: Alignment.center,
+              width: 301.w,
+              height: 41.h,
+              child: const Text(
+                "You haven't added anything to your cart yet, start exploring your favorite courses!",
+                style: TextStyle(color: Color(0xfff899197)),
+              )), GestureDetector(
+            onTap: () {
+              // Get.toNamed(Routes.NavigationPage);
+            },
+            child: Container(margin: EdgeInsets.only(top: 100.h),
+              alignment: Alignment.center,
+              width: 335.w,
+              height: 52.h,
+              decoration: BoxDecoration(
+                  color: const Color(0xfff00A9B7),
+                  borderRadius: BorderRadius.circular(20.r)),
+              child: Text(
+                "Explore course",
+                style: TextStyle(fontSize: 16.sp, color: Colors.white),
+              ),
+            ),
+          )
         ],
       ),
     );
