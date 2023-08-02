@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Models/TopicContent.dart';
 import 'package:secoola/appRoutes.dart';
+import 'package:secoola/theme/Color.dart';
 
 class ChooseTopic extends StatelessWidget {
   const ChooseTopic({super.key});
@@ -11,7 +12,7 @@ class ChooseTopic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xffffafafa),
+      backgroundColor: white,
       body: SingleChildScrollView(
         child: Column(
           children: [titleWidget()],
@@ -48,7 +49,7 @@ class titleWidget extends StatelessWidget {
               child: Text(
                 "Choose your favorite topic to help us deliver the most suitable course for you.",
                 style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xfffa9aeb2)),
+                    TextStyle(fontSize: 14.sp, color: grey),
                 textAlign: TextAlign.center,
               ),
             )
@@ -118,9 +119,9 @@ class _TopicSelectionState extends State<TopicSelection> {
                           borderRadius: BorderRadius.circular(
                             22.r,
                           ),
-                          color: const Color(0xfffFFFFFF),
+                          color: white2,
                           border: Border.all(
-                            color: isSelected ? Color(0xfff00A9B7) : Color(0xfffFFFFF),
+                            color: isSelected ? teal : white2,
                             width: 2,
                           ),
                         ),
@@ -132,7 +133,7 @@ class _TopicSelectionState extends State<TopicSelection> {
                           right:0,
                           child: Image.asset(
                             "assets/checkmark.png",
-                            color: Color(0xfff00A9B7),
+                            color: teal,
                           ),
                         ),
                     ]),
@@ -171,17 +172,16 @@ class ButtomWidget extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.resolveWith<Color?>(
                   (Set<MaterialState> states) {
                     if (states.contains(MaterialState.pressed)) {
-                      return const Color(0xfff00a9b7); //<-- SEE HERE
+                      return teal; //<-- SEE HERE
                     }
-                    return const Color(
-                        0xfffcacaca); // Defer to the widget's default.
+                    return grey; // Defer to the widget's default.
                   },
                 ),
               ),
               child: Text(
                 "Start your Journey",
                 style:
-                    TextStyle(color: const Color(0xfffffffff), fontSize: 16.sp),
+                    TextStyle(color: white2, fontSize: 16.sp),
               ),
             ),
           ),
@@ -191,7 +191,7 @@ class ButtomWidget extends StatelessWidget {
         ),
         Text(
           "You can still change your topic again later",
-          style: TextStyle(fontSize: 14.sp, color: const Color(0xfffcacaca)),
+          style: TextStyle(fontSize: 14.sp, color: grey),
         )
       ],
     );

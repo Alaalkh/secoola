@@ -7,6 +7,7 @@ import 'package:secoola/Views/Widgets/CourseWidget.dart';
 import 'package:secoola/Views/Widgets/DesignTopics.dart';
 import 'package:secoola/Views/Widgets/TopicWidget.dart';
 import 'package:secoola/Views/Widgets/itemsWidget.dart';
+import 'package:secoola/theme/Color.dart';
 
 import '../../Widgets/CategoriesWidget.dart';
 import '../../Widgets/NotificationWidget.dart';
@@ -40,12 +41,12 @@ class Appbar extends StatelessWidget {
         isScrollControlled: true,
         constraints: BoxConstraints(maxHeight: 622.h),
         elevation: 10,
-        backgroundColor: const Color(0xfffFAFAFA),
+        backgroundColor: white,
         context: ctx,
         builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
               Container(
                 decoration: const BoxDecoration(
-                    color: Color(0xfffFAFAFA),
+                    color: white,
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(30))),
                 // height: 900.h,
@@ -68,7 +69,7 @@ class Appbar extends StatelessWidget {
                     height: 52.h,
                     width: 52.w,
                     decoration: BoxDecoration(
-                        color: const Color(0xfffFAFAFA),
+                        color: white,
                         borderRadius: BorderRadius.circular(20.r)),
                     child: const Icon(Icons.close),
                   )),
@@ -80,13 +81,13 @@ class Appbar extends StatelessWidget {
         constraints: BoxConstraints(maxHeight: 622.h),
         isScrollControlled: true,
         elevation: 10,
-        backgroundColor: const Color(0xfffFAFAFA),
+        backgroundColor: white,
         context: ctx,
         builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
               SingleChildScrollView(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: const Color(0xfffFAFAFA),
+                      color: white,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(30.r))),
                   height: 697.h,
@@ -111,7 +112,7 @@ class Appbar extends StatelessWidget {
                     height: 52.h,
                     width: 52.w,
                     decoration: BoxDecoration(
-                        color: const Color(0xfffFAFAFA),
+                        color: white,
                         borderRadius: BorderRadius.circular(20.r)),
                     child: const Icon(Icons.close),
                   )),
@@ -122,7 +123,7 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xfff00A9B7),
+        color: teal,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -138,7 +139,7 @@ class Appbar extends StatelessWidget {
                   margin: EdgeInsets.only(left: 20.w, top: 66.h),
                   child: Text(
                     "Hi, Dimas",
-                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
+                    style: TextStyle(fontSize: 24.sp, color: white2),
                   )),
 
               Container(
@@ -159,11 +160,11 @@ class Appbar extends StatelessWidget {
                   margin: EdgeInsets.only(top: 66.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
-                    color: const Color(0xfff008793),
+                    color: darkteal,
                   ),
                   height: 40.h,
                   width: 40.w,
-                  child: const Icon(Icons.shopping_cart, color: Colors.white),
+                  child: const Icon(Icons.shopping_cart, color: white2),
                 ),
               ),
 
@@ -175,13 +176,13 @@ class Appbar extends StatelessWidget {
                   margin: EdgeInsets.only(top: 66.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
-                    color: const Color(0xfff008793),
+                    color: darkteal,
                   ),
                   height: 40.h,
                   width: 40.w,
                   child: const Icon(
                     Icons.notifications,
-                    color: Colors.white,
+                    color: white2,
                   ),
                 ),
               )
@@ -193,7 +194,7 @@ class Appbar extends StatelessWidget {
                   margin: EdgeInsets.only(left: 33.w),
                   child: Text(
                     "Let's start learning!",
-                    style: TextStyle(fontSize: 20.sp, color: Colors.white),
+                    style: TextStyle(fontSize: 20.sp, color:white2),
                   ))
             ],
           ),
@@ -212,7 +213,7 @@ class Appbar extends StatelessWidget {
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xfffFFFFF)),
+                        white2),
                     // Set the desired background color
 
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -236,7 +237,7 @@ class Appbar extends StatelessWidget {
                       Text(
                         'Search for anything',
                         style: TextStyle(
-                            fontSize: 14.sp, color: const Color(0xfffADB2B6)),
+                            fontSize: 14.sp, color: grey),
                       ),
                     ],
                   ),
@@ -274,7 +275,7 @@ class PopularCourse extends StatelessWidget {
               child: Text(
                 "See All",
                 style:
-                    TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
+                    TextStyle(color: teal, fontSize: 14.sp),
               ),
             )
           ],
@@ -285,22 +286,22 @@ class PopularCourse extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CourseWidget(
-                boxcolor: Color(0xfffFFEA7D),
+                boxcolor: yellow,
                 titletext: "Design Thingking Fundamental",
                 coursetutor: "Robert Fox",
                 price: "\$ 150",
                 colorText: Colors.red,
                 recommend: "Best Seller",
-                background: Color(0xfffFCE2EA),
+                background: Ligthblue,
               ),
               CourseWidget(
-                boxcolor: Color(0xfffA3CCDE),
+                boxcolor: blue,
                 titletext: "Flutter Class - Advance Program",
                 coursetutor: "Wade Warren",
                 price: "\$ 24",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Recomended",
-                background: Color(0xfffDCF3F5),
+                background: Ligthred,
               )
             ],
           ),
@@ -334,7 +335,7 @@ class Categories extends StatelessWidget {
               child: Text(
                 "See All",
                 style:
-                    TextStyle(color: const Color(0xfff00A9B7), fontSize: 14.sp),
+                    TextStyle(color: teal, fontSize: 14.sp),
               ),
             )
           ],
@@ -403,31 +404,31 @@ class DesignTopic extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: const <Widget>[
               DesignTopics(
-                boxcolor: Color(0xfffFFEA7D),
+                boxcolor: yellow,
                 titletext: "Design Thingking F...",
                 coursetutor: "Dianne Russell",
                 price: "\$ 75",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
+                background: Ligthblue,
               ),
               DesignTopics(
-                boxcolor: Color(0xfffFFB099),
+                boxcolor: Ligthorange,
                 titletext: "Figma Prototyping 1...",
                 coursetutor: "Jacob Jones",
                 price: "\$ 32",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
+                background:Ligthblue,
               ),
               DesignTopics(
-                boxcolor: Color(0xfffFCE2EA),
+                boxcolor: pink,
                 titletext: "UI UX Design Essentials",
                 coursetutor: "Jacob Jones",
                 price: "\$ 83",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
+                background:Ligthblue,
               ),
             ],
           ),
@@ -454,32 +455,31 @@ class CodingTopic extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: const <Widget>[
               DesignTopics(
-                boxcolor: Color(0xfffD0B2FF),
+                boxcolor: purple,
                 titletext: "Flutter Class - Adv...",
                 coursetutor: "Cameron Williamson",
                 price: "\$ 97",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
+                background: Ligthblue,
               ),
               DesignTopics(
-                boxcolor: Color(0xfffFFEA7D),
+                boxcolor: yellow,
                 titletext: "Python Class - Adv...",
                 coursetutor: "Brooklyn Simmons",
                 price: "\$ 66",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Best Deal",
-                background: Color(0xfffDCF3F5),
+                background: Ligthblue,
               ),
               DesignTopics(
-                boxcolor: Color(0xfff00A9B7),
+                boxcolor: teal,
                 titletext: "Swift Class - Adv...",
                 coursetutor: "Cameron Williamson",
                 price: "\$ 41",
-                colorText: Color(0xfff00A9B7),
+                colorText: teal,
                 recommend: "Label",
-                background: Color(0xfffDCF3F5),
-              ),
+                background: Ligthblue,              ),
             ],
           ),
         )
@@ -509,22 +509,22 @@ class MarketingTopic extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: const <Widget>[
             DesignTopics(
-                      boxcolor: Color(0xfffFFB099),
+                      boxcolor: Ligthorange,
                       titletext: "Digital Marketing S...",
                       coursetutor: "Esther Howard",
                       price: "\$ 49",
-                      colorText: Color(0xfffFF6666),
+                      colorText: Colors.red,
                       recommend: "Hot Deals",
-                      background: Color(0xfffFCE2EA),
+                      background: Ligthred,
                     ),
                     DesignTopics(
                       boxcolor: Color(0xfff86F2CB),
                       titletext: "Personal Branding F...",
                       coursetutor: "Savannah Nguyen",
                       price: "\$ 56",
-                      colorText: Color(0xfff00A9B7),
+                      colorText: teal,
                       recommend: "Most Sold",
-                      background: Color(0xfffDCF3F5),
+                      background: Ligthblue,
                     ),
                     DesignTopics(
                       boxcolor: Color(0xfff00A9B7),
@@ -533,7 +533,7 @@ class MarketingTopic extends StatelessWidget {
                       price: "\$ 41",
                       colorText: Color(0xfff00A9B7),
                       recommend: "Best Deal",
-                      background: Color(0xfffDCF3F5),
+                      background:Ligthblue,
                     )
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/theme/Color.dart';
 
 class CategoriesWidget extends StatelessWidget {
   final String image;
@@ -13,7 +14,7 @@ class CategoriesWidget extends StatelessWidget {
       height: 40.h,
       width: 96.w,
       decoration: BoxDecoration(
-          color: const Color(0xfffFFFFFF),
+          color: white2,
           borderRadius: BorderRadius.circular(22.r)),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
