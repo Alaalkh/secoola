@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,7 +15,6 @@ class CodeTextFeild extends StatelessWidget {
               FocusScope.of(context).nextFocus();
             }
           },
-          obscureText: true,
           textAlign: TextAlign.center,
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
@@ -32,7 +30,7 @@ class CodeTextFeild extends StatelessWidget {
             LengthLimitingTextInputFormatter(1),
             FilteringTextInputFormatter.digitsOnly
           ],
-          style: const TextStyle(
+          style: const TextStyle(fontWeight: FontWeight.w800,
               color: Color(0xfff00A9B7), // Set the color of the obscure text
               letterSpacing: 2.0)),
     );

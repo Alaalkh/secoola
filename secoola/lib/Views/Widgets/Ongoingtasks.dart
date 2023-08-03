@@ -25,7 +25,8 @@ class Ondoingtask extends StatelessWidget {
               minibox: Ligthblue,
               degree: 0.3,
               progress: "7/32 lesson",
-              time: "August 24, 2021"),  MyCourse(
+              time: "August 24, 2021"),
+          MyCourse(
               minibox: Ligthorange,
               degree: 0.6,
               progress: "28/40 lesson",

@@ -82,7 +82,7 @@ class CourseWidget extends StatelessWidget {
                                 padding: EdgeInsets.only(left: 6.w),
                                 child: const Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: grey,
                                   size: 17,
                                 ),
                               )
