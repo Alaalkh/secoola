@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
@@ -26,11 +27,11 @@ class _CourseDetailsState extends State<MyCourse>
 
   @override
   Widget build(BuildContext context) {
-    return  const Column(
+    return const Column(
+
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Appbar(),
-        Togglebar(),
+       Appbar(),        Togglebar(),
       ],
     );
   }
@@ -42,8 +43,8 @@ class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
-        color:teal,
+      decoration: BoxDecoration(
+        color: teal,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -56,13 +57,11 @@ class Appbar extends StatelessWidget {
           Row(
             children: [
               Container(
-                  margin:  EdgeInsets.only(left: 33.w, top: 66.h),
-                  child:  Text(
+                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
+                  child: Text(
                     "My Course",
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
                   )),
-
-
             ],
           ),
           const SizedBox(
@@ -75,13 +74,11 @@ class Appbar extends StatelessWidget {
                 height: 48.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: white2,
-                    borderRadius: BorderRadius.circular(15.r)),
+                    color: white2, borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
-                    hintStyle:  TextStyle(
-                        fontSize: 14.sp, color: grey),
+                    hintStyle: TextStyle(fontSize: 14.sp, color: grey),
                     prefixIcon: Image.asset(
                       "assets/img_4.png",
                       scale: 5,
@@ -115,61 +112,61 @@ class _TogglebarState extends State<Togglebar>
 
     double yourWidth = width;
     return Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [
-               SizedBox(height: 22.h),
-              Container(
-                // height: 50,
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            SizedBox(height: 22.h),
+            Container(
+              // height: 50,
 
-                decoration: BoxDecoration(
-                    color: Ligthgrey2,
-                    borderRadius: BorderRadius.circular(17.r)),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w,top: 5.h,right: 5.w,bottom: 5.h),
-                      child: TabBar(
-                        unselectedLabelColor: Colors.black,
-                        labelColor: Colors.white,
-                        indicatorColor: Colors.transparent,
-                        indicatorWeight: 2,
-                        indicator: BoxDecoration(
-                          color: teal,
-                          borderRadius: BorderRadius.circular(17.r),
-                        ),
-                        controller: tabController,
-                        tabs: [
-                           SizedBox(
-                            width: 300.w,
-                            child: const Tab(
-                              text: 'Ongoing',
-                            ),
-                          ),
-                          SizedBox(
-                            width: yourWidth,
-                            child: const Tab(
-                              text: 'Complete',
-                            ),
-                          ),
-                        ],
+              decoration: BoxDecoration(
+                  color: Ligthgrey2, borderRadius: BorderRadius.circular(17.r)),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 5.w, top: 5.h, right: 5.w, bottom: 5.h),
+                    child: TabBar(
+                      unselectedLabelColor: Colors.black,
+                      labelColor: Colors.white,
+                      indicatorColor: Colors.transparent,
+                      indicatorWeight: 2,
+                      indicator: BoxDecoration(
+                        color: teal,
+                        borderRadius: BorderRadius.circular(17.r),
                       ),
+                      controller: tabController,
+                      tabs: [
+                        SizedBox(
+                          width: 300.w,
+                          child: const Tab(
+                            text: 'Ongoing',
+                          ),
+                        ),
+                        SizedBox(
+                          width: yourWidth,
+                          child: const Tab(
+                            text: 'Complete',
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Expanded(
-                child: TabBarView(
-                  controller: tabController,
-                  children: [const Ondoingtask(), const Completecourse()],
-                ),
-              )
-            ],
-          ),
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: [const Ondoingtask(), const Completecourse()],
+              ),
+            )
+          ],
         ),
-
+      ),
     );
   }
 }
+

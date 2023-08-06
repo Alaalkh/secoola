@@ -141,7 +141,7 @@ class Accountwidget extends StatelessWidget {
           title2: 'Security',
           iconn2: Icon(Icons.lock_open),
           iconn3: Icon(
-            Icons.rectangle_rounded,
+            Icons.email,
             size: 22,
           ),
           title3: 'Email ',
@@ -168,12 +168,12 @@ class Coursewidget extends StatelessWidget {
         ),
         const CourseWidget(
           iconn: Icon(
-            Icons.rectangle_rounded,
+            Icons.checklist_rtl,
           ),
           title: 'Certificate',
           title2: 'Payment',
-          iconn2: Icon(Icons.rectangle_rounded),
-          iconn3: Icon(Icons.rectangle_rounded),
+          iconn2: Icon(Icons.payment),
+          iconn3: Icon(Icons.history),
           title3: 'History',
           more: Icon(Icons.arrow_forward_ios_outlined),
         )
@@ -198,11 +198,11 @@ class SupportWidget extends StatelessWidget {
         ),
         const SupportWid(
           iconn: Icon(
-            Icons.star_outlined,
+            Icons.help,
           ),
           title: 'Help',
           title2: 'FAQ',
-          iconn2: Icon(Icons.rectangle_rounded),
+          iconn2: Icon(Icons.question_answer),
           more: Icon(Icons.arrow_forward_ios_outlined),
         )
       ],

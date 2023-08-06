@@ -12,7 +12,6 @@ class CategoriesWidget extends StatelessWidget {
     return Container(
       margin:  EdgeInsets.only(left: 18.w, top: 11.h),
       height: 40.h,
-      width: 96.w,
       decoration: BoxDecoration(
           color: white2,
           borderRadius: BorderRadius.circular(22.r)),

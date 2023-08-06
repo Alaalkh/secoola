@@ -42,12 +42,12 @@ class _NavigationContentState extends State<NavigationContent> {
           BottomNavigationBarItem(
             label: "Explore",
             icon: Icon(
-              Icons.circle,
+              Icons.explore,
             ),
           ),
           BottomNavigationBarItem(
             label: "My Course",
-            icon: Icon(Icons.circle),
+            icon: Icon(Icons.book_rounded),
           ),
           BottomNavigationBarItem(
             label: "Wishlist",

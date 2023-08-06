@@ -18,8 +18,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
+    return  const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Appbar(),
@@ -29,7 +28,7 @@ class HomePage extends StatelessWidget {
           CodingTopic(),
           MarketingTopic()
         ],
-      ),
+
     );
   }
 }
