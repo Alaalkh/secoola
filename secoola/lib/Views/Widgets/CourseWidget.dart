@@ -33,67 +33,62 @@ class CourseWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GestureDetector(
-              onTap: () {
-                Get.toNamed(Routes.CourseDetails);
-              },
-              child: Container(
-                margin: EdgeInsets.only(left: 22.w, top: 22.h),
-                width: 220.w,
-                height: 140.h,
-                decoration: BoxDecoration(
-                    color: boxcolor, borderRadius: BorderRadius.circular(17.r)),
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 22.w, top: 11.h),
-                          decoration: BoxDecoration(
-                              color: white2,
-                              borderRadius: BorderRadius.circular(9)),
-                          height: 28.h,
-                          width: 49.w,
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                "assets/star.png",
-                                height: 11.h,
-                                width: 22.w,
+            Container(
+              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+              width: 220.w,
+              height: 140.h,
+              decoration: BoxDecoration(
+                  color: boxcolor, borderRadius: BorderRadius.circular(17.r)),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 22.w, top: 11.h),
+                        decoration: BoxDecoration(
+                            color: white2,
+                            borderRadius: BorderRadius.circular(9)),
+                        height: 28.h,
+                        width: 49.w,
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              "assets/star.png",
+                              height: 11.h,
+                              width: 22.w,
+                            ),
+                            const Text("4.8")
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 77.w,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 22.w, top: 11.h),
+                        decoration: BoxDecoration(
+                            color: white2,
+                            borderRadius: BorderRadius.circular(9.r)),
+                        height: 28.h,
+                        width: 28.w,
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 6.w),
+                              child: const Icon(
+                                Icons.favorite,
+                                color: grey,
+                                size: 17,
                               ),
-                              const Text("4.8")
-                            ],
-                          ),
+                            )
+                          ],
                         ),
-                        SizedBox(
-                          width: 77.w,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 22.w, top: 11.h),
-                          decoration: BoxDecoration(
-                              color: white2,
-                              borderRadius: BorderRadius.circular(9.r)),
-                          height: 28.h,
-                          width: 28.w,
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.only(left: 6.w),
-                                child: const Icon(
-                                  Icons.favorite,
-                                  color: grey,
-                                  size: 17,
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
+                  ),
 
-                  ],
-                ),
+                ],
               ),
             )
           ],

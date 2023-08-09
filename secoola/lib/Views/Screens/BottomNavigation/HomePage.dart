@@ -276,21 +276,26 @@ class PopularCourse extends StatelessWidget {
             )
           ],
         ),
-        const SingleChildScrollView(
+         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CourseWidget(
-                boxcolor: yellow,
-                titletext: "Design Thingking Fundamental",
-                coursetutor: "Robert Fox",
-                price: "\$ 150",
-                colorText: teal,
-                recommend: "Best Seller",
-                background: Ligthblue,
+              GestureDetector(    onTap: () {
+                Get.toNamed(Routes.CourseDetails);
+
+              },
+                child: const CourseWidget(
+                  boxcolor: yellow,
+                  titletext: "Design Thingking Fundamental",
+                  coursetutor: "Robert Fox",
+                  price: "\$ 150",
+                  colorText: teal,
+                  recommend: "Best Seller",
+                  background: Ligthblue,
+                ),
               ),
-              CourseWidget(
+              const CourseWidget(
                 boxcolor: blue,
                 titletext: "Flutter Class - Advance Program",
                 coursetutor: "Wade Warren",
