@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Views/Widgets/NotificationWidget.dart';
-import 'package:secoola/theme/Color.dart';
+
+import '../../../theme/Color.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -9,16 +10,31 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   body: Column(
+        body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+          children: [ Container(
+            padding: const EdgeInsets.only(left: 11),
+            height: 52,
+            width: 52,
+            margin: const EdgeInsets.only(top: 100, left: 22),
+            decoration: BoxDecoration(
+                color: const Color(0xfffFFFFFF),
+                borderRadius: BorderRadius.circular(17)),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back_ios),
+              color: Colors.black,
+            ),
+          ),SizedBox(width: 22.w,),
             Container(
-              margin: EdgeInsets.only(top: 22.h, left: 11.w),
+              margin: EdgeInsets.only(top: 100.h, left: 11.w),
               child: Text(
                 "Notification",
                 style: TextStyle(fontSize: 24.sp),
@@ -28,7 +44,7 @@ class NotificationPage extends StatelessWidget {
               width: 22.w,
             ),
             Container(
-              margin: EdgeInsets.only(top: 22.h, left: 11.w),
+              margin: EdgeInsets.only(top: 100.h, left: 11.w),
               child: Text(
                 "👋   ",
                 style: TextStyle(fontSize: 24.sp),
@@ -47,7 +63,7 @@ class NotificationPage extends StatelessWidget {
             )
           ],
         ),
-         const SingleChildScrollView(
+        const SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,6 +113,6 @@ class NotificationPage extends StatelessWidget {
           ],
         ),
       ],
-      ) );
+    ));
   }
 }

@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:secoola/Views/Widgets/AccountWidget.dart';
+import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
-
 
 class AccontPage extends StatelessWidget {
   const AccontPage({super.key});
@@ -61,12 +62,11 @@ class Emailinfo extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin:  EdgeInsets.only(left: 22.w, top: 40.h),
+          margin: EdgeInsets.only(left: 22.w, top: 40.h),
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-              color: yellow,
-              borderRadius: BorderRadius.circular(12.r)),
+              color: yellow, borderRadius: BorderRadius.circular(12.r)),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,22 +74,22 @@ class Emailinfo extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  margin:  EdgeInsets.only(left: 22.w, top: 37.h),
-                  child:  Text(
+                  margin: EdgeInsets.only(left: 22.w, top: 37.h),
+                  child: Text(
                     "Raymond Skyberg",
                     style: TextStyle(fontSize: 16.sp),
                   ),
                 )
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: 11.h,
             ),
             Row(
               children: [
                 Container(
-                  margin:  EdgeInsets.only(left: 22.w),
-                  child:  Text(
+                  margin: EdgeInsets.only(left: 22.w),
+                  child: Text(
                     "raymond@mail.com",
                     style: TextStyle(fontSize: 12.sp, color: grey),
                   ),
@@ -101,12 +101,11 @@ class Emailinfo extends StatelessWidget {
         Column(
           children: [
             Container(
-              margin:  EdgeInsets.only(left: 100.w, top: 40.h),
+              margin: EdgeInsets.only(left: 100.w, top: 40.h),
               height: 40.h,
               width: 40.w,
               decoration: BoxDecoration(
-                  color: white2,
-                  borderRadius: BorderRadius.circular(12.r)),
+                  color: white2, borderRadius: BorderRadius.circular(12.r)),
               child: Image.asset(
                 "assets/editbutton.png",
                 scale: 2,
@@ -133,20 +132,49 @@ class Accountwidget extends StatelessWidget {
                 child: const Text("Account")),
           ],
         ),
-        const CourseWidget(
-          iconn: Icon(
-            Icons.notifications,
+        Container(
+          margin: EdgeInsets.only(top: 22.h),
+          width: 335.w,
+          height: 152.h,
+          decoration: BoxDecoration(
+              color: Color(0xfffFFFFFF),
+              borderRadius: BorderRadius.circular(20.r)),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.NotificationPage);
+                },
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.notifications,
+                  ),
+                  title: 'Notification',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),          GestureDetector(
+                onTap: () {},
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.security,
+                  ),
+                  title: 'Security',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),          GestureDetector(
+                onTap: () {},
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.email,
+                  ),
+                  title: 'Email   ',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),
+            ],
           ),
-          title: 'Notifications',
-          title2: 'Security',
-          iconn2: Icon(Icons.lock_open),
-          iconn3: Icon(
-            Icons.email,
-            size: 22,
-          ),
-          title3: 'Email ',
-          more: Icon(Icons.arrow_forward_ios_outlined),
         )
+
       ],
     );
   }
@@ -166,16 +194,46 @@ class Coursewidget extends StatelessWidget {
                 child: const Text("Course")),
           ],
         ),
-        const CourseWidget(
-          iconn: Icon(
-            Icons.checklist_rtl,
+        Container(
+          margin: EdgeInsets.only(top: 22.h),
+          width: 335.w,
+          height: 152.h,
+          decoration: BoxDecoration(
+              color: Color(0xfffFFFFFF),
+              borderRadius: BorderRadius.circular(20.r)),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.notifications,
+                  ),
+                  title: 'Certificate',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),          GestureDetector(
+                onTap: () {                               Get.toNamed(Routes.Paymentpage);
+    },
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.payment,
+                  ),
+                  title: 'Payment',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),          GestureDetector(
+                onTap: () {},
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.history,
+                  ),
+                  title: 'History',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),
+            ],
           ),
-          title: 'Certificate',
-          title2: 'Payment',
-          iconn2: Icon(Icons.payment),
-          iconn3: Icon(Icons.history),
-          title3: 'History',
-          more: Icon(Icons.arrow_forward_ios_outlined),
         )
       ],
     );
