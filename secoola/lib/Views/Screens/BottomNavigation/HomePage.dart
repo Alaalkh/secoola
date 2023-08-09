@@ -569,7 +569,7 @@ class BottomSheet_Content extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 22.h, left: 11.w),
               child: Text(
-                "👋   ",
+                "👋",
                 style: TextStyle(fontSize: 24.sp),
               ),
             )
@@ -592,7 +592,7 @@ class BottomSheet_Content extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               NotificationWidget(
-                image: Icon(Icons.rectangle_rounded, color: teal),
+                image: Icon(Icons.payments_outlined, color: teal),
                 description: 'Start your course now.',
                 title: 'Your payment is success',
                 list: Icon(Icons.more_horiz, color: teal),

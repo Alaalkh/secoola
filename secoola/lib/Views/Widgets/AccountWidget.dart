@@ -43,9 +43,7 @@ class CourseWidget extends StatelessWidget {
 }
 class SupportWid extends StatelessWidget {
   final Icon iconn;
-  final Icon iconn2;
   final String title;
-  final String title2;
   final Icon more;
 
 
@@ -53,21 +51,13 @@ class SupportWid extends StatelessWidget {
       {super.key,
         required this.iconn,
         required this.title,
-        required this.iconn2,
-        required this.title2,
+
        required this.more,
       });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 22.h),
-      width: 335.w,
-      height: 104.h,
-      decoration: BoxDecoration(
-          color: Color(0xfffFFFFFF), borderRadius: BorderRadius.circular(20.r)),
-      child: Column(
-        children: [
+    return
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
@@ -84,27 +74,7 @@ class SupportWid extends StatelessWidget {
                 child: more,
               )
             ],
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 22.h, left: 11.w),
-                child: iconn2,
-              ),
-              Container(
-                  margin: EdgeInsets.only(top: 22.h,),
-                  child: Text(
-                    title2,
-                    style: TextStyle(fontSize: 14.sp),
-                  )), Container(
-                margin: EdgeInsets.only(top: 22.h, left: 190.w),
-                child: more,
-              )
-            ],
-          ),
 
-        ],
-      ),
     );
   }
 }

@@ -152,7 +152,8 @@ class Accountwidget extends StatelessWidget {
                   title: 'Notification',
                   more: Icon(Icons.arrow_forward_ios_outlined),
                 ),
-              ),          GestureDetector(
+              ),
+              GestureDetector(
                 onTap: () {},
                 child: const CourseWidget(
                   iconn: Icon(
@@ -161,7 +162,8 @@ class Accountwidget extends StatelessWidget {
                   title: 'Security',
                   more: Icon(Icons.arrow_forward_ios_outlined),
                 ),
-              ),          GestureDetector(
+              ),
+              GestureDetector(
                 onTap: () {},
                 child: const CourseWidget(
                   iconn: Icon(
@@ -174,7 +176,6 @@ class Accountwidget extends StatelessWidget {
             ],
           ),
         )
-
       ],
     );
   }
@@ -212,9 +213,11 @@ class Coursewidget extends StatelessWidget {
                   title: 'Certificate',
                   more: Icon(Icons.arrow_forward_ios_outlined),
                 ),
-              ),          GestureDetector(
-                onTap: () {                               Get.toNamed(Routes.Paymentpage);
-    },
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.Paymentpage);
+                },
                 child: const CourseWidget(
                   iconn: Icon(
                     Icons.payment,
@@ -222,7 +225,8 @@ class Coursewidget extends StatelessWidget {
                   title: 'Payment',
                   more: Icon(Icons.arrow_forward_ios_outlined),
                 ),
-              ),          GestureDetector(
+              ),
+              GestureDetector(
                 onTap: () {},
                 child: const CourseWidget(
                   iconn: Icon(
@@ -254,15 +258,41 @@ class SupportWidget extends StatelessWidget {
                 child: const Text("Support")),
           ],
         ),
-        const SupportWid(
-          iconn: Icon(
-            Icons.help,
-          ),
-          title: 'Help',
-          title2: 'FAQ',
-          iconn2: Icon(Icons.question_answer),
-          more: Icon(Icons.arrow_forward_ios_outlined),
-        )
+        Container(
+          margin: EdgeInsets.only(top: 22.h),
+          width: 335.w,
+          height: 104.h,
+          decoration: BoxDecoration(
+              color: Color(0xfffFFFFFF),
+              borderRadius: BorderRadius.circular(20.r)),
+         child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.help,
+                  ),
+                  title: 'Help',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.FaqPage);
+                },
+                child: const CourseWidget(
+                  iconn: Icon(
+                    Icons.question_answer_rounded,
+                  ),
+                  title: 'FAQ',
+                  more: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),
+              
+
+            ],
+          ),)
       ],
     );
   }

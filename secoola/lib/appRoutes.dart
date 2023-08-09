@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:secoola/Views/Screens/AccountPages/Faq_page.dart';
 import 'package:secoola/Views/Screens/AccountPages/NotificationPage.dart';
 import 'package:secoola/Views/Screens/Topics/ChooseTopic.dart';
 import 'package:secoola/Views/Screens//Course/Continuecourse.dart';
@@ -40,6 +41,7 @@ class Routes {
   static String Searchdefault = '/Searchdefault';
   static String Searchresult = '/Searchresult';
   static String NotificationPage = '/NotificationPage';
+  static String FaqPage = '/FaqPage';
 }
 
 final getPages = [
@@ -100,7 +102,8 @@ final getPages = [
   GetPage(name: Routes.Searchdefault, page: () => const Searchdefault()),
   GetPage(name: Routes.Continuecourse, page: () => const Continuecourse()),
   GetPage(name: Routes.Searchresult, page: () => const Searchresult()),
-  GetPage(name: Routes.NotificationPage, page: () => const NotificationPage()),
+  GetPage(name: Routes.NotificationPage, page: () => const NotificationPage(), transition: Transition.rightToLeft),
+  GetPage(name: Routes.FaqPage, page: () =>  FaqPage(), transition: Transition.rightToLeft),
 ];
 
 // class MyMiddelware extends GetMiddleware {
