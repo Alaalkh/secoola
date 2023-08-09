@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
@@ -27,73 +26,65 @@ class _CourseDetailsState extends State<MyCourse>
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-       Appbar(),        Togglebar(),
+        AppBar(toolbarHeight: 186,
+            automaticallyImplyLeading: false,
+            backgroundColor: teal,
+            title:
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                        margin: EdgeInsets.only(left: 33.w),
+                        child: Text(
+                          "My Course",
+                          style: TextStyle(
+                              fontSize: 24.sp, color: Colors.white),
+                        )),
+                  ],
+                ),
+                const SizedBox(
+                  height: 44,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 48.h,
+                      width: 335.w,
+                      decoration: BoxDecoration(
+                          color: white2,
+                          borderRadius: BorderRadius.circular(15.r)),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search for anything",
+                          hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                          prefixIcon: Image.asset(
+                            "assets/img_4.png",
+                            scale: 5,
+                          ),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ), shape: RoundedRectangleBorder(   borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(28.r),
+            bottomRight: Radius.circular(28.r),
+          )),),
+        // Appbar(),
+        Togglebar(),
       ],
     );
   }
 }
 
-class Appbar extends StatelessWidget {
-  const Appbar({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: teal,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28.r),
-          bottomRight: Radius.circular(28.r),
-        ),
-      ),
-      height: 222,
-      width: double.infinity,
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
-                  child: Text(
-                    "My Course",
-                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
-                  )),
-            ],
-          ),
-          const SizedBox(
-            height: 44,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 48.h,
-                width: 335.w,
-                decoration: BoxDecoration(
-                    color: white2, borderRadius: BorderRadius.circular(15.r)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search for anything",
-                    hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                    prefixIcon: Image.asset(
-                      "assets/img_4.png",
-                      scale: 5,
-                    ),
-                    border: InputBorder.none,
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class Togglebar extends StatefulWidget {
   const Togglebar({super.key});
@@ -108,13 +99,19 @@ class _TogglebarState extends State<Togglebar>
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     double yourWidth = width;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height,
         child: Column(
           children: [
             SizedBox(height: 22.h),
@@ -169,4 +166,3 @@ class _TogglebarState extends State<Togglebar>
     );
   }
 }
-
