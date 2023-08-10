@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/appRoutes.dart';
@@ -17,38 +18,36 @@ class VerficicationPage extends StatelessWidget {
       backgroundColor: white,
       body: Column(
         children: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 11),
-                  height: 52,
-                  width: 52,
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: white2,
-                      borderRadius: BorderRadius.circular(17)),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back_ios),
-                    color: Colors.black,
-                  ),
+          Row(
+            children: [
+              Container(
+                padding:  EdgeInsets.only(left: 11.w),
+                height: 52.h,
+                width: 52.w,
+                margin:  EdgeInsets.only(top: 66.h, left: 22.w),
+                decoration: BoxDecoration(
+                    color: white2,
+                    borderRadius: BorderRadius.circular(17)),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back_ios),
+                  color: Colors.black,
                 ),
-                const SizedBox(
-                  width: 22,
+              ), SizedBox(
+                width: 22.w,
+              ),
+              Padding(
+                padding:  EdgeInsets.only(top: 66.h, left: 44.w),
+                child: const Text(
+                  "Verify",
+                  style: TextStyle(fontSize: 16),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 66, left: 44),
-                  child: const Text(
-                    "Verify",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
+
           const titleWidget(),
           const NumberCode(),
           const SizedBox(
@@ -85,38 +84,34 @@ class titleWidget extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 66, left: 15),
                 child: const Text(
-                  "📲 ",
+                  "📲",
                   style: TextStyle(fontSize: 24),
                 ),
               )
             ],
           ),
         ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 14, left: 44),
-                child: const Text(
-                  "Check your inbox, we have send the Verification   ",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
-          ),
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 14, left: 44),
+              child: const Text(
+                "Check your inbox, we have send the Verification   ",
+                style: TextStyle(color: Colors.grey, fontSize: 14),
+              ),
+            )
+          ],
         ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 44),
-                child: const Text(
-                  "code to your email.",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
-          ),
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 44),
+              child: const Text(
+                "code to your email.",
+                style: TextStyle(color: Colors.grey, fontSize: 14),
+              ),
+            )
+          ],
         ),
       ],
     );
@@ -133,19 +128,19 @@ class NumberCode extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-              margin: const EdgeInsets.only(left: 25, top: 33),
+              margin:  EdgeInsets.only(left: 25.w, top: 33.h),
               decoration: BoxDecoration(
                   color: white2,
                   borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
-              margin: const EdgeInsets.only(top: 33),
+              margin:  EdgeInsets.only(top: 33.h),
               decoration: BoxDecoration(
                   color: white2,
                   borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
-            margin: const EdgeInsets.only(top: 33),
+            margin:  EdgeInsets.only(top: 33.h),
             decoration: BoxDecoration(
                 color: white2,
                 borderRadius: BorderRadius.circular(12)),

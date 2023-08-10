@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:secoola/Views/Screens/ForgotPassword/EmailEntry.dart';
+import 'package:secoola/Views/Screens/ForgotPassword/titleWidget.dart';
 import 'package:secoola/appRoutes.dart';
 
 import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/theme/Color.dart';
+
+import '../Topics/TitleWidget.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -18,10 +23,10 @@ class ResetPassword extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 11),
-                height: 52,
-                width: 52,
-                margin: const EdgeInsets.only(top: 66, left: 22),
+                padding:  EdgeInsets.only(left: 11.w),
+                height: 52.h,
+                width: 52.w,
+                margin:  EdgeInsets.only(top: 66.h, left: 22.w),
                 decoration: BoxDecoration(
                     color: white,
                     borderRadius: BorderRadius.circular(17)),
@@ -33,19 +38,19 @@ class ResetPassword extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(
-                width: 22,
+               SizedBox(
+                width: 22.w,
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 44),
-                child: const Text(
+               Padding(
+                padding: EdgeInsets.only(top: 66.h, left: 44.w),
+                child: Text(
                   "Reset Password",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16.sp),
                 ),
               ),
             ],
           ),
-          const titleWidget(),
+          const titlePasswordWidget(),
           const EmailEntry()
         ],
       ),
@@ -53,107 +58,4 @@ class ResetPassword extends StatelessWidget {
   }
 }
 
-class titleWidget extends StatelessWidget {
-  const titleWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 44),
-                child: const Text(
-                  "Reset your password",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 15),
-                child: const Text(
-                  " 🔐   ",
-                  style: TextStyle(fontSize: 24),
-                ),
-              )
-            ],
-          ),
-        ),
-        Row(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 14, left: 44),
-              child: const Text(
-                "Enter your email and a verification code to reset the ",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-            )
-          ],
-        ),
-        Container(
-          margin: const EdgeInsets.only(left: 44),
-          child: const Text(
-            "password will be sent to your email.",
-            style: TextStyle(color: Colors.grey, fontSize: 14),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class EmailEntry extends StatelessWidget {
-  const EmailEntry({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Container(
-              width: 335,
-              height: 56,
-              margin: const EdgeInsets.only(top: 44, left: 27),
-              decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: BorderRadius.circular(16)),
-              child: const TextFeildwidget(obscuretext: false,
-                hint: '  Your email', icon: Icon(Icons.rectangle_rounded,color: teal,size: 17,),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 22,
-        ),
-        Row(
-          children: [
-            Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(11)),
-              width: 355,
-              height: 56,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 25),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.verification);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: teal,
-                  ),
-                  child: const Text(
-                    "Send verification code",
-                    style: TextStyle(color: white),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
