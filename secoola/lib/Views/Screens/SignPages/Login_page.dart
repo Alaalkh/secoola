@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/Views/Screens/SignPages/SignButton.dart';
+import 'package:secoola/Views/Screens/SignPages/LoginButton.dart';
 import 'package:secoola/Views/Screens/SignPages/SocialMedia_Icons.dart';
 import 'package:secoola/theme/Color.dart';
 
@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14.sp, color: grey),
             ),
-            const SignButton()
+            const LoginButton()
           ],
         ),
       ),

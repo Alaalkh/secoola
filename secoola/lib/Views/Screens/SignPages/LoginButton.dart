@@ -6,14 +6,14 @@ import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 
-class SignButton extends StatefulWidget {
-  const SignButton({super.key});
+class LoginButton extends StatefulWidget {
+  const LoginButton({super.key});
 
   @override
-  State<SignButton> createState() => _SignButtonState();
+  State<LoginButton> createState() => _LoginButtonState();
 }
 
-class _SignButtonState extends State<SignButton> {
+class _LoginButtonState extends State<LoginButton> {
   bool isActive = true;
   bool isActive2 = true;
 
@@ -26,7 +26,8 @@ class _SignButtonState extends State<SignButton> {
             height: 56.h,
             margin: EdgeInsets.only(top: 66.h),
             decoration: BoxDecoration(
-                color: white2, borderRadius: BorderRadius.circular(16.r)),
+                color: white2,
+                borderRadius: BorderRadius.circular(16.r)),
             child: const TextFeildwidget(
               hint: 'Your email',
               icon: Icon(
@@ -41,7 +42,8 @@ class _SignButtonState extends State<SignButton> {
             height: 56.h,
             margin: EdgeInsets.only(top: 22.h),
             decoration: BoxDecoration(
-                color: white2, borderRadius: BorderRadius.circular(22.r)),
+                color: white2,
+                borderRadius: BorderRadius.circular(22.r)),
             child: const TextFeildwidget(
               obscuretext: true,
               icon: Icon(
@@ -51,31 +53,39 @@ class _SignButtonState extends State<SignButton> {
               ),
               hint: 'Your password',
             )),
-        Container(
-          margin: EdgeInsets.only(bottom: 11.h, right: 22.w, top: 44.h),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(11)),
+        Align(alignment: Alignment.centerRight,
+          child: TextButton(
+            onPressed: () {
+              Get.toNamed(Routes.resetpassword);
+            },
+            child: Text(
+              "Forget Password?",
+              style: TextStyle(color: Ligthgrey, fontSize: 14.sp,),
+            ),
+          ),
+        ),
+
+        Container(margin: EdgeInsets.only(bottom: 11.h,right: 22.w),
+          decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(11)),
           width: 355.w,
           height: 56.h,
           child: Padding(
             padding: EdgeInsets.only(left: 25.w),
             child: ElevatedButton(
-              onPressed: isActive
-                  ? () {
-                      Get.toNamed(Routes.Chossetopic);
-                    }
-                  : null,
+              onPressed: isActive ? () {
+              } : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: teal,
               ),
               child: const Text(
-                "Sign up",
+                "Login",
                 style: TextStyle(color: white),
               ),
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               child: Text(
@@ -89,8 +99,7 @@ class _SignButtonState extends State<SignButton> {
             )
           ],
         ),
-        SizedBox(
-          height: 77.h,
+        SizedBox(height: 77.h,
           child: Text(
             "Conditions and Privacy Policy ",
             style: TextStyle(color: teal, fontSize: 14.sp),
@@ -98,10 +107,10 @@ class _SignButtonState extends State<SignButton> {
         ),
         GestureDetector(
           onTap: () {
-            Get.toNamed(Routes.LoginPage);
+            Get.toNamed(Routes.SignPage);
           },
           child: Text(
-            "I do have an account",
+            "I don't have an account",
             style: TextStyle(color: teal, fontSize: 14.sp),
           ),
         )
