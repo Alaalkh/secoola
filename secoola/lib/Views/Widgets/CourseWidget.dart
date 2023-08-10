@@ -72,17 +72,10 @@ class CourseWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(9.r)),
                         height: 28.h,
                         width: 28.w,
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 6.w),
-                              child: const Icon(
-                                Icons.favorite,
-                                color: grey,
-                                size: 17,
-                              ),
-                            )
-                          ],
+                        child: const Icon(
+                          Icons.favorite,
+                          color: grey,
+                          size: 17,
                         ),
                       )
                     ],
@@ -93,33 +86,28 @@ class CourseWidget extends StatelessWidget {
             )
           ],
         ),
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 22.w, top: 11.h),
-              child: Text(
-                titletext,
-                style: TextStyle(color: Colors.black, fontSize: 14.sp),
-              ),
-            )
-          ],
+        Padding(padding: EdgeInsets.only(left: 22.w),
+          child: Text(
+            titletext,
+            style: TextStyle(color: Colors.black, fontSize: 14.sp),
+          ),
         ),
-        Row(
-          children: [
-            Container(
-                margin: EdgeInsets.only(left: 20.w, top: 6.h),
-                child: const Icon(
-                  Icons.person,
-                  color: grey,
-                )),
-            Container(
-              margin: EdgeInsets.only(top: 6.h),
-              child: Text(
-                coursetutor,
-                style: TextStyle(color:grey, fontSize: 12.sp),
+        Padding(padding: EdgeInsets.only(left: 22.w),
+          child: Row(
+            children: [
+              const Icon(
+                Icons.person,
+                color: grey,
               ),
-            )
-          ],
+              Container(
+                margin: EdgeInsets.only(top: 6.h),
+                child: Text(
+                  coursetutor,
+                  style: TextStyle(color:grey, fontSize: 12.sp),
+                ),
+              )
+            ],
+          ),
         ),
         Row(
           children: [
@@ -132,11 +120,10 @@ class CourseWidget extends StatelessWidget {
             ),
             Container(
               height: 20.h,
-              width: 77.w,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: background, borderRadius: BorderRadius.circular(22.r)),
-              margin: EdgeInsets.only(left: 11.w, top: 6.h),
+              margin: EdgeInsets.only(left: 11.w, top: 6.h),padding: EdgeInsets.only(left: 10.w,right: 10.w),
               child: Text(
                 recommend,
                 style: TextStyle(color: colorText, fontSize: 12.sp),
@@ -148,23 +135,3 @@ class CourseWidget extends StatelessWidget {
     );
   }
 }
-//
-// class DotPainter extends CustomPainter {
-//   final Color color;
-//   final double radius;
-//
-//   DotPainter({this.color = Colors.black, this.radius = 5.0});
-//
-//   @override
-//   void paint(Canvas canvas, Size size) {
-//     final Paint paint = Paint()..color = color;
-//
-//     Offset center = Offset(size.width / 2, size.height / 2);
-//     canvas.drawCircle(center, radius, paint);
-//   }
-//
-//   @override
-//   bool shouldRepaint(CustomPainter oldDelegate) {
-//     return false;
-//   }
-// }

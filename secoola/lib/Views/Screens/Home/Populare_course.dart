@@ -14,24 +14,18 @@ class PopularCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 22.w, top: 22.h),
-              child: Text(
-                "Popular course",
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
-              ),
+            Text(
+              "Popular course",
+              style: TextStyle(color: Colors.black, fontSize: 18.sp),
             ),
             SizedBox(
-              width: 144.w,
+              width: 100.w,height: 33.h,
             ),
-            Container(
-              margin: EdgeInsets.only(left: 22.w, top: 22.h),
-              child: Text(
-                "See All",
-                style: TextStyle(color: teal, fontSize: 14.sp),
-              ),
+            Text(
+              "See All",
+              style: TextStyle(color: teal, fontSize: 14.sp),
             )
           ],
         ),
