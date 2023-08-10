@@ -24,12 +24,8 @@ class _NavigationContentState extends State<NavigationContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _widget[_currentIndex],
       backgroundColor: Color(0xfffFAFAFA),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [_widget.elementAt(_currentIndex)],
-        ),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,

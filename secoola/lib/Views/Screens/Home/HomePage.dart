@@ -24,20 +24,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const   SingleChildScrollView(
-      child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Appbar(),
-            PopularCourse(),
-            Categories(),
-            DesignTopic(),
-            CodingTopic(),
-            MarketingTopic()
-          ],
+    return const Scaffold( body:
+    SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Appbar(),
+          PopularCourse(),
+          Categories(),
+          DesignTopic(),
+          CodingTopic(),
+          MarketingTopic()
+        ],
 
       ),
-    );
+    ));
+
   }
 }
 
