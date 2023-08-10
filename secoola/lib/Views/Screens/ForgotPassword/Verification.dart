@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:secoola/Views/Widgets/CustomeButton.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Views/Widgets/Verification_code_widget.dart';
 
@@ -21,13 +22,12 @@ class VerficicationPage extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding:  EdgeInsets.only(left: 11.w),
+                padding: EdgeInsets.only(left: 11.w),
                 height: 52.h,
                 width: 52.w,
-                margin:  EdgeInsets.only(top: 66.h, left: 22.w),
+                margin: EdgeInsets.only(top: 66.h, left: 22.w),
                 decoration: BoxDecoration(
-                    color: white2,
-                    borderRadius: BorderRadius.circular(17)),
+                    color: white2, borderRadius: BorderRadius.circular(17)),
                 child: IconButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -35,11 +35,12 @@ class VerficicationPage extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_ios),
                   color: Colors.black,
                 ),
-              ), SizedBox(
+              ),
+              SizedBox(
                 width: 22.w,
               ),
               Padding(
-                padding:  EdgeInsets.only(top: 66.h, left: 44.w),
+                padding: EdgeInsets.only(top: 66.h, left: 44.w),
                 child: const Text(
                   "Verify",
                   style: TextStyle(fontSize: 16),
@@ -47,13 +48,19 @@ class VerficicationPage extends StatelessWidget {
               ),
             ],
           ),
-
           const titleWidget(),
           const NumberCode(),
           const SizedBox(
             height: 22,
           ),
-          const VerfiyButton(),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(Routes.newpassword);
+            },
+            child: const VerfiyButton(
+              ButtonString: 'Verfiy',
+            ),
+          ),
           const SizedBox(
             height: 66,
           ),
@@ -71,47 +78,30 @@ class titleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 44),
-                child: const Text(
-                  "Recovery code",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
-                ),
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 66, left: 44),
+              child: const Text(
+                "Recovery code  📲",
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 15),
-                child: const Text(
-                  "📲",
-                  style: TextStyle(fontSize: 24),
-                ),
-              )
-            ],
+            ),
+          ],
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 14, left: 44),
+          child: const Text(
+            "Check your inbox, we have send the Verification   ",
+            style: TextStyle(color: Colors.grey, fontSize: 14),
           ),
         ),
-        Row(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 14, left: 44),
-              child: const Text(
-                "Check your inbox, we have send the Verification   ",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-            )
-          ],
-        ),
-        Row(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(left: 44),
-              child: const Text(
-                "code to your email.",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-            )
-          ],
+        Container(
+          margin: const EdgeInsets.only(left: 44),
+          child: const Text(
+            "code to your email.",
+            style: TextStyle(color: Colors.grey, fontSize: 14),
+          ),
         ),
       ],
     );
@@ -128,64 +118,28 @@ class NumberCode extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-              margin:  EdgeInsets.only(left: 25.w, top: 33.h),
+              margin: EdgeInsets.only(left: 25.w, top: 33.h),
               decoration: BoxDecoration(
-                  color: white2,
-                  borderRadius: BorderRadius.circular(12)),
+                  color: white2, borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
-              margin:  EdgeInsets.only(top: 33.h),
+              margin: EdgeInsets.only(top: 33.h),
               decoration: BoxDecoration(
-                  color: white2,
-                  borderRadius: BorderRadius.circular(12)),
+                  color: white2, borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild()),
           Container(
-            margin:  EdgeInsets.only(top: 33.h),
+            margin: EdgeInsets.only(top: 33.h),
             decoration: BoxDecoration(
-                color: white2,
-                borderRadius: BorderRadius.circular(12)),
+                color: white2, borderRadius: BorderRadius.circular(12)),
             child: const CodeTextFeild(),
           ),
           Container(
-              margin: const EdgeInsets.only(top: 33, right: 14),
+              margin: EdgeInsets.only(top: 33.h, right: 14.w),
               decoration: BoxDecoration(
-                  color: white2,
-                  borderRadius: BorderRadius.circular(12)),
+                  color: white2, borderRadius: BorderRadius.circular(12)),
               child: const CodeTextFeild())
         ],
       ),
-    );
-  }
-}
-
-class VerfiyButton extends StatelessWidget {
-  const VerfiyButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(11)),
-          width: 355,
-          height: 56,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 25),
-            child: ElevatedButton(
-              onPressed: () {
-                Get.toNamed(Routes.newpassword);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: teal,
-              ),
-              child: const Text(
-                "Verify",
-                style: TextStyle(color: white2),
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
