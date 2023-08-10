@@ -9,71 +9,60 @@ class WishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Appbar(), Elements()],
-    );
-  }
-}
-
-class Appbar extends StatelessWidget {
-  const Appbar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xfff00A9B7),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28.r),
-          bottomRight: Radius.circular(28.r),
-        ),
-      ),
-      height: 222.h,
-      width: double.infinity.w,
-      child: Column(
-        children: [
-          Row(
+    return Column(
+      children: [
+        AppBar(primary: false,
+          toolbarHeight: 186,
+          automaticallyImplyLeading: false,
+          backgroundColor: teal,
+          title: Column(
             children: [
-              Container(
-                  margin: EdgeInsets.only(left: 33.w, top: 66.h),
-                  child: Text(
-                    "Wishlist",
-                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
-                  )),
-              SizedBox(
-                width: 77.w,
+              Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.only(left: 11.w,top: 28.h),
+                      child: Text(
+                        "Wishlist",
+                        style: TextStyle(fontSize: 24.sp, color: Colors.white),
+                      )),
+                ],
               ),
-            ],
-          ),
-          SizedBox(
-            height: 44.h,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 48.h,
-                width: 335.w,
-                decoration: BoxDecoration(
-                    color: const Color(0xfffFFFFFF),
-                    borderRadius: BorderRadius.circular(15.r)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search for anything",
-                    hintStyle:
-                        TextStyle(fontSize: 14.sp, color: const Color(0xfffD9DBDE)),
-                    prefixIcon: Image.asset(
-                      "assets/img_4.png",
-                      scale: 5,
+              const SizedBox(
+                height: 44,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 48.h,
+                    width: 335.w,
+                    decoration: BoxDecoration(
+                        color: white2,
+                        borderRadius: BorderRadius.circular(15.r)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Search for anything",
+                        hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                        prefixIcon: Image.asset(
+                          "assets/img_4.png",
+                          scale: 5,
+                        ),
+                        border: InputBorder.none,
+                      ),
                     ),
-                    border: InputBorder.none,
-                  ),
-                ),
+                  )
+                ],
               )
             ],
-          )
-        ],
-      ),
+          ),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(28.r),
+            bottomRight: Radius.circular(28.r),
+          )),
+        ),
+        Elements()
+      ],
     );
   }
 }
@@ -96,7 +85,7 @@ class Elements extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 44.0,
+          mainAxisSpacing: 20.0,
           mainAxisExtent: 190,
         ),
         itemCount: WishlistContents.length,
@@ -143,7 +132,7 @@ class Elements extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 22.w, top: 11.h),
                       decoration: BoxDecoration(
-                          color:white2,
+                          color: white2,
                           borderRadius: BorderRadius.circular(9.r)),
                       height: 28.h,
                       width: 28.w,
@@ -152,6 +141,7 @@ class Elements extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.only(left: 6.w),
                             child: const Icon(
+
                               Icons.favorite,
                               color: Colors.red,
                               size: 17,
@@ -163,7 +153,8 @@ class Elements extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(margin: EdgeInsets.only(left: 22.w),
+              Container(
+                margin: EdgeInsets.only(left: 22.w),
                 child: Text(WishlistContents[i].title),
               ),
               Row(
@@ -179,8 +170,7 @@ class Elements extends StatelessWidget {
                     margin: EdgeInsets.only(top: 6.h),
                     child: Text(
                       WishlistContents[i].tutorname,
-                      style:
-                          TextStyle(color: grey, fontSize: 12.sp),
+                      style: TextStyle(color: grey, fontSize: 12.sp),
                     ),
                   ),
                 ],
@@ -192,8 +182,7 @@ class Elements extends StatelessWidget {
                     margin: EdgeInsets.only(left: 22.w),
                     child: Text(
                       "\$ 24",
-                      style:
-                          TextStyle(color: teal, fontSize: 16.sp),
+                      style: TextStyle(color: teal, fontSize: 16.sp),
                     ),
                   ),
                   Container(
@@ -206,8 +195,7 @@ class Elements extends StatelessWidget {
                     margin: EdgeInsets.only(left: 11.w, top: 6.h),
                     child: Text(
                       "Label",
-                      style:
-                          TextStyle(color: teal, fontSize: 12.sp),
+                      style: TextStyle(color: teal, fontSize: 12.sp),
                     ),
                   )
                 ],

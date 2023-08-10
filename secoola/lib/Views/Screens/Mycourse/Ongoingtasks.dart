@@ -1,11 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:secoola/Views/Widgets/Mycourse_widget.dart';
-import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 
 class Ondoingtask extends StatelessWidget {

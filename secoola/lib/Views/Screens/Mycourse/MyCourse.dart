@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/Views/Screens/BottomNavigation/HomePage.dart';
-import 'package:secoola/Views/Widgets/Completecourse.dart';
-import 'package:secoola/Views/Widgets/Ongoingtasks.dart';
+import 'package:secoola/Views/Screens/Home/HomePage.dart';
+import 'package:secoola/Views/Screens/Mycourse/Completecourse.dart';
+import 'package:secoola/Views/Screens/Mycourse/Ongoingtasks.dart';
 import 'package:secoola/theme/Color.dart';
 
 class MyCourse extends StatefulWidget {
@@ -29,7 +29,7 @@ class _CourseDetailsState extends State<MyCourse>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        AppBar(toolbarHeight: 186,
+        AppBar(toolbarHeight: 186,primary: false,
             automaticallyImplyLeading: false,
             backgroundColor: teal,
             title:
@@ -38,7 +38,7 @@ class _CourseDetailsState extends State<MyCourse>
                 Row(
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: 33.w),
+                        margin: EdgeInsets.only(left: 11.w,top: 28.h),
                         child: Text(
                           "My Course",
                           style: TextStyle(
@@ -104,7 +104,6 @@ class _TogglebarState extends State<Togglebar>
         .size
         .width;
 
-    double yourWidth = width;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: SizedBox(
@@ -137,13 +136,13 @@ class _TogglebarState extends State<Togglebar>
                       controller: tabController,
                       tabs: [
                         SizedBox(
-                          width: 300.w,
+                          width: width,
                           child: const Tab(
                             text: 'Ongoing',
                           ),
                         ),
                         SizedBox(
-                          width: yourWidth,
+                          width: width,
                           child: const Tab(
                             text: 'Complete',
                           ),

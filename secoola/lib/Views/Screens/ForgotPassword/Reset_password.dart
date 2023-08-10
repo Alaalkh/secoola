@@ -82,30 +82,22 @@ class titleWidget extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 14, left: 44),
-                child: const Text(
-                  "Enter your email and a verification code to reset the ",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
-          ),
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 14, left: 44),
+              child: const Text(
+                "Enter your email and a verification code to reset the ",
+                style: TextStyle(color: Colors.grey, fontSize: 14),
+              ),
+            )
+          ],
         ),
         Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 44),
-                child: const Text(
-                  "password will be sent to your email.",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
+          margin: const EdgeInsets.only(left: 44),
+          child: const Text(
+            "password will be sent to your email.",
+            style: TextStyle(color: Colors.grey, fontSize: 14),
           ),
         ),
       ],

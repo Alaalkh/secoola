@@ -22,30 +22,28 @@ class _SignPageState extends State<SignPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              child: Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: ScreenUtil().setHeight(111),
-                        left: ScreenUtil().setWidth(33)),
-                    child: Text(
-                      "Create Account",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: ScreenUtil().setSp(22)),
-                    ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      top: ScreenUtil().setHeight(111),
+                      left: ScreenUtil().setWidth(33)),
+                  child: Text(
+                    "Create Account",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: ScreenUtil().setSp(22)),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: 111.h, left: ScreenUtil().setWidth(44)),
-                    child: Text(
-                      " ✌️  ",
-                      style: TextStyle(fontSize: ScreenUtil().setSp(24)),
-                    ),
-                  )
-                ],
-              ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: 111.h, left: ScreenUtil().setWidth(44)),
+                  child: Text(
+                    " ✌️  ",
+                    style: TextStyle(fontSize: ScreenUtil().setSp(24)),
+                  ),
+                )
+              ],
             ),
             Container(
               child: Row(
