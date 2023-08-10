@@ -40,7 +40,7 @@ class MarketingTopic extends StatelessWidget {
               ),
               DesignTopics(
                 boxcolor: Color(0xfff00A9B7),
-                titletext: "Neuromarketing&Marketing ",
+                titletext: "marketing&Marketing ",
                 coursetutor: "Arlene McCoy",
                 price: "\$ 41",
                 colorText: Color(0xfff00A9B7),
@@ -50,9 +50,7 @@ class MarketingTopic extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(
-          height: 33,
-        )
+
       ],
     );
   }

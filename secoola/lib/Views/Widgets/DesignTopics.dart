@@ -65,7 +65,8 @@ class DesignTopics extends StatelessWidget {
           ),
         ),
         Padding(padding: EdgeInsets.only(left: 25.w),
-          child: Text(
+          child: Text(  maxLines: 1, // Restrict text to a single line
+            overflow: TextOverflow.ellipsis,
             titletext,
             style:  TextStyle(color: Colors.black, fontSize: 14.sp),
           ),
