@@ -9,13 +9,14 @@ class CategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Container(padding: EdgeInsets.only(left: 7.w,right: 7.w),
       margin:  EdgeInsets.only(left: 18.w, top: 11.h),
       height: 40.h,
       decoration: BoxDecoration(
           color: white2,
           borderRadius: BorderRadius.circular(22.r)),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             image ,

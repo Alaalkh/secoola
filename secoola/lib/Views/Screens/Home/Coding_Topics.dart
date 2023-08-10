@@ -15,7 +15,7 @@ class CodingTopic extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Coding")],
         ),
-        Container(
+        SizedBox(
           height: 226.h,
           child: ListView(
             scrollDirection: Axis.horizontal,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/theme/Color.dart';
 
 class TopicWidgdet extends StatelessWidget {
@@ -12,34 +13,34 @@ class TopicWidgdet extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 22, top: 22),
-          child: const Text(
+          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+          child:  Text(
             "Your topic",
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: TextStyle(color: Colors.black, fontSize: 18.sp),
           ),
         ),
         Container(
           alignment: Alignment.center,
-          margin: const EdgeInsets.only(left: 10, top: 22),
-          height: 20,
-          width: 65,
+          margin:  EdgeInsets.only(left: 10.w, top: 22.h),
+          height: 20.h,
+          padding: EdgeInsets.only(left: 5.w,right: 5.w),
           decoration: BoxDecoration(
             color: const Color(0xfffDCF3F5),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
             Topictitle,
-            style: TextStyle(color: Color(0xfff00A9B7), fontSize: 12),
+            style:  TextStyle(color: Color(0xfff00A9B7), fontSize: 12.sp),
           ),
         ),
-        const SizedBox(
-          width: 122,
+         SizedBox(
+          width: 122.w,
         ),
         Container(
-          margin: const EdgeInsets.only(left: 22, top: 22),
-          child: const Text(
+          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+          child:  Text(
             "See All",
-            style: TextStyle(color: teal, fontSize: 14),
+            style: TextStyle(color: teal, fontSize: 14.sp),
           ),
         )
       ],

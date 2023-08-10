@@ -12,20 +12,17 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+            Padding(padding: EdgeInsets.only(top: 25.h),
               child: Text(
                 "Categories",
                 style: TextStyle(color: Colors.black, fontSize: 18.sp),
               ),
             ),
-            SizedBox(
-              width: 180.w,
+            SizedBox(width: 130.w,
             ),
-            Container(
-              margin: EdgeInsets.only(left: 22.w, top: 22.h),
+            Padding(padding: EdgeInsets.only(top: 25.w),
               child: Text(
                 "See All",
                 style: TextStyle(color: teal, fontSize: 14.sp),

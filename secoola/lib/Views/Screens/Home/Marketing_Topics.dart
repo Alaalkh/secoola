@@ -15,7 +15,7 @@ class MarketingTopic extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [TopicWidgdet(Topictitle: "Marketing")],
         ),
-        Container(
+        SizedBox(
           height: 226.h,
           child: ListView(
             scrollDirection: Axis.horizontal,
