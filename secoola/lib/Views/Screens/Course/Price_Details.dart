@@ -27,15 +27,19 @@ class PriceDetails extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
+          Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                "Price",
-                style: TextStyle(color: grey, fontSize: 16.sp),
+              SizedBox(width: 300.w,height: 21.h,
+                child: Text(
+                  "Price",
+                  style: TextStyle(color: grey, fontSize: 16.sp),
+                ),
               ),
-              Text(
-                "\$150",
-                style: TextStyle(color: teal, fontSize: 24.sp),
+              SizedBox(width: 60.w,height: 32.h,
+                child: Text(
+                  "\$150",
+                  style: TextStyle(color: teal, fontSize: 24.sp),
+                ),
               )
             ],
           ),

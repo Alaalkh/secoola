@@ -32,13 +32,24 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
+    void _nextPage() {
+      if (currentIndex < 2) {
+        _controller.nextPage(
+            duration: const Duration(milliseconds: 300), curve: Curves.ease);
+        setState(() {});
+      } else {
+        Get.toNamed(Routes.SignPage);
+      }
+    }
+
+    ;
     return Scaffold(
       backgroundColor: const Color(0xfffffffff),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(top: ScreenUtil().setHeight(77)),
+          SizedBox(
+            height: 155.h,
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,
@@ -67,42 +78,41 @@ class _OnBoardingState extends State<OnBoarding> {
                     padding: EdgeInsets.only(left: ScreenUtil().setWidth(10)),
                     child: Column(
                       children: [
-                        SizedBox(height: ScreenUtil().setHeight(66)),
-                     Image.asset(
-                            contents[i].image,width: 300.w,height: 180.h,
+                        SizedBox(
+                          height: ScreenUtil().setHeight(200),
+                          child: Image.asset(
+                            contents[i].image,
+                            width: 300.w,
+                            height: 180.h,
                           ),
-                        
+                        ),
                         Container(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                              onPressed: () {
-                                Get.toNamed(Routes.SignPage);
-                              },
-                              child: const Text(
-                                "Skip",
-                                style: TextStyle(color: teal),
-                              )),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 28.w),
-                          child: Text(
-                            contents[i].title,
-                            style: TextStyle(
-                              fontSize: ScreenUtil().setSp(24),
-                              fontWeight: FontWeight.bold,
+                            style: TextButton.styleFrom(
+                              primary: teal, // Text color
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 10), // Padding
                             ),
+                            onPressed: _nextPage,
+                            child: Text(currentIndex < 2 ? 'Next' : 'Continue'),
                           ),
                         ),
-                        Container(
-                            margin: EdgeInsets.only(right: 28.w),
-                            child: Text(
-                              contents[i].discription,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: ScreenUtil().setSp(14),
-                                color: Colors.grey,
-                              ),
-                            ))
+                        Text(
+                          contents[i].title,
+                          style: TextStyle(
+                            fontSize: ScreenUtil().setSp(24),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          contents[i].discription,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: ScreenUtil().setSp(14),
+                            color: Colors.grey,
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -110,69 +120,53 @@ class _OnBoardingState extends State<OnBoarding> {
               },
             ),
           ),
-          Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                      padding: EdgeInsets.only(top: ScreenUtil().setHeight(5)),
-                      decoration: BoxDecoration(
-                          color: teal,
-                          borderRadius:
-                              BorderRadius.circular(ScreenUtil().radius(20))),
-                      width: ScreenUtil().setWidth(335),
-                      height: ScreenUtil().setHeight(52),
-                      margin: EdgeInsets.only(
-                          left: ScreenUtil().setWidth(22),
-                          bottom: ScreenUtil().setHeight(15)),
-                      child: TextButton(
-                        onPressed: () {
-                          if (currentIndex == contents.length - 1) {
-                            Get.toNamed(Routes.SignPage);
-                          }
-                          _controller.nextPage(
-                            duration: const Duration(milliseconds: 100),
-                            curve: Curves.bounceIn,
-                          );
-                        },
-                        child: const Text(
-                          "Let's get started",
-                          style: TextStyle(color: Color(0xffffffff)),
-                        ),
-                      )),
-                ],
+          Container(
+              decoration: BoxDecoration(
+                  color: teal,
+                  borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
+              width: ScreenUtil().setWidth(335),
+              height: ScreenUtil().setHeight(52),
+              margin: EdgeInsets.only(
+                  right: 22.w,
+                  left: ScreenUtil().setWidth(22),
+                  bottom: ScreenUtil().setHeight(15)),
+              child: TextButton(
+                onPressed: () {
+                  if (currentIndex == contents.length - 1) {
+                    Get.toNamed(Routes.SignPage);
+                  }
+                  _controller.nextPage(
+                    duration: const Duration(milliseconds: 100),
+                    curve: Curves.bounceIn,
+                  );
+                },
+                child: const Text(
+                  "Let's get started",
+                  style: TextStyle(color: Color(0xffffffff)),
+                ),
+              )),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(Routes.LoginPage);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: const Color(0xfffffffff),
+                  border: Border.all(color: teal),
+                  borderRadius: BorderRadius.circular(ScreenUtil().radius(20))),
+              width: ScreenUtil().setWidth(335),
+              height: ScreenUtil().setHeight(52),
+              margin: EdgeInsets.only(
+                  right: 22.w,
+                  left: ScreenUtil().setWidth(22),
+                  bottom: ScreenUtil().setHeight(33)),
+              child: Text(
+                "I already have an account",
+                style: TextStyle(fontSize: ScreenUtil().setSp(16), color: teal),
+                textAlign: TextAlign.center,
               ),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed(Routes.LoginPage);
-                    },
-                    child: Container(
-
-                      padding: EdgeInsets.only(top: ScreenUtil().setHeight(13)),
-                      decoration: BoxDecoration(
-                          color: const Color(0xfffffffff),
-                          border: Border.all(color: teal),
-                          borderRadius:
-                              BorderRadius.circular(ScreenUtil().radius(20))),
-                      width: ScreenUtil().setWidth(335),
-                      height: ScreenUtil().setHeight(52),
-                      margin: EdgeInsets.only(
-                          left: ScreenUtil().setWidth(22),
-                          bottom: ScreenUtil().setHeight(33)),
-                      child: Text(
-                        "I already have an account",
-                        style: TextStyle(
-                            fontSize: ScreenUtil().setSp(16),
-                            color: teal),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
         ],
       ),
