@@ -31,7 +31,7 @@ class _SignButtonState extends State<SignButton> {
             child: const TextFeildwidget(
               hint: 'Your email',
               icon: Icon(
-                Icons.rectangle_rounded,
+                Icons.email_rounded,
                 color: teal,
                 size: 17,
               ),

@@ -17,9 +17,16 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 100.h,
             ),
-            Text(
-              "Welcome Back  👋",
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 22.sp,),
+            Padding(
+              padding: EdgeInsets.only(right: 100.w),
+              child: Text(
+                "Welcome Back  👋", // Align text to the left
+
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22.sp,
+                ),
+              ),
             ),
             Text(
               "Login to your account to continue your course.",
