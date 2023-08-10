@@ -18,7 +18,7 @@ class WishlistPage extends StatelessWidget {
           title: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.only(left: 11.w,top: 28.h),
+                  padding: EdgeInsets.only(top: 28.h,right: 250.w),
                   child: Text(
                     "Wishlist",
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
@@ -127,14 +127,10 @@ class Elements extends StatelessWidget {
                           borderRadius: BorderRadius.circular(9.r)),
                       height: 28.h,
                       width: 28.w,
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 17,
-                          )
-                        ],
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                        size: 17,
                       ),
                     )
                   ],
