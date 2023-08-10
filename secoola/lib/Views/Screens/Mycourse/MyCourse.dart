@@ -115,48 +115,42 @@ class _TogglebarState extends State<Togglebar>
           children: [
             SizedBox(height: 22.h),
             Container(
-              // height: 50,
-
               decoration: BoxDecoration(
                   color: Ligthgrey2, borderRadius: BorderRadius.circular(17.r)),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: 5.w, top: 5.h, right: 5.w, bottom: 5.h),
-                    child: TabBar(
-                      unselectedLabelColor: Colors.black,
-                      labelColor: Colors.white,
-                      indicatorColor: Colors.transparent,
-                      indicatorWeight: 2,
-                      indicator: BoxDecoration(
-                        color: teal,
-                        borderRadius: BorderRadius.circular(17.r),
-                      ),
-                      controller: tabController,
-                      tabs: [
-                        SizedBox(
-                          width: width,
-                          child: const Tab(
-                            text: 'Ongoing',
-                          ),
-                        ),
-                        SizedBox(
-                          width: width,
-                          child: const Tab(
-                            text: 'Complete',
-                          ),
-                        ),
-                      ],
-                    ),
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: 5.w, top: 5.h, right: 5.w, bottom: 5.h),
+                child: TabBar(
+                  unselectedLabelColor: Colors.black,
+                  labelColor: Colors.white,
+                  indicatorColor: Colors.transparent,
+                  indicatorWeight: 2,dividerColor: Colors.transparent,
+                  indicator: BoxDecoration(
+                    color: teal,
+                    borderRadius: BorderRadius.circular(17.r),
                   ),
-                ],
+                  controller: tabController,
+                  tabs: [
+                    SizedBox(
+                      width: width,
+                      child: const Tab(
+                        text: 'Ongoing',
+                      ),
+                    ),
+                    SizedBox(
+                      width: width,
+                      child: const Tab(
+                        text: 'Complete',
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
               child: TabBarView(
                 controller: tabController,
-                children: [const Ondoingtask(), const Completecourse()],
+                children: const [Ondoingtask(), Completecourse()],
               ),
             )
           ],
