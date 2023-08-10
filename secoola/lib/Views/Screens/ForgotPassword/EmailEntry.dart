@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Views/Widgets/CustomeButton.dart';
 import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
@@ -33,10 +32,31 @@ class EmailEntry extends StatelessWidget {
          SizedBox(
           height: 22.h,
         ),
-        GestureDetector(onTap: (){
-          Get.toNamed(Routes.verification);
-        },
-            child: const VerfiyButton(ButtonString: 'Send Verification Code',))
+        Row(
+          children: [
+            Container(
+              decoration:
+              BoxDecoration(borderRadius: BorderRadius.circular(11)),
+              width: 355.w,
+              height: 56.h,
+              child: Padding(
+                padding:  EdgeInsets.only(left: 25.w),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.verification);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: teal,
+                  ),
+                  child: const Text(
+                    "Send verification code",
+                    style: TextStyle(color: white),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
