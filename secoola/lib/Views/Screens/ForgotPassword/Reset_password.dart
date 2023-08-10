@@ -15,37 +15,35 @@ class ResetPassword extends StatelessWidget {
       backgroundColor: white2,
       body: Column(
         children: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 11),
-                  height: 52,
-                  width: 52,
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.circular(17)),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back_ios),
-                    color: Colors.black,
-                  ),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 11),
+                height: 52,
+                width: 52,
+                margin: const EdgeInsets.only(top: 66, left: 22),
+                decoration: BoxDecoration(
+                    color: white,
+                    borderRadius: BorderRadius.circular(17)),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back_ios),
+                  color: Colors.black,
                 ),
-                const SizedBox(
-                  width: 22,
+              ),
+              const SizedBox(
+                width: 22,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 66, left: 44),
+                child: const Text(
+                  "Reset Password",
+                  style: TextStyle(fontSize: 16),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 66, left: 44),
-                  child: const Text(
-                    "Reset Password",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           const titleWidget(),
           const EmailEntry()

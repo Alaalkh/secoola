@@ -16,16 +16,16 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          margin: EdgeInsets.only(top: 22.h),
+        Padding(
+          padding: EdgeInsets.only(top: 22.h),
           child: icon,
         ),
-        Container(
-          margin: EdgeInsets.only(top: 22.h, left: 6.w),
+        Padding(
+          padding: EdgeInsets.only(top: 22.h),
           child: Text(title),
         ),SizedBox(width: 178.w,),
-        Container(
-          margin: EdgeInsets.only(top: 22.h),
+        Padding(
+          padding: EdgeInsets.only(top: 22.h),
           child: arrow,
         )
       ],

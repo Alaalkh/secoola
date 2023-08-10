@@ -30,48 +30,48 @@ class Categories extends StatelessWidget {
             )
           ],
         ),
-        const SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+        const SingleChildScrollView(scrollDirection: Axis.horizontal,
+          child: Column(
             children: [
-              CategoriesWidget(
-                Category: 'Art',
-                image: "assets/mona-lisa.png",
-              ),
-              CategoriesWidget(
-                Category: 'Coding',
-                image: "assets/laptop.png",
-              ),
-              CategoriesWidget(
-                Category: 'Design',
-                image: "assets/design.png",
-              ),
-              CategoriesWidget(
-                Category: 'Health',
-                image: "assets/healthcare.png",
+              Row(
+                children: [
+                  CategoriesWidget(
+                    Category: 'Art',
+                    image: "assets/mona-lisa.png",
+                  ),
+                  CategoriesWidget(
+                    Category: 'Coding',
+                    image: "assets/laptop.png",
+                  ),
+                  CategoriesWidget(
+                    Category: 'Design',
+                    image: "assets/design.png",
+                  ),
+                  CategoriesWidget(
+                    Category: 'Health',
+                    image: "assets/healthcare.png",
+                  )
+                ],
+              ), Row(
+                children: [
+                  CategoriesWidget(
+                    Category: 'Business',
+                    image: "assets/business.png",
+                  ),
+                  CategoriesWidget(
+                    Category: 'Marketing',
+                    image: "assets/laptop.png",
+                  ),
+                  CategoriesWidget(
+                    Category: 'LifeStyle',
+                    image: "assets/life.png",
+                  ),
+                ],
               )
             ],
           ),
         ),
-        const SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              CategoriesWidget(
-                Category: 'Business',
-                image: "assets/business.png",
-              ),
-              CategoriesWidget(
-                Category: 'Marketing',
-                image: "assets/laptop.png",
-              ),
-              CategoriesWidget(
-                Category: 'LifeStyle',
-                image: "assets/life.png",
-              ),
-            ],
-          ),
-        )
+
       ],
     );
   }
