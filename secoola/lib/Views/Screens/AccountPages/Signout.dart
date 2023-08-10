@@ -5,15 +5,20 @@ class Signout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return   const Stack(
+      alignment: Alignment.bottomCenter,
       children: [
-        Positioned(top:22,
-          child: Text(
-            "Sign out",
-            style: TextStyle(fontSize: 14, color: Colors.red),
-          ),
-        )
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Positioned(
+              child: Text(
+                "Sign out",
+                style: TextStyle(fontSize: 14, color: Colors.red),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }

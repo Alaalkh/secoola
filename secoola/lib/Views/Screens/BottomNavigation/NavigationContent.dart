@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:secoola/Views/Screens/AccountPages/AccountPage.dart';
 import 'package:secoola/Views/Screens/Mycourse/MyCourse.dart';
 import 'package:secoola/Views/Screens/Home/HomePage.dart';
-import 'package:secoola/Views/Screens/BottomNavigation/Wishlistpage.dart';
+import 'package:secoola/Views/Screens/Wishlist/Wishlistpage.dart';
 
 class NavigationContent extends StatefulWidget {
   const NavigationContent({super.key});

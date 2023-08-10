@@ -17,41 +17,32 @@ class WishlistPage extends StatelessWidget {
           backgroundColor: teal,
           title: Column(
             children: [
-              Row(
-                children: [
-                  Container(
-                      margin: EdgeInsets.only(left: 11.w,top: 28.h),
-                      child: Text(
-                        "Wishlist",
-                        style: TextStyle(fontSize: 24.sp, color: Colors.white),
-                      )),
-                ],
-              ),
+              Padding(
+                  padding: EdgeInsets.only(left: 11.w,top: 28.h),
+                  child: Text(
+                    "Wishlist",
+                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
+                  )),
               const SizedBox(
                 height: 44,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 48.h,
-                    width: 335.w,
-                    decoration: BoxDecoration(
-                        color: white2,
-                        borderRadius: BorderRadius.circular(15.r)),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "Search for anything",
-                        hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                        prefixIcon: Image.asset(
-                          "assets/img_4.png",
-                          scale: 5,
-                        ),
-                        border: InputBorder.none,
-                      ),
+              Container(
+                height: 48.h,
+                width: 335.w,
+                decoration: BoxDecoration(
+                    color: white2,
+                    borderRadius: BorderRadius.circular(15.r)),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Search for anything",
+                    hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                    prefixIcon: Image.asset(
+                      "assets/img_4.png",
+                      scale: 5,
                     ),
-                  )
-                ],
+                    border: InputBorder.none,
+                  ),
+                ),
               )
             ],
           ),
@@ -61,7 +52,7 @@ class WishlistPage extends StatelessWidget {
             bottomRight: Radius.circular(28.r),
           )),
         ),
-        Elements()
+        const Elements()
       ],
     );
   }
@@ -136,16 +127,12 @@ class Elements extends StatelessWidget {
                           borderRadius: BorderRadius.circular(9.r)),
                       height: 28.h,
                       width: 28.w,
-                      child: Row(
+                      child: const Row(
                         children: [
-                          Container(
-                            padding: EdgeInsets.only(left: 6.w),
-                            child: const Icon(
-
-                              Icons.favorite,
-                              color: Colors.red,
-                              size: 17,
-                            ),
+                          Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                            size: 17,
                           )
                         ],
                       ),
@@ -153,21 +140,21 @@ class Elements extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 22.w),
+              Padding(
+                padding: EdgeInsets.only(left: 22.w),
                 child: Text(WishlistContents[i].title),
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 6.h),
+                  Padding(
+                      padding: EdgeInsets.only(left: 20.w, top: 6.h),
                       child: const Icon(
                         Icons.person,
                         color: grey,
                       )),
-                  Container(
-                    margin: EdgeInsets.only(top: 6.h),
+                  Padding(
+                    padding: EdgeInsets.only(top: 6.h),
                     child: Text(
                       WishlistContents[i].tutorname,
                       style: TextStyle(color: grey, fontSize: 12.sp),
@@ -187,12 +174,11 @@ class Elements extends StatelessWidget {
                   ),
                   Container(
                     height: 15.h,
-                    width: 77.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         color: Ligthblue,
                         borderRadius: BorderRadius.circular(22.r)),
-                    margin: EdgeInsets.only(left: 11.w, top: 6.h),
+                    margin: EdgeInsets.only(left: 11.w, top: 6.h),padding: EdgeInsets.only(left: 11.w,right: 11.w),
                     child: Text(
                       "Label",
                       style: TextStyle(color: teal, fontSize: 12.sp),

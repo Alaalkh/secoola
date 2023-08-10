@@ -35,12 +35,10 @@ class _FaqPageState extends State<FaqPage> {
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(
-                width: 22,
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 66, left: 44),
-                child: const Text(
+
+              const Padding(
+                padding: EdgeInsets.only(top: 66, left: 100),
+                child: Text(
                   "FAQ",
                   style: TextStyle(fontSize: 16),
                 ),
@@ -49,7 +47,6 @@ class _FaqPageState extends State<FaqPage> {
           ),
           Theme(
             data: ThemeData(dividerColor: Colors.transparent,indicatorColor: Colors.yellow,cardColor: grey),
-
             child: Expanded(
               child: ListView.builder(
                   itemCount: fqcontents.length,
@@ -61,7 +58,7 @@ class _FaqPageState extends State<FaqPage> {
                       collapsedBackgroundColor: white,
                       expandedAlignment: Alignment.topLeft,
                       iconColor: teal,
-                      childrenPadding: EdgeInsets.all(11),
+                      childrenPadding: const EdgeInsets.all(11),
                       children: [
                         Text(
                           fqcontents[i].discription,

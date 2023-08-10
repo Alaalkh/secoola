@@ -12,13 +12,8 @@ class Coursewidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            Container(
-                margin: EdgeInsets.only(top: 33.h, left: 22.w),
-                child: const Text("Course")),
-          ],
-        ),
+        Padding(padding: EdgeInsets.only(top: 22.h,right: 260.h),
+            child: const Text("Course",)),
         Container(
           margin: EdgeInsets.only(top: 22.h),
           width: 335.w,

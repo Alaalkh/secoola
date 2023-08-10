@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:secoola/Views/Widgets/AccountWidget.dart';
 import 'package:secoola/appRoutes.dart';
+
 class Accountwidget extends StatelessWidget {
   const Accountwidget({super.key});
 
@@ -11,13 +12,8 @@ class Accountwidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            Container(
-                margin: EdgeInsets.only(top: 33.h, left: 22.w),
-                child: const Text("Account")),
-          ],
-        ),
+        Padding(padding: EdgeInsets.only(top: 22.h,right: 260.h),
+            child: const Text("Account",)),
         Container(
           margin: EdgeInsets.only(top: 22.h),
           width: 335.w,
