@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Views/Screens/SignPages/SignButton.dart';
 import 'package:secoola/Views/Screens/SignPages/SocialMedia_Icons.dart';
-import 'package:secoola/appRoutes.dart';
-import 'package:secoola/Views/Widgets/IconWidget.dart';
-import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
 class SignPage extends StatefulWidget {
