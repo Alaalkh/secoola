@@ -90,7 +90,7 @@ class _SignButtonState extends State<SignButton> {
           ],
         ),
         SizedBox(
-          height: 77.h,
+          height:111.h,
           child: Text(
             "Conditions and Privacy Policy ",
             style: TextStyle(color: teal, fontSize: 14.sp),

@@ -12,17 +12,16 @@ class TopicWidgdet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-          child:  Text(
+        Padding(padding: EdgeInsets.only(left: 25.w,top: 15.h),
+          child: Text(
             "Your topic",
             style: TextStyle(color: Colors.black, fontSize: 18.sp),
           ),
         ),
         Container(
           alignment: Alignment.center,
-          margin:  EdgeInsets.only(left: 10.w, top: 22.h),
           height: 20.h,
+          margin: EdgeInsets.only(left: 11.w,top: 15.h),
           padding: EdgeInsets.only(left: 5.w,right: 5.w),
           decoration: BoxDecoration(
             color: const Color(0xfffDCF3F5),
@@ -36,9 +35,8 @@ class TopicWidgdet extends StatelessWidget {
          SizedBox(
           width: 122.w,
         ),
-        Container(
-          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
-          child:  Text(
+        Padding(padding: EdgeInsets.only(left: 16.w,top: 15.h),
+          child: Text(
             "See All",
             style: TextStyle(color: teal, fontSize: 14.sp),
           ),

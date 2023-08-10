@@ -99,7 +99,7 @@ class _LoginButtonState extends State<LoginButton> {
             )
           ],
         ),
-        SizedBox(height: 77.h,
+        SizedBox(height: 111.h,
           child: Text(
             "Conditions and Privacy Policy ",
             style: TextStyle(color: teal, fontSize: 14.sp),
