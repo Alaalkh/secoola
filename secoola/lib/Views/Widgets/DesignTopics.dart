@@ -11,27 +11,35 @@ class DesignTopics extends StatelessWidget {
   final String recommend;
   final Color colorText;
   final Color background;
-  const DesignTopics({super.key, required this.boxcolor, required this.titletext, required this.coursetutor, required this.price, required this.recommend, required this.colorText, required this.background});
+
+  const DesignTopics(
+      {super.key,
+      required this.boxcolor,
+      required this.titletext,
+      required this.coursetutor,
+      required this.price,
+      required this.recommend,
+      required this.colorText,
+      required this.background});
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start ,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin:  EdgeInsets.only(left: 22.w, top: 22.h),
+          margin: EdgeInsets.only(left: 22.w, top: 22.h),
           height: 100.h,
           width: 142.w,
           decoration: BoxDecoration(
-              color:boxcolor,
-              borderRadius: BorderRadius.circular(17.r)),
+              color: boxcolor, borderRadius: BorderRadius.circular(17.r)),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin:  EdgeInsets.only(top: 11.h, left: 6.h),
+                margin: EdgeInsets.only(top: 11.h, left: 6.h),
                 decoration: BoxDecoration(
-                    color:  white2,
-                    borderRadius: BorderRadius.circular(9.r)),
+                    color: white2, borderRadius: BorderRadius.circular(9.r)),
                 height: 28.h,
                 width: 49.w,
                 child: Row(
@@ -45,35 +53,37 @@ class DesignTopics extends StatelessWidget {
                   ],
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 width: 50.w,
               ),
               Container(
-                margin:  EdgeInsets.only(top: 11.h),
+                margin: EdgeInsets.only(top: 11.h),
                 decoration: BoxDecoration(
-                    color: white2,
-                    borderRadius: BorderRadius.circular(9.r)),
+                    color: white2, borderRadius: BorderRadius.circular(9.r)),
                 height: 28.h,
                 width: 28.w,
                 child: const Icon(
                   Icons.favorite,
-                  color:grey,
+                  color: grey,
                   size: 17,
                 ),
               )
             ],
           ),
         ),
-        Padding(padding: EdgeInsets.only(left: 25.w),
-          child: Text(  maxLines: 1, // Restrict text to a single line
+        Padding(
+          padding: EdgeInsets.only(left: 25.w),
+          child: Text(
+            maxLines: 1, // Restrict text to a single line
             overflow: TextOverflow.ellipsis,
             titletext,
-            style:  TextStyle(color: Colors.black, fontSize: 14.sp),
+            style: TextStyle(color: Colors.black, fontSize: 14.sp),
           ),
         ),
         Row(
           children: [
-            Padding(padding: EdgeInsets.only(left: 20.w),
+            Padding(
+              padding: EdgeInsets.only(left: 20.w),
               child: const Icon(
                 Icons.person,
                 color: grey,
@@ -81,13 +91,14 @@ class DesignTopics extends StatelessWidget {
             ),
             Text(
               coursetutor,
-              style:  TextStyle(color:grey, fontSize: 12.sp),
+              style: TextStyle(color: grey, fontSize: 12.sp),
             )
           ],
         ),
         Row(
           children: [
-            Padding(padding: EdgeInsets.only(left: 20.w,top: 6.w),
+            Padding(
+              padding: EdgeInsets.only(left: 20.w, top: 6.w),
               child: Text(
                 price,
                 style: TextStyle(color: teal, fontSize: 16.sp),
@@ -97,15 +108,17 @@ class DesignTopics extends StatelessWidget {
               height: 20.h,
               width: 77.w,
               alignment: Alignment.center,
-              decoration:  BoxDecoration(color: background,borderRadius: BorderRadius.circular(22)),
-              margin:  EdgeInsets.only(left: 11.w, top: 6.h),
-              child:  Text(
+              decoration: BoxDecoration(
+                  color: background, borderRadius: BorderRadius.circular(22)),
+              margin: EdgeInsets.only(left: 11.w, top: 6.h),
+              child: Text(
                 recommend,
                 style: TextStyle(color: colorText, fontSize: 12.sp),
               ),
             )
           ],
         )
-      ],);
+      ],
+    );
   }
 }
