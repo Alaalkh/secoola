@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:secoola/Views/Widgets/NotificationWidget.dart';
 
 import '../../../theme/Color.dart';
@@ -27,7 +28,7 @@ class NotificationPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(17)),
             child: IconButton(
               onPressed: () {
-                Navigator.pop(context);
+                Get.back();
               },
               icon: const Icon(Icons.arrow_back_ios),
               color: Colors.black,

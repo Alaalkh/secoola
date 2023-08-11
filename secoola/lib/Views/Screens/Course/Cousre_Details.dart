@@ -6,6 +6,8 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:secoola/Views/Screens/Course/Continuecourse.dart';
 import 'package:secoola/Views/Screens/Course/Curriculum.dart';
 import 'package:secoola/Views/Screens/Course/DetailsCourse_Review.dart';
+import 'package:secoola/Views/Widgets/Custome_appbar.dart';
+import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 
 class CourseDetails extends StatelessWidget {
@@ -13,75 +15,59 @@ class CourseDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xfffffffff),
-      body: SingleChildScrollView(
+    return  Scaffold(extendBodyBehindAppBar:true,appBar: CustomAppBar(title:  Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        GestureDetector(
+          child: Container(
+            height: 40.h,
+            width: 40.w,
+            margin: EdgeInsets.only(left: 25.w,bottom: 55.h),
+            decoration: BoxDecoration(
+                color: const Color(0xfff6bc2a3),
+                borderRadius: BorderRadius.circular(12.r)),
+            child: const Icon(
+              Icons.arrow_back,
+              color: Color(0xfffffffff),
+            ),
+          ),
+          onTap: () {
+            Get.back();
+          },
+        ),
+        GestureDetector(onTap: (){
+          // Get.toNamed(Routes.)
+        },
+          child: Container(
+            height: 40.h,
+            width: 40.w,
+            margin: EdgeInsets.only(left: 222.w),
+            decoration: BoxDecoration(
+                color: const Color(0xfffccbb64),
+                borderRadius: BorderRadius.circular(12.r)),
+            child: const Icon(
+              Icons.shopping_cart,
+              color: white2,
+            ),
+          ),
+        )
+      ],
+    )
+        , backcolor: Colors.transparent),
+      backgroundColor: const Color(0xfffffffff),
+      body:  SingleChildScrollView(
         child: Column(
-          children: [AppbarWidget(), DetailsReview()],
+
+          children: [
+            Container
+              (width: 375.w,height: 360.h,
+              decoration: const BoxDecoration(color: yellow),),
+            const DetailsReview()],
         ),
       ),
     );
   }
 }
 
-class AppbarWidget extends StatelessWidget {
-  const AppbarWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 360.h,
-              width: 375.w,
-              decoration: const BoxDecoration(color: Color(0xfffffea7d)),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                        child: Container(
-                          height: 40.h,
-                          width: 40.w,
-                          margin: EdgeInsets.only(left: 33.w, top: 55.h),
-                          decoration: BoxDecoration(
-                              color: const Color(0xfff6bc2a3),
-                              borderRadius: BorderRadius.circular(12.r)),
-                          child: const Icon(
-                            Icons.arrow_back,
-                            color: Color(0xfffffffff),
-                          ),
-                        ),
-                        onTap: () {
-                          Get.back();
-                        },
-                      ),
-                      Container(
-                        height: 40.h,
-                        width: 40.w,
-                        margin: EdgeInsets.only(left: 222.w, top: 55.h),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffccbb64),
-                            borderRadius: BorderRadius.circular(12.r)),
-                        child: const Icon(
-                          Icons.shopping_cart,
-                          color: white2,
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ],
-    );
-  }
-}
 
 
