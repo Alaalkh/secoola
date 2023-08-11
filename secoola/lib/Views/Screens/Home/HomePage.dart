@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-         extendBodyBehindAppBar: true,
+         // extendBodyBehindAppBar: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
