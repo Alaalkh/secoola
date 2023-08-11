@@ -21,9 +21,9 @@ class _CourseDetailsState extends State<CourseDetails> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-      'https://www.youtube.com/watch?v=9iRySrdhVQA',
-    )..initialize().then((_) {
+    _controller = VideoPlayerController.networkUrl(Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'))
+      ..initialize().then((_) {
         setState(() {});
       });
   }
@@ -89,10 +89,10 @@ class _CourseDetailsState extends State<CourseDetails> {
               decoration: const BoxDecoration(color: yellow),
               child: Center(
                 child: Padding(
-                  padding:  EdgeInsets.only(top: 70.0.h),
+                  padding: EdgeInsets.only(top: 70.0.h),
                   child: ElevatedButton(
                     onPressed: () {
-                      showVideoPopup(context);
+                      showCustomVideoPopup (context);
                     },
                     child: const Icon(Icons.play_circle),
                   ),
@@ -106,26 +106,39 @@ class _CourseDetailsState extends State<CourseDetails> {
     );
   }
 
-  void showVideoPopup(BuildContext context) {
+  void showCustomVideoPopup(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          content: SizedBox(
-            width: _controller.value.size?.width ?? 200,
-            height: _controller.value.size?.height ?? 200,
-            child: VideoPlayer(_controller),
+          contentPadding: EdgeInsets.zero, // No default padding
+          content: Container(
+            width: 300,
+            height: 400,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
+                child: VideoPlayer(_controller),
+              ),
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+               Get.back();
               },
-              child: const Text('Close'),
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: teal,
+              ),
+              child: Text('Close'),
             ),
           ],
         );
       },
     );
-  }
-}
+  }}

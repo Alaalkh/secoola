@@ -19,13 +19,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBody: true,
+        extendBodyBehindAppBar: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 55.0.h, left: 10.w),
+                padding:  EdgeInsets.only(left: 11.0.w),
                 child: Row(
                   children: [
                     Text(
@@ -72,54 +72,63 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 44.h, top: 33.h),
-                child: SizedBox(
-                  width: 335.w, // Set the desired width
-                  height: 50.h,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.toNamed(Routes.Searchdefault);
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(white2),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          "assets/img_4.png",
-                          scale: 5,
-                        ),
-                        const SizedBox(width: 8),
-                        Flexible(
-                          child: Text(
-                            'Search for anything',
-                            style: TextStyle(fontSize: 14.sp, color: grey),
+            ],
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  color: teal,borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25))
+                ),
+                height: 196.h,
+                width: 375.w,
+                child: Padding(
+                  padding: EdgeInsets.only( top: 125.h,bottom: 16.h,left: 22.w,right: 22.w),
+                  child: SizedBox(
+                    width: 335.w, // Set the desired width
+                    height: 48.h,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.Searchdefault);
+                      },
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(white2),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
                           ),
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            "assets/img_4.png",
+                            scale: 5,
+                          ),
+                          const SizedBox(width: 8),
+                          Flexible(
+                            child: Text(
+                              'Search for anything',
+                              style: TextStyle(fontSize: 14.sp, color: grey),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        body: const SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              PopularCourse(),
-              Categories(),
-              DesignTopic(),
-              CodingTopic(),
-              MarketingTopic()
+              const PopularCourse(),
+              const Categories(),
+              const DesignTopic(),
+              const CodingTopic(),
+              const MarketingTopic()
             ],
           ),
         ));
