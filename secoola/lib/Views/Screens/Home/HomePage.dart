@@ -19,13 +19,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-         // extendBodyBehindAppBar: true,
+        extendBody: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
             children: [
               Padding(
-                padding:  EdgeInsets.only(top: 55.0.h,left:10.w),
+                padding: EdgeInsets.only(top: 55.0.h, left: 10.w),
                 child: Row(
                   children: [
                     Text(
@@ -82,10 +82,8 @@ class HomePage extends StatelessWidget {
                       Get.toNamed(Routes.Searchdefault);
                     },
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(white2),
-                      shape:
-                          MaterialStateProperty.all<RoundedRectangleBorder>(
+                      backgroundColor: MaterialStateProperty.all<Color>(white2),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -112,7 +110,6 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-
         ),
         body: const SingleChildScrollView(
           child: Column(

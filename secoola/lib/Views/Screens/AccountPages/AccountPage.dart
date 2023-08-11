@@ -13,7 +13,7 @@ class AccontPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(extendBody: true,
         appBar: CustomAppBar(
           backcolor: Colors.transparent,
           title: Column(

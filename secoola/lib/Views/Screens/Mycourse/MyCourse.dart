@@ -27,7 +27,7 @@ class _CourseDetailsState extends State<MyCourse>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(extendBody: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
