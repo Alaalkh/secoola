@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:secoola/Views/Screens/Course/Continuecourse.dart';
+import 'package:secoola/Views/Screens/Course/Curriculum.dart';
+import 'package:secoola/Views/Screens/Course/DetailsCourse_Review.dart';
 import 'package:secoola/theme/Color.dart';
 
 class CourseDetails extends StatelessWidget {
@@ -15,7 +17,7 @@ class CourseDetails extends StatelessWidget {
       backgroundColor: Color(0xfffffffff),
       body: SingleChildScrollView(
         child: Column(
-          children: [AppbarWidget(), CourseReview()],
+          children: [AppbarWidget(), DetailsReview()],
         ),
       ),
     );
@@ -81,7 +83,5 @@ class AppbarWidget extends StatelessWidget {
     );
   }
 }
-
-
 
 

@@ -70,10 +70,13 @@ class _CourseDetailsState extends State<MyCourse>
             ],
           )
         ],
-      ), shape: RoundedRectangleBorder(   borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(28.r),
-        bottomRight: Radius.circular(28.r),
-      )),),
+      ),
+      shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(28.r),
+            bottomRight: Radius.circular(28.r),
+          )),
+        ),
         body :const SingleChildScrollView(
           child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +108,7 @@ class _TogglebarState extends State<Togglebar>
     double width = MediaQuery
         .of(context)
         .size
-        .width;
+        .width/2;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -116,13 +119,12 @@ class _TogglebarState extends State<Togglebar>
             .height,
         child: Column(
           children: [
-            SizedBox(height: 22.h),
-            Container(
+            Container(margin: EdgeInsets.only(top: 22.h),
               decoration: BoxDecoration(
                   color: Ligthgrey2, borderRadius: BorderRadius.circular(17.r)),
               child: Padding(
                 padding: EdgeInsets.only(
-                    left: 5.w, top: 5.h, right: 5.w, bottom: 5.h),
+                    top: 5.h,  bottom: 5.h),
                 child: TabBar(
                   unselectedLabelColor: Colors.black,
                   labelColor: Colors.white,

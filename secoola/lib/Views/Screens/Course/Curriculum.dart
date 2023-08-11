@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:secoola/Views/Widgets/CurriculumWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
-class Curriculum extends StatelessWidget {
-  const Curriculum({super.key});
+class Curriculumtab extends StatelessWidget {
+  const Curriculumtab({super.key});
 
   @override
   Widget build(BuildContext context) {
