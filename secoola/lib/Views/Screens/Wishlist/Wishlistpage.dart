@@ -9,16 +9,16 @@ class WishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AppBar(primary: false,
+    return Scaffold(
+        appBar: AppBar(
+          primary: false,
           toolbarHeight: 186,
           automaticallyImplyLeading: false,
           backgroundColor: teal,
           title: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.only(top: 28.h,right: 250.w),
+                  padding: EdgeInsets.only(top: 28.h, right: 250.w),
                   child: Text(
                     "Wishlist",
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
@@ -30,8 +30,7 @@ class WishlistPage extends StatelessWidget {
                 height: 48.h,
                 width: 335.w,
                 decoration: BoxDecoration(
-                    color: white2,
-                    borderRadius: BorderRadius.circular(15.r)),
+                    color: white2, borderRadius: BorderRadius.circular(15.r)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search for anything",
@@ -52,9 +51,11 @@ class WishlistPage extends StatelessWidget {
             bottomRight: Radius.circular(28.r),
           )),
         ),
-        const Elements()
-      ],
-    );
+        body: const SingleChildScrollView(
+          child: Column(
+            children: [Elements()],
+          ),
+        ));
   }
 }
 
@@ -174,7 +175,8 @@ class Elements extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Ligthblue,
                         borderRadius: BorderRadius.circular(22.r)),
-                    margin: EdgeInsets.only(left: 11.w, top: 6.h),padding: EdgeInsets.only(left: 11.w,right: 11.w),
+                    margin: EdgeInsets.only(left: 11.w, top: 6.h),
+                    padding: EdgeInsets.only(left: 11.w, right: 11.w),
                     child: Text(
                       "Label",
                       style: TextStyle(color: teal, fontSize: 12.sp),

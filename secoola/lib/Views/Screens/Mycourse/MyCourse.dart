@@ -26,61 +26,64 @@ class _CourseDetailsState extends State<MyCourse>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold( appBar:   AppBar(toolbarHeight: 186,primary: false,
+      automaticallyImplyLeading: false,
+      backgroundColor: teal,
+      title:
+      Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                  margin: EdgeInsets.only(left: 11.w,top: 28.h),
+                  child: Text(
+                    "My Course",
+                    style: TextStyle(
+                        fontSize: 24.sp, color: Colors.white),
+                  )),
+            ],
+          ),
+          const SizedBox(
+            height: 44,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 48.h,
+                width: 335.w,
+                decoration: BoxDecoration(
+                    color: white2,
+                    borderRadius: BorderRadius.circular(15.r)),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Search for anything",
+                    hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                    prefixIcon: Image.asset(
+                      "assets/img_4.png",
+                      scale: 5,
+                    ),
+                    border: InputBorder.none,
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ), shape: RoundedRectangleBorder(   borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(28.r),
+        bottomRight: Radius.circular(28.r),
+      )),),
+        body :const SingleChildScrollView(
+          child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        AppBar(toolbarHeight: 186,primary: false,
-            automaticallyImplyLeading: false,
-            backgroundColor: teal,
-            title:
-            Column(
-              children: [
-                Row(
-                  children: [
-                    Container(
-                        margin: EdgeInsets.only(left: 11.w,top: 28.h),
-                        child: Text(
-                          "My Course",
-                          style: TextStyle(
-                              fontSize: 24.sp, color: Colors.white),
-                        )),
-                  ],
-                ),
-                const SizedBox(
-                  height: 44,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 48.h,
-                      width: 335.w,
-                      decoration: BoxDecoration(
-                          color: white2,
-                          borderRadius: BorderRadius.circular(15.r)),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "Search for anything",
-                          hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                          prefixIcon: Image.asset(
-                            "assets/img_4.png",
-                            scale: 5,
-                          ),
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ), shape: RoundedRectangleBorder(   borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(28.r),
-            bottomRight: Radius.circular(28.r),
-          )),),
-        // Appbar(),
-        Togglebar(),
+
+          // Appbar(),
+          Togglebar(),
       ],
-    );
+    ),
+        ));
   }
 }
 

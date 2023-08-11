@@ -17,7 +17,7 @@ class AccontPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return const Scaffold(body: SingleChildScrollView(
       child: Column(
         children: [
           title(),
@@ -29,7 +29,7 @@ class AccontPage extends StatelessWidget {
 
         ],
       ),
-    );
+    ));
   }
 }
 
