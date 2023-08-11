@@ -11,56 +11,56 @@ class WishlistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 55.0.h, left: 10.w),
-                child: Row(
-                  children: [
-                    Text(
-                      "Wishlist",
-                      style: TextStyle(fontSize: 24.sp, color: white2),
-                    ),
-                    SizedBox(
-                      width: 77.w,
-                    ),
-                  ],
+                padding:  EdgeInsets.only(left: 11.0.w),
+                child: Text(
+                  "Wishlist",
+                  style: TextStyle(fontSize: 24.sp, color: white2),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 44.h, top: 33.h),
-                child: SizedBox(
-                    width: 335.w, // Set the desired width
-                    height: 50.h,
-                    child: Container(
-                      height: 48.h,
-                      width: 335.w,
-                      decoration: BoxDecoration(
-                          color: white2,
-                          borderRadius: BorderRadius.circular(15.r)),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: "Search for anything",
-                          hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                          prefixIcon: Image.asset(
-                            "assets/img_4.png",
-                            scale: 5,
-                          ),
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    )),
-              ),
+
             ],
           ),
         ),
-
-
-        body: const SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
-            children: [Elements()],
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    color: teal,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(25),
+                        bottomRight: Radius.circular(25))),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 125.h, bottom: 16.h, left: 22.w, right: 22.w),
+                  child: Container(
+                    height: 48.h,
+                    width: 335.w,
+                    decoration: BoxDecoration(
+                        color: white2,
+                        borderRadius: BorderRadius.circular(15.r)),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Search for anything",
+                        hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                        prefixIcon: Image.asset(
+                          "assets/img_4.png",
+                          scale: 5,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Elements()
+            ],
           ),
         ));
   }
@@ -95,7 +95,7 @@ class Elements extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 22.w, right: 16.w,top: 3.h),
+                margin: EdgeInsets.only(left: 22.w, right: 16.w),
                 height: 100.h,
                 width: 158.w,
                 decoration: BoxDecoration(
