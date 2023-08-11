@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Models/WishlistContent.dart';
+import 'package:secoola/Views/Widgets/Custome_appbar.dart';
 import 'package:secoola/theme/Color.dart';
 
 class WishlistPage extends StatelessWidget {
@@ -10,47 +11,53 @@ class WishlistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          primary: false,
-          toolbarHeight: 186,
-          automaticallyImplyLeading: false,
-          backgroundColor: teal,
+        appBar: CustomAppBar(
+          backcolor: teal,
           title: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.only(top: 28.h, right: 250.w),
-                  child: Text(
-                    "Wishlist",
-                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
-                  )),
-              const SizedBox(
-                height: 44,
-              ),
-              Container(
-                height: 48.h,
-                width: 335.w,
-                decoration: BoxDecoration(
-                    color: white2, borderRadius: BorderRadius.circular(15.r)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search for anything",
-                    hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                    prefixIcon: Image.asset(
-                      "assets/img_4.png",
-                      scale: 5,
+                padding: EdgeInsets.only(top: 55.0.h, left: 10.w),
+                child: Row(
+                  children: [
+                    Text(
+                      "Wishlist",
+                      style: TextStyle(fontSize: 24.sp, color: white2),
                     ),
-                    border: InputBorder.none,
-                  ),
+                    SizedBox(
+                      width: 77.w,
+                    ),
+                  ],
                 ),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 44.h, top: 33.h),
+                child: SizedBox(
+                    width: 335.w, // Set the desired width
+                    height: 50.h,
+                    child: Container(
+                      height: 48.h,
+                      width: 335.w,
+                      decoration: BoxDecoration(
+                          color: white2,
+                          borderRadius: BorderRadius.circular(15.r)),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Search for anything",
+                          hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                          prefixIcon: Image.asset(
+                            "assets/img_4.png",
+                            scale: 5,
+                          ),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    )),
+              ),
             ],
           ),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(28.r),
-            bottomRight: Radius.circular(28.r),
-          )),
         ),
+
+
         body: const SingleChildScrollView(
           child: Column(
             children: [Elements()],
@@ -88,7 +95,7 @@ class Elements extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 22.w, right: 16.w),
+                margin: EdgeInsets.only(left: 22.w, right: 16.w,top: 3.h),
                 height: 100.h,
                 width: 158.w,
                 decoration: BoxDecoration(
