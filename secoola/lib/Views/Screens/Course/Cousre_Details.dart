@@ -84,21 +84,40 @@ class _CourseDetailsState extends State<CourseDetails> {
         child: Column(
           children: [
             Container(
-              width: 375.w,
-              height: 360.h,
-              decoration: const BoxDecoration(color: yellow),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 70.0.h),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      showCustomVideoPopup (context);
-                    },
-                    child: const Icon(Icons.play_circle),
+                width: 375.w,
+                height: 360.h,
+                decoration: const BoxDecoration(color: yellow),
+                child: Center(
+                  child: GestureDetector(onTap: (){
+                    showCustomVideoPopup(context);
+                    if (_controller.value.isPlaying) {
+                      _controller.pause();
+                    } else {
+                      _controller.play();
+                    }
+                  },
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 165.w,
+                      height: 48.h,
+                      decoration: BoxDecoration(
+                          color: const Color(0xfffccbb64),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            Icons.play_circle,
+                            color: white2,
+                          ),
+                          Text(
+                            "Course Review",
+                            style: TextStyle(color: white2),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
+                )),
             const DetailsReview()
           ],
         ),
@@ -129,16 +148,17 @@ class _CourseDetailsState extends State<CourseDetails> {
           actions: [
             TextButton(
               onPressed: () {
-               Get.back();
+                Get.back();
               },
               style: TextButton.styleFrom(
                 primary: Colors.white,
                 backgroundColor: teal,
               ),
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );
       },
     );
-  }}
+  }
+}
