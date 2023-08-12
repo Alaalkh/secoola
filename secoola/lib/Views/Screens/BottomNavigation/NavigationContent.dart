@@ -19,11 +19,17 @@ class _NavigationContentState extends State<NavigationContent> {
     const MyCourse(),
     const WishlistPage(),
     const AccontPage()
+  ]; final List<String> titles = <String>[
+    "HomePage",
+    " MyCourse",
+    " WishlistPage",
+    " AccontPage"
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: _widget[_currentIndex],
       backgroundColor: Color(0xfffFAFAFA),
       bottomNavigationBar: BottomNavigationBar(
