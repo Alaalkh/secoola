@@ -22,7 +22,7 @@ class _CourseDetailsState extends State<CourseDetails> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.networkUrl(Uri.parse(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'))
+        'https://firebasestorage.googleapis.com/v0/b/storage-93a33.appspot.com/o/Videos%2Fdesign.mp4?alt=media&token=15e7a9d0-0a75-4be3-8ece-dc8ca2b2412c'))
       ..initialize().then((_) {
         setState(() {});
       });
