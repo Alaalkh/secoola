@@ -38,10 +38,8 @@ class WishlistPage extends StatelessWidget {
                         bottomRight: Radius.circular(25))),
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: 125.h, bottom: 16.h, left: 22.w, right: 22.w),
+                      top: 133.h,bottom: 15.h, left: 22.w, right: 22.w),
                   child: Container(
-                    height: 48.h,
-                    width: 335.w,
                     decoration: BoxDecoration(
                         color: white2,
                         borderRadius: BorderRadius.circular(15.r)),
@@ -59,7 +57,7 @@ class WishlistPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Elements()
+              const Elements()
             ],
           ),
         ));

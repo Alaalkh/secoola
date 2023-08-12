@@ -19,7 +19,7 @@ class AccontPage extends StatelessWidget {
           title: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 55.0.h, left: 10.w),
+                padding: EdgeInsets.only( left: 10.w),
                 child: Row(
                   children: [
                     Text(
@@ -32,57 +32,64 @@ class AccontPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                  padding: EdgeInsets.only(bottom: 44.h, top: 33.h),
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 22.w, top: 40.h),
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                            color: yellow,
-                            borderRadius: BorderRadius.circular(12.r)),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 22.w, top: 33.h),
-                            child: Text(
-                              "Raymond Skyberg",
-                              style: TextStyle(fontSize: 16.sp),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 22.w, top: 11.h),
-                            child: Text(
-                              "raymond@mail.com",
-                              style: TextStyle(fontSize: 12.sp, color: grey),
-                            ),
-                          )
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 77.w, top: 40.h),
-                        height: 40.h,
-                        width: 40.w,
-                        decoration: BoxDecoration(
-                            color: white2,
-                            borderRadius: BorderRadius.circular(12.r)),
-                        child: Image.asset(
-                          "assets/editbutton.png",
-                          scale: 2,
-                        ),
-                      )
-                    ],
-                  )),
+
             ],
           ),
         ),
-        body: const SingleChildScrollView(
+        body:  SingleChildScrollView(
           child: Column(
-            children: [
+            children: [  Container(
+              decoration: const BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(25),
+                      bottomRight: Radius.circular(25))),
+
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 22.w),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        color: yellow,
+                        borderRadius: BorderRadius.circular(12.r)),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 22.w, ),
+                        child: Text(
+                          "Raymond Skyberg",
+                          style: TextStyle(fontSize: 16.sp),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 22.w, ),
+                        child: Text(
+                          "raymond@mail.com",
+                          style: TextStyle(fontSize: 12.sp, color: grey),
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 77.w,),
+                    height: 40.h,
+                    width: 40.w,
+                    decoration: BoxDecoration(
+                        color: white2,
+                        borderRadius: BorderRadius.circular(12.r)),
+                    child: Image.asset(
+                      "assets/editbutton.png",
+                      scale: 2,
+                    ),
+                  )
+                ],
+              )
+            ),
+
               Accountwidget(),
               Coursewidget(),
               SupportWidget(),
