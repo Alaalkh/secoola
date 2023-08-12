@@ -11,48 +11,44 @@ class WishlistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        extendBody: true,
         appBar: CustomAppBar(
           backcolor: teal,
           title: Column(
             children: [
               Padding(
-                padding:  EdgeInsets.only(left: 11.0.w),
+                padding: EdgeInsets.only(left: 11.0.w),
                 child: Text(
                   "Wishlist",
                   style: TextStyle(fontSize: 24.sp, color: white2),
                 ),
               ),
-
             ],
           ),
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
+              Container(margin: EdgeInsets.only(bottom: 22.h),
                 decoration: const BoxDecoration(
                     color: teal,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(25),
                         bottomRight: Radius.circular(25))),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      top: 133.h,bottom: 15.h, left: 22.w, right: 22.w),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: white2,
-                        borderRadius: BorderRadius.circular(15.r)),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "Search for anything",
-                        hintStyle: TextStyle(fontSize: 14.sp, color: grey),
-                        prefixIcon: Image.asset(
-                          "assets/img_4.png",
-                          scale: 5,
-                        ),
-                        border: InputBorder.none,
+                child: Container(
+                  margin: EdgeInsets.only(
+                      bottom: 15.h, left: 22.w, right: 22.w),
+                  decoration: BoxDecoration(
+                      color: white2, borderRadius: BorderRadius.circular(15.r)),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Search for anything",
+                      hintStyle: TextStyle(fontSize: 14.sp, color: grey),
+                      prefixIcon: Image.asset(
+                        "assets/img_4.png",
+                        scale: 5,
                       ),
+                      border: InputBorder.none,
                     ),
                   ),
                 ),
