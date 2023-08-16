@@ -255,18 +255,18 @@ class _CourseReviewState extends State<CourseReview>
             children: [
               Container(
                 margin: EdgeInsets.only(top: 33.h),
-                height: 46.h,
+                height: 55.h,
                 width: 335.w,
                 decoration: BoxDecoration(
                     color: const Color(0xfffF4F4F4),
                     borderRadius: BorderRadius.circular(16.r)),
                 child: Padding(
                   padding: EdgeInsets.only(
-                      left: 5.w, top: 5.h, right: 5.w, bottom: 5.h),
+                     top: 5.h,  bottom: 5.h),
                   child: TabBar(
                     unselectedLabelColor: Colors.black,
                     labelColor: Colors.white,
-                    indicatorColor: Colors.transparent,
+                    indicatorColor: Colors.transparent,dividerColor: Colors.transparent,
                     indicatorWeight: 2,
                     indicator: BoxDecoration(
                       color: const Color(0xfff00A9B7),

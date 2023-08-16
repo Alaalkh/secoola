@@ -14,11 +14,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(375, 812),
+        designSize: const Size(375, 812),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
             getPages: getPages,
             debugShowCheckedModeBanner: false,
             title: 'Secoola',
-            home:  SplachScreen(),
+            home:  const SplachScreen(),
             theme: ThemeData(
               scaffoldBackgroundColor: white,
               useMaterial3: true,

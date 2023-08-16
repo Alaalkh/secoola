@@ -44,6 +44,7 @@ dependencies:
   form_validator: ">=0.1.1 <2.0.0"
   video_thumbnail: ^0.5.3
   http: ^1.1.0
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:

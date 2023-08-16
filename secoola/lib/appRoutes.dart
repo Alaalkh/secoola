@@ -3,7 +3,7 @@ import 'package:secoola/Views/Screens/AccountPages/Faq_page.dart';
 import 'package:secoola/Views/Screens/AccountPages/NotificationPage.dart';
 import 'package:secoola/Views/Screens/Course/CartPage.dart';
 import 'package:secoola/Views/Screens/Topics/ChooseTopic.dart';
-import 'package:secoola/Views/Screens//Course/Continuecourse.dart';
+import 'package:secoola/Views/Screens/Mycourse/Continuecourse.dart';
 import 'package:secoola/Views/Screens/Course/Course_complete.dart';
 import 'package:secoola/Views/Screens/Course/Cousre_Details.dart';
 import 'package:secoola/Views/Screens/Mycourse/MyCourse.dart';
