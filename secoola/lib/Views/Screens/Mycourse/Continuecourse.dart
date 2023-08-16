@@ -1,74 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:secoola/Views/Screens/Mycourse/CurriculumTab.dart';
+import 'package:secoola/Views/Screens/Mycourse/Reviewcourse.dart';
 import 'package:secoola/Views/Widgets/CurriculumWidget.dart';
+import 'package:secoola/Views/Widgets/Custome_appbar.dart';
+import 'package:secoola/appRoutes.dart';
+import 'package:secoola/theme/Color.dart';
 
 class Continuecourse extends StatelessWidget {
   const Continuecourse({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFFFFFFFF),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [AppbarWidget(), CourseReview()],
-        ),
-      ),
-    );
-  }
-}
-
-class AppbarWidget extends StatelessWidget {
-  const AppbarWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return  Scaffold( extendBodyBehindAppBar:true,appBar: CustomAppBar(
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 360.h,
-              width: 375.w,
-              decoration: const BoxDecoration(color: Color(0xfffFFEA7D)),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 40.h,
-                        width: 40.w,
-                        margin: EdgeInsets.only(left: 33.w, top: 55.h),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfff6BC2A3),
-                            borderRadius: BorderRadius.circular(12.r)),
-                        child: const Icon(
-                          Icons.arrow_back,
-                          color: Color(0xfffFFFFFF),
-                        ),
-                      ),
-                      Container(
-                        height: 40.h,
-                        width: 40.w,
-                        margin: EdgeInsets.only(left: 222.w, top: 55.h),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffCCBB64),
-                            borderRadius: BorderRadius.circular(12.r)),
-                        child: const Icon(
-                          Icons.shopping_cart,
-                          color: Color(0xfffFFFFFF),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
+            GestureDetector(
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                margin: EdgeInsets.only(left: 25.w, bottom: 55.h),
+                decoration: BoxDecoration(
+                    color: const Color(0xfff6bc2a3),
+                    borderRadius: BorderRadius.circular(12.r)),
+                child: const Icon(
+                  Icons.arrow_back,
+                  color: Color(0xfffffffff),
+                ),
+              ),
+              onTap: () {
+                Get.back();
+              },
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(Routes.CartPage);
+              },
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                margin: EdgeInsets.only(left: 222.w),
+                decoration: BoxDecoration(
+                    color: const Color(0xfffccbb64),
+                    borderRadius: BorderRadius.circular(12.r)),
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: white2,
+                ),
               ),
             )
           ],
         ),
-      ],
+        backcolor: Colors.transparent),
+      backgroundColor: Color(0xFFFFFFFFF),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [ Container(
+              width: 375.w,
+              height: 360.h,
+              decoration: const BoxDecoration(color: yellow),
+              ), CourseReview()],
+        ),
+      ),
     );
   }
 }
@@ -304,185 +299,4 @@ class _CourseReviewState extends State<CourseReview>
   }
 }
 
-class Curriculum extends StatelessWidget {
-  const Curriculum({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return  const Column(
-      children: [
-        CurriculumWidgets(
-            Name: "Introduction         ",
-            duraion: "00.53 mins",
-            iconn:
-                Icon(Icons.check_circle, size: 33, color: Color(0xfff00A9B7))),
-        CurriculumWidgets(
-            Name: "Design Thingking",
-            duraion: "05.25 mins",
-            iconn: Icon(Icons.slow_motion_video_outlined,
-                size: 33, color: Color(0xfff00A9B7))),
-        CurriculumWidgets(
-            Name: "Improving Design",
-            duraion: "05.36 mins",
-            iconn: Icon(Icons.slow_motion_video_outlined,
-                size: 33, color: Color(0xfff00A9B7)))
-      ],
-    );
-  }
-}
-
-class ReviewTab extends StatelessWidget {
-  const ReviewTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 22.h),
-              child: Text(
-                "Student reviews",
-                style: TextStyle(fontSize: 16.sp),
-              ),
-            )
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-                margin: EdgeInsets.only(top: 10.h),
-                child: Image.asset(
-                  "assets/star.png",
-                  scale: 33,
-                )),
-            SizedBox(width: 6.w),
-            Container(
-                margin: EdgeInsets.only(top: 10.h),
-                child: Image.asset(
-                  "assets/star.png",
-                  scale: 33,
-                )),
-            SizedBox(width: 6.w),
-            Container(
-                margin: EdgeInsets.only(top: 10.h),
-                child: Image.asset(
-                  "assets/star.png",
-                  scale: 33,
-                )),
-            SizedBox(width: 6.w),
-            Container(
-                margin: EdgeInsets.only(top: 10.h),
-                child: Image.asset(
-                  "assets/star.png",
-                  scale: 33,
-                )),
-            SizedBox(width: 6.w),
-            Container(
-                margin: EdgeInsets.only(top: 10.h),
-                child: Image.asset(
-                  "assets/star.png",
-                  scale: 33,
-                )),
-            SizedBox(width: 20.w),
-            Container(
-              margin: EdgeInsets.only(top: 10.h),
-              child: Text(
-                "4.8 out of 5",
-                style: TextStyle(fontSize: 12.sp),
-              ),
-            )
-          ],
-        ),
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 33.h, left: 28.w),
-              child: Text(
-                "Sort By",
-                style: TextStyle(fontSize: 12.sp),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 33.h, left: 28.w),
-              // child:Icon(Icons)
-            )
-          ],
-        ),
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 16.h, left: 20.w),
-              height: 36.h,
-              width: 36.h,
-              decoration: BoxDecoration(
-                  color: const Color(0xfffFFEA7D),
-                  borderRadius: BorderRadius.circular(12)),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 22.w, top: 12.h),
-                  child: const Text(
-                    "Reviewer Username",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Container(
-                    margin: EdgeInsets.only(left: 22.w, top: 3.h),
-                    child: const Text(
-                      "1 day ago",
-                      style: TextStyle(fontSize: 12),
-                    ))
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 15.h, left: 66.w),
-              height: 32.h,
-              width: 67.w,
-              decoration: BoxDecoration(
-                  color: const Color(0xfffFAFAFA),
-                  borderRadius: BorderRadius.circular(12.r)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/star.png",
-                    scale: 33,
-                  ),
-                  SizedBox(
-                    width: 6.w,
-                  ),
-                  const Text(
-                    "4.8",
-                    style: TextStyle(fontSize: 16),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 16.h, left: 20.w),
-              width: 335.w,
-              height: 41.h,
-              child: const Text(
-                "Description this is a simple description that explain the description about the class ",
-                style: TextStyle(color: Color(0xfffA9AEB2)),
-              ),
-            )
-          ],
-        )
-      ],
-    );
-  }
-}
