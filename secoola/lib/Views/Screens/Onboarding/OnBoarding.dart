@@ -6,7 +6,7 @@ import 'package:secoola/appRoutes.dart';
 import 'package:secoola/Models/onboardinModel.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
+import 'package:get/get.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
 
@@ -14,7 +14,9 @@ class OnBoarding extends StatefulWidget {
   State<OnBoarding> createState() => _OnBoardingState();
 }
 
-class _OnBoardingState extends State<OnBoarding> {
+class _OnBoardingState extends State<OnBoarding> {  var apiResponse = ''.obs;
+
+
   int currentIndex = 0;
   PageController _controller = PageController(initialPage: 0);
 

@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:secoola/Views/Screens/Course/DetailsCourse_Review.dart';
 import 'package:secoola/Views/Widgets/Custome_appbar.dart';
+import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:video_player/video_player.dart';
 
@@ -61,7 +62,7 @@ class _CourseDetailsState extends State<CourseDetails> {
               ),
               GestureDetector(
                 onTap: () {
-                  // Get.toNamed(Routes.)
+                   Get.toNamed(Routes.CartPage);
                 },
                 child: Container(
                   height: 40.h,

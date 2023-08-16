@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:secoola/Views/Screens/AccountPages/Faq_page.dart';
 import 'package:secoola/Views/Screens/AccountPages/NotificationPage.dart';
+import 'package:secoola/Views/Screens/Course/CartPage.dart';
 import 'package:secoola/Views/Screens/Topics/ChooseTopic.dart';
 import 'package:secoola/Views/Screens//Course/Continuecourse.dart';
 import 'package:secoola/Views/Screens/Course/Course_complete.dart';
@@ -42,6 +43,7 @@ class Routes {
   static String Searchresult = '/Searchresult';
   static String NotificationPage = '/NotificationPage';
   static String FaqPage = '/FaqPage';
+  static String CartPage = '/CartPage';
 }
 
 final getPages = [
@@ -109,6 +111,9 @@ final getPages = [
   GetPage(
       name: Routes.FaqPage,
       page: () => FaqPage(),
+      transition: Transition.rightToLeft),  GetPage(
+      name: Routes.CartPage,
+      page: () => CartPage(),
       transition: Transition.rightToLeft),
 ];
 
