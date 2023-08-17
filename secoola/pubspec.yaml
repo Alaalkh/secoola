@@ -45,6 +45,7 @@ dependencies:
   video_thumbnail: ^0.5.3
   http: ^1.1.0
   dio: ^4.0.0
+  mobx: ^2.2.0
 
 dev_dependencies:
   flutter_test:

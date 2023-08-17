@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secoola/Views/Screens/Mycourse/CurriculumTab.dart';
 import 'package:secoola/Views/Screens/Mycourse/Reviewcourse.dart';
-import 'package:secoola/Views/Widgets/CurriculumWidget.dart';
 import 'package:secoola/Views/Widgets/Custome_appbar.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';

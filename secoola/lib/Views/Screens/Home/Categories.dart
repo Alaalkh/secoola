@@ -1,9 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:secoola/Controllers/Controller.dart';
 import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:http/http.dart' as http;
@@ -33,7 +29,6 @@ class _CategoriesState extends State<Categories> {
   @override
   void initState() {
     super.initState();
-    CategoryController.categoryController.fetchData();
   }
   @override
   Widget build(BuildContext context) {
@@ -62,30 +57,19 @@ class _CategoriesState extends State<Categories> {
             )
           ],
         ),
-        SizedBox(
-          height: 88.h,
-          child: FutureBuilder(
-            future: CategoryController.categoryController.fetchData(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator(color: teal,),);
-              } else if (snapshot.hasError) {
-                return Center(child: Text('Error: ${snapshot.error}'));
-              } else if (snapshot.hasData) {
-                final categoryData = snapshot.data;
-                return ListView.builder(
-                  itemCount: categoryData!.length,
-                  itemBuilder: (context, index) {
-                    return CategoriesWidget(
-                      image: categoryData[index]!.image.toString(),
-                      Category: categoryData[index]!.name.toString(),
-                    );
-                  },
-                );
-              } else {
-                return const Center(child: Text('No data available.'));
-              }
-            },
+        const SingleChildScrollView(scrollDirection: Axis.horizontal,
+          child: Column(
+            children: [
+              Row(
+               children: [CategoriesWidget(image: "assets/design.png", Category: "Design"),CategoriesWidget(image: "assets/laptop.png", Category: "Coding"),
+                 CategoriesWidget(image: "assets/business.png", Category: "Marketing"),
+                ],
+              ),Row(
+                children: [CategoriesWidget(image: "assets/healthcare.png", Category: "LifeStyle"),CategoriesWidget(image: "assets/design.png", Category: "Design"),
+                  CategoriesWidget(image: "assets/design.png", Category: "Design"),
+                ],
+              ),
+            ],
           ),
         ),
 

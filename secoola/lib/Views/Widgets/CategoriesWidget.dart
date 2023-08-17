@@ -18,7 +18,7 @@ class CategoriesWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(
+          Image.asset(
             image ,
             width: 22.w,
           ), SizedBox(width: 7.w,),
