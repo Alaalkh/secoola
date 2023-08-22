@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/theme/Color.dart';
 
@@ -18,8 +20,8 @@ class CategoriesWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            image ,
+          CachedNetworkImage(
+            imageUrl: image ,
             width: 22.w,
           ), SizedBox(width: 7.w,),
           Text(Category,style:  TextStyle(fontSize: 14.sp),)

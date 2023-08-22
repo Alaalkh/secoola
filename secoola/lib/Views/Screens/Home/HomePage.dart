@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:secoola/Controllers/Apicontroller.dart';
+import 'package:secoola/Models/Category.dart';
 import 'package:secoola/Views/Screens/Home/Categories.dart';
 import 'package:secoola/Views/Screens/Home/Coding_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Design_Topics.dart';
@@ -39,26 +41,35 @@ class _HomePageState extends State<HomePage> {
   //   print(categoreis.length);
   //   return categoreis;
   // }
-  String apiData = ''; // The fetched API data will be stored here
+  // String apiData = '';
+  //
+  // Future<void> fetchApiData() async {
+  //   final response = await http.get(
+  //       Uri.parse('https://api.rafeeqissa.com/api/category'));
+  //
+  //   if (response.statusCode == 200) {
+  //     final responseData = json.decode(response.body);
+  //     setState(() {
+  //       apiData = responseData['key'];
+  //       print(apiData);
+  //
+  //     });
+  //   } else {
+  //     print('Request failed with status: ${response.statusCode}');
+  //   }
+  //   @override
+  //   void initState() {
+  //     super.initState();
+  //     fetchApiData();
+  //   }
+  // }
+  // HTTPHandler httpHandler = HTTPHandler();
+  // late Future<List<Photo>> photoList;
 
-  Future<void> fetchApiData() async {
-    final response = await http.get(
-        Uri.parse('https://api.rafeeqissa.com/api/category'));
-
-    if (response.statusCode == 200) {
-      final responseData = json.decode(response.body);
-      setState(() {
-        apiData = responseData['key'];
-      });
-    } else {
-      print('Request failed with status: ${response.statusCode}');
-    }
-    @override
-    void initState() {
-      // TODO: implement initState
-      super.initState();
-      fetchApiData();
-    }
+  @override
+  void initState() {
+    super.initState();
+    // photoList = httpHandler.fetchData();
   }
 
   @override
@@ -198,33 +209,37 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                   ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: 44.h,
-                        child:ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: const <Widget>[
-                                    CategoriesWidget(
-                                        image: "assets/laptop.png",
-                                        Category: "Coding"),
-                                    CategoriesWidget(
-                                        image: "assets/laptop.png",
-                                        Category: "Coding"),
-                                    CategoriesWidget(
-                                        image: "assets/laptop.png",
-                                        Category: "Coding"),
-                                    CategoriesWidget(
-                                        image: "assets/laptop.png",
-                                        Category: "Coding"),
-                                  ],
-                                )
-
-
-                        // child:
-                      )
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: FutureBuilder<ApiResponse>(
+                      future: ApiService.fetchData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return Center(child: Text('Error loading data'));
+                        } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
+                          return Center(child: Text('No data available'));
+                        } else {
+                          final topics = snapshot.data!.data;
+                          return Row(
+                            children: topics.map((topicJson) {
+                              final topic = ProgrammingTopic.fromJson(topicJson);
+                              return Padding(
+                                padding: const EdgeInsets.only(left:2),
+                                child: CategoriesWidget(
+                                  image: topic.image,
+                                 Category: topic.name,
+                                  // Customize the UI as needed
+                                ),
+                              );
+                            }).toList(),
+                          );
+                        }
+                      },
+                    ),
                   )
+
                 ],
               ),
               const DesignTopic(),
@@ -236,6 +251,9 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+// buildCard(Photo photo) {
+//   return CategoriesWidget(image: photo.image, Category: photo.name.toString());
+// }
 void show(BuildContext ctx) {
   showModalBottomSheet(
       isScrollControlled: true,
@@ -317,8 +335,8 @@ void Items(BuildContext ctx) {
 }
 
 class Category {
-   String name, image, created_at, updated_at;
-   int id;
+  String name, image, created_at, updated_at;
+  int id;
 
   Category(this.image, this.id, this.name, this.created_at, this.updated_at);
 }
