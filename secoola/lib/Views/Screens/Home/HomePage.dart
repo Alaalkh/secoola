@@ -286,9 +286,3 @@ void Items(BuildContext ctx) {
           ]));
 }
 
-class Category {
-  String name, image, created_at, updated_at;
-  int id;
-
-  Category(this.image, this.id, this.name, this.created_at, this.updated_at);
-}

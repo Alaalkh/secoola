@@ -1,54 +1,92 @@
-class ApiResponse2 {
+
+
+class Api{
   final bool status;
   final String message;
-  final Map<String, dynamic> data;
+  final List<Map<String, dynamic>> data;
 
-  ApiResponse2({
+  Api({
     required this.status,
     required this.message,
     required this.data,
   });
 
-  factory ApiResponse2.fromJson(Map<String, dynamic> json) {
-    return ApiResponse2(
+  factory Api.fromJson(Map<String, dynamic> json) {
+    return Api(
       status: json['status'],
       message: json['message'],
-      data: json['data'],
+      data: List<Map<String, dynamic>>.from(json['data']),
     );
   }
 }
+
+class Data {
+  List<Category> category;
+  List<Coding> papularCourses;
+  List<Coding> design;
+  List<Coding> coding;
+  List<Markt> markt;
+
+  Data({
+    required this.category,
+    required this.papularCourses,
+    required this.design,
+    required this.coding,
+    required this.markt,
+  });
+
+  factory Data.fromJson(Map<String, dynamic> json) => Data(
+    category: List<Category>.from(json["Category"].map((x) => Category.fromJson(x))),
+    papularCourses: List<Coding>.from(json["PapularCourses"].map((x) => Coding.fromJson(x))),
+    design: List<Coding>.from(json["Design"].map((x) => Coding.fromJson(x))),
+    coding: List<Coding>.from(json["Coding"].map((x) => Coding.fromJson(x))),
+    markt: List<Markt>.from(json["Markt"].map((x) => Markt.fromJson(x))),
+  );
+
+
+}
+
 class Category {
-  final int id;
-  final String name;
-  final String image;
+  int id;
+  String name;
+  String image;
+  String createdAt;
+  String updatedAt;
 
   Category({
     required this.id,
     required this.name,
     required this.image,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
-  factory Category.fromJson(Map<String, dynamic> json) {
-    return Category(
-      id: json['id'],
-      name: json['name'],
-      image: json['image'],
-    );
-  }
+  factory Category.fromJson(Map<String, dynamic> json) => Category(
+    id: json["id"],
+    name: json["name"],
+    image: json["image"],
+    createdAt: json["created_at"],
+    updatedAt: json["updated_at"],
+  );
+
+
 }
 
-class PapularCourse {
-  final int id;
-  final int categoryId;
-  final String name;
-  final String description;
-  final String ownerCourse;
-  final String image;
-  final int countStudent;
-  final int evaluation;
-  final String language;
+class Coding {
+  int id;
+  int categoryId;
+  String name;
+  String description;
+  String ownerCourse;
+  String image;
+  int countStudent;
+  int evaluation;
+  String language;
+  String createdAt;
+  String updatedAt;
+  CodingCategory category;
 
-  PapularCourse({
+  Coding({
     required this.id,
     required this.categoryId,
     required this.name,
@@ -58,34 +96,77 @@ class PapularCourse {
     required this.countStudent,
     required this.evaluation,
     required this.language,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.category,
   });
 
-  factory PapularCourse.fromJson(Map<String, dynamic> json) {
-    return PapularCourse(
-      id: json['id'],
-      categoryId: json['category_id'],
-      name: json['name'],
-      description: json['description'],
-      ownerCourse: json['owner_course'],
-      image: json['image'],
-      countStudent: json['count_student'],
-      evaluation: json['evaluation'],
-      language: json['language'],
+
+  factory Coding.fromJson(Map<String, dynamic> json) {
+    return Coding(
+      id: json["id"],
+      categoryId: json["category_id"],
+      name: json["name"],
+      description: json["description"],
+      ownerCourse: json["owner_course"],
+      image: json["image"],
+      countStudent: json["count_student"],
+      evaluation: json["evaluation"],
+      language: json["language"],
+      createdAt: json["created_at"],
+      updatedAt: json["updated_at"], category: CodingCategory.fromJson(json["category"]),
     );
   }
-}
-class DesignTopics {
-  final int id;
-  final int categoryId;
-  final String name;
-  final String description;
-  final String ownerCourse;
-  final String image;
-  final int countStudent;
-  final int evaluation;
-  final String language;
 
-  DesignTopics({
+}
+
+class CodingCategory {
+  int id;
+  String name;
+  String image;
+  String createdAt;
+  String updatedAt;
+
+  CodingCategory({
+    required this.id,
+    required this.name,
+    required this.image,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  factory CodingCategory.fromJson(Map<String, dynamic> json) => CodingCategory(
+    id: json["id"],
+    name: json["name"],
+    image: json["image"],
+    createdAt: json["created_at"],
+    updatedAt: json["updated_at"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "image": image,
+    "created_at": createdAt,
+    "updated_at": updatedAt,
+  };
+}
+
+class Markt {
+  int id;
+  int categoryId;
+  String name;
+  String description;
+  String ownerCourse;
+  String image;
+  int countStudent;
+  int evaluation;
+  String language;
+  String createdAt;
+  String updatedAt;
+  MarktCategory category;
+
+  Markt({
     required this.id,
     required this.categoryId,
     required this.name,
@@ -95,94 +176,58 @@ class DesignTopics {
     required this.countStudent,
     required this.evaluation,
     required this.language,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.category,
   });
 
-  factory DesignTopics.fromJson(Map<String, dynamic> json) {
-    return DesignTopics(
-      id: json['id'],
-      categoryId: json['category_id'],
-      name: json['name'],
-      description: json['description'],
-      ownerCourse: json['owner_course'],
-      image: json['image'],
-      countStudent: json['count_student'],
-      evaluation: json['evaluation'],
-      language: json['language'],
-    );
+
+  factory Markt.fromJson(Map<String, dynamic> json) {
+    return Markt(
+        id: json["id"],
+        categoryId: json["category_id"],
+        name: json["name"],
+        description: json["description"],
+        ownerCourse: json["owner_course"],
+        image: json["image"],
+        countStudent: json["count_student"],
+        evaluation: json["evaluation"],
+        language: json["language"],
+        createdAt: json["created_at"],
+        updatedAt: json["updated_at"],
+        category: MarktCategory.fromJson(json["category"]
+    ));
   }
 }
-class CodingTopics {
-  final int id;
-  final int categoryId;
-  final String name;
-  final String description;
-  final String ownerCourse;
-  final String image;
-  final int countStudent;
-  final int evaluation;
-  final String language;
 
-  CodingTopics({
+class MarktCategory {
+  int id;
+  String name;
+  String image;
+  String createdAt;
+  String updatedAt;
+
+  MarktCategory({
     required this.id,
-    required this.categoryId,
     required this.name,
-    required this.description,
-    required this.ownerCourse,
     required this.image,
-    required this.countStudent,
-    required this.evaluation,
-    required this.language,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
-  factory CodingTopics.fromJson(Map<String, dynamic> json) {
-    return CodingTopics(
-      id: json['id'],
-      categoryId: json['category_id'],
-      name: json['name'],
-      description: json['description'],
-      ownerCourse: json['owner_course'],
-      image: json['image'],
-      countStudent: json['count_student'],
-      evaluation: json['evaluation'],
-      language: json['language'],
-    );
-  }
+  factory MarktCategory.fromJson(Map<String, dynamic> json) => MarktCategory(
+    id: json["id"],
+    name: json["name"],
+    image: json["image"],
+    createdAt: json["created_at"],
+    updatedAt: json["updated_at"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "image": image,
+    "created_at": createdAt,
+    "updated_at": updatedAt,
+  };
 }
-class MarketingTopics {
-  final int id;
-  final int categoryId;
-  final String name;
-  final String description;
-  final String ownerCourse;
-  final String image;
-  final int countStudent;
-  final int evaluation;
-  final String language;
-
-  MarketingTopics({
-    required this.id,
-    required this.categoryId,
-    required this.name,
-    required this.description,
-    required this.ownerCourse,
-    required this.image,
-    required this.countStudent,
-    required this.evaluation,
-    required this.language,
-  });
-
-  factory MarketingTopics.fromJson(Map<String, dynamic> json) {
-    return MarketingTopics(
-      id: json['id'],
-      categoryId: json['category_id'],
-      name: json['name'],
-      description: json['description'],
-      ownerCourse: json['owner_course'],
-      image: json['image'],
-      countStudent: json['count_student'],
-      evaluation: json['evaluation'],
-      language: json['language'],
-    );
-  }
-}
-

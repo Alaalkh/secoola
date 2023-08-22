@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:secoola/Controllers/Apicontroller.dart';
+import 'package:secoola/Models/Category.dart';
+import 'package:secoola/Models/MainInfo.dart';
+import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
 import '../../../appRoutes.dart';
@@ -30,38 +34,70 @@ class PopularCourse extends StatelessWidget {
             )
           ],
         ),
+        // SingleChildScrollView(
+        //   scrollDirection: Axis.horizontal,
+        //   child: Row(
+        //     crossAxisAlignment: CrossAxisAlignment.start,
+        //     children: [
+        //       GestureDetector(    onTap: () {
+        //         Get.toNamed(Routes.CourseDetails);
+        //
+        //       },
+        //         child: const CourseWidget(
+        //           boxcolor: yellow,
+        //           titletext: "Design Thingking Fundamental",
+        //           coursetutor: "Robert Fox",
+        //           price: "\$ 150",
+        //           colorText: teal,
+        //           recommend: "Best Seller",
+        //           background: Ligthblue, backimage: "assets/flutter.jpg",
+        //         ),
+        //       ),
+        //       const CourseWidget(backimage: "assets/flutter.jpg",
+        //         boxcolor: blue,
+        //         titletext: "Flutter Class - Advance Program",
+        //         coursetutor: "Wade Warren",
+        //         price: "\$ 24",
+        //         colorText: Colors.red,
+        //         recommend: "Recomended",
+        //         background: Ligthred,
+        //       )
+        //     ],
+        //   ),
+        // )
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GestureDetector(    onTap: () {
-                Get.toNamed(Routes.CourseDetails);
-
-              },
-                child: const CourseWidget(
-                  boxcolor: yellow,
-                  titletext: "Design Thingking Fundamental",
-                  coursetutor: "Robert Fox",
-                  price: "\$ 150",
-                  colorText: teal,
-                  recommend: "Best Seller",
-                  background: Ligthblue, backimage: "assets/flutter.png",
-                ),
-              ),
-              const CourseWidget(backimage: "assets/flutter.png",
-                boxcolor: blue,
-                titletext: "Flutter Class - Advance Program",
-                coursetutor: "Wade Warren",
-                price: "\$ 24",
-                colorText: Colors.red,
-                recommend: "Recomended",
-                background: Ligthred,
-              )
-            ],
+          child: FutureBuilder<Api>(
+            future: ApiService.fetchPopularCourse(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return const Center(child: Text('Error loading data'));
+              } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
+                return const Center(child: Text('No data available'));
+              }  else {
+                final topics = snapshot.data!.data;
+                return Row(
+                  children: topics.map((topicJson) {
+                    final topic = Coding.fromJson(topicJson);
+                    return Padding(
+                      padding: const EdgeInsets.only(left:2),
+                      child: CategoriesWidget(
+                        image: topic.ownerCourse,
+                        Category: topic.description,
+                        // Customize the UI as needed
+                      ),
+                    );
+                  }).toList(),
+                );
+              }
+            },
           ),
-        )
+        ),
+
       ],
+
     );
   }
 }
