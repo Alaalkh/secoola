@@ -6,7 +6,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Controllers/Apicontroller.dart';
 import 'package:secoola/Models/Category.dart';
-import 'package:secoola/Views/Screens/Home/Categories.dart';
 import 'package:secoola/Views/Screens/Home/Coding_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Design_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Marketing_Topics.dart';
@@ -27,49 +26,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // getCatgeory() async {
-  //   var response =
-  //       await http.get(Uri.https('api.rafeeqissa.com', 'api/category'));
-  //   var jsonData = jsonDecode(response.body);
-  //   print(jsonData);
-  //   List<Category> categoreis = [];
-  //   for (var u in jsonData) {
-  //     Category category = Category(
-  //         u["image"], u["id"], u["name"], u["updated_at"], u["created_at"]);
-  //     categoreis.add(category);
-  //   }
-  //   print(categoreis.length);
-  //   return categoreis;
-  // }
-  // String apiData = '';
-  //
-  // Future<void> fetchApiData() async {
-  //   final response = await http.get(
-  //       Uri.parse('https://api.rafeeqissa.com/api/category'));
-  //
-  //   if (response.statusCode == 200) {
-  //     final responseData = json.decode(response.body);
-  //     setState(() {
-  //       apiData = responseData['key'];
-  //       print(apiData);
-  //
-  //     });
-  //   } else {
-  //     print('Request failed with status: ${response.statusCode}');
-  //   }
-  //   @override
-  //   void initState() {
-  //     super.initState();
-  //     fetchApiData();
-  //   }
-  // }
-  // HTTPHandler httpHandler = HTTPHandler();
-  // late Future<List<Photo>> photoList;
 
   @override
   void initState() {
     super.initState();
-    // photoList = httpHandler.fetchData();
   }
 
   @override
@@ -184,63 +144,58 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const PopularCourse(),
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 25.h),
-                        child: Text(
-                          "Categories",
-                          style:
-                              TextStyle(color: Colors.black, fontSize: 18.sp),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 130.w,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 25.w),
-                        child: Text(
-                          "See All",
-                          style: TextStyle(color: teal, fontSize: 14.sp),
-                        ),
-                      )
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 25.h),
+                    child: Text(
+                      "Categories",
+                      style:
+                          TextStyle(color: Colors.black, fontSize: 18.sp),
+                    ),
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: FutureBuilder<ApiResponse>(
-                      future: ApiService.fetchData(),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
-                          return Center(child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return Center(child: Text('Error loading data'));
-                        } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
-                          return Center(child: Text('No data available'));
-                        } else {
-                          final topics = snapshot.data!.data;
-                          return Row(
-                            children: topics.map((topicJson) {
-                              final topic = ProgrammingTopic.fromJson(topicJson);
-                              return Padding(
-                                padding: const EdgeInsets.only(left:2),
-                                child: CategoriesWidget(
-                                  image: topic.image,
-                                 Category: topic.name,
-                                  // Customize the UI as needed
-                                ),
-                              );
-                            }).toList(),
-                          );
-                        }
-                      },
+                  SizedBox(
+                    width: 130.w,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 25.w),
+                    child: Text(
+                      "See All",
+                      style: TextStyle(color: teal, fontSize: 14.sp),
                     ),
                   )
-
                 ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: FutureBuilder<ApiResponse>(
+                  future: ApiService.fetchCategory(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else if (snapshot.hasError) {
+                      return const Center(child: Text('Error loading data'));
+                    } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
+                      return const Center(child: Text('No data available'));
+                    } else {
+                      final topics = snapshot.data!.data;
+                      return Row(
+                        children: topics.map((topicJson) {
+                          final topic = ProgrammingTopic.fromJson(topicJson);
+                          return Padding(
+                            padding: const EdgeInsets.only(left:2),
+                            child: CategoriesWidget(
+                              image: topic.image,
+                             Category: topic.name,
+                              // Customize the UI as needed
+                            ),
+                          );
+                        }).toList(),
+                      );
+                    }
+                  },
+                ),
               ),
               const DesignTopic(),
               const CodingTopic(),
@@ -251,9 +206,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// buildCard(Photo photo) {
-//   return CategoriesWidget(image: photo.image, Category: photo.name.toString());
-// }
 void show(BuildContext ctx) {
   showModalBottomSheet(
       isScrollControlled: true,

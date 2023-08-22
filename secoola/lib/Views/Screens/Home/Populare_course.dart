@@ -14,7 +14,8 @@ class PopularCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               "Popular course",
@@ -45,10 +46,10 @@ class PopularCourse extends StatelessWidget {
                   price: "\$ 150",
                   colorText: teal,
                   recommend: "Best Seller",
-                  background: Ligthblue,
+                  background: Ligthblue, backimage: "assets/flutter.png",
                 ),
               ),
-              const CourseWidget(
+              const CourseWidget(backimage: "assets/flutter.png",
                 boxcolor: blue,
                 titletext: "Flutter Class - Advance Program",
                 coursetutor: "Wade Warren",
