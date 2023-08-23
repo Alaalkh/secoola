@@ -30,6 +30,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<PapularCourses> popularCourses = [];
   List<DesignCourses> designCousrse = [];
+  List<DesignCourses> CodingCousrse = [];
+  List<DesignCourses> MarketingCousrse = [];
 
   Future<void> fetchPopularCourses() async {
     final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
@@ -44,7 +46,10 @@ class _HomePageState extends State<HomePage> {
     } else {
       throw Exception('Failed to fetch data');
     }
-  } Future<void> fetchDesignCourses() async {
+  }
+
+  ////////////////////////////////////////////////////////
+  Future<void> fetchDesignCourses() async {
     final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
 
     if (response.statusCode == 200) {
@@ -56,6 +61,34 @@ class _HomePageState extends State<HomePage> {
       });
     } else {
       throw Exception('Failed to fetch data');
+    }//////////////////////////////////////////////////
+  }Future<void> fetchCodingCourses() async {
+    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
+
+    if (response.statusCode == 200) {
+      final jsonData = json.decode(response.body);
+      final data = jsonData['data']['Coding'] as List<dynamic>;
+
+      setState(() {
+        CodingCousrse = data.map((course) => DesignCourses.fromJson(course)).toList();
+      });
+    } else {
+      throw Exception('Failed to fetch data');
+    }
+  }
+  /////////////////////////////////////////////////////////////
+  Future<void> fetchMarketingCourses() async {
+    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
+
+    if (response.statusCode == 200) {
+      final jsonData = json.decode(response.body);
+      final data = jsonData['data']['Markt'] as List<dynamic>;
+
+      setState(() {
+        MarketingCousrse = data.map((course) => DesignCourses.fromJson(course)).toList();
+      });
+    } else {
+      throw Exception('Failed to fetch data');
     }
   }
   @override
@@ -63,6 +96,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     fetchPopularCourses();
     fetchDesignCourses();
+    fetchCodingCourses();
+    fetchMarketingCourses();
   }
 
   @override
@@ -231,8 +266,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
                DesignTopic(DesingTopic: designCousrse),
-              const CodingTopic(),
-              const MarketingTopic()
+               CodingTopic(Codingtopic: CodingCousrse,),
+               MarketingTopic(Marketingtopic: MarketingCousrse,)
             ],
           ),
         ));

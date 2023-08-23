@@ -15,7 +15,7 @@ class DesignTopic extends StatelessWidget {
     return Column(
       children: [
          const TopicWidgdet(Topictitle: "Design"),
-        SizedBox(height: 235.h,
+        SizedBox(height: 209.h,
           child: ListView.builder(scrollDirection: Axis.horizontal,
               itemCount: DesingTopic.length,
               itemBuilder: (context, index) {
