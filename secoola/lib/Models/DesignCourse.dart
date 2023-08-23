@@ -1,4 +1,4 @@
-class PapularCourses {
+class DesignCourses {
   final int id;
   final int categoryId;
   final String name;
@@ -9,7 +9,7 @@ class PapularCourses {
   final int evaluation;
   final String language;
 
-  PapularCourses({
+  DesignCourses({
     required this.id,
     required this.categoryId,
     required this.name,
@@ -21,8 +21,8 @@ class PapularCourses {
     required this.language,
   });
 
-  factory PapularCourses.fromJson(Map<String, dynamic> json) {
-    return PapularCourses(
+  factory DesignCourses.fromJson(Map<String, dynamic> json) {
+    return DesignCourses(
       id: json["id"],
       categoryId: json["category_id"],
       name: json["name"],
