@@ -9,12 +9,13 @@ class DesignTopic extends StatelessWidget {
 
   final List<DesignCourses> DesingTopic;
 
-  DesignTopic({required this.DesingTopic});
+  DesignTopic(this.DesingTopic);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-         const TopicWidgdet(Topictitle: "Design"),
+        const TopicWidgdet(Topictitle: "Design"),
         SizedBox(height: 209.h,
           child: ListView.builder(scrollDirection: Axis.horizontal,
               itemCount: DesingTopic.length,

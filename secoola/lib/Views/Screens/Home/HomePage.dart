@@ -2,12 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:secoola/Controllers/Apicontroller.dart';
+import 'package:secoola/Controllers/Controller.dart';
 import 'package:secoola/Models/Category.dart';
-import 'package:secoola/Models/DesignCourse.dart';
-import 'package:secoola/Models/MainInfo.dart';
 import 'package:secoola/Views/Screens/Home/Coding_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Design_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Marketing_Topics.dart';
@@ -18,7 +17,6 @@ import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/Views/Widgets/Custome_appbar.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
-import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,76 +26,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<PapularCourses> popularCourses = [];
-  List<DesignCourses> designCousrse = [];
-  List<DesignCourses> CodingCousrse = [];
-  List<DesignCourses> MarketingCousrse = [];
-
-  Future<void> fetchPopularCourses() async {
-    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
-
-    if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      final data = jsonData['data']['PapularCourses'] as List<dynamic>;
-
-      setState(() {
-        popularCourses = data.map((course) => PapularCourses.fromJson(course)).toList();
-      });
-    } else {
-      throw Exception('Failed to fetch data');
-    }
-  }
-
-  ////////////////////////////////////////////////////////
-  Future<void> fetchDesignCourses() async {
-    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
-
-    if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      final data = jsonData['data']['Design'] as List<dynamic>;
-
-      setState(() {
-        designCousrse = data.map((course) => DesignCourses.fromJson(course)).toList();
-      });
-    } else {
-      throw Exception('Failed to fetch data');
-    }//////////////////////////////////////////////////
-  }Future<void> fetchCodingCourses() async {
-    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
-
-    if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      final data = jsonData['data']['Coding'] as List<dynamic>;
-
-      setState(() {
-        CodingCousrse = data.map((course) => DesignCourses.fromJson(course)).toList();
-      });
-    } else {
-      throw Exception('Failed to fetch data');
-    }
-  }
-  /////////////////////////////////////////////////////////////
-  Future<void> fetchMarketingCourses() async {
-    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
-
-    if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      final data = jsonData['data']['Markt'] as List<dynamic>;
-
-      setState(() {
-        MarketingCousrse = data.map((course) => DesignCourses.fromJson(course)).toList();
-      });
-    } else {
-      throw Exception('Failed to fetch data');
-    }
-  }
+  final ApiController apiController = Get.put(ApiController());
   @override
   void initState() {
     super.initState();
-    fetchPopularCourses();
-    fetchDesignCourses();
-    fetchCodingCourses();
-    fetchMarketingCourses();
+    apiController.fetchPopularCourses();
+    apiController.fetchDesignCourses();
+    apiController.fetchCodingCourses();
+    apiController.fetchMarketingCourses();
   }
 
   @override
@@ -183,9 +119,9 @@ class _HomePageState extends State<HomePage> {
                       },
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(white2),
+                        MaterialStateProperty.all<Color>(white2),
                         shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
@@ -211,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              PopularCourse(popularCourses: popularCourses),
+              PopularCourse(apiController.popularCourses),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -220,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                       "Categories",
                       style:
-                          TextStyle(color: Colors.black, fontSize: 18.sp),
+                      TextStyle(color: Colors.black, fontSize: 18.sp),
                     ),
                   ),
                   SizedBox(
@@ -238,7 +174,7 @@ class _HomePageState extends State<HomePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: FutureBuilder<ApiResponse>(
-                  future: ApiService.fetchCategory(),
+                  future: ApiController.fetchCategory(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
@@ -255,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(left:2),
                             child: CategoriesWidget(
                               image: topic.image,
-                             Category: topic.name,
+                              Category: topic.name,
                               // Customize the UI as needed
                             ),
                           );
@@ -265,9 +201,9 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-               DesignTopic(DesingTopic: designCousrse),
-               CodingTopic(Codingtopic: CodingCousrse,),
-               MarketingTopic(Marketingtopic: MarketingCousrse,)
+              DesignTopic(apiController.designcourses),
+              CodingTopic(apiController.Codingcourses),
+              MarketingTopic(apiController.Marketingcourses,)
             ],
           ),
         ));
@@ -282,35 +218,35 @@ void show(BuildContext ctx) {
       backgroundColor: white,
       context: ctx,
       builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
-            Container(
-              decoration: const BoxDecoration(
-                  color: white,
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(30))),
-              // height: 900.h,
-              width: double.infinity.w,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
-                child: Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[BottomSheet_Content()],
-                  ),
-                ),
+        Container(
+          decoration: const BoxDecoration(
+              color: white,
+              borderRadius:
+              BorderRadius.vertical(top: Radius.circular(30))),
+          // height: 900.h,
+          width: double.infinity.w,
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[BottomSheet_Content()],
               ),
             ),
-            Positioned(
-                top: -80.h,
-                right: 12.w,
-                child: Container(
-                  height: 52.h,
-                  width: 52.w,
-                  decoration: BoxDecoration(
-                      color: white, borderRadius: BorderRadius.circular(20.r)),
-                  child: const Icon(Icons.close),
-                )),
-          ]));
+          ),
+        ),
+        Positioned(
+            top: -80.h,
+            right: 12.w,
+            child: Container(
+              height: 52.h,
+              width: 52.w,
+              decoration: BoxDecoration(
+                  color: white, borderRadius: BorderRadius.circular(20.r)),
+              child: const Icon(Icons.close),
+            )),
+      ]));
 }
 
 void Items(BuildContext ctx) {
@@ -321,36 +257,35 @@ void Items(BuildContext ctx) {
       backgroundColor: white,
       context: ctx,
       builder: (ctx) => Stack(clipBehavior: Clip.none, children: [
-            SingleChildScrollView(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: white,
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(30.r))),
-                height: 697.h,
-                width: double.infinity.w,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
-                  child: Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[FillCart()],
-                    ),
-                  ),
+        SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+                color: white,
+                borderRadius:
+                BorderRadius.vertical(top: Radius.circular(30.r))),
+            height: 697.h,
+            width: double.infinity.w,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[FillCart()],
                 ),
               ),
             ),
-            Positioned(
-                top: -80.h,
-                right: 12.w,
-                child: Container(
-                  height: 52.h,
-                  width: 52.w,
-                  decoration: BoxDecoration(
-                      color: white, borderRadius: BorderRadius.circular(20.r)),
-                  child: const Icon(Icons.close),
-                )),
-          ]));
+          ),
+        ),
+        Positioned(
+            top: -80.h,
+            right: 12.w,
+            child: Container(
+              height: 52.h,
+              width: 52.w,
+              decoration: BoxDecoration(
+                  color: white, borderRadius: BorderRadius.circular(20.r)),
+              child: const Icon(Icons.close),
+            )),
+      ]));
 }
-

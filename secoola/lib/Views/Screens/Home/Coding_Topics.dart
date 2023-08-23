@@ -7,7 +7,7 @@ import 'package:secoola/theme/Color.dart';
 class CodingTopic extends StatelessWidget {
   final List<DesignCourses> Codingtopic;
 
-  CodingTopic({required this.Codingtopic});
+  CodingTopic(this.Codingtopic);
   @override
   Widget build(BuildContext context) {
     return Column(

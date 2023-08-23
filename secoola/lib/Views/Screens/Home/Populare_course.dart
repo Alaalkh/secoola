@@ -11,7 +11,7 @@ import 'package:http/http.dart' as http;
 class PopularCourse extends StatelessWidget {
   final List<PapularCourses> popularCourses;
 
-  PopularCourse({required this.popularCourses});
+  PopularCourse(this.popularCourses);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class PopularCourse extends StatelessWidget {
                                         width: 220.w,
                                         height: 140.h,
                                       ),onTap: (){
-                                        Get.toNamed(Routes.CourseDetails);
+                                      Get.toNamed(Routes.CourseDetails);
                                     },
                                     ),
                                     Row(
