@@ -22,8 +22,7 @@ class CategoriesWidget extends StatelessWidget {
         children: [
           CachedNetworkImage(
             imageUrl: image ,
-            width: 22.w,
-          ), SizedBox(width: 7.w,),
+          ),
           Text(Category,style:  TextStyle(fontSize: 14.sp),)
         ],
       ),
