@@ -30,10 +30,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    apiController.fetchPopularCourses();
-    apiController.fetchDesignCourses();
-    apiController.fetchCodingCourses();
-    apiController.fetchMarketingCourses();
   }
 
   @override
@@ -95,117 +91,123 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    color: teal,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(25),
-                        bottomRight: Radius.circular(25))),
-                height: 196.h,
-                width: 375.w,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      top: 125.h, bottom: 16.h, left: 22.w, right: 22.w),
-                  child: SizedBox(
-                    width: 335.w, // Set the desired width
-                    height: 48.h,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed(Routes.Searchdefault);
-                      },
-                      style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(white2),
-                        shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
+        body: GetBuilder<ApiController>(
+            init:  ApiController(),
+
+            builder: (controller) {
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: teal,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(25),
+                            bottomRight: Radius.circular(25))),
+                    height: 196.h,
+                    width: 375.w,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 125.h, bottom: 16.h, left: 22.w, right: 22.w),
+                      child: SizedBox(
+                        width: 335.w, // Set the desired width
+                        height: 48.h,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.toNamed(Routes.Searchdefault);
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all<Color>(white2),
+                            shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                "assets/img_4.png",
+                                scale: 5,
+                              ),
+                              const SizedBox(width: 8),
+                              Flexible(
+                                child: Text(
+                                  'Search for anything',
+                                  style: TextStyle(fontSize: 14.sp, color: grey),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            "assets/img_4.png",
-                            scale: 5,
-                          ),
-                          const SizedBox(width: 8),
-                          Flexible(
-                            child: Text(
-                              'Search for anything',
-                              style: TextStyle(fontSize: 14.sp, color: grey),
-                            ),
-                          ),
-                        ],
+                    ),
+                  ),
+                  PopularCourse(controller.popularCourses),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 25.h),
+                        child: Text(
+                          "Categories",
+                          style:
+                          TextStyle(color: Colors.black, fontSize: 18.sp),
+                        ),
                       ),
+                      SizedBox(
+                        width: 130.w,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 25.w),
+                        child: Text(
+                          "See All",
+                          style: TextStyle(color: teal, fontSize: 14.sp),
+                        ),
+                      )
+                    ],
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: FutureBuilder<ApiResponse>(
+                      future: ApiController.fetchCategory(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return const Center(child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return const Center(child: Text('Error loading data'));
+                        } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
+                          return const Center(child: Text('No data available'));
+                        } else {
+                          final topics = snapshot.data!.data;
+                          return Row(
+                            children: topics.map((topicJson) {
+                              final topic = ProgrammingTopic.fromJson(topicJson);
+                              return Padding(
+                                padding: const EdgeInsets.only(left:2),
+                                child: CategoriesWidget(
+                                  image: topic.image,
+                                  Category: topic.name,
+                                  // Customize the UI as needed
+                                ),
+                              );
+                            }).toList(),
+                          );
+                        }
+                      },
                     ),
                   ),
-                ),
-              ),
-              PopularCourse(apiController.popularCourses),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 25.h),
-                    child: Text(
-                      "Categories",
-                      style:
-                      TextStyle(color: Colors.black, fontSize: 18.sp),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 130.w,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25.w),
-                    child: Text(
-                      "See All",
-                      style: TextStyle(color: teal, fontSize: 14.sp),
-                    ),
-                  )
+                  DesignTopic(controller.designcourses),
+                  CodingTopic(controller.Codingcourses),
+                  MarketingTopic(controller.Marketingcourses,)
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: FutureBuilder<ApiResponse>(
-                  future: ApiController.fetchCategory(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(child: CircularProgressIndicator());
-                    } else if (snapshot.hasError) {
-                      return const Center(child: Text('Error loading data'));
-                    } else if (!snapshot.hasData || snapshot.data!.data.isEmpty) {
-                      return const Center(child: Text('No data available'));
-                    } else {
-                      final topics = snapshot.data!.data;
-                      return Row(
-                        children: topics.map((topicJson) {
-                          final topic = ProgrammingTopic.fromJson(topicJson);
-                          return Padding(
-                            padding: const EdgeInsets.only(left:2),
-                            child: CategoriesWidget(
-                              image: topic.image,
-                              Category: topic.name,
-                              // Customize the UI as needed
-                            ),
-                          );
-                        }).toList(),
-                      );
-                    }
-                  },
-                ),
-              ),
-              DesignTopic(apiController.designcourses),
-              CodingTopic(apiController.Codingcourses),
-              MarketingTopic(apiController.Marketingcourses,)
-            ],
-          ),
+            );
+          }
         ));
   }
 }

@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'package:secoola/Models/MainInfo.dart';
 
 class ApiController extends GetxController {
+
   RxBool isLoading = true.obs;
   RxList<PapularCourses> popularCourses = <PapularCourses>[].obs;
   RxList<DesignCourses> designcourses = <DesignCourses>[].obs;
@@ -15,11 +16,11 @@ class ApiController extends GetxController {
 
   @override
   void onInit() {
+    super.onInit();
     fetchPopularCourses();
     fetchDesignCourses();
     fetchCodingCourses();
     fetchMarketingCourses();
-    super.onInit();
   }
   static Future<ApiResponse> fetchCategory() async {
     final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/category'));
