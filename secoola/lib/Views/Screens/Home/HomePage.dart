@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:secoola/Controllers/Apicontroller.dart';
 import 'package:secoola/Models/Category.dart';
+import 'package:secoola/Models/MainInfo.dart';
 import 'package:secoola/Views/Screens/Home/Coding_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Design_Topics.dart';
 import 'package:secoola/Views/Screens/Home/Marketing_Topics.dart';
@@ -26,10 +27,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<PapularCourses> popularCourses = [];
 
+  Future<void> fetchPopularCourses() async {
+    final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
+
+    if (response.statusCode == 200) {
+      final jsonData = json.decode(response.body);
+      final data = jsonData['data']['PapularCourses'] as List<dynamic>;
+
+      setState(() {
+        popularCourses = data.map((course) => PapularCourses.fromJson(course)).toList();
+      });
+    } else {
+      throw Exception('Failed to fetch data');
+    }
+  }
   @override
   void initState() {
     super.initState();
+    fetchPopularCourses();
   }
 
   @override
@@ -143,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const PopularCourse(),
+              PopularCourse(popularCourses: popularCourses),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
