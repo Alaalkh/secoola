@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:secoola/Models/DesignCourse.dart';
 import 'package:secoola/Models/MainInfo.dart';
 import 'package:secoola/Views/Screens/Course/Curriculum.dart';
 import 'package:secoola/Views/Screens/Course/Price_Details.dart';
@@ -12,15 +13,15 @@ import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:video_player/video_player.dart';
 
-class CourseDetails extends StatefulWidget {
-  final PapularCourses item;
+class TopicDetails extends StatefulWidget {
+  final DesignCourses item;
 
-  CourseDetails({required this.item});
+  TopicDetails({required this.item});
   @override
-  State<CourseDetails> createState() => _CourseDetailsState();
+  State<TopicDetails> createState() => _CourseDetailsState();
 }
 
-class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProviderStateMixin {
+class _CourseDetailsState extends State<TopicDetails>     with SingleTickerProviderStateMixin {
   late VideoPlayerController _controller;
   late TabController tabController = TabController(length: 2, vsync: this);
   late String nameController;
@@ -74,7 +75,7 @@ class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProv
               ),
               GestureDetector(
                 onTap: () {
-                   Get.toNamed(Routes.CartPage);
+                  Get.toNamed(Routes.CartPage);
                 },
                 child: Container(
                   height: 40.h,
@@ -185,7 +186,7 @@ class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProv
                     width: 335.w,
                     height: 63.h,
                     child: Text(
-                        widget.item.description ,
+                      widget.item.description ,
                       style: TextStyle(color: grey, fontSize: 16.sp),
                     ),
                   ),

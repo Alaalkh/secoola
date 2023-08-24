@@ -17,7 +17,8 @@ class _DetailsReviewState extends State<DetailsReview>
   late TabController tabController = TabController(length: 2, vsync: this);
 
   @override
-  Widget build(BuildContext context) {   double width = MediaQuery
+  Widget build(BuildContext context) {
+    double width = MediaQuery
       .of(context)
       .size
       .width/2;

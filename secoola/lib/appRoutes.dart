@@ -88,10 +88,7 @@ final getPages = [
     page: () => const NavigationContent(),
   ),
   GetPage(name: Routes.MyCourse, page: () => const MyCourse()),
-  GetPage(
-      name: Routes.CourseDetails,
-      page: () => const CourseDetails(),
-      transition: Transition.fade),
+
   GetPage(
       name: Routes.Paymentpage,
       page: () => const Paymentpage(),

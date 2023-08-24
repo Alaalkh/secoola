@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Models/DesignCourse.dart';
-import 'package:secoola/Models/MainInfo.dart';
+import 'package:secoola/Views/Screens/Course/TopicDetails.dart';
 import 'package:secoola/Views/Widgets/TopicWidget.dart';
 
 import 'package:secoola/theme/Color.dart';
 class DesignTopic extends StatelessWidget {
 
-  final List<DesignCourses> DesingTopic;
+  final List<DesignCourses> Desingtopic;
 
-  DesignTopic(this.DesingTopic);
+  DesignTopic(this.Desingtopic);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class DesignTopic extends StatelessWidget {
         const TopicWidgdet(Topictitle: "Design"),
         SizedBox(height: 209.h,
           child: ListView.builder(scrollDirection: Axis.horizontal,
-              itemCount: DesingTopic.length,
+              itemCount: Desingtopic.length,
               itemBuilder: (context, index) {
-                final course = DesingTopic[index];
+                final course = Desingtopic[index];
                 return Padding(
                   padding: EdgeInsets.only(left: 11.w, top: 22.h,right: 14.w),
                   child: Column(
@@ -32,10 +32,17 @@ class DesignTopic extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 25),
-                            child: Image.network(
-                              course.image,
-                              width: 142.w,
-                              height: 100.h,
+                            child: GestureDetector(onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  TopicDetails(item: Desingtopic[index])),
+                              );
+                            },
+                              child: Image.network(
+                                course.image,
+                                width: 142.w,
+                                height: 100.h,
+                              ),
                             ),
                           ),
                           Row(

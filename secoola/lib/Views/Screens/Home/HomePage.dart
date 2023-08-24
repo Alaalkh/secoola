@@ -201,9 +201,9 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  DesignTopic(controller.designcourses),
-                  CodingTopic(controller.Codingcourses),
-                  MarketingTopic(controller.Marketingcourses,)
+                  DesignTopic(apiController.designcourses),
+                  CodingTopic(apiController.Codingcourses),
+                  MarketingTopic(apiController.Marketingcourses,)
                 ],
               ),
             );

@@ -97,4 +97,5 @@ class ApiController extends GetxController {
       isLoading.value = false;
     }
   }
+
 }

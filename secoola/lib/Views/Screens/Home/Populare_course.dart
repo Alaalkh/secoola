@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secoola/Models/MainInfo.dart';
+import 'package:secoola/Views/Screens/Course/Cousre_Details.dart';
 import 'package:secoola/appRoutes.dart';
 import 'package:secoola/theme/Color.dart';
 
@@ -62,8 +63,10 @@ class PopularCourse extends StatelessWidget {
                                         width: 220.w,
                                         height: 140.h,
                                       ),onTap: (){
-                                      Get.toNamed(Routes.CourseDetails);
-                                    },
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>  CourseDetails(item: popularCourses[index])),
+                                      );                                    },
                                     ),
                                     Row(
                                       crossAxisAlignment: CrossAxisAlignment.start,
