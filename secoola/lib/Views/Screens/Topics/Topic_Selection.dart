@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secoola/Controllers/Controller.dart';
 import 'package:secoola/Models/Category.dart';
-import 'package:secoola/Models/TopicContent.dart';
 import 'package:secoola/theme/Color.dart';
 
 class TopicSelection extends StatefulWidget {
@@ -46,7 +45,7 @@ class _TopicSelectionState extends State<TopicSelection> {
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 67.0,
+              crossAxisSpacing: 44.0,
               mainAxisSpacing: 11.0,
               mainAxisExtent: 103,
             ),

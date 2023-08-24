@@ -52,6 +52,7 @@ class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProv
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
+
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -96,43 +97,56 @@ class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProv
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-                width: 375.w,
-                height: 360.h,
-                decoration: const BoxDecoration(color: yellow),
-                child: Center(
-                  child: GestureDetector(onTap: (){
-                    showCustomVideoPopup(context);
-                    if (_controller.value.isPlaying) {
-                      _controller.pause();
-                    } else {
-                      _controller.play();
-                    }
-                  },
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 165.w,
-                      height: 48.h,
-                      decoration: BoxDecoration(
-                          color: const Color(0xfffccbb64),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: const Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.play_circle,
-                            color: white2,
-                          ),
-                          Text(
-                            "Course Review",
-                            style: TextStyle(color: white2),
-                          ),
-                        ],
+            Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                GestureDetector(
+                  child: Image.network(
+                    widget.item.image,
+                    width: 492.7.w,
+                    height: 413.h,
+                    fit: BoxFit.fill,
+                  ),
+                  onTap: () {},
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 188.h),
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        showCustomVideoPopup(context);
+                        if (_controller.value.isPlaying) {
+                          _controller.pause();
+                        } else {
+                          _controller.play();
+                        }
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 165.w,
+                        height: 48.h,
+                        decoration: BoxDecoration(
+                            color: const Color(0xfffccbb64),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.play_circle,
+                              color: white2,
+                            ),
+                            Text(
+                              "Course Review",
+                              style: TextStyle(color: white2),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                )),
-            // const DetailsReview()
-            Container(
+                )
+              ],
+            ),Container(
               margin: EdgeInsets.only(bottom: 11.h),
               width: 375.w,
               height: 956.h,
