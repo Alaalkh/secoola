@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/Models/DesignCourse.dart';
+import 'package:secoola/Views/Screens/Course/TopicDetails.dart';
 import 'package:secoola/Views/Widgets/TopicWidget.dart';
 
 import 'package:secoola/theme/Color.dart';
@@ -31,10 +32,17 @@ class MarketingTopic extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 25),
-                            child: Image.network(
-                              course.image,
-                              width: 142.w,
-                              height: 100.h,
+                            child: GestureDetector(onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  TopicDetails(item: Marketingtopic[index])),
+                              );
+                            },
+                              child: Image.network(
+                                course.image,
+                                width: 142.w,
+                                height: 100.h,
+                              ),
                             ),
                           ),
                           Row(

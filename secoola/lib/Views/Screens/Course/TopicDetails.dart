@@ -156,25 +156,31 @@ class _CourseDetailsState extends State<TopicDetails>     with SingleTickerProvi
                   Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 15.w, top: 11.h),
+                        padding: EdgeInsets.only( left:15.w,top: 11.h),
                         child: const Icon(
                           Icons.person,
                           color: Color(0xff00A9B7),
                         ),
                       ),
+                      SizedBox(width: 255.w,
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 7.w, top: 11.h),
+                            child: Text( maxLines:2, // Restrict text to a single line
+                              overflow: TextOverflow.ellipsis,
+                              widget.item.ownerCourse ,
+                              style: TextStyle(color: teal, fontSize: 14.sp),
+                            )),
+                      ),
                       Padding(
-                          padding: EdgeInsets.only(left: 7.w, top: 11.h),
-                          child: Text(
-                            widget.item.ownerCourse ,
-                            style: TextStyle(color: teal, fontSize: 14.sp),
-                          )),SizedBox(width:22.w,),
-                      Image.asset(
-                        "assets/star.png",
-                        scale: 33,
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Image.asset(
+                          "assets/star.png",
+                          scale: 33,
+                        ),
                       ),
 
                       Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
+                        padding: const EdgeInsets.only(left: 4.0,top: 8.0),
                         child: Text(
                           "4.8",
                           style: TextStyle(fontSize: 16.sp),
@@ -182,12 +188,15 @@ class _CourseDetailsState extends State<TopicDetails>     with SingleTickerProvi
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: 335.w,
-                    height: 63.h,
-                    child: Text(
-                      widget.item.description ,
-                      style: TextStyle(color: grey, fontSize: 16.sp),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: SizedBox(
+                      width: 335.w,
+                      height: 63.h,
+                      child: Text(
+                        widget.item.description ,
+                        style: TextStyle(color: grey, fontSize: 16.sp),
+                      ),
                     ),
                   ),
                   Row(
