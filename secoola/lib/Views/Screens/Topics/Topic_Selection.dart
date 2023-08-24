@@ -46,7 +46,7 @@ class _TopicSelectionState extends State<TopicSelection> {
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 44.0,
+              crossAxisSpacing: 67.0,
               mainAxisSpacing: 11.0,
               mainAxisExtent: 103,
             ),
@@ -67,8 +67,8 @@ class _TopicSelectionState extends State<TopicSelection> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(left: 22.w, right: 16.w),
-                          height: 78.h,
-                          width: 155.w,
+                          height: 76.h,
+                          width: 109.w,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(22),
                             color: white2,
@@ -78,11 +78,9 @@ class _TopicSelectionState extends State<TopicSelection> {
                             ),
                           ),
                           child: SizedBox(
-                            width: 66, // Your desired width
-                            height: 55, // Your desired height
                             child: CachedNetworkImage(
-                              imageUrl: topic.image,
-                               // Adjust the fit based on your needs
+                              imageUrl: topic.image,width: 99,
+                              height: 55,
                             ),
                           ),
                         ),
@@ -98,8 +96,8 @@ class _TopicSelectionState extends State<TopicSelection> {
                       ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 11.w),
+                  Padding(
+                    padding: EdgeInsets.only(left: 11.w),
                     child: Text(topic.name),
                   )
                 ],
