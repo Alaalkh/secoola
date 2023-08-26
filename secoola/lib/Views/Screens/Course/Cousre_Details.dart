@@ -189,7 +189,7 @@ class _CourseDetailsState extends State<CourseDetails>     with SingleTickerProv
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
-                          "4.8",
+                          "${widget.item.evaluation}.0",
                           style: TextStyle(fontSize: 16.sp),
                         ),
                       ),

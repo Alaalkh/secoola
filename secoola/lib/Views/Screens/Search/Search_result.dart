@@ -14,7 +14,8 @@ class Searchresult extends StatelessWidget {
       backgroundColor: Color(0xfffFAFAFA),
       body: SingleChildScrollView(
         child: Column(
-          children: [searchbar(title: 'UxDesing', trailingicon: Icon(Icons.close),), Buttons(), Elements()],
+          children: [
+            searchbar(title: 'UxDesing', trailingicon: Icon(Icons.close),), Buttons(), Elements()],
         ),
       ),
     );
@@ -179,20 +180,20 @@ class Elements extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 11.w),
+              Padding(
+                padding: EdgeInsets.only(left: 11.w),
                 child: Text(WishlistContents[i].title),
               ),
               Row(
                 children: [
-                  Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 6.h),
+                  Padding(
+                      padding: EdgeInsets.only(left: 20.w, top: 6.h),
                       child: const Icon(
                         Icons.person,
                         color: Color(0xfffA9AEB2),
                       )),
-                  Container(
-                    margin: EdgeInsets.only(top: 6.h),
+                  Padding(
+                    padding: EdgeInsets.only(top: 6.h),
                     child: Text(
                       WishlistContents[i].tutorname,
                       style:
@@ -203,31 +204,27 @@ class Elements extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 22.w),
-                        child: Text(
-                          "\$ 24",
-                          style: TextStyle(
-                              color: Color(0xfff00A9B7), fontSize: 16.sp),
-                        ),
-                      ),
-                      Container(
-                        height: 15.h,
-                        width: 77.w,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffDCF3F5),
-                            borderRadius: BorderRadius.circular(22.r)),
-                        margin: EdgeInsets.only(left: 11.w, top: 6.h),
-                        child: Text(
-                          "Label",
-                          style: TextStyle(
-                              color: Color(0xfff00A9B7), fontSize: 12.sp),
-                        ),
-                      )
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(left: 22.w),
+                    child: Text(
+                      "\$ 24",
+                      style: TextStyle(
+                          color: Color(0xfff00A9B7), fontSize: 16.sp),
+                    ),
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 77.w,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: const Color(0xfffDCF3F5),
+                        borderRadius: BorderRadius.circular(22.r)),
+                    margin: EdgeInsets.only(left: 11.w, top: 6.h),
+                    child: Text(
+                      "Label",
+                      style: TextStyle(
+                          color: Color(0xfff00A9B7), fontSize: 12.sp),
+                    ),
                   )
                 ],
               )

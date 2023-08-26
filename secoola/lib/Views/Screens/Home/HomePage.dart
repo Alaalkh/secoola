@@ -189,10 +189,14 @@ class _HomePageState extends State<HomePage> {
                               final topic = ProgrammingTopic.fromJson(topicJson);
                               return Padding(
                                 padding: const EdgeInsets.only(left:2),
-                                child: CategoriesWidget(
-                                  image: topic.image,
-                                  Category: topic.name,
-                                  // Customize the UI as needed
+                                child: GestureDetector(onTap: (){
+                                  Get.toNamed(Routes.CategoriesScreen);
+                                },
+                                  child: CategoriesWidget(
+                                    image: topic.image,
+                                    Category: topic.name,
+                                    // Customize the UI as needed
+                                  ),
                                 ),
                               );
                             }).toList(),
