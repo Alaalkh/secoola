@@ -30,7 +30,7 @@ class _TopicSelectionState extends State<TopicSelection> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<ApiResponse>(
-      future: ApiController.fetchCategory(),
+      future: ApiController.Category(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

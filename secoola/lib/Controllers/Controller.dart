@@ -13,6 +13,8 @@ class ApiController extends GetxController {
   RxList<DesignCourses> designcourses = <DesignCourses>[].obs;
   RxList<DesignCourses> Codingcourses = <DesignCourses>[].obs;
   RxList<DesignCourses> Marketingcourses = <DesignCourses>[].obs;
+  RxList<DesignCourses> Categories = <DesignCourses>[].obs;
+  RxList<ProgrammingTopic> programmingtopics = <ProgrammingTopic>[].obs;
 
   @override
   void onInit() {
@@ -21,8 +23,9 @@ class ApiController extends GetxController {
     fetchDesignCourses();
     fetchCodingCourses();
     fetchMarketingCourses();
+    fetchCategory();
   }
-  static Future<ApiResponse> fetchCategory() async {
+  static Future<ApiResponse> Category() async {
     final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/category'));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -46,6 +49,20 @@ class ApiController extends GetxController {
       isLoading.value = false;
     }
   }
+  Future<void> fetchCategory() async {
+    try {
+      final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/category'));
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        final popularCoursesData = jsonData['data']as List;
+        programmingtopics.value = popularCoursesData.map((courseJson) => ProgrammingTopic.fromJson(courseJson)).toList();
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }
 
 
   /////////////////////////////////////////////////////
@@ -55,8 +72,8 @@ class ApiController extends GetxController {
       final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
-        final popularCoursesData = jsonData['data']['Design'] as List;
-        designcourses.value = popularCoursesData.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
+        final designcourse = jsonData['data']['Design'] as List;
+        designcourses.value = designcourse.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
       }
     } catch (e) {
       print('Error fetching data: $e');
@@ -72,8 +89,8 @@ class ApiController extends GetxController {
       final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
-        final popularCoursesData = jsonData['data']['Coding'] as List;
-        Codingcourses.value = popularCoursesData.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
+        final codingcourses = jsonData['data']['Coding'] as List;
+        Codingcourses.value = codingcourses.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
       }
     } catch (e) {
       print('Error fetching data: $e');
@@ -88,8 +105,21 @@ class ApiController extends GetxController {
       final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
-        final popularCoursesData = jsonData['data']['Markt'] as List;
-        Marketingcourses.value = popularCoursesData.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
+        final marketingcourses = jsonData['data']['Markt'] as List;
+        Marketingcourses.value = marketingcourses.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }Future<void> fetchCategories() async {
+    try {
+      final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/lecture'));
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        final categories = jsonData['data'] as List;
+        Categories.value = categories.map((courseJson) => DesignCourses.fromJson(courseJson)).toList();
       }
     } catch (e) {
       print('Error fetching data: $e');

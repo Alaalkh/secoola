@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:secoola/Models/TopicContent.dart';
 import 'package:secoola/Models/fquestion.dart';
 import 'package:secoola/theme/Color.dart';
 
@@ -30,16 +28,18 @@ class _FaqPageState extends State<FaqPage> {
                     borderRadius: BorderRadius.circular(17)),
                 child: IconButton(
                   onPressed: () {
-                    Get.back();
+                    Navigator.pop(context);
                   },
                   icon: const Icon(Icons.arrow_back_ios),
                   color: Colors.black,
                 ),
               ),
-
-              const Padding(
-                padding: EdgeInsets.only(top: 66, left: 100),
-                child: Text(
+              const SizedBox(
+                width: 22,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 66, left: 44),
+                child: const Text(
                   "FAQ",
                   style: TextStyle(fontSize: 16),
                 ),
@@ -47,7 +47,10 @@ class _FaqPageState extends State<FaqPage> {
             ],
           ),
           Theme(
-            data: ThemeData(dividerColor: Colors.transparent,indicatorColor: Colors.yellow,cardColor: grey),
+            data: ThemeData(
+                dividerColor: Colors.transparent,
+                indicatorColor: Colors.yellow,
+                cardColor: grey),
             child: Expanded(
               child: ListView.builder(
                   itemCount: fqcontents.length,
@@ -59,7 +62,7 @@ class _FaqPageState extends State<FaqPage> {
                       collapsedBackgroundColor: white,
                       expandedAlignment: Alignment.topLeft,
                       iconColor: teal,
-                      childrenPadding: const EdgeInsets.all(11),
+                      childrenPadding: EdgeInsets.all(11),
                       children: [
                         Text(
                           fqcontents[i].discription,

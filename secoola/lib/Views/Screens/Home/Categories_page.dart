@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/Models/DesignCourse.dart';
 import 'package:secoola/Views/Widgets/Custome_appbar.dart';
 import 'package:secoola/theme/Color.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  final dynamic element;
 
+  CategoriesScreen(this.element);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

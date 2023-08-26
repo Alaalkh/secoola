@@ -45,7 +45,7 @@ class Routes {
   static String NotificationPage = '/NotificationPage';
   static String FaqPage = '/FaqPage';
   static String CartPage = '/CartPage';
-  static String CategoriesScreen = '/CategoriesScreen';
+  // static String CategoriesScreen = '/CategoriesScreen';
 }
 
 final getPages = [
@@ -115,16 +115,7 @@ final getPages = [
       name: Routes.CartPage,
       page: () => CartPage(),
       transition: Transition.rightToLeft),
-  GetPage(
-      name: Routes.CategoriesScreen,
-      page: () => CategoriesScreen(),
-      transition: Transition.rightToLeft),
+
 ];
 
-// class MyMiddelware extends GetMiddleware {
-//   @override
-//   GetPage? onPageCalled(GetPage? page) {
-//     print(page?.name);
-//     return super.onPageCalled(page);
-//   }
-// }
+

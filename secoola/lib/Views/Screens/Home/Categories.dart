@@ -1,38 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/Models/Category.dart';
+import 'package:secoola/Views/Screens/Home/Categories_page.dart';
 import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:http/http.dart' as http;
 
-
 class Categories extends StatefulWidget {
-  const Categories({super.key});
+  final List<ProgrammingTopic> programmingtopics;
+
+  Categories(this.programmingtopics);
 
   @override
   State<Categories> createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
-  // List Catge=[];
-  // Future  fetchData() async {
-  //   http.Response response = await http.get(Uri.parse(
-  //       'https://api.rafeeqissa.com/api/category'));
-  //   var result = jsonDecode(response.body);
-  //     var respondbody=jsonDecode(result.body);
-  //     print(respondbody[2]);
-  //     setState(() {
-  //       Catge.addAll(respondbody);
-  //
-  //     });
-  //     print(Catge);
-  // }
   @override
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Row(
@@ -57,22 +47,31 @@ class _CategoriesState extends State<Categories> {
             )
           ],
         ),
-        const SingleChildScrollView(scrollDirection: Axis.horizontal,
-          child: Column(
-            children: [
-              Row(
-               children: [CategoriesWidget(image: "assets/design.png", Category: "Design"),CategoriesWidget(image: "assets/laptop.png", Category: "Coding"),
-                 CategoriesWidget(image: "assets/business.png", Category: "Marketing"),
-                ],
-              ),Row(
-                children: [CategoriesWidget(image: "assets/healthcare.png", Category: "LifeStyle"),CategoriesWidget(image: "assets/design.png", Category: "Design"),
-                  CategoriesWidget(image: "assets/design.png", Category: "Design"),
-                ],
-              ),
-            ],
-          ),
+        SizedBox(
+          height: 50.h,
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: widget.programmingtopics.length,
+              itemBuilder: (context, index) {
+                final course = widget.programmingtopics[index];
+                return Row(
+                  children: [
+                    GestureDetector(
+                      child: CategoriesWidget(
+                          image: course.image, Category: course.name),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoriesScreen(widget.programmingtopics[index]),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                );
+              }),
         ),
-
       ],
     );
   }

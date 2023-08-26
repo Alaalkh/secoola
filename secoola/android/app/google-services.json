@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148967206681",
+    "project_id": "secoola-41b6e",
+    "storage_bucket": "secoola-41b6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148967206681:android:a913d7715cb136800e9f88",
+        "android_client_info": {
+          "package_name": "com.example.secoola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148967206681-5uegbupo6vhkv0e5704q2ufc8u8pb1d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ1xnCXeLgj_fAnPZYY33dgvOaXSCik6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148967206681-5uegbupo6vhkv0e5704q2ufc8u8pb1d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
