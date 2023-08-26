@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:secoola/Views/Screens/ForgotPassword/EmailEntry.dart';
 import 'package:secoola/Views/Screens/ForgotPassword/titleWidget.dart';
-import 'package:secoola/appRoutes.dart';
-
-import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
 import '../Topics/TitleWidget.dart';
@@ -51,7 +46,7 @@ class ResetPassword extends StatelessWidget {
             ],
           ),
           const titlePasswordWidget(),
-          const EmailEntry()
+           EmailEntry()
         ],
       ),
     );

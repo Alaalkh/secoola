@@ -2,22 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
 
-class TextFeildwidget extends StatelessWidget {
+class Textwidget extends StatelessWidget {
   final String hint;
   final Icon icon;
   final bool obscuretext;
-
-  const TextFeildwidget(
+  final TextEditingController controller;
+  const Textwidget(
       {super.key,
-      required this.hint,
-      required this.icon,
-      required this.obscuretext});
+        required this.hint,
+        required this.icon,
+        required this.obscuretext, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     final validator1 = ValidationBuilder().email().maxLength(50).build();
 
-    return TextFormField(
+    return TextFormField(controller:controller ,
       validator: validator1,
       obscureText: obscuretext,
       decoration: InputDecoration(

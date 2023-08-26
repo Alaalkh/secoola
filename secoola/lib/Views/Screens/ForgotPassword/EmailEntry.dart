@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
+import 'package:secoola/Views/Widgets/TextWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
 import '../../../appRoutes.dart';
 
 class EmailEntry extends StatelessWidget {
-  const EmailEntry({super.key});
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class EmailEntry extends StatelessWidget {
               decoration: BoxDecoration(
                   color: white,
                   borderRadius: BorderRadius.circular(16)),
-              child: const TextFeildwidget(obscuretext: false,
+              child:  Textwidget(obscuretext: false,controller: emailController,
                 hint: '  Your email', icon: Icon(Icons.email,color: teal,size: 17,),
               ),
             ),

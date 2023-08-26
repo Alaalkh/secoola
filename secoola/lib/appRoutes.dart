@@ -71,7 +71,7 @@ final getPages = [
   ),
   GetPage(
     name: Routes.newpassword,
-    page: () => const NewPassword(),
+    page: () =>  NewPassword(),
   ),
   GetPage(
     name: Routes.resetpassword,

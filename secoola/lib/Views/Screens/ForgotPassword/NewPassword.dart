@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:secoola/Views/Widgets/TextWidget.dart';
 import 'package:secoola/appRoutes.dart';
-import 'package:secoola/Views/Widgets/IconWidget.dart';
-import 'package:secoola/Views/Widgets/TextFieldWidget.dart';
 import 'package:secoola/theme/Color.dart';
 
 class NewPassword extends StatelessWidget {
-  const NewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,40 +13,38 @@ class NewPassword extends StatelessWidget {
       backgroundColor:white,
       body: Column(
         children: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 11),
-                  height: 52,
-                  width: 52,
-                  margin: const EdgeInsets.only(top: 66, left: 22),
-                  decoration: BoxDecoration(
-                      color: white2,
-                      borderRadius: BorderRadius.circular(17)),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back_ios),
-                    color: Colors.black,
-                  ),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 11),
+                height: 52,
+                width: 52,
+                margin: const EdgeInsets.only(top: 66, left: 22),
+                decoration: BoxDecoration(
+                    color: white2,
+                    borderRadius: BorderRadius.circular(17)),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back_ios),
+                  color: Colors.black,
                 ),
-                const SizedBox(
-                  width: 22,
+              ),
+              const SizedBox(
+                width: 22,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 66, left: 44),
+                child: const Text(
+                  "Reset Password",
+                  style: TextStyle(fontSize: 16),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 66, left: 44),
-                  child: const Text(
-                    "Reset Password",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           const titleWidget(),
-          const passwordEntry()
+           passwordEntry()
         ],
       ),
     );
@@ -75,37 +71,25 @@ class titleWidget extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 66, left: 15),
                 child: const Text(
-                  " 🔐   ",
+                  "🔐",
                   style: TextStyle(fontSize: 24),
                 ),
               )
             ],
           ),
         ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 14, left: 44),
-                child: const Text(
-                  "Enter your email and a verification code to reset the ",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
+        const Padding(
+          padding: EdgeInsets.only(top: 14, left: 44),
+          child: Text(
+            "Enter your email and a verification code to reset the ",
+            style: TextStyle(color: Colors.grey, fontSize: 14),
           ),
         ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 44),
-                child: const Text(
-                  "password will be sent to your email.",
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                ),
-              )
-            ],
+        const Padding(
+          padding: EdgeInsets.only(left: 44),
+          child: Text(
+            "password will be sent to your email.",
+            style: TextStyle(color: Colors.grey, fontSize: 14),
           ),
         ),
       ],
@@ -114,7 +98,7 @@ class titleWidget extends StatelessWidget {
 }
 
 class passwordEntry extends StatelessWidget {
-  const passwordEntry({super.key});
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -129,8 +113,8 @@ class passwordEntry extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: white2,
                     borderRadius: BorderRadius.circular(16)),
-                child: const TextFeildwidget(obscuretext: true,
-                  hint: ' Your Password', icon: Icon(size: 17,Icons.lock_rounded,color: teal,),
+                child:  Textwidget(obscuretext: true,controller: passwordController,
+                  hint: ' Your Password', icon: const Icon(size: 17,Icons.lock_rounded,color: teal,),
                 )),
           ],
         ),
