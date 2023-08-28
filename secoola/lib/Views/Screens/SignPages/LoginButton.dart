@@ -27,10 +27,14 @@ class _LoginButtonState extends State<LoginButton> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       try {
-        await auth.signInWithEmailAndPassword(
+        UserCredential authResult =  await auth.signInWithEmailAndPassword(
           email: _email,
           password: _password,
+
         );
+        if (authResult.user != null) {
+          Get.toNamed(Routes.Chossetopic);
+        }
       } catch (e) {
         // Handle sign-up errors.
       }
@@ -42,7 +46,7 @@ class _LoginButtonState extends State<LoginButton> {
       children: [
         Form(
           key: _formKey,
-          child: Column(
+          child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
@@ -79,8 +83,7 @@ class _LoginButtonState extends State<LoginButton> {
                     _email = value!;
                   },
                 ),
-              ),
-              Container(
+              ),Container(
                 width: 335.w,
                 height: 56.h,
                 margin: EdgeInsets.only(top: 22.h),
@@ -115,7 +118,7 @@ class _LoginButtonState extends State<LoginButton> {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
             ],
           ),
         ),

@@ -23,10 +23,14 @@ class _SignButtonState extends State<SignButton> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       try {
-        await auth.createUserWithEmailAndPassword(
+        UserCredential authResult = await auth.createUserWithEmailAndPassword(
           email: _email,
           password: _password,
+
         );
+        if (authResult.user != null) {
+          Get.toNamed(Routes.Chossetopic);
+        }
       } catch (e) {
         // Handle sign-up errors.
       }
@@ -39,7 +43,7 @@ class _SignButtonState extends State<SignButton> {
       children: [
         Form(
           key: _formKey,
-          child: Column(
+          child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
@@ -76,42 +80,42 @@ class _SignButtonState extends State<SignButton> {
                     _email = value!;
                   },
                 ),
+              ),Container(
+          width: 335.w,
+          height: 56.h,
+          margin: EdgeInsets.only(top: 22.h),
+          decoration: BoxDecoration(
+              color: white2, borderRadius: BorderRadius.circular(22.r)),
+          child: TextFormField(
+            obscureText: true,
+            decoration: InputDecoration(
+              prefixIcon: const Icon(
+                Icons.lock,
+                color: teal,
               ),
-              Container(
-                width: 335.w,
-                height: 56.h,
-                margin: EdgeInsets.only(top: 22.h),
-                decoration: BoxDecoration(
-                    color: white2, borderRadius: BorderRadius.circular(22.r)),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      color: teal,
-                    ),
-                    border: InputBorder.none,
-                    hintText: "Your Password",
-                    hintStyle: const TextStyle(
-                        fontSize: 14, color: Color(0xFFFA9AEB2)),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      borderSide: const BorderSide(
-                        color: Color(0xff00A9B7),
-                      ),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a password';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    _password = value!;
-                  },
+              border: InputBorder.none,
+              hintText: "Your Password",
+              hintStyle: const TextStyle(
+                  fontSize: 14, color: Color(0xFFFA9AEB2)),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                borderSide: const BorderSide(
+                  color: Color(0xff00A9B7),
                 ),
               ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a password';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _password = value!;
+            },
+          ),
+        ),
+
               const SizedBox(height: 20),
             ],
           ),
