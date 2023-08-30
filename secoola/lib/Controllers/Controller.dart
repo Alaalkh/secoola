@@ -17,7 +17,6 @@ class ApiController extends GetxController {
   RxList<DesignCourses> Marketingcourses = <DesignCourses>[].obs;
   RxList<DesignCourses> Categories = <DesignCourses>[].obs;
   RxList<ProgrammingTopic> programmingtopics = <ProgrammingTopic>[].obs;
-  RxList<LaravelCategory> larvelCourses = <LaravelCategory>[].obs;
   RxList<Categoruyclass> categorydata = <Categoruyclass>[].obs;
 
   @override
@@ -27,8 +26,6 @@ class ApiController extends GetxController {
     fetchDesignCourses();
     fetchCodingCourses();
     fetchMarketingCourses();
-    fetchCategory();
-    laravel();
     fetchData();
   }
 
@@ -78,23 +75,6 @@ class ApiController extends GetxController {
     }
   }
 
-  Future<void> fetchCategory() async {
-    try {
-      final response =
-          await http.get(Uri.parse('https://api.rafeeqissa.com/api/category'));
-      if (response.statusCode == 200) {
-        final jsonData = json.decode(response.body);
-        final popularCoursesData = jsonData['data'] as List;
-        programmingtopics.value = popularCoursesData
-            .map((courseJson) => ProgrammingTopic.fromJson(courseJson))
-            .toList();
-      }
-    } catch (e) {
-      print('Error fetching data: $e');
-    } finally {
-      isLoading.value = false;
-    }
-  }
 
   /////////////////////////////////////////////////////
 
@@ -156,40 +136,6 @@ class ApiController extends GetxController {
     }
   }
 
-  Future<void> fetchCategories() async {
-    try {
-      final response =
-          await http.get(Uri.parse('https://api.rafeeqissa.com/api/lecture'));
-      if (response.statusCode == 200) {
-        final jsonData = json.decode(response.body);
-        final categories = jsonData['data'] as List;
-        Categories.value = categories
-            .map((courseJson) => DesignCourses.fromJson(courseJson))
-            .toList();
-      }
-    } catch (e) {
-      print('Error fetching data: $e');
-    } finally {
-      isLoading.value = false;
-    }
-  }
 
-  Future<void> laravel() async {
-    try {
-      final response =
-          await http.get(Uri.parse('https://api.rafeeqissa.com/api/lecture'));
-      if (response.statusCode == 200) {
-        final jsonData = json.decode(response.body);
-        final categories = jsonData['data'] as List;
-        larvelCourses.value = categories
-            .map((courseJson) => LaravelCategory.fromJson(courseJson))
-            .toList();
-        print(categories);
-      }
-    } catch (e) {
-      print('Error fetching data: $e');
-    } finally {
-      isLoading.value = false;
-    }
-  }
+
 }

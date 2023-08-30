@@ -12,6 +12,7 @@ import 'package:http/http.dart' as http;
 class LarvelScreen extends StatelessWidget {
   final Categoruyclass category;
   final String Categoryname;
+
   LarvelScreen({required this.category, required this.Categoryname});
 
   Future<List<Course>> fetchCoursesForCategory(int categoryId) async {
@@ -35,7 +36,8 @@ class LarvelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  CustomAppBar(
+      extendBodyBehindAppBar: true,
+      appBar: CustomAppBar(
           title: Text(
             Categoryname,
             style: TextStyle(color: white2),
@@ -178,6 +180,5 @@ class LarvelScreen extends StatelessWidget {
         },
       ),
     );
-
   }
 }
