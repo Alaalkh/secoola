@@ -40,7 +40,7 @@ class LarvelScreen extends StatelessWidget {
       appBar: CustomAppBar(
           title: Text(
             Categoryname,
-            style: TextStyle(color: white2),
+            style: const TextStyle(color: white2),
           ),
           backcolor: teal),
       body: FutureBuilder(
