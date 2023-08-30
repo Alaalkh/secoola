@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:secoola/Controllers/Controller.dart';
 import 'package:secoola/Models/Category.dart';
-import 'package:secoola/Views/Screens/Home/Categories_page.dart';
+import 'package:secoola/Views/Screens/Home/Larvel_page.dart';
 import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:http/http.dart' as http;
@@ -23,6 +25,7 @@ class _CategoriesState extends State<Categories> {
 
   @override
   Widget build(BuildContext context) {
+    final ApiController apiController = Get.put(ApiController());
     return Column(
       children: [
         Row(
@@ -63,7 +66,7 @@ class _CategoriesState extends State<Categories> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CategoriesScreen(widget.programmingtopics[index]),
+                            builder: (context) => LarvelScreen(apiController.larvelCourses,course.name),
                           ),
                         );
                       },

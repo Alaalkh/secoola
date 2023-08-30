@@ -45,7 +45,7 @@ class _TopicSelectionState extends State<TopicSelection> {
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 44.0,
+              crossAxisSpacing: 22.0,
               mainAxisSpacing: 11.0,
               mainAxisExtent: 103,
             ),
@@ -76,10 +76,10 @@ class _TopicSelectionState extends State<TopicSelection> {
                               width: 2,
                             ),
                           ),
-                          child: SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: CachedNetworkImage(
-                              imageUrl: topic.image,width: 99,
-                              height: 55,
+                              imageUrl: topic.image,
                             ),
                           ),
                         ),

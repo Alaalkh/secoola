@@ -22,9 +22,15 @@ class SocialMediaIcons extends StatelessWidget {
               edgeInsets: EdgeInsets.only(left: 33.w, top: 55.h)),
 
         ),
-        Iconwidget(
-            image: Image.asset("assets/facebook.png"),
-            edgeInsets: EdgeInsets.only(left: 11.w, top: 55.h)),
+        GestureDetector(onTap: ()async{
+          await FirebaseService().signInWithFacebook();
+          Get.toNamed(Routes.Chossetopic);
+
+        },
+          child: Iconwidget(
+              image: Image.asset("assets/facebook.png"),
+              edgeInsets: EdgeInsets.only(left: 11.w, top: 55.h)),
+        ),
         Iconwidget(
             image: Image.asset("assets/apple-logo.png"),
             edgeInsets: EdgeInsets.only(left: 11.w, top: 55.h))
