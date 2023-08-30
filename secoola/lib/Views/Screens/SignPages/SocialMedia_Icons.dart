@@ -23,8 +23,8 @@ class SocialMediaIcons extends StatelessWidget {
 
         ),
         GestureDetector(onTap: ()async{
-          await FirebaseService().signInWithFacebook();
-          Get.toNamed(Routes.Chossetopic);
+          await FirebaseService().loginWithFacebook();
+         // Get.toNamed(Routes.Chossetopic);
 
         },
           child: Iconwidget(

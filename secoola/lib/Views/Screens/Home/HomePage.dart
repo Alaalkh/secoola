@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     PopularCourse(controller.popularCourses),
-                    Categories(apiController.programmingtopics),
+                    Categories(),
                     DesignTopic(apiController.designcourses),
                     CodingTopic(apiController.Codingcourses),
                     MarketingTopic(

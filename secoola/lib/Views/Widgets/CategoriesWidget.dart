@@ -20,8 +20,11 @@ class CategoriesWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CachedNetworkImage(
-            imageUrl: image ,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CachedNetworkImage(
+              imageUrl: image ,
+            ),
           ),
           Text(Category,style:  TextStyle(fontSize: 14.sp),)
         ],

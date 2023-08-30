@@ -1,27 +1,49 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secoola/Controllers/Controller.dart';
 import 'package:secoola/Models/Category.dart';
+import 'package:secoola/Models/categoryiesclass.dart';
 import 'package:secoola/Views/Screens/Home/Larvel_page.dart';
 import 'package:secoola/Views/Widgets/CategoriesWidget.dart';
 import 'package:secoola/theme/Color.dart';
 import 'package:http/http.dart' as http;
 
 class Categories extends StatefulWidget {
-  final List<ProgrammingTopic> programmingtopics;
 
-  Categories(this.programmingtopics);
 
   @override
   State<Categories> createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
+  late List<Categoruyclass> categories = [];
+
   @override
   void initState() {
     super.initState();
+    fetchData();
   }
+  Future<void> fetchData() async {
+    try {
+      final response = await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
+      final jsonData = json.decode(response.body);
+      if (jsonData['data'] != null && jsonData['data']['Category'] is List) {
+        setState(() {
+          categories = (jsonData['data']['Category'] as List)
+              .map((category) => Categoruyclass.fromJson(category))
+              .toList();
+        });
+      } else {
+        print("Invalid API response");
+      }
+    } catch (error) {
+      print("Error fetching data: $error");
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +76,9 @@ class _CategoriesState extends State<Categories> {
           height: 50.h,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: widget.programmingtopics.length,
+              itemCount: categories.length,
               itemBuilder: (context, index) {
-                final course = widget.programmingtopics[index];
+                final course = categories[index];
                 return Row(
                   children: [
                     GestureDetector(
@@ -66,7 +88,7 @@ class _CategoriesState extends State<Categories> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LarvelScreen(apiController.larvelCourses,course.name),
+                            builder: (context) => LarvelScreen(category: categories[index],Categoryname: course.name,),
                           ),
                         );
                       },

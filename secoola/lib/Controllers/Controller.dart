@@ -5,7 +5,9 @@ import 'package:secoola/Models/DesignCourse.dart';
 import 'dart:convert';
 
 import 'package:secoola/Models/MainInfo.dart';
+import 'package:secoola/Models/categoryiesclass.dart';
 import 'package:secoola/Models/laravelCategory.dart';
+import 'package:secoola/Views/Screens/Home/Categories.dart';
 
 class ApiController extends GetxController {
   RxBool isLoading = true.obs;
@@ -16,6 +18,7 @@ class ApiController extends GetxController {
   RxList<DesignCourses> Categories = <DesignCourses>[].obs;
   RxList<ProgrammingTopic> programmingtopics = <ProgrammingTopic>[].obs;
   RxList<LaravelCategory> larvelCourses = <LaravelCategory>[].obs;
+  RxList<Categoruyclass> categorydata = <Categoruyclass>[].obs;
 
   @override
   void onInit() {
@@ -26,6 +29,7 @@ class ApiController extends GetxController {
     fetchMarketingCourses();
     fetchCategory();
     laravel();
+    fetchData();
   }
 
   static Future<ApiResponse> Category() async {
@@ -48,6 +52,23 @@ class ApiController extends GetxController {
         final popularCoursesData = jsonData['data']['PapularCourses'] as List;
         popularCourses.value = popularCoursesData
             .map((courseJson) => PapularCourses.fromJson(courseJson))
+            .toList();
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }
+  Future<void> fetchData() async {
+    try {
+      final response =
+          await http.get(Uri.parse('https://api.rafeeqissa.com/api/main'));
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        final popularCoursesData = jsonData['data']['Category'] as List;
+        categorydata.value = popularCoursesData
+            .map((courseJson) => Categoruyclass.fromJson(courseJson))
             .toList();
       }
     } catch (e) {

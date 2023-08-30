@@ -8,18 +8,19 @@ class FirebaseService{
 
   String userEmail = "";
 
-  Future<UserCredential> signInWithFacebook() async {
-    final LoginResult loginResult = await FacebookAuth.instance.login(
-        permissions: ['email', 'public_profile', 'user_birthday']
-    );
+  Future<void> loginWithFacebook() async {
+    try {
+      final LoginResult result = await FacebookAuth.instance.login();
 
-    final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
-
-    final userData = await FacebookAuth.instance.getUserData();
-
-    userEmail = userData['email'];
-
-    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+      if (result.status == LoginStatus.success) {
+        final AccessToken accessToken = result.accessToken!;
+        print('Logged in with Facebook! User ID: ${accessToken.userId}');
+      } else {
+        print('Facebook login failed. Status: ${result.status}');
+      }
+    } catch (e) {
+      print('Error during Facebook login: $e');
+    }
   }
   SignInWithgoogle ()async{
     try {
