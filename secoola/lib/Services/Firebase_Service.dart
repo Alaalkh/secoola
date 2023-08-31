@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:secoola/appRoutes.dart';
 
 class FirebaseService{
   final _auth=FirebaseAuth.instance;
@@ -33,6 +35,8 @@ class FirebaseService{
             accessToken: googleSignInAuthentication.accessToken,
             idToken: googleSignInAuthentication.idToken);
         await _auth.signInWithCredential(authCredential);
+        Get.toNamed(Routes.Chossetopic);
+
       }
     }on FirebaseAuthException catch(e){
       print(e.message);
@@ -41,6 +45,7 @@ class FirebaseService{
 
   }
   Signout()async{
+    Get.toNamed(Routes.SignPage);
     await _auth.signOut();
     await _googlesign.signOut();
   }

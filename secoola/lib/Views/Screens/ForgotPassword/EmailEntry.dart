@@ -43,7 +43,7 @@ class EmailEntry extends StatelessWidget {
                 padding:  EdgeInsets.only(left: 25.w),
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.toNamed(Routes.verification);
+                    // Get.toNamed(Routes.verification);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: teal,

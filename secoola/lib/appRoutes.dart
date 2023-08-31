@@ -17,8 +17,6 @@ import 'package:secoola/Views/Screens/Search/Search_default.dart';
 import 'package:secoola/Views/Screens/Search/Search_result.dart';
 import 'package:secoola/Views/Screens/SignPages/Login_page.dart';
 import 'package:secoola/Views/Screens/Splashscreen/SplashScreen.dart';
-import 'package:secoola/Views/Screens/ForgotPassword/Verification.dart';
-
 import 'Views/Screens/ForgotPassword/NewPassword.dart';
 import 'Views/Screens/ForgotPassword/Reset_password.dart';
 import 'Views/Screens/SignPages/Signin_page.dart';
@@ -27,7 +25,6 @@ class Routes {
   static String Splashscreen = '/Splashscreen';
   static String LoginPage = '/LoginPage';
   static String SignPage = '/SignPage';
-  static String verification = '/verification';
   static String Onboarding = '/Onboarding';
   static String newpassword = '/newpassword';
   static String resetpassword = '/resetpassword';
@@ -61,10 +58,7 @@ final getPages = [
     name: Routes.SignPage,
     page: () => const SignPage(),
   ),
-  GetPage(
-    name: Routes.verification,
-    page: () => const VerficicationPage(),
-  ),
+
   GetPage(
     name: Routes.Onboarding,
     page: () => const OnBoarding(),

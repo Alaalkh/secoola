@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,55 +11,72 @@ import 'package:secoola/Views/Widgets/Verification_code_widget.dart';
 import '../../../theme/Color.dart';
 
 class VerficicationPage extends StatelessWidget {
-  const VerficicationPage({super.key});
+  final String email;
+  final TextEditingController otpController = TextEditingController();
+
+  VerficicationPage({required this.email});
+
+  void verifyOTP(BuildContext context) async {
+    String otp = otpController.text;
+
+    try {
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: otp);
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      // Verification successful, proceed with necessary actions
+    } catch (e) {
+      // Handle error
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                padding:  EdgeInsets.only(left: 11.w),
-                height: 52.h,
-                width: 52.w,
-                margin:  EdgeInsets.only(top: 66.h, left: 22.w),
-                decoration: BoxDecoration(
-                    color: white2,
-                    borderRadius: BorderRadius.circular(17)),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back_ios),
-                  color: Colors.black,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding:  EdgeInsets.only(left: 11.w),
+                  height: 52.h,
+                  width: 52.w,
+                  margin:  EdgeInsets.only(top: 66.h, left: 22.w),
+                  decoration: BoxDecoration(
+                      color: white2,
+                      borderRadius: BorderRadius.circular(17)),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back_ios),
+                    color: Colors.black,
+                  ),
+                ), SizedBox(
+                  width: 22.w,
                 ),
-              ), SizedBox(
-                width: 22.w,
-              ),
-              Padding(
-                padding:  EdgeInsets.only(top: 66.h, left: 44.w),
-                child: const Text(
-                  "Verify",
-                  style: TextStyle(fontSize: 16),
+                Padding(
+                  padding:  EdgeInsets.only(top: 66.h, left: 44.w),
+                  child: const Text(
+                    "Verify",
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
 
-          const titleWidget(),
-          const NumberCode(),
-          const SizedBox(
-            height: 22,
-          ),
-          const VerfiyButton(),
-          const SizedBox(
-            height: 66,
-          ),
-          const ResendCode()
-        ],
+            const titleWidget(),
+            const NumberCode(),
+            const SizedBox(
+              height: 22,
+            ),
+            const VerfiyButton(),
+            const SizedBox(
+              height: 66,
+            ),
+            const ResendCode()
+          ],
+        ),
       ),
     );
   }

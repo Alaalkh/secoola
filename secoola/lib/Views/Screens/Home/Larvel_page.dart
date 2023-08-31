@@ -38,9 +38,32 @@ class LarvelScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
-          title: Text(
-            Categoryname,
-            style: const TextStyle(color: white2),
+          title: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 11),
+                height: 52,
+                width: 52,
+                margin: const EdgeInsets.only( left: 22),
+                decoration: BoxDecoration(
+                    color: const Color(0xfffFFFFFF),
+                    borderRadius: BorderRadius.circular(17)),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back_ios),
+                  color: Colors.black,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 77.0),
+                child: Text(
+                  Categoryname,
+                  style: const TextStyle(color: white2),
+                ),
+              ),
+            ],
           ),
           backcolor: teal),
       body: FutureBuilder(

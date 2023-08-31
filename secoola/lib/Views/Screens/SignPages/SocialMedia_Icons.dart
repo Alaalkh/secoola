@@ -15,7 +15,6 @@ class SocialMediaIcons extends StatelessWidget {
         GestureDetector(
           onTap: ()async{
            await FirebaseService().SignInWithgoogle();
-           Get.toNamed(Routes.Chossetopic);
         },
           child: Iconwidget(
               image: Image.asset("assets/search.png"),
